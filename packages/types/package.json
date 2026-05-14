@@ -1,0 +1,16 @@
+{
+    "name": "@agri-packages/types",
+    "version": "0.1.0",
+    "private": true,
+    "types": "dist/index.d.ts",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "type-check": "tsc --noEmit",
+        "clean": "rm -rf dist"
+    },
+    "devDependencies": {
+        "typescript": "6.0.3"
+    }
+}

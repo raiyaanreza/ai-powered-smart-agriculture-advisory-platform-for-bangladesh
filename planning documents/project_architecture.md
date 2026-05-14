@@ -471,7 +471,7 @@ datasets/ -> notebooks/ -> experiments/ -> model registry -> service deployment 
 
 ---
 
-## 10. Agentic Workflow Architecture
+### 10. Agentic Workflow Architecture
 
 This is the core intelligence layer of the platform.
 
@@ -485,70 +485,36 @@ A single LLM response is not enough for a government-grade advisory system. The 
 * Use **LangChain** for tools, retrievers, prompt composition, and integrations.
 * Use a dedicated agent service rather than embedding orchestration inside the frontend or general API routes.
 
-### 10.3 Main agent roles
+### 10.3 Primary Agent Roles
 
-#### 1. Crop Intake Agent
+#### 1. Crop Intake Agent (Intent & Routing)
+* **Purpose**: Identifies intent (diagnosis, pricing, weather, advice).
+* **Action**: Detects crop family and routes to specialized models or fallback classifiers.
 
-Purpose:
+#### 2. Farmer Advisory Agent
+* **Purpose**: Provides treatment/prevention steps in Bangla.
+* **Answers**: Pesticide usage, fertilizer dosage, irrigation timing, etc.
 
-* accept image or text input,
-* identify intent,
-* detect whether the request is diagnosis, pricing, weather, or general advice.
+#### 3. Weather Risk Agent
+* **Purpose**: Combines Weather API data with crop stages and disease risk models.
+* **Warnings**: “High fungal infection risk in next 3 days.”
 
-#### 2. Crop Routing Agent
+#### 4. Government Subsidy Agent
+* **Purpose**: Helps farmers find and apply for digital subsidies and schemes.
 
-Purpose:
+#### 5. Marketplace Intelligence Agent
+* **Purpose**: Provides local crop prices, demand prediction, and selling suggestions.
 
-* determine crop family,
-* choose the correct specialized model.
+#### 6. Emergency Outbreak Agent
+* **Purpose**: Detects regional trends (e.g., “Brown spot increasing in Rajshahi”) for early warning.
 
-#### 3. Disease Diagnosis Agent
+#### 7. RAG Verification & Safety Agent
+* **Purpose**: Checks advice against BARI/BRRI documents to ensure context grounding and safety.
 
-Purpose:
+#### 8. Escalation Agent
+* **Purpose**: Decides when to ask for more images or suggest human expert review.
 
-* interpret model output,
-* convert class labels into human-readable diagnosis.
-
-#### 4. Advisory Agent
-
-Purpose:
-
-* generate practical treatment or prevention guidance,
-* provide steps in Bangla,
-* respect locality and crop type.
-
-#### 5. RAG Verification Agent
-
-Purpose:
-
-* check advice against curated agriculture documents,
-* reduce hallucination risk,
-* suggest grounded corrections.
-
-#### 6. Weather Risk Agent
-
-Purpose:
-
-* combine weather data with disease likelihood,
-* generate alerts and preventive suggestions.
-
-#### 7. Escalation Agent
-
-Purpose:
-
-* decide when to ask the user for more images,
-* decide when to suggest human expert review,
-* decide when confidence is too low.
-
-#### 8. Summarization Agent
-
-Purpose:
-
-* create short farmer-friendly summaries,
-* create officer-friendly summaries,
-* create report-ready outputs.
-
-### 10.4 Core agent workflow chain
+### 10.4 Core Agent Workflow Chain
 
 ```text
 User Input
@@ -563,14 +529,6 @@ User Input
 → User Output
 ```
 
-### 10.5 Workflow branching rules
-
-* If image confidence is low, request another image or human review.
-* If the crop is unknown, route to fallback classifier.
-* If the advice touches chemical usage, trigger safety validation.
-* If weather conditions increase disease risk, add preventive warning.
-* If the region is known for outbreaks, inject regional context.
-
 ---
 
 ## 11. Data Architecture Plan
@@ -578,279 +536,69 @@ User Input
 ### 11.1 Core database entities
 
 The relational database should store:
+* users, roles, diagnoses, advisories, crops, disease classes, model versions, agent runs, alert subscriptions, documents, feedback, and audit logs.
 
-* users,
-* roles,
-* diagnoses,
-* advisories,
-* crops,
-* disease classes,
-* model versions,
-* agent runs,
-* alert subscriptions,
-* documents,
-* feedback,
-* audit logs.
-
-### 11.2 Suggested database boundaries
-
-#### PostgreSQL
-
-Use for:
-
-* user and session data,
-* diagnosis records,
-* advisory history,
-* reports,
-* analytics summaries,
-* moderation records.
-
-#### Qdrant
-
-Use for:
-
-* agriculture document embeddings,
-* advisory memory,
-* knowledge retrieval,
-* semantic search over manuals and policy docs.
-
-#### Redis
-
-Use for:
-
-* request cache,
-* temporary workflow state,
-* rate limiting,
-* queue support,
-* AI response caching.
-
-#### Object storage
-
-Use for:
-
-* uploaded images,
-* generated reports,
-* dataset assets,
-* model artifacts.
-
-### 11.3 Suggested data flow
-
-```text
-Upload → Object Storage
-       → Metadata in PostgreSQL
-       → Embedding in Qdrant if needed
-       → Workflow state in Redis
-       → Final advisory saved back to PostgreSQL
-```
+### 11.2 Storage Boundaries
+* **PostgreSQL**: Relational data, history, and moderation records.
+* **Qdrant**: Vector embeddings for RAG and semantic search.
+* **Redis**: Cache, job queues, and temporary workflow state.
+* **S3-Compatible Storage**: Images, PDF reports, and model weights.
 
 ---
 
-## 12. API Design Plan
+## 12. Vibe Coding & AI-Assisted Strategy
 
-### 12.1 API design principles
-
-* Every endpoint must have a single responsibility.
-* Every response must be schema-validated.
-* Version APIs from the beginning.
-* Prefer predictable JSON structures.
-* Separate public, private, and internal APIs.
-
-### 12.2 Endpoint categories
-
-#### Public API
-
-* diagnosis submission
-* advisory retrieval
-* article browsing
-* FAQ and help
-* contact submission
-
-#### Authenticated API
-
-* history access
-* saved reports
-* alerts subscription
-* personal profile
-* user feedback
-
-#### Admin API
-
-* content moderation
-* system analytics
-* model monitoring
-* regional outbreak management
-
-#### Internal API
-
-* model inference calls
-* agent graph execution
-* RAG retrieval calls
-* report generation jobs
+To optimize for AI-assisted development (Cursor, Antigravity, etc.), the codebase must maintain:
+* **Strong boundaries**: One feature = one folder.
+* **Contract-first**: Define schemas before logic.
+* **Self-Documentation**: README.md, ARCHITECTURE.md, and API_CONTRACT.md in every service folder.
+* **Prompt Centralization**: All LLM instructions stored in `packages/prompts/`.
 
 ---
 
-## 13. Security, Reliability, and Governance
+## 13. Suggested Development Sequence
 
-### 13.1 Security
+### Phase 1: Foundation (MVP)
+* Core monorepo setup, auth system, and base UI.
+* Primary disease detection pipeline (Classifier + Routing).
+* Basic RAG system and Bangla advisory assistant.
 
-* Role-based access control.
-* Secure file uploads.
-* Input validation at every boundary.
-* Rate limiting on public endpoints.
-* Audit logging for AI advice and admin actions.
+### Phase 2: Intelligence Expansion
+* Weather API integration and localized risk alerts.
+* Farmer account dashboards and history tracking.
+* Voice input/output support for low-literacy users.
 
-### 13.2 Reliability
+### Phase 3: Agentic Ecosystem
+* Full LangGraph orchestration of specialized advisory agents.
+* Regional outbreak detection and government dashboard.
+* Subsidy and marketplace intelligence integration.
 
-* Retry failed model or LLM calls where safe.
-* Add graceful fallbacks.
-* Cache repeated advisory patterns.
-* Keep a human review path for low-confidence cases.
-
-### 13.3 Governance
-
-* Store model version with every diagnosis.
-* Store prompt/version metadata for agent outputs.
-* Log source documents used for RAG.
-* Keep an approval path for public-sector content.
+### Phase 4: National Scale
+* IoT sensor integration, drone/satellite analytics.
+* National Agricultural Intelligence Layer (Digital Twin).
 
 ---
 
-## 14. Modularity Rules for AI-Assisted Development
+## 14. Future Expansion Scopes
 
-These rules are important when using AI agents for incremental development.
-
-### 14.1 One feature = one module
-
-A feature must not be spread randomly across the repository.
-
-### 14.2 One service = one responsibility
-
-Avoid creating services that do too much.
-
-### 14.3 Shared code must be intentional
-
-Only truly reusable code goes to `packages/`.
-
-### 14.4 Prompt logic stays centralized
-
-All prompts, tool definitions, and AI templates must live in dedicated prompt files.
-
-### 14.5 Schema-first development
-
-Define schemas before implementation so AI agents can generate compatible code faster.
-
-### 14.6 Test before expansion
-
-Every new feature should ship with tests or at least structured validation rules.
+* **Drone Integration**: Large-scale farm surveys and government monitoring.
+* **IoT Integration**: Real-time soil moisture, temperature, and humidity sensors.
+* **Yield Prediction**: Historical and weather-based growth modeling.
+* **National Intelligence**: A centralized "Agricultural Digital Twin" for Bangladesh.
 
 ---
 
-## 15. File Ownership Rules for Future Work
+---
 
-### Where new ideas should go
+## 15. Strategic Implementation Goal
 
-#### New frontend page
-
-* `apps/web/app/(...)`
-
-#### New UI component
-
-* `packages/ui` if reusable
-* feature-local component folder if page-specific
-
-#### New backend capability
-
-* corresponding service folder inside `services/`
-
-#### New AI agent step
-
-* `services/agent-orchestrator/`
-* or dedicated workflow module inside `packages/ai-tools/`
-
-#### New prompt or LLM behavior
-
-* `packages/prompts/`
-
-#### New shared types or schemas
-
-* `packages/types/` and `packages/schemas/`
-
-#### New dataset or experiment
-
-* `datasets/` or `experiments/`
-
-#### New infrastructure change
-
-* `infrastructure/`
+The primary objective is not just "disease detection," but building an **AI-native agricultural operating system** for Bangladesh. Every technical decision should prioritize horizontal scalability and modularity to allow independent evolution of AI services, models, and UI modules.
 
 ---
 
-## 16. Suggested Development Sequence
-
-### Phase 1: Foundation
-
-* repo setup
-* monorepo tooling
-* base auth
-* base UI system
-* API gateway
-* logging and config
-
-### Phase 2: Diagnosis MVP
-
-* crop upload
-* crop routing
-* crop-specific disease inference
-* result display
-* saved history
-
-### Phase 3: Advisory Layer
-
-* Bangla advice generation
-* RAG grounding
-* severity-based treatment recommendations
-* report export
-
-### Phase 4: Agentic Intelligence
-
-* LangGraph orchestration
-* weather-aware warnings
-* escalation and fallback workflows
-* chat assistant
-
-### Phase 5: Government Scale
-
-* admin dashboard
-* analytics
-* outbreak monitoring
-* role-based oversight
-
-### Phase 6: Expansion
-
-* voice input/output
-* mobile-first optimization
-* IoT integration
-* geospatial and drone support
-
----
-
-## 17. Definition of Done for Each Module
-
-A module is considered done only when it has:
-
-* a clear folder boundary,
-* documented input/output contract,
-* test coverage or validation,
-* integration through the API layer,
-* no hidden coupling with unrelated modules,
-* readable docs for future AI agents.
-
----
-
-## 18. Operational Context for AI Agents
+## 16. Operational Context for AI Agents
 
 When an AI coding agent works on this repository, it should:
-
 * search only within the relevant service or feature folder,
 * not modify unrelated modules,
 * respect schema contracts,
@@ -860,7 +608,6 @@ When an AI coding agent works on this repository, it should:
 * avoid generating duplicate logic.
 
 Agents should always ask:
-
 1. Which domain owns this logic?
 2. Which schema defines the contract?
 3. Which service should change?
@@ -869,17 +616,14 @@ Agents should always ask:
 
 ---
 
-## 19. Final Architecture Summary
+## 17. Final Architecture Summary
 
-The platform should be built as a **modular AI agriculture ecosystem** with:
+The platform is a **modular AI agriculture ecosystem** featuring:
+* **Presentation**: Next.js public/admin frontends.
+* **Backend**: FastAPI microservices for business logic.
+* **AI Core**: Specialist crop disease models and RAG knowledge systems.
+* **Orchestration**: LangGraph-based multi-agent workflows.
+* **Data**: PostgreSQL (Relational), Redis (Cache/Queue), and Qdrant (Vector).
+* **Delivery**: Containerized monorepo with automated CI/CD.
 
-* a Next.js public and admin frontend,
-* FastAPI-based backend services,
-* specialist crop disease model services,
-* LangGraph-based agent orchestration,
-* PostgreSQL, Redis, and Qdrant as core data systems,
-* strong monorepo organization,
-* clear contract-driven boundaries,
-* AI-agent-friendly documentation and folder structure.
-
-This structure will let the team build incrementally, allow AI agents to work efficiently, and keep the platform scalable for Bangladesh-wide deployment.
+This structure allows for incremental builds, efficient AI-assisted development, and government-scale deployment.

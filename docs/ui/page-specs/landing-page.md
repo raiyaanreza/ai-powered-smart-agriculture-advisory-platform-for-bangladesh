@@ -32,19 +32,20 @@ Introduce the AgriVision platform to the public and farmers, highlighting the AI
 ## 🤖 4. Stitch-Ready Prompt
 Copy-paste this into Stitch:
 
-> **Prompt**: Design a premium landing page for "AgriVision", a national AI agriculture platform for Bangladesh.
+> **Prompt**: Design a modern, high-conversion LANDING PAGE for an AI-powered agriculture platform called "AgriVision" for Bangladeshi farmers.
 >
 > **Style**: 
-> - Theme: Deep forest dark mode (#07130F).
-> - Effects: Glassmorphism, blurred transparent cards (rgba 17, 38, 30, 0.72), and soft emerald green glows.
+> - Theme: Deep forest dark green gradient (#07130F).
+> - Accents: Harvest gold (#EAB308) for main buttons and primary highlights.
+> - Effects: Glassmorphism, blurred transparent cards, and soft emerald green glows.
 > - Aesthetics: Futuristic "Agri-OS" look, high-end SaaS feel, professional and trustworthy.
 >
-> **Sections**:
-> 1. Navigation with a glass background.
-> 2. Hero section with a powerful typography headline and an "Emerald" CTA button that has a soft outer glow.
-> 3. A 3-column feature grid using glass-cards with thin borders.
-> 4. A section showing a live "Outbreak Alert" map with a dark green theme.
-> 5. A clean, minimal footer.
+> **Required Sections**:
+> 1. HERO SECTION: Headline: "AI-Powered Smart Agriculture for Bangladesh". Subheadline: "Instant disease diagnosis, localized crop advisory, and real-time weather-risk alerts in Bangla". Primary CTA button: "Diagnose Your Crop Now" (with Gold glow).
+> 2. SUPPORTED CROPS SHOWCASE: Display 6 crop cards: Rice, Wheat, Corn, Potato, Brassica, Jute.
+> 3. HOW IT WORKS: (1) Upload crop photo → (2) AI analyzes disease → (3) Get Bangla advisory.
+> 4. ACTIVE OUTBREAK BANNER: Color-coded alert section showing "⚠️ Brown Spot Outbreak - Rajshahi Region".
+> 5. NAVIGATION: Glass background with Logo, Features, About, Alerts, and Login.
 >
 > **Typography**: Geist (sans-serif), bold headers, ample whitespace. 
 > **Mobile**: Ensure it looks like a sleek mobile dashboard on smaller screens.

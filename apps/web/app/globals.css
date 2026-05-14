@@ -3,135 +3,350 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─────────────────────────────────────────────
+   AGRIVISION — Professional Light Theme
+   Palette: Earth Green · Harvest Gold · Slate
+   ───────────────────────────────────────────── */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-
-  --color-accent: var(--accent);
+  /* ── Semantic tokens (map to CSS vars) ── */
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-primary:           var(--primary);
+  --color-primary-foreground:var(--primary-foreground);
+  --color-accent:            var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-border:            var(--border);
+  --color-ring:              var(--ring);
+  --color-input:             var(--input);
+  --color-destructive:       var(--destructive);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+  /* ── Earth Green Palette ── */
+  --color-green-50:  #F0FDF4;
+  --color-green-100: #DCFCE7;
+  --color-green-200: #BBF7D0;
+  --color-green-300: #86EFAC;
+  --color-green-400: #4ADE80;
+  --color-green-500: #22C55E;
+  --color-green-600: #16A34A;
+  --color-green-700: #15803D;
+  --color-green-800: #166534;
+  --color-green-900: #14532D;
+  --color-green-950: #052E16;
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  /* ── Earth / Brand Green (deeper, calmer) ── */
+  --color-earth-50:  #F1F8F2;
+  --color-earth-100: #E0F0E3;
+  --color-earth-200: #C1E2C6;
+  --color-earth-300: #8FC99A;
+  --color-earth-400: #5BAD6B;
+  --color-earth-500: #3D9150;
+  --color-earth-600: #2D7A3E;
+  --color-earth-700: #2D5A27;
+  --color-earth-800: #214020;
+  --color-earth-900: #1A321A;
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  /* ── Harvest Gold ── */
+  --color-gold-50:  #FEFCE8;
+  --color-gold-100: #FEF9C3;
+  --color-gold-200: #FEF08A;
+  --color-gold-300: #FDE047;
+  --color-gold-400: #FACC15;
+  --color-gold-500: #EAB308;
+  --color-gold-600: #CA8A04;
+  --color-gold-700: #A16207;
 
-  --color-emerald: #38D27D;
-  --color-gold: #EAB308;
-  --color-mint: #7EF7B8;
-  --color-forest: #07130F;
-  --color-surface: #0D1F18;
-  --color-glass: rgba(17, 38, 30, 0.72);
+  /* ── Slate (professional grays) ── */
+  --color-slate-50:  #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  /* ── Animations ── */
+  --animate-fade-in-up:    fade-in-up 0.6s ease-out forwards;
+  --animate-shimmer:        shimmer 2.5s linear infinite;
+  --animate-float:          float 6s ease-in-out infinite;
+  --animate-gradient-x:    gradient-x 8s ease infinite;
+  --animate-marquee:        marquee 50s linear infinite;
+  --animate-pulse-ring:     pulse-ring 2s ease-in-out infinite;
 
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+  @keyframes fade-in-up {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+  @keyframes shimmer {
+    0%   { background-position: -400% 0; }
+    100% { background-position: 400% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes pulse-ring {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(45, 90, 39, 0.3); }
+    50%       { box-shadow: 0 0 0 12px rgba(45, 90, 39, 0); }
   }
 }
 
+/* ─────────────────────────────────────────────
+   CSS Variables — Light Mode Root
+   ───────────────────────────────────────────── */
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #07130f;
-    --card: #ffffff;
-    --card-foreground: #07130f;
-    --popover: #ffffff;
-    --popover-foreground: #07130f;
-    --primary: #38D27D;
-    --primary-foreground: #ffffff;
-    --secondary: #7EF7B8;
-    --secondary-foreground: #07130f;
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
-    --accent: #EAB308;
-    --accent-foreground: #ffffff;
-    --destructive: #ff6b6b;
-    --destructive-foreground: #ffffff;
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #38D27D;
-    --chart-1: #38D27D;
-    --chart-2: #EAB308;
-    --chart-3: #57C7FF;
-    --chart-4: #FF6B6B;
-    --chart-5: #7EF7B8;
-    --radius: 0.75rem;
-  }
+    /* Page */
+    --background:         #FAFAFA;
+    --foreground:         #1E293B;
 
-  .dark {
-    --background: #07130f;
-    --foreground: #d8e6de;
-    --card: #0d1f18;
-    --card-foreground: #d8e6de;
-    --popover: #0d1f18;
-    --popover-foreground: #d8e6de;
-    --primary: #38D27D;
-    --primary-foreground: #07130f;
-    --secondary: #1ca56d;
-    --secondary-foreground: #d8e6de;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #EAB308;
-    --accent-foreground: #07130f;
-    --destructive: #ff6b6b;
-    --destructive-foreground: #ffffff;
-    --border: #3d4a3f;
-    --input: #3d4a3f;
-    --ring: #38D27D;
-    --chart-1: #38D27D;
-    --chart-2: #EAB308;
-    --chart-3: #57C7FF;
-    --chart-4: #FF6B6B;
-    --chart-5: #7EF7B8;
+    /* Cards */
+    --card:               #FFFFFF;
+    --card-foreground:    #1E293B;
+
+    /* Brand */
+    --primary:            #2D5A27;
+    --primary-foreground: #FFFFFF;
+
+    /* Accent (gold) */
+    --accent:             #EAB308;
+    --accent-foreground:  #1A1A00;
+
+    /* Muted */
+    --muted:              #F1F5F9;
+    --muted-foreground:   #64748B;
+
+    /* Borders */
+    --border:             #E2E8F0;
+    --input:              #E2E8F0;
+    --ring:               rgba(45, 90, 39, 0.4);
+
+    /* Danger */
+    --destructive:        #EF4444;
   }
 }
 
+/* ─────────────────────────────────────────────
+   Base Resets
+   ───────────────────────────────────────────── */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+    border-color: var(--border);
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', system-ui, sans-serif;
   }
+
+  ::selection {
+    background-color: rgba(45, 90, 39, 0.15);
+    color: #2D5A27;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2D5A27;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* ─────────────────────────────────────────────
+   Utility Classes
+   ───────────────────────────────────────────── */
+@layer utilities {
+
+  /* ── Section backgrounds ── */
+  .bg-hero {
+    background: linear-gradient(160deg, #F1F8F2 0%, #FAFAFA 50%, #FEFCE8 100%);
+  }
+
+  .bg-section-alt {
+    background: #F8FAFC;
+  }
+
+  .bg-dark-section {
+    background: linear-gradient(135deg, #1A321A 0%, #2D5A27 60%, #214020 100%);
+  }
+
+  /* ── Gradient text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #2D5A27 0%, #3D9150 50%, #2D7A3E 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #CA8A04 0%, #EAB308 50%, #A16207 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Cards ── */
+  .card-base {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-base:hover {
+    border-color: rgba(45, 90, 39, 0.25);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 12px 32px rgba(45, 90, 39, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-elevated {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  .card-dark {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+  }
+
+  /* ── Feature icon container ── */
+  .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(45, 90, 39, 0.12);
+  }
+
+  /* ── Pill badge ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .pill-green {
+    background: rgba(45, 90, 39, 0.08);
+    color: #2D5A27;
+    border: 1px solid rgba(45, 90, 39, 0.18);
+  }
+
+  .pill-gold {
+    background: rgba(234, 179, 8, 0.1);
+    color: #92400E;
+    border: 1px solid rgba(234, 179, 8, 0.25);
+  }
+
+  .pill-white {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* ── Shimmer effect ── */
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+    background-size: 400% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  /* ── Stat number ── */
+  .stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: #2D5A27;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2D5A27;
+  }
+
+  /* ── Divider line ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E2E8F0, transparent);
+  }
+
+  /* ── Hero grid pattern ── */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(45,90,39,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,90,39,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ── Glow ── */
+  .glow-green {
+    box-shadow: 0 0 30px rgba(45, 90, 39, 0.2), 0 0 60px rgba(45, 90, 39, 0.08);
+  }
+
+  /* ── Step connector line ── */
+  .step-line::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2D5A27, #E2E8F0);
+    transform: translateX(0);
+  }
+
+  /* ── Text sizes ── */
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
 }

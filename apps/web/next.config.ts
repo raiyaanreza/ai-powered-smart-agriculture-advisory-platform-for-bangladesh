@@ -4,12 +4,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ["@agri-packages/ui", "@agri-packages/types"],
   images: {
-    domains: ["localhost"],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
+      { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "localhost" },
     ],
   },
   experimental: {

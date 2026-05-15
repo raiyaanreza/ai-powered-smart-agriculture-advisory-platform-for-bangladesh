@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Map as MapIcon, ShieldAlert, Activity, Navigation } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 
 interface Report {
   id: string;
@@ -21,7 +21,7 @@ export function OutbreakMap() {
     let mounted = true;
 
     const fetchReports = async () => {
-      const { data, error } = await supabase
+      const { data, error } = await supabaseAdmin
         .from("reports")
         .select("id, disease_name, latitude, longitude, severity, location_name")
         .order("created_at", { ascending: false })

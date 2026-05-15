@@ -27,12 +27,13 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "..", "..", ".."))
 
 try:
-    print("Loading Crop Classifier...")
+    print(f"Loading Crop Classifier from: {os.path.join(project_root, 'models', 'crop-classifier', 'best.pt')}")
     CROP_ROUTER_MODEL = YOLO(
         os.path.join(project_root, "models", "crop-classifier", "best.pt")
     )
+    print("Crop Classifier loaded successfully.")
 except Exception as e:
-    print(f"Warning: Failed to load crop classifier. {e}")
+    print(f"CRITICAL ERROR: Failed to load crop classifier. {e}")
     CROP_ROUTER_MODEL = None
 
 DISEASE_MODELS = {}
@@ -51,16 +52,22 @@ def get_disease_model(crop_name: str) -> YOLO:
     }
 
     path = model_paths.get(crop_name)
-    if not path or not os.path.exists(path):
+    if not path:
+        print(f"Error: No model path defined for crop: {crop_name}")
+        return None
+        
+    if not os.path.exists(path):
+        print(f"Error: Model file NOT FOUND at: {path}")
         return None
 
-    print(f"Lazy loading disease model for {crop_name}...")
+    print(f"Lazy loading disease model for {crop_name} from {path}...")
     try:
         model = YOLO(path)
         DISEASE_MODELS[crop_name] = model
+        print(f"Successfully loaded model for {crop_name}")
         return model
     except Exception as e:
-        print(f"Failed to load {crop_name} model: {e}")
+        print(f"FAILED to load {crop_name} model: {e}")
         return None
 
 

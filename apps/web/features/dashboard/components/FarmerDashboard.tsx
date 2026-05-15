@@ -21,6 +21,50 @@ import Link from "next/link";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { DashboardBackground } from "./DashboardBackground";
 
+function LiveWeatherWidget() {
+  const [weather, setWeather] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const key = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+      if (!key) return;
+      try {
+        const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=Dhaka`);
+        const data = await res.json();
+        if (data.current) setWeather(data.current);
+      } catch (e) {
+        console.error("Failed to fetch weather", e);
+      }
+    };
+    fetchWeather();
+  }, []);
+
+  return (
+    <div className="bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] p-10 text-white shadow-2xl overflow-hidden relative border border-white/10">
+      <div className="absolute top-0 right-0 p-8 opacity-20">
+        <CloudRain className="h-20 w-20" />
+      </div>
+      <div className="relative z-10">
+        <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8 flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+          Live Environment (Dhaka)
+        </div>
+        <div className="text-5xl font-black mb-2 tracking-tighter">
+          {weather ? `${Math.round(weather.temp_c)}°C` : "..."}
+        </div>
+        <div className="flex items-center gap-4 text-slate-400 text-sm font-medium mb-10">
+          <span className="flex items-center gap-1">
+            <CloudRain className="h-4 w-4 text-blue-400" /> {weather ? `${weather.humidity}%` : "..."}
+          </span>
+          <span className="flex items-center gap-1">
+            <Wind className="h-4 w-4 text-emerald-400" /> {weather ? `${weather.wind_kph}km/h` : "..."}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function FarmerDashboard() {
   const { user, profile, loading } = useAuth();
   const [realHistory, setRealHistory] = useState<any[]>([]);
@@ -116,11 +160,31 @@ export function FarmerDashboard() {
           {/* Operational Bento Grid */}
           <div className="grid lg:grid-cols-12 gap-6 mb-8">
 
-            {/* Primary Health Metric */}
+            {/* Primary Health Metric - Sentinel Hub Integration */}
             <div className="lg:col-span-8 bg-white/70 backdrop-blur-lg border border-white/30 rounded-[2.5rem] p-10 relative overflow-hidden group shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all duration-500">
-              <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
-                <Activity className="h-48 w-48 text-slate-900" />
-              </div>
+              
+              {/* Sentinel Hub NDVI Map Background */}
+              <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000"
+                   style={{
+                     backgroundImage: `url("https://www.sentinel-hub.com/img/showcase/agriculture_1.jpg")`,
+                     backgroundSize: 'cover',
+                     backgroundPosition: 'center',
+                     filter: 'contrast(1.2) saturate(1.5) hue-rotate(10deg)'
+                   }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent z-0" />
+              {process.env.NEXT_PUBLIC_SENTINEL_HUB_ID ? (
+                <div className="absolute top-6 right-6 z-10 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[9px] font-black uppercase tracking-widest text-emerald-700">Sentinel-2 Sync Active</span>
+                </div>
+              ) : (
+                <div className="absolute top-6 right-6 z-10 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-500">Sentinel-2 Offline</span>
+                </div>
+              )}
+
 
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-12">
@@ -186,26 +250,7 @@ export function FarmerDashboard() {
 
             {/* Regional Risk & Weather */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] p-10 text-white shadow-2xl overflow-hidden relative border border-white/10">
-                <div className="absolute top-0 right-0 p-8 opacity-20">
-                  <CloudRain className="h-20 w-20" />
-                </div>
-                <div className="relative z-10">
-                  <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8">Environment</div>
-                  <div className="text-5xl font-black mb-2 tracking-tighter">32°C</div>
-                  <div className="flex items-center gap-4 text-slate-400 text-sm font-medium mb-10">
-                    <span className="flex items-center gap-1"><CloudRain className="h-4 w-4" /> 12%</span>
-                    <span className="flex items-center gap-1"><Wind className="h-4 w-4" /> 8km/h</span>
-                  </div>
-
-                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <div className="flex items-center gap-3 text-red-400 text-[11px] font-black uppercase tracking-widest mb-3">
-                      <AlertTriangle className="h-4 w-4" /> Heavy Rain Expected
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">Consider delaying fertilizer application for the next 48 hours to prevent runoff.</p>
-                  </div>
-                </div>
-              </div>
+              <LiveWeatherWidget />
 
               <div className="bg-white/70 backdrop-blur-lg border border-white/30 rounded-[2.5rem] p-10 shadow-xl">
                 <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8">Quick Contacts</div>

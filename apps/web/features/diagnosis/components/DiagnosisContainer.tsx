@@ -7,7 +7,7 @@ import { ResultDisplay } from "./ResultDisplay";
 import { OutbreakMap } from "./OutbreakMap";
 import { toast } from "sonner";
 import { useAuth } from "@/features/auth/hooks/useAuth";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 
 export function DiagnosisContainer() {
   const { user, profile } = useAuth();
@@ -48,7 +48,7 @@ export function DiagnosisContainer() {
       today.setHours(0, 0, 0, 0);
 
       // 1. Diagnoses count today
-      const { count, error: countErr } = await supabase
+      const { count, error: countErr } = await supabaseAdmin
         .from('diagnoses')
         .select('*', { count: 'exact', head: true })
         .gte('created_at', today.toISOString());
@@ -58,7 +58,7 @@ export function DiagnosisContainer() {
       }
 
       // 2. Average precision
-      const { data: precData, error: precErr } = await supabase
+      const { data: precData, error: precErr } = await supabaseAdmin
         .from('diagnoses')
         .select('confidence_score')
         .gte('created_at', today.toISOString());
@@ -70,7 +70,7 @@ export function DiagnosisContainer() {
       }
 
       // 3. Recent 3 Diagnoses
-      const { data: recent, error: recErr } = await supabase
+      const { data: recent, error: recErr } = await supabaseAdmin
         .from('diagnoses')
         .select('crop_detected, disease_detected, district, created_at')
         .order('created_at', { ascending: false })

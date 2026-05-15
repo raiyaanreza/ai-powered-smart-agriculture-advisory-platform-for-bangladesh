@@ -5,7 +5,7 @@
 <h1 align="center">🌾 AgriVision AI</h1>
 
 <p align="center">
-  <strong>Government-Scale Agricultural Intelligence Ecosystem for Bangladesh</strong>
+  <strong>The Future of Bangladeshi Agriculture — Powered by Multi-Agent Intelligence</strong>
 </p>
 
 <p align="center">
@@ -14,122 +14,152 @@
   <img src="https://img.shields.io/badge/Supabase-Realtime-3FCF8E?style=for-the-badge&logo=supabase" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css" />
   <img src="https://img.shields.io/badge/LangGraph-Orchestration-blue?style=for-the-badge&logo=langchain" />
+  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge" />
 </p>
 
 ---
 
-## 📖 Overview
+## 📖 Project Vision
 
-**AgriVision** is an AI-native agricultural operating system designed to empower the Bangladeshi agricultural sector. It bridges the gap between rural farmers and government expertise using advanced computer vision, multi-agent orchestration, and real-time geospatial intelligence.
+**AgriVision AI** is a government-scale, AI-native agricultural operating system designed to empower the heart of Bangladesh — its farmers. By bridging the gap between rural fields and national expertise, we provide an ecosystem that transforms how diseases are diagnosed, how advisory is delivered, and how national agricultural outbreaks are managed.
 
-The platform is built on a **Modular Monorepo Architecture**, separating public-facing farmer tools from high-security administrative command centers.
-
----
-
-## 🚀 The AgriVision Journey (Sequential Modules)
-
-AgriVision is organized into logical layers that work together to deliver a seamless experience.
-
-### 1. 🚜 Farmer Portal (`apps/web`)
-The primary interface for farmers to interact with the AI.
-*   **AI Disease Diagnosis**: Instant identification of rice diseases (Leaf Blast, Brown Spot, etc.) via image uploads.
-*   **Multi-turn AI Advisor**: A conversational agent that remembers history and provides localized treatment steps in Bangla.
-*   **Farmer Dashboard**: A premium glassmorphic interface featuring an **Animated Semantic Map** of Bangladesh for contextual awareness.
-*   **Onboarding**: Tailored experience for new farmers to set up their crop profiles.
-
-### 2. 🏛️ National Command Center (`apps/admin`)
-The "War Room" for agricultural officials and experts.
-*   **GIS Outbreak Intelligence**: Real-time hotspot mapping across districts (Dhaka, Rajshahi, etc.).
-*   **National Alert System**: Broadcast emergency pest/weather warnings to thousands of farmers instantly.
-*   **Disease Library Management**: A visual reference gallery used to update and verify the national agricultural knowledge base.
-*   **Farmer Verification**: Ensuring data integrity across the platform.
-
-### 3. 🤖 Intelligence Layer (`services/`)
-The brain of the platform, powered by Python and FastAPI.
-*   **Advisory Service**: Orchestrates LangGraph agents to process diagnosis results and generate expert advice.
-*   **Crop Routing**: Automatically routes images to specialized models for higher accuracy.
-*   **RAG Knowledge Engine**: Grounds AI responses in official BARI/BRRI research data.
-
-### 4. 📦 Shared Infrastructure (`packages/`)
-Common logic used across all applications.
-*   **`@agri/ui`**: Shared React components and glassmorphic design tokens.
-*   **`@agri/schemas`**: Unified Zod/Pydantic contracts for frontend-backend parity.
-*   **`@agri/prompts`**: Centralized repository for all LLM instructions.
+> [!IMPORTANT]
+> **Architected for Scale**: This platform is built on a modular micro-frontend and micro-service architecture, allowing for independent evolution of AI models, geospatial tools, and farmer interfaces.
 
 ---
 
-## 🛠️ Technology Stack
+## 🚜 Core Functionalities
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | Next.js 16 (App Router), React 19, TypeScript 6 |
-| **Backend** | FastAPI (Python 3.12), SQLAlchemy 2.0 |
-| **Styling** | Tailwind CSS 4, Framer Motion (Animations), Shadcn UI |
-| **Database** | Supabase (PostgreSQL), Realtime Sync |
-| **AI/Agents** | Google Gemini 1.5 Flash, LangGraph, LangChain |
-| **Mapping** | Leaflet.js with custom Pulse Animations |
+### 1. High-Fidelity Farmer Dashboard
+The Farmer Portal is designed with a **Premium Glassmorphic UI**, balancing technical density with rural accessibility. 
+*   **Animated Semantic Map**: A live, glowing background map of Bangladesh that provides contextual regional awareness.
+*   **Health Tracking**: Monitor farm health trends, historical diagnoses, and active alerts in a unified view.
+
+<p align="center">
+  <img src="assets/farmer_dashboard.png" width="90%" alt="Farmer Dashboard Mockup" />
+</p>
+
+### 2. AI-Powered Disease Diagnosis
+Leveraging specialized computer vision models, AgriVision provides instant, high-accuracy diagnosis for critical Bangladeshi crops.
+*   **Domain Routing**: Automatically routes images to specialized models (Rice, Wheat, Corn, etc.).
+*   **Detailed Analytics**: Receive confidence scores, severity estimates, and immediate treatment protocols.
+
+<p align="center">
+  <img src="assets/diagnosis.png" width="90%" alt="AI Diagnosis Mockup" />
+</p>
+
+### 3. AgriBot: LangGraph Multi-Agent Advisor
+AgriBot is not just a chatbot; it is a sophisticated orchestration of multiple agents that provide context-aware, research-grounded advice.
+*   **Contextual Memory**: Remembers your previous questions and farm history.
+*   **RAG Integration**: Grounds all advice in official BARI/BRRI research documents for maximum trust.
+
+<p align="center">
+  <img src="assets/agribot.png" width="90%" alt="AgriBot Advisor Mockup" />
+</p>
+
+### 4. National Command Center (GIS)
+The administrative "War Room" for the Ministry of Agriculture to monitor and respond to national outbreaks.
+*   **Live Hotspot Mapping**: Real-time interactive GIS map showing disease hotspots with pulse animations.
+*   **Emergency Broadcast**: One-click national alerts to thousands of farmers in high-risk regions.
+
+<p align="center">
+  <img src="assets/admin_gis.png" width="90%" alt="Admin Command Center Mockup" />
+</p>
 
 ---
 
-## 🗺️ Roadmap & Status
+## 🏗️ System Architecture
 
-| Phase | Milestone | Features | Status |
+AgriVision follows a **Contract-First, Modular Monorepo** design to ensure long-term maintainability and easy feature integration.
+
+```mermaid
+graph TD
+    User((Farmer)) --> WebApp[Farmer Portal / Next.js]
+    Admin((Ministry)) --> AdminApp[Command Center / Next.js]
+    
+    subgraph "Intelligent Orchestration"
+        Agent[LangGraph Multi-Agent Engine]
+        RAG[RAG Knowledge Service / BARI-BRRI]
+    end
+    
+    subgraph "AI Inference Layer"
+        Router[Specialized Crop Router]
+        RiceModel[Rice Disease Model]
+        WheatModel[Wheat Disease Model]
+        CornModel[Corn Disease Model]
+    end
+    
+    subgraph "Data & Realtime"
+        DB[(PostgreSQL + Supabase)]
+        Vector[(Qdrant Vector DB)]
+        Storage[(Object Storage)]
+    end
+    
+    WebApp & AdminApp --> Agent
+    Agent --> Router
+    Router --> RiceModel & WheatModel & CornModel
+    Agent --> RAG
+    Agent & WebApp & AdminApp --> DB
+```
+
+---
+
+## 🛠️ Technical Stack Specifications
+
+*   **Frontend**: [Next.js 16 (App Router)](https://nextjs.org), [React 19](https://react.dev), [Framer Motion](https://www.framer.com/motion/)
+*   **Backend**: [FastAPI (Python 3.12)](https://fastapi.tiangolo.com), [Pydantic v2](https://docs.pydantic.dev/)
+*   **AI/Agents**: [Google Gemini 1.5 Flash](https://ai.google.dev), [LangGraph](https://www.langchain.com/langgraph), [LangChain](https://langchain.com)
+*   **Data Layer**: [Supabase](https://supabase.com), [PostgreSQL](https://postgresql.org), [Qdrant](https://qdrant.tech)
+*   **Styling**: [Tailwind CSS 4](https://tailwindcss.com), [Shadcn UI](https://ui.shadcn.com)
+
+---
+
+## 📅 Roadmap: The Path Forward
+
+| Phase | Milestone | Focus | Status |
 | :--- | :--- | :--- | :---: |
-| **1** | **Foundation** | Auth, Onboarding, Basic Diagnosis | ✅ |
-| **2** | **Intelligence** | LangGraph Advisor, Multi-turn Chat, History | ✅ |
-| **3** | **Command** | GIS Heatmaps, National Alerts, Admin Portal | ✅ |
-| **4** | **Stability** | Unified UI, Asset Sync, Model Optimization | ✅ |
-| **5** | **Scale** | Satellite NDVI, Voice Interaction, Marketplace | ⏳ |
+| **Phase 1** | **Foundation** | Core UI, Auth, and Basic Diagnosis | ✅ Done |
+| **Phase 2** | **Intelligence** | Multi-Agent Orchestration & RAG | ✅ Done |
+| **Phase 3** | **Command** | GIS Heatmaps & National Alert System | ✅ Done |
+| **Phase 4** | **Stability** | Unified Design System & Asset Integration | ✅ Done |
+| **Phase 5** | **National Scale** | Satellite NDVI, Voice NLP, and Marketplace | ⏳ Planned |
 
 ---
 
-## 🏃 Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
-* **Node.js**: v20+
-* **Python**: 3.12+
-* **pnpm**: v9+
-* **Supabase CLI** (optional)
+### 1. Prerequisites
+- Node.js v20+
+- Python 3.12+
+- pnpm v9+
 
-### Setup & Installation
+### 2. Installation
+```bash
+# Clone the repository
+git clone https://github.com/RaiyaanReza/I-Powered-Smart-Agriculture-Advisory-Platform-for-Bangladesh.git
 
-1. **Clone & Install**:
-   ```bash
-   git clone https://github.com/RaiyaanReza/I-Powered-Smart-Agriculture-Advisory-Platform-for-Bangladesh.git
-   pnpm install
-   ```
+# Install dependencies
+pnpm install
+```
 
-2. **Environment Configuration**:
-   Follow the templates in `.env.example` (if provided) or create:
-   - `apps/web/.env.local`
-   - `apps/admin/.env.local`
-   - `services/advisory-service/.env`
+### 3. Execution
+```bash
+# Start all apps and services simultaneously
+pnpm dev
 
-3. **Database Migration**:
-   Apply SQL scripts from `docs/sql/` to your Supabase instance.
-
-### Running the Ecosystem
-
-*   **Run Everything (Turbo)**:
-    ```bash
-    pnpm dev
-    ```
-*   **Run Specific App**:
-    ```bash
-    pnpm dev --filter web   # Farmer Portal (:3000)
-    pnpm dev --filter admin # Admin Center (:3001)
-    ```
+# Or start specific applications
+pnpm dev --filter web   # Farmer Portal (:3000)
+pnpm dev --filter admin # Admin Center (:3001)
+```
 
 ---
 
-## 📂 Documentation Guide
+## 📂 Documentation
 
-For deeper dives, explore our specialized documentation:
-
-*   📑 **[Project Overview](docs/01_PROJECT_OVERVIEW.md)**: Vision and product philosophy.
-*   🏗️ **[System Architecture](docs/02_SYSTEM_ARCHITECTURE.md)**: Technical deep dive into services and agents.
-*   🎨 **[Design Architecture](docs/03_DESIGN_ARCHITECTURE.md)**: UI patterns, tokens, and UX strategy.
-*   📜 **[Current State](CURRENT_STATE.md)**: Latest sprint progress and active tasks.
+*   📑 **[Project Overview](docs/01_PROJECT_OVERVIEW.md)**: Product vision and philosophy.
+*   🏗️ **[System Architecture](docs/02_SYSTEM_ARCHITECTURE.md)**: Technical deep dive.
+*   🎨 **[Design Architecture](docs/03_DESIGN_ARCHITECTURE.md)**: UI/UX strategy.
+*   📜 **[Current State](CURRENT_STATE.md)**: Latest progress and sprint tracking.
 
 ---
 

@@ -23,8 +23,9 @@ Stabilizing the unified ecosystem and preparing for Phase 5 (National Scale Feat
 - **Key Feature**: Integrated visual disease references for Rice (Bacterial Leaf Blight, Blast, Brown Spot) into the Admin Disease Library.
 - **Status**: Stable.
 
-### 4. Documentation Overhaul
-- **Description**: Synchronized `README.md`, `01_PROJECT_OVERVIEW.md`, and created `CURRENT_STATE.md` to reflect realized features.
+### 4. Documentation & Visual Overhaul
+- **Description**: Rebuilt the root `README.md` with high-fidelity UI mockups for all major features (Dashboard, Diagnosis, AgriBot, Admin GIS).
+- **Key Feature**: Added professional image assets and an improved Mermaid architecture diagram.
 - **Status**: Complete.
 
 ---

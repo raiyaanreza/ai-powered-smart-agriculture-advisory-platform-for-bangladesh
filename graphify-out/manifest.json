@@ -520,8 +520,8 @@
     "hash": "44513b74839549a30544ffcccee0ebf6"
   },
   "E:\\agri-ai-platform\\CURRENT_STATE.md": {
-    "mtime": 1778871395.1735098,
-    "hash": "934127576ef00b57353672d2d6da3544"
+    "mtime": 1778873508.5529249,
+    "hash": "7fbc1ff30b6c86a92e5c9778b06ccb0a"
   },
   "E:\\agri-ai-platform\\docker-compose.yml": {
     "mtime": 1778761629.059615,
@@ -536,8 +536,8 @@
     "hash": "bd39e307eb90ed0cb166ff5262bb151f"
   },
   "E:\\agri-ai-platform\\README.md": {
-    "mtime": 1778871384.6727016,
-    "hash": "af2b64974c2ee4973d3072052faa88b1"
+    "mtime": 1778873502.4316082,
+    "hash": "8a7f7339e10e58147fc400a2c929b579"
   },
   "E:\\agri-ai-platform\\requirements.txt": {
     "mtime": 1778760553.6970696,
@@ -2647,13 +2647,29 @@
     "mtime": 1772862033.771005,
     "hash": "ebef5acee6a33853460b9524abc0062e"
   },
+  "E:\\agri-ai-platform\\assets\\admin_gis.png": {
+    "mtime": 1778873467.5077991,
+    "hash": "05a6f7ab99c6e1317edb7b8037013187"
+  },
+  "E:\\agri-ai-platform\\assets\\agribot.png": {
+    "mtime": 1778873482.916958,
+    "hash": "5dc99b97d64ca5ea9aa6be229de3c3d5"
+  },
   "E:\\agri-ai-platform\\assets\\banner.png": {
     "mtime": 1778837761.7840948,
     "hash": "99080790b624938e207187a7228bb36e"
   },
+  "E:\\agri-ai-platform\\assets\\diagnosis.png": {
+    "mtime": 1778873454.536035,
+    "hash": "77ee57e90c2f4fca7111f6c45f211093"
+  },
   "E:\\agri-ai-platform\\assets\\drone_image.png": {
     "mtime": 1778837714.6602652,
     "hash": "884ec61a1b8dfa1c3c33d1bb397d0c40"
+  },
+  "E:\\agri-ai-platform\\assets\\farmer_dashboard.png": {
+    "mtime": 1778873438.8170874,
+    "hash": "2753be8fd52710c431cd68621359e7ac"
   },
   "E:\\agri-ai-platform\\assets\\diseases\\brassica\\all.png": {
     "mtime": 1778840052.091704,

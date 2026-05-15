@@ -8,15 +8,22 @@ interface LibraryHeroProps {
 
 export function LibraryHero({ onSearch }: LibraryHeroProps) {
   return (
-    <div className="relative overflow-hidden pt-40 pb-24 px-4 bg-[#052E16]">
+    <div className="relative overflow-hidden pt-36 pb-24 px-4 bg-[#052E16]">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" 
           className="w-full h-full object-cover"
           alt="Fields"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#052E16]/60 to-[#052E16]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#052E16]/60 to-[#052E16]" />
       </div>
+
+      <motion.div
+        aria-hidden="true"
+        className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-gold-500/10 blur-3xl"
+        animate={{ y: [0, 18, 0], opacity: [0.35, 0.55, 0.35] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <div className="max-w-5xl mx-auto relative z-10 text-center border-b border-white/5 pb-16">
         <motion.div
@@ -44,18 +51,21 @@ export function LibraryHero({ onSearch }: LibraryHeroProps) {
         </motion.p>
 
         <motion.div 
-          className="bg-white p-2 rounded-2xl shadow-2xl flex items-center gap-2 max-w-lg mx-auto"
+          initial={{ opacity: 0, y: 14, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.15 }}
+          className="bg-white/95 backdrop-blur-xl p-2.5 rounded-[1.25rem] shadow-2xl flex items-center gap-2 max-w-xl mx-auto border border-white/60"
         >
-          <div className="flex-1 flex items-center px-4 gap-3">
-            <Search className="h-4 w-4 text-slate-300" />
+          <div className="flex-1 flex items-center px-4 gap-3 bg-slate-50 rounded-xl">
+            <Search className="h-4 w-4 text-slate-400" />
             <input 
               type="text" 
               onChange={(e) => onSearch(e.target.value)}
               placeholder="রোগের নাম দিয়ে খুঁজুন..."
-              className="w-full py-2 text-[15px] focus:outline-none text-slate-800 font-bold placeholder:text-slate-200 font-bn"
+              className="w-full py-3 text-[15px] focus:outline-none text-slate-800 font-bold placeholder:text-slate-400 font-bn bg-transparent"
             />
           </div>
-          <button className="bg-[#052E16] text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-all">
+          <button className="bg-[#052E16] text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-all shadow-lg shadow-green-950/20">
             খুঁজুন
           </button>
         </motion.div>
@@ -78,7 +88,7 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
   return (
     <div className="space-y-6">
       {/* Filters Section */}
-      <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-[15px] font-black text-slate-900 tracking-tight">Filters</h3>
           <button onClick={onReset} className="text-[10px] font-black text-earth-700 uppercase tracking-widest">RESET</button>
@@ -127,10 +137,10 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Seasonal Trends Section (Exact match) */}
-      <div className="bg-[#2D5A27] rounded-[2rem] p-8 text-white relative overflow-hidden shadow-xl">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.05 }} className="bg-[#2D5A27] rounded-[2rem] p-8 text-white relative overflow-hidden shadow-xl">
         <div className="flex items-center gap-3 mb-6">
            <Calendar className="h-5 w-5 text-[#EAB308]" />
            <h3 className="text-[15px] font-black tracking-tight">Seasonal Trends</h3>
@@ -151,10 +161,10 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
         <button className="w-full py-4 rounded-xl bg-[#EAB308] text-[#052E16] font-black text-[11px] uppercase tracking-widest shadow-lg shadow-gold-900/20 active:scale-95 transition-all">
           VIEW FULL REPORT
         </button>
-      </div>
+      </motion.div>
 
       {/* Community Impact Section (Exact match) */}
-      <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
         <div className="flex items-center gap-3 mb-8">
            <Users className="h-5 w-5 text-earth-700" />
            <h3 className="text-[15px] font-black text-slate-900 tracking-tight">Community Impact</h3>
@@ -187,7 +197,7 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
         <button className="text-[10px] font-black text-earth-700 uppercase tracking-widest flex items-center gap-2 group">
           VIEW LOCAL INSIGHTS <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }

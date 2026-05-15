@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, LogIn, Leaf, Zap, BookOpen, MessageSquare, ShoppingCart, Search, LayoutDashboard, ShieldCheck, User, Bell, History } from "lucide-react";
 import Link from "next/link";
@@ -22,6 +22,7 @@ export function Navbar() {
   const [notificationOpen, setNotificationOpen] = useState(false);
   const { user, profile, signOut } = useAuth();
   const pathname = usePathname();
+  const notificationChannelKey = useRef(`schema-db-changes-${Math.random().toString(36).slice(2)}`);
 
   const [notifications, setNotifications] = useState<any[]>([]);
   const userRole = profile?.role || user?.user_metadata?.role || "user";
@@ -38,26 +39,30 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
-    
-    if (user) {
-      fetchNotifications();
-      const channel = supabase
-        .channel('schema-db-changes')
-        .on('postgres_changes', 
-          { event: 'INSERT', schema: 'public', table: 'notifications' }, 
-          (payload) => {
-            setNotifications(prev => [payload.new, ...prev]);
-            toast.info(`New Alert: ${payload.new.title}`);
-          }
-        ).subscribe();
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        supabase.removeChannel(channel);
-      };
-    }
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [user]);
+  }, []);
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    fetchNotifications();
+    const channel = supabase
+      .channel(`${notificationChannelKey.current}-${user.id}`)
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "notifications" },
+        (payload) => {
+          setNotifications((prev) => [payload.new, ...prev]);
+          toast.info(`New Alert: ${payload.new.title}`);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user?.id, userRole]);
 
   const fetchNotifications = async () => {
     const { data } = await supabase
@@ -70,21 +75,20 @@ export function Navbar() {
   };
 
   return (
-    <header 
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-2 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm" : "py-4 bg-white/50 backdrop-blur-sm border-b border-slate-200/50"
-      }`}
+    <header
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-2 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm" : "py-4 bg-white/50 backdrop-blur-sm border-b border-slate-200/50"
+        }`}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
-          
+
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#2D5A27] to-[#3D9150] flex items-center justify-center shadow-lg shadow-green-900/10 group-hover:rotate-6 transition-transform duration-300">
+            <div className="h-8 w-8 rounded-lg bg-linear-to-br from-earth-700 to-earth-500 flex items-center justify-center shadow-lg shadow-green-900/10 group-hover:rotate-6 transition-transform duration-300">
               <Leaf className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-black tracking-tighter text-slate-900">
-              Agri<span className="text-[#2D5A27]">Vision</span>
+              Agri<span className="text-earth-700">Vision</span>
             </span>
           </Link>
 
@@ -93,16 +97,15 @@ export function Navbar() {
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 rounded-full text-[12px] font-black transition-all duration-300 flex items-center gap-2 ${
-                    isActive 
-                      ? "bg-white text-[#2D5A27] shadow-sm ring-1 ring-slate-200" 
+                  className={`px-4 py-2 rounded-full text-[12px] font-black transition-all duration-300 flex items-center gap-2 ${isActive
+                      ? "bg-white text-earth-700 shadow-sm ring-1 ring-slate-200"
                       : "text-slate-500 hover:text-slate-900 hover:bg-white/50"
-                  }`}
+                    }`}
                 >
-                  <link.icon className={`h-3.5 w-3.5 ${isActive ? "text-[#2D5A27]" : "text-slate-400"}`} />
+                  <link.icon className={`h-3.5 w-3.5 ${isActive ? "text-earth-700" : "text-slate-400"}`} />
                   {link.name}
                 </Link>
               );
@@ -115,12 +118,12 @@ export function Navbar() {
               <Globe className="h-4 w-4" />
               <span className="text-[10px] font-black uppercase tracking-widest">BN</span>
             </button>
-            <div className="h-5 w-[1px] bg-slate-200 mx-1" />
-            
+            <div className="h-5 w-px bg-slate-200 mx-1" />
+
             {user && (
               <div className="relative">
-                <button 
-                  onClick={() => setUserMenuOpen(false) || setNotificationOpen(!notificationOpen)}
+                <button
+                  onClick={() => { setUserMenuOpen(false); setNotificationOpen(!notificationOpen); }}
                   className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-all relative"
                 >
                   <Bell className="h-5 w-5" />
@@ -129,7 +132,7 @@ export function Navbar() {
 
                 <AnimatePresence>
                   {notificationOpen && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -137,17 +140,17 @@ export function Navbar() {
                     >
                       <div className="px-6 pb-4 border-b border-slate-50 flex items-center justify-between">
                         <span className="text-xs font-black text-slate-900 uppercase tracking-widest">Alert Center</span>
-                        <span className="text-[10px] font-black text-[#2D5A27] uppercase tracking-widest cursor-pointer hover:underline">Mark all read</span>
+                        <span className="text-[10px] font-black text-earth-700 uppercase tracking-widest cursor-pointer hover:underline">Mark all read</span>
                       </div>
-                      <div className="max-h-[400px] overflow-y-auto">
+                      <div className="max-h-100 overflow-y-auto">
                         {notifications.length === 0 ? (
                           <div className="px-6 py-10 text-center text-slate-400 text-[10px] font-bold">No active alerts.</div>
                         ) : (
                           notifications.map((n) => (
-                            <NotificationItem 
+                            <NotificationItem
                               key={n.id}
-                              title={n.title} 
-                              msg={n.message} 
+                              title={n.title}
+                              msg={n.message}
                               type={n.type}
                               time={new Date(n.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             />
@@ -165,11 +168,11 @@ export function Navbar() {
 
             {user ? (
               <div className="relative">
-                <button 
-                  onClick={() => setNotificationOpen(false) || setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-3 p-1 pr-3 rounded-full border border-slate-200 hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-[#2D5A27]/20"
+                <button
+                  onClick={() => { setNotificationOpen(false); setUserMenuOpen(!userMenuOpen); }}
+                  className="flex items-center gap-3 p-1 pr-3 rounded-full border border-slate-200 hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-earth-700/20"
                 >
-                  <div className="h-8 w-8 rounded-full bg-[#052E16] flex items-center justify-center overflow-hidden">
+                  <div className="h-8 w-8 rounded-full bg-green-950 flex items-center justify-center overflow-hidden">
                     {profile?.avatar_url ? (
                       <img src={profile.avatar_url} alt="User Avatar" className="h-full w-full object-cover" />
                     ) : (
@@ -180,7 +183,7 @@ export function Navbar() {
                     <span className="text-[11px] font-black text-slate-900 leading-none tracking-tight">
                       {profile?.full_name?.split(' ')[0] || user.email?.split('@')[0]}
                     </span>
-                    <span className="text-[9px] font-black text-[#2D5A27] uppercase tracking-widest leading-none mt-1">
+                    <span className="text-[9px] font-black text-earth-700 uppercase tracking-widest leading-none mt-1">
                       {userRole}
                     </span>
                   </div>
@@ -188,23 +191,23 @@ export function Navbar() {
 
                 <AnimatePresence>
                   {userMenuOpen && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       className="absolute right-0 mt-2 w-56 bg-white border border-slate-100 rounded-2xl shadow-xl shadow-slate-200/50 py-2 z-50"
                     >
                       <Link href="/premium" className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
-                        <div className="h-8 w-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                        <div className="h-8 w-8 rounded-full bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center">
                           <Zap className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                           <div className="text-[12px] font-black text-slate-900 group-hover:text-amber-600 transition-colors">Premium Services</div>
-                           <div className="text-[10px] text-slate-400 font-medium">Unlock satellite tools</div>
+                          <div className="text-[12px] font-black text-slate-900 group-hover:text-amber-600 transition-colors">Premium Services</div>
+                          <div className="text-[10px] text-slate-400 font-medium">Unlock satellite tools</div>
                         </div>
                       </Link>
-                      <div className="h-[1px] bg-slate-100 my-1" />
-                      <button 
+                      <div className="h-px bg-slate-100 my-1" />
+                      <button
                         onClick={() => { signOut(); setUserMenuOpen(false); }}
                         className="w-full text-left px-4 py-3 text-[12px] font-black text-red-500 hover:bg-red-50 transition-colors"
                       >
@@ -215,9 +218,9 @@ export function Navbar() {
                 </AnimatePresence>
               </div>
             ) : (
-              <Link 
+              <Link
                 href="/login"
-                className="h-9 px-5 rounded-full bg-[#052E16] text-white text-[12px] font-black flex items-center gap-2 hover:bg-[#064E3B] transition-all shadow-lg shadow-green-950/20 active:scale-95"
+                className="h-9 px-5 rounded-full bg-green-950 text-white text-[12px] font-black flex items-center gap-2 hover:bg-green-900 transition-all shadow-lg shadow-green-950/20 active:scale-95"
               >
                 <LogIn className="h-4 w-4 text-white" />
                 <span className="text-white">Sign In</span>
@@ -226,7 +229,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="lg:hidden h-9 w-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-900"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -238,7 +241,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -246,30 +249,30 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-8 space-y-4">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={link.href}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 text-slate-900 font-bold"
                   onClick={() => setIsOpen(false)}
                 >
                   <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                    <link.icon className="h-5 w-5 text-[#2D5A27]" />
+                    <link.icon className="h-5 w-5 text-earth-700" />
                   </div>
                   {link.name}
                 </Link>
               ))}
               <div className="pt-4 flex items-center gap-3">
                 {user ? (
-                   <button 
+                  <button
                     onClick={() => { signOut(); setIsOpen(false); }}
                     className="flex-1 h-12 rounded-2xl bg-slate-100 text-slate-900 font-bold"
                   >
                     Sign Out
                   </button>
                 ) : (
-                  <Link 
+                  <Link
                     href="/login"
-                    className="flex-1 h-12 rounded-2xl bg-[#052E16] text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-green-950/20"
+                    className="flex-1 h-12 rounded-2xl bg-green-950 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-green-950/20"
                     onClick={() => setIsOpen(false)}
                   >
                     <LogIn className="h-5 w-5 text-white" />
@@ -297,7 +300,7 @@ function NotificationItem({ title, msg, type, time }: { title: string, msg: stri
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-2">
           {icons[type]}
-          <span className="text-[11px] font-black text-slate-900 uppercase tracking-tight group-hover:text-[#2D5A27] transition-colors">{title}</span>
+          <span className="text-[11px] font-black text-slate-900 uppercase tracking-tight group-hover:text-earth-700 transition-colors">{title}</span>
         </div>
         <span className="text-[9px] font-medium text-slate-400">{time}</span>
       </div>
@@ -310,14 +313,14 @@ function NotificationItem({ title, msg, type, time }: { title: string, msg: stri
 
 export function Footer() {
   return (
-    <footer className="bg-[#052E16] text-white pt-20 pb-10 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-      
+    <footer className="bg-green-950 text-white pt-20 pb-10 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-125 h-125 bg-green-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-xl bg-[#2D5A27] flex items-center justify-center">
+              <div className="h-10 w-10 rounded-xl bg-earth-700 flex items-center justify-center">
                 <Leaf className="h-6 w-6 text-white" />
               </div>
               <span className="text-xl font-black tracking-tighter">

@@ -22,7 +22,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Bacterial",
     severity: "High",
-    image: `${BASE_PATH}/Rice__Bacterial_Leaf_Blight/0001.jpg`,
+    image: `/assets/diseases/rice/bacterial leaf blight.png`,
     description: "ব্যাকটেরিয়াজনিত পাতা পোড়া বা বিএলবি (BLB) বাংলাদেশের ধান চাষের জন্য একটি অত্যন্ত গুরুতর এবং ধ্বংসাত্মক সমস্যা। এটি মূলত জ্যান্থোমোনাস ওরাইজি নামক এক ধরণের ব্যাকটেরিয়ার আক্রমণে হয়ে থাকে।",
     symptoms: [
       "পাতার ডগা বা কিনারা থেকে শুরু হওয়া জলছাপের মতো দাগ",
@@ -43,7 +43,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Fungal",
     severity: "Medium",
-    image: `${BASE_PATH}/Rice__Brown_Spot/0001.jpg`,
+    image: `/assets/diseases/rice/brown spot.png`,
     description: "বাদামী দাগ বা ব্রাউন স্পট বাংলাদেশের ধানের একটি প্রাচীন এবং পরিচিত রোগ যা মূলত ছত্রাক (Bipolaris oryzae) দ্বারা ঘটে। এটি সাধারণত সেই সব জমিতে বেশি হয় যেখানে মাটির উর্বরতা কম।",
     symptoms: [
       "পাতায় ছোট ছোট ডিম্বাকৃতি বা গোলাকার গাঢ় বাদামী দাগ",
@@ -64,7 +64,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Fungal",
     severity: "High",
-    image: `${BASE_PATH}/Rice__Leaf_Blast/0001.jpg`,
+    image: `/assets/diseases/rice/leaf blast.png`,
     description: "ব্লাস্ট ধানের একটি অত্যন্ত সংক্রামক ছত্রাকজনিত রোগ যা ম্যাগনোপোর্থ ওরাইজি নামক ছত্রাক দ্বারা হয়। এটি ফসলের ফলন ২০% থেকে ১০০% পর্যন্ত ধ্বংস করতে পারে।",
     symptoms: [
       "পাতায় চোখের মতো দাগ পড়া যার মাঝখানটা ছাই রঙা বা সাদা এবং চারপাশটা গাঢ় বাদামী",
@@ -84,7 +84,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Fungal",
     severity: "Medium",
-    image: `${BASE_PATH}/Rice__Leaf_Scald/0001.jpg`,
+    image: `/assets/diseases/rice/leaf sclad.png`,
     description: "লিফ স্ক্যাল্ড বা পাতা পোড়া রোগটি মাইক্রোডোকিয়াম ওরাইজি নামক ছত্রাক দ্বারা ঘটে। এটি মূলত আমন মৌসুমে বেশি দেখা যায়।",
     symptoms: [
       "পাতার কিনারায় বা ডগায় চুরুটের আগুনের মতো পোড়া পোড়া দাগ",
@@ -104,7 +104,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Fungal",
     severity: "Low",
-    image: `${BASE_PATH}/Rice__Narrow_Brown_Leaf_Spot/0001.jpg`,
+    image: `/assets/diseases/rice/narrow brown leaf spot.png`,
     description: "এই রোগটি সারকোস্পোরা জানি নামক ছত্রাক দ্বারা হয়। বাংলাদেশে এটি সাধারণত ধান পাকার শেষ পর্যায়ে বেশি দেখা যায়।",
     symptoms: [
       "দাগগুলো অনেক চিকন বা সরু এবং লম্বাটে হয়ে থাকে",
@@ -123,7 +123,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Pest",
     severity: "High",
-    image: `${BASE_PATH}/Rice__Rice_Hispa/0001.jpg`,
+    image: `/assets/diseases/rice/rice hispa.png`,
     description: "পামরি পোকা ধানের একটি অন্যতম প্রধান শত্রু পোকা। পূর্ণবয়স্ক পামরি পোকা দেখতে কালো এবং এর গায়ে অসংখ্য কাঁটা থাকে।",
     symptoms: [
       "পাতার উপরিভাগের সবুজ অংশ খেয়ে ফেলে, ফলে সাদা সমান্তরাল লম্বা দাগ পড়ে",
@@ -144,7 +144,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Fungal",
     severity: "High",
-    image: `${BASE_PATH}/Rice__Sheath_Blight/0001.jpg`,
+    image: `/assets/diseases/rice/sheath blight.png`,
     description: "খোল পোড়া রোগ ধানের একটি সাধারণ মারাত্মক ছত্রাকজনিত রোগ যা রাইজোকটোনিয়া সোলানি দ্বারা হয়। এটি কাণ্ডের নিচের দিক থেকে শুরু হয়।",
     symptoms: [
       "আক্রান্ত স্থানে অসম আকৃতির ধূসর-সাদা দাগ যার কিনারা গাঢ় বাদামী",
@@ -164,7 +164,7 @@ export const diseases: Disease[] = [
     crop: "Rice",
     type: "Healthy",
     severity: "Low",
-    image: `${BASE_PATH}/Rice__Healthy_Leaf/0001.jpg`,
+    image: `/assets/diseases/rice/healthy.png`,
     description: "সুস্থ ধান গাছের পাতা গাঢ় সবুজ এবং কোনো ধরণের দাগ বা পোকার আক্রমণমুক্ত থাকে। এটি মডেলকে অন্যান্য রোগের সাথে পার্থক্য করতে সাহায্য করে।",
     symptoms: [
       "পাতা গাঢ় সবুজ এবং পরিষ্কার",

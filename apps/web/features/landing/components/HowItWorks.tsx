@@ -165,39 +165,32 @@ export function HowItWorks() {
                 </span>
               </div>
 
-              <div className="p-5">
-                {/* Progress */}
-                <div className="flex items-center gap-0 mb-5">
-                  {["Upload", "Analysis", "Report"].map((s, i) => (
-                    <div key={s} className="flex-1 flex flex-col items-center gap-1">
-                      <div className="h-7 w-7 rounded-full flex items-center justify-center text-xs font-black"
-                           style={{
-                             background: i < 2 ? "#2D5A27" : "#F1F5F9",
-                             color: i < 2 ? "#fff" : "#94A3B8",
-                           }}>
-                        {i < 2 ? "✓" : "3"}
-                      </div>
-                      <span className="text-[10px] font-semibold" style={{ color: "#94A3B8" }}>{s}</span>
+              <div className="p-5 relative group overflow-hidden">
+                <div className="rounded-2xl overflow-hidden aspect-video relative flex items-center justify-center bg-slate-900 border border-slate-100 shadow-inner">
+                  <video 
+                    src="/assets/demo.mp4" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="w-full h-full object-cover opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                  
+                  {/* Overlay decorative elements */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
+                  
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                       <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+                       <span className="text-white text-[10px] font-black uppercase tracking-widest shadow-sm">AI Scan Active</span>
                     </div>
-                  ))}
+                    <div className="px-2 py-1 rounded-md bg-white/20 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                       99.2% Accuracy
+                    </div>
+                  </div>
                 </div>
 
-                {/* Image preview strip */}
-                <div className="rounded-xl mb-4 p-4 grid grid-cols-3 gap-2"
-                     style={{ background: "linear-gradient(135deg, #F1F8F2, #E0F0E3)" }}>
-                  {[false, true, false].map((affected, i) => (
-                    <div key={i} className="h-20 rounded-lg flex flex-col items-end justify-end p-1.5"
-                         style={{
-                           background: affected ? "rgba(251,191,36,0.2)" : "rgba(74,222,128,0.15)",
-                           border: `1px solid ${affected ? "rgba(251,191,36,0.4)" : "rgba(74,222,128,0.3)"}`,
-                         }}>
-                      <span className="text-[9px] font-bold"
-                            style={{ color: affected ? "#92400E" : "#166534" }}>
-                        {affected ? "⚠ Affected" : "✓ Healthy"}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                {/* Analysis Report Mock */}
 
                 {/* Result */}
                 <div className="rounded-xl p-4 mb-3"

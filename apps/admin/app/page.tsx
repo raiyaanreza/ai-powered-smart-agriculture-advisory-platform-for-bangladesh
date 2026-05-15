@@ -7,7 +7,7 @@ import {
   Search, FileJson, ChevronRight, Globe
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -18,7 +18,7 @@ import dynamic from "next/dynamic";
 const OutbreakMap = dynamic(() => import("@/features/admin/components/OutbreakMap"), { 
   ssr: false,
   loading: () => (
-    <div className="h-[500px] w-full rounded-[2.5rem] bg-slate-100 animate-pulse flex items-center justify-center">
+    <div className="h-125 w-full rounded-[2.5rem] bg-slate-100 animate-pulse flex items-center justify-center">
       <div className="text-xs font-black uppercase tracking-widest text-slate-400">Initializing GIS Module...</div>
     </div>
   )
@@ -34,6 +34,13 @@ export default function AdminDashboard() {
   const [fetching, setFetching] = useState(true);
   const [diseases, setDiseases] = useState<Disease[]>(initialDiseases);
   const [showAddDisease, setShowAddDisease] = useState(false);
+  const [dashboardMetrics, setDashboardMetrics] = useState({
+    totalUsers: 0,
+    diagnosesCount: 0,
+    accuracy: 0,
+    trend: [0, 0, 0, 0, 0, 0, 0],
+  });
+  const [recentAlerts, setRecentAlerts] = useState<any[]>([]);
   
   // New Disease Form State
   const [newDisease, setNewDisease] = useState<Partial<Disease>>({
@@ -51,6 +58,8 @@ export default function AdminDashboard() {
     const userRole = profile?.role || user?.user_metadata?.role;
     if (userRole === "admin") {
       fetchPending();
+      fetchDashboardAnalytics();
+      fetchLibraryDiseases();
       
       const channel = supabase
         .channel('admin-profiles')
@@ -72,7 +81,7 @@ export default function AdminDashboard() {
 
   const fetchPending = async () => {
     setFetching(true);
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from("profiles")
       .select("*")
       .eq("role", "farmer")
@@ -136,7 +145,7 @@ export default function AdminDashboard() {
     const { error } = await supabase.from("diseases").insert([diseaseToAdd]);
     
     if (!error) {
-      setDiseases([diseaseToAdd, ...diseases]);
+      await fetchLibraryDiseases();
       setShowAddDisease(false);
       setNewDisease({
         name: "", nameBn: "", crop: "Rice", type: "Fungal", severity: "Medium",
@@ -150,6 +159,68 @@ export default function AdminDashboard() {
       setDiseases([diseaseToAdd, ...diseases]);
       setShowAddDisease(false);
     }
+  };
+
+  const fetchLibraryDiseases = async () => {
+    const { data } = await supabaseAdmin
+      .from("diseases")
+      .select("*");
+
+    if (data && data.length > 0) {
+      const remoteDiseases = data as Disease[];
+      const seenIds = new Set(remoteDiseases.map((disease) => disease.id));
+      setDiseases([...remoteDiseases, ...initialDiseases.filter((disease) => !seenIds.has(disease.id))]);
+    } else {
+      setDiseases(initialDiseases);
+    }
+  };
+
+  const fetchDashboardAnalytics = async () => {
+    const [profilesResult, diagnosesResult, notificationsResult] = await Promise.all([
+      supabaseAdmin.from("profiles").select("id", { count: "exact", head: true }),
+      supabaseAdmin
+        .from("diagnoses")
+        .select("confidence_score, created_at", { count: "exact" })
+        .order("created_at", { ascending: false })
+        .limit(200),
+      supabaseAdmin
+        .from("notifications")
+        .select("id, title, message, type, created_at")
+        .order("created_at", { ascending: false })
+        .limit(3),
+    ]);
+
+    const diagnoses = diagnosesResult.data || [];
+    const windowStart = new Date();
+    windowStart.setHours(0, 0, 0, 0);
+
+    const trend = Array.from({ length: 7 }, (_, index) => {
+      const day = new Date(windowStart);
+      day.setDate(day.getDate() - (6 - index));
+      const dayStart = day.getTime();
+      const dayEnd = dayStart + 24 * 60 * 60 * 1000;
+      return diagnoses.filter((item) => {
+        if (!item.created_at) return false;
+        const createdAt = new Date(item.created_at).getTime();
+        return createdAt >= dayStart && createdAt < dayEnd;
+      }).length;
+    });
+
+    const accuracy = diagnoses.length > 0
+      ? diagnoses.reduce((sum, item) => sum + (typeof item.confidence_score === "number" ? item.confidence_score : 0), 0) / diagnoses.length
+      : 0;
+
+    setDashboardMetrics({
+      totalUsers: profilesResult.count ?? 0,
+      diagnosesCount: diagnosesResult.count ?? diagnoses.length,
+      accuracy: accuracy * 100,
+      trend,
+    });
+
+    setRecentAlerts((notificationsResult.data || []).map((notification) => ({
+      ...notification,
+      time: new Date(notification.created_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    })));
   };
 
   const userRole = profile?.role || user?.user_metadata?.role;
@@ -217,18 +288,18 @@ export default function AdminDashboard() {
     <div className="min-h-screen flex flex-col bg-[#F9FAFB]">
       <Navbar />
       
-      <div className="flex-1 flex flex-col lg:flex-row max-w-[1600px] w-full mx-auto p-4 lg:p-8 gap-8">
+      <div className="flex-1 flex flex-col lg:flex-row max-w-400 w-full mx-auto p-4 lg:p-8 gap-8">
         
         {/* Sidebar */}
         <aside className="w-full lg:w-72 flex flex-col gap-2">
-          <div className="p-6 bg-white border border-slate-200 rounded-[2rem] shadow-sm mb-4">
+          <div className="p-6 bg-white border border-slate-200 rounded-4xl shadow-sm mb-4">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-12 w-12 rounded-2xl bg-[#052E16] flex items-center justify-center shadow-lg shadow-green-900/20">
                 <ShieldCheck className="h-6 w-6 text-white" />
               </div>
               <div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-slate-400">Admin Panel</div>
-                <div className="text-sm font-black text-slate-900 truncate max-w-[120px]">{user?.email?.split('@')[0]}</div>
+                <div className="text-sm font-black text-slate-900 truncate max-w-30">{user?.email?.split('@')[0]}</div>
               </div>
             </div>
             
@@ -261,7 +332,7 @@ export default function AdminDashboard() {
             </nav>
           </div>
 
-          <div className="p-6 bg-gradient-to-br from-[#052E16] to-[#1A3A1A] rounded-[2rem] shadow-xl text-white">
+          <div className="p-6 bg-linear-to-br from-green-950 to-[#1A3A1A] rounded-4xl shadow-xl text-white">
             <Activity className="h-6 w-6 text-green-400 mb-4" />
             <div className="text-xs font-bold text-green-200 uppercase tracking-widest mb-1">System Health</div>
             <div className="text-xl font-black mb-4 tracking-tighter">99.8% Online</div>
@@ -289,10 +360,10 @@ export default function AdminDashboard() {
                     <p className="text-slate-500 font-medium">Real-time insights into agricultural health and user activity.</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <button className="h-10 px-4 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-slate-50">
+                    <button className="h-10 px-4 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-50 active:scale-95">
                       <FileJson className="h-4 w-4" /> Export Data
                     </button>
-                    <button className="h-10 px-4 rounded-xl bg-[#052E16] text-white text-xs font-black flex items-center gap-2 hover:bg-slate-900 shadow-lg shadow-green-900/10">
+                    <button className="h-10 px-4 rounded-xl bg-[#052E16] text-white text-xs font-black flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-900 active:scale-95 shadow-lg shadow-green-900/10">
                       <Bell className="h-4 w-4" /> Issue Alert
                     </button>
                   </div>
@@ -300,52 +371,27 @@ export default function AdminDashboard() {
 
                 {/* Stats Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <StatCard label="Total Users" value="1,284" trend="+12%" icon={Users} color="blue" />
-                  <StatCard label="Diagnoses" value="4,821" trend="+24%" icon={Activity} color="green" />
-                  <StatCard label="Accuracy" value="98.2%" trend="+0.5%" icon={ShieldCheck} color="purple" />
-                  <StatCard label="Pending" value={pendingFarmers.length.toString()} trend="Critical" icon={AlertTriangle} color="amber" />
+                  <StatCard label="Total Users" value={dashboardMetrics.totalUsers.toLocaleString()} trend={dashboardMetrics.totalUsers > 0 ? `+${dashboardMetrics.totalUsers}` : "0"} icon={Users} color="blue" />
+                  <StatCard label="Diagnoses" value={dashboardMetrics.diagnosesCount.toLocaleString()} trend={dashboardMetrics.diagnosesCount > 0 ? `+${dashboardMetrics.diagnosesCount}` : "0"} icon={Activity} color="green" />
+                  <StatCard label="Accuracy" value={`${dashboardMetrics.accuracy.toFixed(1)}%`} trend={dashboardMetrics.accuracy > 0 ? `+${dashboardMetrics.accuracy.toFixed(1)}%` : "0"} icon={ShieldCheck} color="purple" />
+                  <StatCard label="Pending" value={pendingFarmers.length.toString()} trend={pendingFarmers.length > 0 ? `+${pendingFarmers.length}` : "0"} icon={AlertTriangle} color="amber" />
                 </div>
 
-                {/* Charts and Map Section */}
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {/* Diagnosis Trend Chart */}
+                {/* Map & Analytics Section */}
+                <div className="grid grid-cols-1 gap-8">
+                  {/* National Outbreak Map & Analytics (GIS) */}
                   <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
                     <div className="flex items-center justify-between mb-8">
                       <h3 className="font-black text-slate-900 flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-green-600" /> Diagnosis Volume
-                      </h3>
-                      <select className="text-[10px] font-black uppercase tracking-widest text-slate-400 bg-transparent border-none focus:outline-none">
-                        <option>Last 7 Days</option>
-                        <option>Last 30 Days</option>
-                      </select>
-                    </div>
-                    
-                    <div className="h-64 w-full flex items-end gap-2">
-                      {[40, 70, 45, 90, 65, 80, 95].map((val, i) => (
-                        <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
-                          <div 
-                            className="w-full bg-gradient-to-t from-green-600 to-green-400 rounded-lg transition-all duration-500 group-hover:scale-y-105" 
-                            style={{ height: `${val}%` }} 
-                          />
-                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Day {i+1}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* National Outbreak Map (GIS) */}
-                  <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
-                    <div className="flex items-center justify-between mb-8">
-                      <h3 className="font-black text-slate-900 flex items-center gap-2">
-                        <MapIcon className="h-5 w-5 text-blue-600" /> Outbreak Intelligence (GIS)
+                        <MapIcon className="h-5 w-5 text-blue-600" /> Outbreak Intelligence & Analytics
                       </h3>
                       <div className="flex items-center gap-2">
                         <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                        <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">Live Heatmap</span>
+                        <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">Live Sync</span>
                       </div>
                     </div>
                     
-                    <div className="h-64 rounded-3xl overflow-hidden border border-slate-100">
+                    <div className="w-full">
                       <OutbreakMap />
                     </div>
                   </div>
@@ -407,7 +453,7 @@ export default function AdminDashboard() {
                   </button>
                 </div>
 
-                <div className="bg-white border border-slate-200 rounded-[2.5rem] shadow-sm overflow-hidden">
+                <div className="bg-white border border-slate-200 rounded-[2.5rem] shadow-sm overflow-hidden mb-8">
                   <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex items-center gap-4">
                     <div className="relative flex-1">
                       <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -467,6 +513,41 @@ export default function AdminDashboard() {
                         ))}
                       </tbody>
                     </table>
+                  </div>
+                </div>
+
+                <div className="bg-white border border-slate-200 rounded-[2.5rem] shadow-sm overflow-hidden">
+                  <div className="p-8 border-b border-slate-100 flex items-center justify-between">
+                    <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest flex items-center gap-2">
+                       <Globe className="h-4 w-4 text-[#052E16]" /> Visual Reference Library (Rice)
+                    </h3>
+                  </div>
+                  <div className="p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    {diseases.filter(d => d.crop === "Rice").map(d => (
+                      <div key={`ref-${d.id}`} className="group cursor-pointer">
+                        <div className="aspect-square rounded-3xl overflow-hidden border border-slate-100 bg-slate-50 relative shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+                           {d.image ? (
+                             <img 
+                               src={d.image} 
+                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                               alt={d.name} 
+                             />
+                           ) : (
+                             <div className="h-full w-full flex items-center justify-center text-slate-300">
+                                <Database className="h-8 w-8" />
+                             </div>
+                           )}
+                           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                              <div className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">{d.name}</div>
+                              <div className="text-[8px] font-bold text-green-400 uppercase tracking-widest mt-1">Verified Expert Ref</div>
+                           </div>
+                        </div>
+                        <div className="mt-3 px-1">
+                           <div className="text-[11px] font-black text-slate-900 truncate">{d.name}</div>
+                           <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{d.type}</div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -529,7 +610,7 @@ export default function AdminDashboard() {
                             <button 
                               key={role} 
                               onClick={() => setAlertForm({ ...alertForm, target: role })}
-                              className={`flex-1 h-12 rounded-xl border text-[10px] font-black uppercase tracking-widest transition-all ${
+                              className={`flex-1 h-12 rounded-xl border text-[10px] font-black uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 active:scale-95 ${
                                 alertForm.target === role ? "bg-[#052E16] text-white border-[#052E16]" : "border-slate-200 text-slate-500 hover:border-[#052E16] hover:text-[#052E16]"
                               }`}
                             >
@@ -557,7 +638,7 @@ export default function AdminDashboard() {
                         </div>
                         <button 
                           onClick={handleBroadcast}
-                          className="h-14 px-10 rounded-2xl bg-red-600 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:bg-red-700 transition-all shadow-xl shadow-red-600/20"
+                          className="h-14 px-10 rounded-2xl bg-red-600 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-red-700 active:scale-95 shadow-xl shadow-red-600/20"
                         >
                           <Bell className="h-5 w-5" /> Broadcast Now
                         </button>
@@ -567,19 +648,19 @@ export default function AdminDashboard() {
 
                   <div className="space-y-6">
                     <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest flex items-center gap-2">
-                      <Activity className="h-4 w-4 text-red-600" /> Active Alerts (3)
+                      <Activity className="h-4 w-4 text-red-600" /> Active Alerts ({recentAlerts.length})
                     </h3>
                     
                     <div className="space-y-4">
-                      {[
-                        { title: "Severe Drought Warning", time: "2h ago", type: "Critical" },
-                        { title: "Rice Tungro Outbreak", time: "5h ago", type: "Warning" },
-                        { title: "New Fertilizer Subsidy", time: "1d ago", type: "Info" }
-                      ].map((alert, i) => (
-                        <div key={i} className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm flex items-start justify-between">
+                      {recentAlerts.length === 0 ? (
+                        <div className="bg-white border border-dashed border-slate-200 rounded-3xl p-8 text-center text-slate-400 text-xs font-bold uppercase tracking-widest">
+                          No active alerts yet.
+                        </div>
+                      ) : recentAlerts.map((alert, i) => (
+                        <div key={alert.id || i} className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm flex items-start justify-between transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                           <div className="flex gap-4">
                             <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${
-                              alert.type === "Critical" ? "bg-red-50 text-red-600" : alert.type === "Warning" ? "bg-amber-50 text-amber-600" : "bg-blue-50 text-blue-600"
+                              alert.type === "critical" ? "bg-red-50 text-red-600" : alert.type === "warning" ? "bg-amber-50 text-amber-600" : "bg-blue-50 text-blue-600"
                             }`}>
                               <AlertTriangle className="h-5 w-5" />
                             </div>
@@ -588,7 +669,7 @@ export default function AdminDashboard() {
                               <div className="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-widest">{alert.time} • {alert.type}</div>
                             </div>
                           </div>
-                          <button className="text-slate-300 hover:text-red-500 transition-colors">
+                          <button className="text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:text-red-500 active:scale-95">
                             <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
@@ -605,7 +686,7 @@ export default function AdminDashboard() {
       {/* Add Disease Modal */}
       <AnimatePresence>
         {showAddDisease && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -631,8 +712,8 @@ export default function AdminDashboard() {
 
               <div className="flex-1 overflow-y-auto p-10 space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
-                  <FormInput label="Common Name (English)" value={newDisease.name} onChange={v => setNewDisease({...newDisease, name: v})} placeholder="e.g. Leaf Blast" />
-                  <FormInput label="Scientific/Bangla Name" value={newDisease.nameBn} onChange={v => setNewDisease({...newDisease, nameBn: v})} placeholder="ধনের ব্লাস্ট রোগ" />
+                  <FormInput label="Common Name (English)" value={newDisease.name} onChange={(v: string) => setNewDisease({...newDisease, name: v})} placeholder="e.g. Leaf Blast" />
+                  <FormInput label="Scientific/Bangla Name" value={newDisease.nameBn} onChange={(v: string) => setNewDisease({...newDisease, nameBn: v})} placeholder="ধনের ব্লাস্ট রোগ" />
                   
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 px-1">Affected Crop</label>
@@ -752,7 +833,7 @@ function StatCard({ label, value, trend, icon: Icon, color }: any) {
   };
   
   return (
-    <div className="bg-white border border-slate-200 rounded-[2rem] p-6 shadow-sm hover:border-[#052E16]/20 transition-all group">
+    <div className="bg-white border border-slate-200 rounded-4xl p-6 shadow-sm hover:border-[#052E16]/20 transition-all group">
       <div className={`h-12 w-12 rounded-2xl ${colors[color]} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
         <Icon className="h-6 w-6" />
       </div>
@@ -773,7 +854,7 @@ function VerificationCard({ farmer, onVerify }: any) {
     <div className="group border border-slate-100 rounded-3xl p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-slate-200 hover:bg-slate-50/50 transition-all gap-6">
       <div className="flex items-center gap-6">
         <div className="h-16 w-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-sm group-hover:rotate-3 transition-transform">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-full bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center">
              <Users className="h-5 w-5 text-slate-400" />
           </div>
         </div>

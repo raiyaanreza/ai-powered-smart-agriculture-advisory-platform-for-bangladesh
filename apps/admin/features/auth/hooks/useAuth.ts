@@ -49,18 +49,23 @@ export function useAuth() {
     }, 3000);
 
     try {
-      supabase.auth.getSession().then(({ data: { session } }) => {
-        console.log("useAuth session fetched", !!session);
-        clearTimeout(timeout);
-        setUser(session?.user ?? null);
-        if (session?.user) fetchProfile(session.user.id);
-        else setLoading(false);
-      }).catch(err => {
-        console.error("getSession error", err);
-        setLoading(false);
-      });
+      supabase.auth
+        .getSession()
+        .then(({ data: { session } }) => {
+          console.log("useAuth session fetched", !!session);
+          clearTimeout(timeout);
+          setUser(session?.user ?? null);
+          if (session?.user) fetchProfile(session.user.id);
+          else setLoading(false);
+        })
+        .catch((err) => {
+          console.error("getSession error", err);
+          setLoading(false);
+        });
 
-      const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
         console.log("useAuth state changed", _event);
         clearTimeout(timeout);
         setUser(session?.user ?? null);

@@ -11,14 +11,53 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "No image provided" }, { status: 400 });
     }
 
-    // Initialize Gemini 3.1 Flash Lite
+    const base64Data = image.split(",")[1];
+    
+    // Step 1: Query the LangGraph Orchestrator (YOLO .pt models)
+    let yoloCrop = "Unknown";
+    let yoloDisease = "Unknown";
+    let yoloConfidence = 0.0;
+    
+    try {
+      const buffer = Buffer.from(base64Data, 'base64');
+      const formData = new FormData();
+      formData.append("file", new Blob([buffer], { type: "image/jpeg" }), "upload.jpg");
+      
+      const orchestratorRes = await fetch("http://127.0.0.1:8000/diagnose", {
+        method: "POST",
+        body: formData,
+      });
+      
+      if (orchestratorRes.ok) {
+        const orchData = await orchestratorRes.json();
+        yoloCrop = orchData.crop || "Unknown";
+        if (orchData.diagnosis && orchData.diagnosis.disease_class) {
+          yoloDisease = orchData.diagnosis.disease_class;
+          yoloConfidence = orchData.diagnosis.confidence || 0.0;
+        }
+      } else {
+        console.warn("Orchestrator returned error, falling back to pure Gemini:", await orchestratorRes.text());
+      }
+    } catch (e) {
+      console.warn("Could not reach local agent-orchestrator, falling back to pure Gemini:", e);
+    }
+
+    // Step 2: Use Gemini to enrich the diagnosis with treatments
     const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
 
     const prompt = `
       Act as an expert plant pathologist. Analyze this crop image.
       Provide the diagnosis in ${language === "bn" ? "Bangla" : "English"}.
       
-      BE CONCISE AND TOKEN-SAVING. Use this JSON format:
+      The AI vision model has pre-identified this as:
+      Crop: ${yoloCrop}
+      Condition/Disease: ${yoloDisease}
+      (Confidence: ${yoloConfidence})
+      
+      If the vision model says "Unknown", rely entirely on the image to make your own judgment.
+      If the vision model provides a specific crop and disease, base your treatment plan on that, but visually verify it makes sense.
+
+      BE CONCISE AND TOKEN-SAVING. Use this JSON format strictly:
       {
         "crop": "Crop Name",
         "disease": "Disease Name",
@@ -36,7 +75,7 @@ export async function POST(req: Request) {
       prompt,
       {
         inlineData: {
-          data: image.split(",")[1], // Remove "data:image/jpeg;base64,"
+          data: base64Data,
           mimeType: "image/jpeg",
         },
       },
@@ -46,9 +85,15 @@ export async function POST(req: Request) {
     const jsonStr = responseText.replace(/```json/g, "").replace(/```/g, "").trim();
     const diagnosis = JSON.parse(jsonStr);
 
-    // Save to DB if userId is provided or from session
+    // Override with YOLO confidence if YOLO was successful and confident
+    if (yoloDisease !== "Unknown" && yoloConfidence > 0.5) {
+        diagnosis.crop = yoloCrop !== "Unknown" ? yoloCrop : diagnosis.crop;
+        diagnosis.disease = yoloDisease;
+        diagnosis.confidence = yoloConfidence;
+    }
+
+    // Save to DB if userId is provided
     const { userId } = await req.json().catch(() => ({})); 
-    // Note: In a real app, we would get this from the session/token for security.
     
     if (userId) {
       const { createClient } = await import("@supabase/supabase-js");
@@ -58,15 +103,12 @@ export async function POST(req: Request) {
       );
 
       await supabase.from("diagnoses").insert([{
-        user_id: userId,
-        crop: diagnosis.crop,
-        disease: diagnosis.disease,
-        pathogen: diagnosis.pathogen,
-        confidence: diagnosis.confidence,
+        farmer_id: userId,
+        disease_detected: `${diagnosis.crop} - ${diagnosis.disease}`,
+        confidence_score: diagnosis.confidence,
         severity: diagnosis.severity,
-        description: diagnosis.description,
-        treatment_bn: diagnosis.treatment_bn,
-        image_url: image.substring(0, 50) // Storing prefix for now, real app uses S3
+        expert_notes: diagnosis.treatment_en?.[0] || diagnosis.description,
+        image_url: image.substring(0, 50) 
       }]);
     }
 

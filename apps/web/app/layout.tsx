@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full scroll-smooth`}>
       {/* Force light background at the root to prevent flash */}
-      <body className="min-h-full flex flex-col" style={{ background: "#FAFAFA", color: "#1E293B" }}>
+      <body className="min-h-full flex flex-col" style={{ color: "#1E293B" }}>
         {children}
         <Toaster position="top-center" richColors />
       </body>

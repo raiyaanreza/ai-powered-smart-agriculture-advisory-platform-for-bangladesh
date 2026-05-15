@@ -48,7 +48,8 @@ The system is designed to be:
 * Marketplace intelligence and regional emergency outbreak detection.
 
 ### C. Government & Community Intelligence
-* **Live Heatmaps**: Regional disease trend analysis for agricultural offices.
+* **Live Heatmaps & Predictive Spread (IMPLEMENTED)**: Regional disease trend analysis for agricultural offices with AI-projected 14-day timeline animations.
+* **District Resource Allocation Model (IMPLEMENTED)**: AI-suggested deployment of agricultural extension officers based on active outbreak severities and hotspot density.
 * **AI Knowledge Engine (RAG)**: Context-grounded advisory using verified research (BARI/BRRI).
 * **Community Systems**: Farmer forums and verified expert consultation panels.
 

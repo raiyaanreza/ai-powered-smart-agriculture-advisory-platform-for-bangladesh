@@ -101,7 +101,7 @@ export function ChatInterface() {
       </div>
 
       {/* Messages Scroll Area */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-8 space-y-10 pb-[250px]">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-8 space-y-10 pb-62.5">
         <AnimatePresence>
           {messages.map((msg) => (
             <motion.div 
@@ -111,22 +111,22 @@ export function ChatInterface() {
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {msg.role === 'user' ? (
-                <div className="max-w-2xl bg-[#2D5A27] text-white p-6 rounded-[2rem] rounded-tr-sm shadow-xl shadow-green-950/10">
-                  <p className="text-[15px] font-medium leading-relaxed mb-4">{msg.text}</p>
+                <div className="max-w-xl bg-earth-700 text-white px-5 py-4 rounded-3xl rounded-tr-sm shadow-xl shadow-green-950/10">
+                  <p className="text-[15px] font-medium leading-relaxed whitespace-pre-wrap">{msg.text}</p>
                   {msg.image && (
-                    <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-white/10">
+                    <div className="mt-4 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10">
                        <img src={msg.image} alt="User Upload" className="w-full object-cover aspect-video" />
                     </div>
                   )}
                 </div>
               ) : (
                 <div className="flex gap-4 items-start max-w-3xl">
-                   <div className="h-10 w-10 rounded-full bg-[#F0F7FF] border border-blue-100 flex items-center justify-center flex-shrink-0">
+                   <div className="h-10 w-10 rounded-full bg-[#F0F7FF] border border-blue-100 flex items-center justify-center shrink-0">
                       <div className="h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center">
                          <Leaf className="h-3.5 w-3.5 text-white" />
                       </div>
                    </div>
-                   <div className="bg-white border border-slate-100 p-8 rounded-[2rem] rounded-tl-sm shadow-xl shadow-slate-200/40">
+                   <div className="bg-white border border-slate-100 p-8 rounded-4xl rounded-tl-sm shadow-xl shadow-slate-200/40">
                       {msg.diagnosis ? (
                         <div className="space-y-6">
                            <h3 className="text-xl font-black text-slate-900 tracking-tight">{msg.diagnosis.title}</h3>
@@ -140,7 +140,7 @@ export function ChatInterface() {
                               <div className="space-y-4">
                                  {msg.diagnosis.steps.map((step, i) => (
                                    <div key={i} className="flex gap-3">
-                                      <CheckCircle2 className="h-4 w-4 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                                      <CheckCircle2 className="h-4 w-4 text-gold-500 shrink-0 mt-0.5" />
                                       <div>
                                          <p className="text-[13px] font-bold text-slate-900 leading-tight mb-1">
                                             {step.label}: <span className="font-medium text-slate-600">{step.action}</span>
@@ -166,7 +166,7 @@ export function ChatInterface() {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-               <div className="bg-white border border-slate-100 p-6 rounded-[2rem] shadow-sm animate-pulse">
+               <div className="bg-white border border-slate-100 p-6 rounded-4xl shadow-sm animate-pulse">
                   <div className="flex gap-2">
                      <div className="h-1.5 w-1.5 rounded-full bg-slate-300 animate-bounce" />
                      <div className="h-1.5 w-1.5 rounded-full bg-slate-300 animate-bounce delay-100" />
@@ -179,7 +179,7 @@ export function ChatInterface() {
       </div>
 
       {/* Input Bar */}
-      <div className="fixed bottom-0 left-72 right-0 p-8 bg-gradient-to-t from-[#FAFAFA] via-[#FAFAFA] to-transparent pointer-events-none">
+      <div className="fixed bottom-0 left-72 right-0 p-8 bg-linear-to-t from-[#FAFAFA] via-[#FAFAFA] to-transparent pointer-events-none">
         <div className="w-full relative pointer-events-auto">
           
           {/* Image Preview */}
@@ -189,7 +189,7 @@ export function ChatInterface() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="mb-4 relative h-32 w-48 rounded-2xl overflow-hidden border-2 border-white shadow-2xl ring-4 ring-[#052E16]/5"
+                className="mb-4 relative h-32 w-48 rounded-2xl overflow-hidden border-2 border-white shadow-2xl ring-4 ring-green-950/5"
               >
                 <img src={selectedImage} className="h-full w-full object-cover" alt="Preview" />
                 <button 
@@ -202,7 +202,7 @@ export function ChatInterface() {
             )}
           </AnimatePresence>
 
-          <div className="bg-white border border-slate-100 rounded-[2.5rem] p-2.5 shadow-2xl flex items-center gap-2">
+          <div className="bg-white border border-slate-100 rounded-[2.5rem] p-2 shadow-2xl flex items-center gap-2">
              <input 
                type="file" 
                hidden 
@@ -222,7 +222,7 @@ export function ChatInterface() {
                onChange={(e) => setInput(e.target.value)}
                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                placeholder="Message AgriAdvisor..."
-               className="flex-1 bg-transparent border-none focus:outline-none text-[15px] font-bold text-slate-800 px-2"
+               className="flex-1 bg-transparent border-none focus:outline-none text-[15px] font-bold text-slate-800 px-2 py-3"
              />
              <div className="flex items-center gap-2">
                 <button className="h-12 w-12 rounded-full hover:bg-slate-50 flex items-center justify-center text-slate-400">
@@ -232,7 +232,7 @@ export function ChatInterface() {
                   onClick={handleSend}
                   disabled={isLoading || (!input.trim() && !selectedImage)}
                   className={`h-12 w-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all active:scale-95 ${
-                    isLoading ? 'bg-slate-200' : 'bg-[#052E16] shadow-green-950/20'
+                    isLoading ? 'bg-slate-200' : 'bg-green-950 shadow-green-950/20'
                   }`}
                 >
                    <Send className={`h-5 w-5 ${isLoading ? 'animate-pulse' : ''}`} />

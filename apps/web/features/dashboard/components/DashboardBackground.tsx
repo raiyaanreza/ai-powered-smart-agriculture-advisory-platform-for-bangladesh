@@ -2,21 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const nodes = [
-  { id: 1, x: 50, y: 55, name: "Dhaka" },
-  { id: 2, x: 70, y: 75, name: "Chittagong" },
-  { id: 3, x: 30, y: 45, name: "Rajshahi" },
-  { id: 4, x: 35, y: 65, name: "Khulna" },
-  { id: 5, x: 60, y: 35, name: "Sylhet" },
-  { id: 6, x: 45, y: 25, name: "Rangpur" },
-  { id: 7, x: 55, y: 70, name: "Barisal" },
-  { id: 8, x: 55, y: 45, name: "Mymensingh" },
-];
-
-const connections = [
-  [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8],
-  [2, 7], [3, 6], [4, 7], [5, 8], [8, 6]
-];
+const PARTICLE_COUNT = 40;
 
 export function DashboardBackground() {
   const [mounted, setMounted] = useState(false);
@@ -27,105 +13,102 @@ export function DashboardBackground() {
 
   if (!mounted) return null;
 
+  const particles = Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: 1.5 + Math.random() * 3.5,
+    duration: 14 + Math.random() * 20,
+    delay: Math.random() * 10,
+    driftX: (Math.random() - 0.5) * 40,
+    driftY: (Math.random() - 0.5) * 40,
+  }));
+
   return (
-    <div className="fixed inset-0 z-[-1] bg-[#052E16] overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#052E16] via-[#064E3B] to-[#052E16] opacity-90" />
-      
-      {/* Bangladesh Map Outline (Simplified SVG) */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-        <svg viewBox="0 0 100 100" className="h-[90vh] w-[90vh] text-green-400 fill-current">
-          <path d="M45,15 L55,12 L65,15 L70,25 L75,35 L72,45 L78,55 L82,65 L78,75 L70,85 L60,95 L50,92 L40,95 L30,85 L25,75 L20,65 L22,55 L18,45 L25,35 L35,25 Z" />
-        </svg>
-      </div>
+    <div className="fixed inset-0 z-[-1] bg-white overflow-hidden">
+      {/* Primary dotted pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)`,
+          backgroundSize: "24px 24px",
+        }}
+      />
+      {/* Secondary offset dots for depth */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.04) 1.5px, transparent 1.5px)`,
+          backgroundSize: "48px 48px",
+          backgroundPosition: "12px 12px",
+        }}
+      />
 
-      {/* Connection Lines */}
-      <svg className="absolute inset-0 h-full w-full pointer-events-none">
-        {connections.map(([startId, endId], index) => {
-          const start = nodes.find(n => n.id === startId)!;
-          const end = nodes.find(n => n.id === endId)!;
-          return (
-            <motion.line
-              key={`conn-${index}`}
-              x1={`${start.x}%`}
-              y1={`${start.y}%`}
-              x2={`${end.x}%`}
-              y2={`${end.y}%`}
-              stroke="rgba(74, 222, 128, 0.2)"
-              strokeWidth="1"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ 
-                pathLength: [0, 1, 0], 
-                opacity: [0, 0.5, 0],
-                stroke: ["rgba(74, 222, 128, 0.2)", "rgba(234, 179, 8, 0.4)", "rgba(74, 222, 128, 0.2)"]
-              }}
-              transition={{
-                duration: 5 + Math.random() * 5,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-                ease: "easeInOut"
-              }}
-            />
-          );
-        })}
-      </svg>
+      {/* Ambient light glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[700px] rounded-full bg-gradient-to-br from-green-50/50 via-emerald-50/30 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 right-1/6 h-[400px] w-[400px] rounded-full bg-gradient-to-bl from-emerald-50/40 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/6 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-teal-50/30 to-transparent blur-3xl pointer-events-none" />
 
-      {/* Glowing Nodes */}
-      {nodes.map((node) => (
-        <div
-          key={node.id}
-          className="absolute"
-          style={{ left: `${node.x}%`, top: `${node.y}%` }}
-        >
-          {/* Node Core */}
-          <motion.div
-            className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_15px_rgba(74,222,128,0.8)]"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-          
-          {/* Node Ripple */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8 rounded-full border border-green-400/20"
-            animate={{ scale: [1, 2], opacity: [0.3, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
-          />
-
-          {/* Node Label (Subtle) */}
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[8px] font-black text-green-400/30 uppercase tracking-[0.2em] whitespace-nowrap">
-            {node.name}
-          </div>
-        </div>
-      ))}
-
-      {/* Random Floating Particles */}
-      {[...Array(20)].map((_, i) => (
+      {/* Floating particles */}
+      {particles.map((p) => (
         <motion.div
-          key={`particle-${i}`}
-          className="absolute h-1 w-1 rounded-full bg-white/20"
-          initial={{ 
-            x: Math.random() * 100 + "%", 
-            y: Math.random() * 100 + "%",
-            scale: Math.random()
+          key={p.id}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            background: p.size > 2.5
+              ? "radial-gradient(circle, rgba(45,90,39,0.3), rgba(45,90,39,0.08))"
+              : "radial-gradient(circle, rgba(45,90,39,0.18), transparent)",
+            boxShadow: p.size > 3 ? "0 0 8px rgba(45,90,39,0.1)" : "none",
           }}
           animate={{
-            y: [null, (Math.random() - 0.5) * 20 + "%"],
-            opacity: [0, 0.5, 0]
+            x: [0, p.driftX, p.driftX * -0.6, 0],
+            y: [0, p.driftY * -1, p.driftY * 0.7, 0],
+            scale: [1, 1.8, 0.7, 1],
+            opacity: [0.15, 0.65, 0.25, 0.15],
           }}
           transition={{
-            duration: 10 + Math.random() * 10,
+            duration: p.duration,
             repeat: Infinity,
-            ease: "linear"
+            delay: p.delay,
+            ease: "easeInOut",
           }}
         />
       ))}
 
-      {/* Scanning Line Effect */}
-      <motion.div 
-        className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-green-400/20 to-transparent shadow-[0_0_20px_rgba(74,222,128,0.1)]"
-        animate={{ y: ["0%", "100%"] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-      />
+      {/* Large ambient drifting blobs */}
+      {[
+        { w: 200, h: 200, l: "15%", t: "20%", d: 30 },
+        { w: 160, h: 160, l: "65%", t: "60%", d: 35 },
+        { w: 120, h: 120, l: "40%", t: "75%", d: 40 },
+      ].map((blob, i) => (
+        <motion.div
+          key={`blob-${i}`}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: blob.w,
+            height: blob.h,
+            left: blob.l,
+            top: blob.t,
+            background: i === 1
+              ? "radial-gradient(circle, rgba(5,46,22,0.03) 0%, transparent 70%)"
+              : "radial-gradient(circle, rgba(45,90,39,0.03) 0%, transparent 70%)",
+          }}
+          animate={{
+            x: [0, 20, -12, 8, 0],
+            y: [0, -18, 14, -8, 0],
+            scale: [1, 1.12, 0.92, 1.05, 1],
+          }}
+          transition={{
+            duration: blob.d,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
     </div>
   );
 }

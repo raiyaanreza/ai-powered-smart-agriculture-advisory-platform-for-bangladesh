@@ -140,7 +140,13 @@ To ensure AI coding agents (Cursor, Antigravity, etc.) can work effectively:
 ---
 
 # 11. UI Design System Direction
-*   **Visual Persona**: Calm, agricultural, government-grade, and trustworthy.
+*   **Visual Persona**: Calm, agricultural, government-grade, and premium-futuristic.
+*   **Design System: Unified Glassmorphism**:
+    *   **Core Style**: `bg-white/70 backdrop-blur-lg` panels with subtle borders.
+    *   **Goal**: Create a high-fidelity, transparent interface that feels lightweight and modern.
+*   **Interactive Element: Animated Semantic Map**:
+    *   **Implementation**: A background-layer map of Bangladesh with glowing nodes for major districts (Dhaka, Chittagong, Rajshahi, etc.).
+    *   **Motion**: Pulse animations and floating particle effects using `framer-motion` to represent real-time data flow.
 *   **Palette**: Primary (Earth Green: #2D5A27), Secondary (Slate: #475569), Accent (Harvest Gold: #EAB308).
 *   **Typography**: Inter for functional UI; Hind Siliguri for Bangla content.
 *   **Accessibility**: High-contrast ratios, minimum 16px font for body text, and touch targets of at least 44x44px.

@@ -9,49 +9,51 @@
 Build a **government-grade AI agriculture platform** focused on:
 * Rural Bangladeshi farmers
 * Mid-scale food suppliers
-* Rooftop gardeners and hobby growers
 * Agricultural officers and extension workers
+* Ministry-level decision makers
 
 The platform acts as a unified ecosystem for disease diagnosis, crop advisory, weather-risk alerts, and national agricultural intelligence. 
 
-**Core Innovation**: Beyond simple detection, the platform is an **AI agricultural operating system** with modular agents and localized advisory workflows.
+**Core Innovation**: Beyond simple detection, the platform is an **AI agricultural operating system** with modular agents, localized advisory workflows, and high-fidelity geospatial intelligence.
 
 ---
 
 # 2. Core Product Philosophy
 
 The system is designed to be:
-* **Bangla-native**: First-class support for regional language and voice interaction.
-* **Agent-driven**: Intelligent orchestration of complex advisory tasks.
+* **Bangla-native**: First-class support for regional language and conversational advisory.
+* **Agent-driven**: Intelligent orchestration of complex advisory tasks using LangGraph.
 * **Modular & Scalable**: Horizontally scalable architecture for government-level deployment.
-* **Inclusive**: Optimized for low-bandwidth environments and varying literacy levels.
+* **Premium UX**: High-fidelity glassmorphic interfaces with real-time data visualizations.
 
 ---
 
 # 3. High-Level System Scope
 
-### Phase 1 — AI Disease Detection Portal
-* **Features**: Crop category detection, specialized disease routing, severity estimation, and treatment recommendations.
-* **Local Adaptation**: Bangla reports, voice output, and progressive loading for low internet areas.
+### Phase 1 — AI Disease Detection Portal (COMPLETED)
+* **Features**: Crop category detection, specialized rice disease routing, severity estimation, and treatment recommendations.
+* **Local Adaptation**: Bangla reports and interactive advisory chat.
+
+### Phase 2 — National Command Center (COMPLETED)
+* **GIS Outbreak Intelligence**: Real-time interactive map showing disease hotspots across Bangladesh.
+* **National Alert System**: Instant broadcast of critical weather and pest warnings.
+* **Disease Library**: National visual reference gallery for verified agricultural data.
 
 ---
 
-# 4. Long-Term Feature Ecosystem
+# 4. Feature Ecosystem
 
-### A. AI Crop Diagnosis System
-* Image-based disease detection (Multi-image support).
-* Leaf segmentation, pest detection, and nutrient deficiency analysis.
-* Growth-stage estimation and yield prediction.
+### A. AI Crop Diagnosis & Advisory
+* **Multi-turn Advisory Chat**: LangGraph-powered conversational agent that remembers context and provides localized treatment steps.
+* **Visual Disease Library**: Curated database of crop diseases with high-resolution visual markers for expert and farmer reference.
 
-### B. Agentic AI Agriculture Assistant
-* Orchestrated workflows for farmer advisory, weather risk, and government subsidies.
-* Marketplace intelligence and regional emergency outbreak detection.
+### B. National Command Center
+* **Live Heatmaps & Predictive Spread**: Regional disease trend analysis for agricultural offices with pulse-animated hotspots.
+* **Verification Workflow**: Administrative control over the national agricultural knowledge base.
 
-### C. Government & Community Intelligence
-* **Live Heatmaps & Predictive Spread (IMPLEMENTED)**: Regional disease trend analysis for agricultural offices with AI-projected 14-day timeline animations.
-* **District Resource Allocation Model (IMPLEMENTED)**: AI-suggested deployment of agricultural extension officers based on active outbreak severities and hotspot density.
-* **AI Knowledge Engine (RAG)**: Context-grounded advisory using verified research (BARI/BRRI).
-* **Community Systems**: Farmer forums and verified expert consultation panels.
+### C. UI/UX Innovation
+* **Semantic Map Background**: An animated, glowing map of Bangladesh integrated into the dashboard, providing a sense of geographical scale and real-time connectivity.
+* **Glassmorphism**: A modern, transparent design system that balances technical density with visual clarity.
 
 ---
 
@@ -60,24 +62,25 @@ The system is designed to be:
 ### For the Government
 * National crop monitoring and real-time disease outbreak detection.
 * Digitization of agricultural extension services.
+* Data-driven resource allocation for extension officers.
 
 ### For Farmers
 * Instant, localized diagnosis leading to reduced crop loss and improved yields.
-* Accessible AI guidance via voice and native language support.
+* Accessible AI guidance via native language support and historical tracking.
 
 ---
 
 # 6. Key Novelty Points
 
-* **Multi-agent Agriculture Intelligence**: Specialized agents for distinct agricultural domains.
-* **Bangla-Native RAG Fusion**: Grounding AI responses in localized, official agricultural data.
+* **Multi-agent Agriculture Intelligence**: Specialized agents for distinct agricultural domains orchestrated via LangGraph.
+* **Geospatial Intelligence (GIS)**: Real-time mapping of agricultural health at a national scale.
 * **Modular Routing Architecture**: High-accuracy results via specialized crop-specific model routing.
 
 ---
 
-# 7. Strategic Recommendation
+# 7. Strategic Status
 
-The platform's greatest value lies in creating a **scalable agricultural intelligence ecosystem**. By modularizing inference and orchestration, AgriVision becomes a foundation for national-scale agricultural digital transformation in Bangladesh.
+The platform has successfully moved from a prototype to a **stable, modular ecosystem**. It now serves as a foundation for national-scale agricultural digital transformation in Bangladesh, bridging the gap between advanced AI models and rural usability.
 
-> *For detailed technical implementation, refer to `project_architecture.md`.*
-> *For detailed user interaction flows, refer to `project_design.md`.*
+> *For detailed technical implementation, refer to `02_SYSTEM_ARCHITECTURE.md`.*
+> *For detailed design tokens and UI patterns, refer to `03_DESIGN_ARCHITECTURE.md`.*

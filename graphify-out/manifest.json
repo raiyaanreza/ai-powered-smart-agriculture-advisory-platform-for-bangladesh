@@ -4,24 +4,28 @@
     "hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "E:\\agri-ai-platform\\apps\\admin\\next-env.d.ts": {
-    "mtime": 1778762359.591008,
-    "hash": "2a74d3909800ca5467fa83b0ab4a4890"
+    "mtime": 1778845437.6899288,
+    "hash": "d0f8375ae1199dc7acd3977fc33b78b8"
   },
   "E:\\agri-ai-platform\\apps\\admin\\next.config.ts": {
-    "mtime": 1778759125.6544113,
-    "hash": "32bbe7f9a85e694df17bce626ae837d7"
+    "mtime": 1778830581.3666818,
+    "hash": "8a93056a6ba9f819f28053d788632979"
   },
   "E:\\agri-ai-platform\\apps\\admin\\postcss.config.mjs": {
     "mtime": 1778755960.3702683,
     "hash": "239f3ebf717465dc636818a1a619398d"
   },
   "E:\\agri-ai-platform\\apps\\admin\\app\\layout.tsx": {
-    "mtime": 1778755960.646914,
-    "hash": "94c34ef68b3949a75807a0211ec2273c"
+    "mtime": 1778829786.5125535,
+    "hash": "2eb3439e144ee62297d24c455ec9c3ba"
   },
   "E:\\agri-ai-platform\\apps\\admin\\app\\page.tsx": {
-    "mtime": 1778755960.6547005,
-    "hash": "1e489b26bb597dc97f8d44954dd042da"
+    "mtime": 1778851854.0420053,
+    "hash": "77076e4ca2ad63039dae425c4ddb257e"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\app\\login\\page.tsx": {
+    "mtime": 1778835100.2460713,
+    "hash": "297c900678e7f80b6a5c2b52588ea200"
   },
   "E:\\agri-ai-platform\\apps\\admin\\components\\ui\\alert.tsx": {
     "mtime": 1778759089.0789318,
@@ -59,33 +63,109 @@
     "mtime": 1778759089.0013328,
     "hash": "485d47f9e6f866e564685e6584e1e747"
   },
+  "E:\\agri-ai-platform\\apps\\admin\\features\\admin\\components\\OutbreakMap.tsx": {
+    "mtime": 1778847121.3793077,
+    "hash": "476b18fa56f96d5488df8f4c8ca709ea"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\features\\auth\\hooks\\useAuth.ts": {
+    "mtime": 1778837440.5781963,
+    "hash": "ac847fa51ceba800c89a8a99d942b15a"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\features\\common\\components\\Layout.tsx": {
+    "mtime": 1778835100.2020786,
+    "hash": "c216c58f3b5a3099714e311177360980"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\features\\library\\data\\diseases.ts": {
+    "mtime": 1778848576.852573,
+    "hash": "0a9dfab191ea292a25a24ad95e4ce55a"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\lib\\supabase.ts": {
+    "mtime": 1778849508.5477026,
+    "hash": "c1f9d44148855e166ec5044542fc2939"
+  },
   "E:\\agri-ai-platform\\apps\\admin\\lib\\utils.ts": {
     "mtime": 1778759043.9718742,
     "hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\check_user.js": {
+    "mtime": 1778791372.1808448,
+    "hash": "987dfa46250f19baea6d0100b7792caf"
   },
   "E:\\agri-ai-platform\\apps\\web\\eslint.config.mjs": {
     "mtime": 1778755960.3212943,
     "hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "E:\\agri-ai-platform\\apps\\web\\next-env.d.ts": {
-    "mtime": 1778762360.0153604,
+    "mtime": 1778848984.9541903,
     "hash": "2a74d3909800ca5467fa83b0ab4a4890"
   },
   "E:\\agri-ai-platform\\apps\\web\\next.config.ts": {
-    "mtime": 1778757438.4805093,
-    "hash": "54ac107834fb8f25b50d857b5757b469"
+    "mtime": 1778830586.2602494,
+    "hash": "494f39b258fe75c1e0738d5e891211c0"
   },
   "E:\\agri-ai-platform\\apps\\web\\postcss.config.mjs": {
     "mtime": 1778755960.3702683,
     "hash": "239f3ebf717465dc636818a1a619398d"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\layout.tsx": {
-    "mtime": 1778755960.646914,
-    "hash": "94c34ef68b3949a75807a0211ec2273c"
+    "mtime": 1778842896.4411788,
+    "hash": "29340bd19b2d42e95941f7bc2bfeb64d"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\page.tsx": {
-    "mtime": 1778755960.6547005,
-    "hash": "1e489b26bb597dc97f8d44954dd042da"
+    "mtime": 1778851891.6413023,
+    "hash": "79f95dc9d28161d15604690cecbff6b3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\advisory\\page.tsx": {
+    "mtime": 1778781546.508677,
+    "hash": "a09faade868c7f58036d0d85de930ebc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\diagnose\\route.ts": {
+    "mtime": 1778851940.6061997,
+    "hash": "f168284ce9fc7b273178f941791c0dd8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\seed\\route.ts": {
+    "mtime": 1778849360.0630732,
+    "hash": "15dd4b5c4070a8ba8a9b51bba76e0389"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\sync-diseases\\route.ts": {
+    "mtime": 1778849587.180649,
+    "hash": "ec96e2314f6eb0b558aa20941151bdcd"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\auth\\callback\\page.tsx": {
+    "mtime": 1778791909.6028218,
+    "hash": "df0a76766dca7be34b162a8aae8c34f1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\diagnose\\page.tsx": {
+    "mtime": 1778777950.3842413,
+    "hash": "8365ff1d2530ae9ce3767a96c78304cb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\farmer\\layout.tsx": {
+    "mtime": 1778842877.8057387,
+    "hash": "7770a8463aa3ec3c20d383bad288eea1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\farmer\\page.tsx": {
+    "mtime": 1778787365.6252615,
+    "hash": "d7769b947b4892d931e5a3e38e67f057"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\farmer\\history\\page.tsx": {
+    "mtime": 1778844536.1743982,
+    "hash": "dc717630c28fb6c542d4b5f763a07463"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\library\\page.tsx": {
+    "mtime": 1778778682.3859432,
+    "hash": "0f75d3d3549351b5a68c7720c25a7140"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\login\\page.tsx": {
+    "mtime": 1778835100.2020786,
+    "hash": "5aa3aa8ea9b4ceb33d2558d1d62307b2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\onboarding\\page.tsx": {
+    "mtime": 1778835100.2020786,
+    "hash": "c625443c07dab69b9645e0be4ddb7c5c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\premium\\page.tsx": {
+    "mtime": 1778789981.1771412,
+    "hash": "0b5f978cb263760d8df8a234b929bf3d"
   },
   "E:\\agri-ai-platform\\apps\\web\\components\\ui\\alert.tsx": {
     "mtime": 1778758438.5331328,
@@ -127,13 +207,125 @@
     "mtime": 1778758439.4352937,
     "hash": "485d47f9e6f866e564685e6584e1e747"
   },
+  "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisoryContent.tsx": {
+    "mtime": 1778837874.108313,
+    "hash": "7ea01d4a9359c28c3bd59d473adddde3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisorySidebar.tsx": {
+    "mtime": 1778782456.1302152,
+    "hash": "abeab93a3f8d07e7ca93b605fc0ae0f2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\auth\\components\\AuthForm.tsx": {
+    "mtime": 1778790907.025977,
+    "hash": "919c6302aff5720365f1877c8dfac56f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\auth\\hooks\\useAuth.ts": {
+    "mtime": 1778837440.5781963,
+    "hash": "f002ceea2a09f9f5c485c8990a18ec30"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\dashboard\\components\\DashboardBackground.tsx": {
+    "mtime": 1778844497.9762666,
+    "hash": "b2fe2b743c33256d8c4e3907d1613be9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\dashboard\\components\\FarmerDashboard.tsx": {
+    "mtime": 1778851818.051617,
+    "hash": "f1330240be57adf1db8ca82b4504d007"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\DiagnosisContainer.tsx": {
+    "mtime": 1778848814.6134303,
+    "hash": "e66949cd85a41b14e46e5fc06d300060"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\ImageUploader.tsx": {
+    "mtime": 1778777150.782961,
+    "hash": "88a8a55c7b031912e6e6cfc7cedeba6e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\OutbreakMap.tsx": {
+    "mtime": 1778848662.2982633,
+    "hash": "8d5ce8d2570929a772846865e0dc1a0c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\ResultDisplay.tsx": {
+    "mtime": 1778848624.7315874,
+    "hash": "209be870aaf3f6ad1d250283cbc49410"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\farmer\\components\\HistoryList.tsx": {
+    "mtime": 1778839348.9486291,
+    "hash": "b35f74c11baaab6a2304c63c41588687"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\AnimatedBanner.tsx": {
+    "mtime": 1778777934.6654482,
+    "hash": "a7ef73e766b5ed5a791515cb8febc619"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\CTA.tsx": {
+    "mtime": 1778775561.8607996,
+    "hash": "0cbb1851e4457a6fab4f623d8cdd0a4d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Features.tsx": {
+    "mtime": 1778775421.463776,
+    "hash": "accf9fa4b82264f652a56600b243a1f9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Hero.tsx": {
+    "mtime": 1778775632.0997932,
+    "hash": "a65b3903334bb7e2bb86b8796deca88d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\HowItWorks.tsx": {
+    "mtime": 1778843001.89859,
+    "hash": "aa6d8391ea92ea09062cb5285cad6c84"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Impact.tsx": {
+    "mtime": 1778851881.66809,
+    "hash": "126f6475a1e02b2d1aeeb3e0418b55d3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Layout.tsx": {
+    "mtime": 1778844674.954047,
+    "hash": "3465fa151dba7ab567801bf5473e1090"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\PipelineAnimation.tsx": {
+    "mtime": 1778854336.301834,
+    "hash": "f0b9d4f7144a171255049bb87cc9874f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Testimonials.tsx": {
+    "mtime": 1778775500.229363,
+    "hash": "8e1c3433421c850474227be4ed91704a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\TrustedBy.tsx": {
+    "mtime": 1778774701.1076586,
+    "hash": "718caac5a75e8fafe6e47d96505d7c4e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\library\\components\\LibraryContainer.tsx": {
+    "mtime": 1778844598.279565,
+    "hash": "5864183d5b38f85806970bfc59e6a84e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\library\\components\\LibraryContent.tsx": {
+    "mtime": 1778837874.1293483,
+    "hash": "fd623b5215212566207ab4b4f64ead38"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\library\\components\\LibraryLayout.tsx": {
+    "mtime": 1778837682.8709826,
+    "hash": "d59e2ba8af8720dbfb4256f9b6f6abe8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\library\\data\\diseases.ts": {
+    "mtime": 1778783597.1811285,
+    "hash": "2248cfd803d59d5e1a4bde5277e09226"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\lib\\supabase.ts": {
+    "mtime": 1778849502.7523897,
+    "hash": "a43141e87a6b7937e2b52ff77cadad29"
+  },
   "E:\\agri-ai-platform\\apps\\web\\lib\\utils.ts": {
     "mtime": 1778758187.0690327,
     "hash": "5a6fd53fdcf2be529e9cc0b718fde352"
   },
+  "E:\\agri-ai-platform\\experiments\\verify_langgraph.py": {
+    "mtime": 1778844627.6170924,
+    "hash": "4a8e36cb676fefacf08b7b8f35264019"
+  },
   "E:\\agri-ai-platform\\packages\\ai-tools\\src\\index.ts": {
     "mtime": 1778762217.6705945,
     "hash": "07e9e11aa2105cb70f650b52dcaed65b"
+  },
+  "E:\\agri-ai-platform\\packages\\prompts\\advisory.py": {
+    "mtime": 1778780691.5221834,
+    "hash": "5f9c9905e0c807ccf3000389555d5931"
   },
   "E:\\agri-ai-platform\\packages\\prompts\\src\\index.ts": {
     "mtime": 1778762208.2646737,
@@ -148,12 +340,80 @@
     "hash": "6ea008fa28f0826f83a190b0d31cce90"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\index.ts": {
-    "mtime": 1778762221.8367693,
-    "hash": "9880bcf6d9c7e28403dcbed2fe2ab97d"
+    "mtime": 1778770047.2643027,
+    "hash": "d364f689905df5fbf974890914ab4e0b"
+  },
+  "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Badge.tsx": {
+    "mtime": 1778770040.5524561,
+    "hash": "dd0b0fa4f0626bd598d88098b0aa3e1e"
+  },
+  "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Button.tsx": {
+    "mtime": 1778774893.018875,
+    "hash": "4075cc722ff9cc1e2b97fb585bde1cd5"
+  },
+  "E:\\agri-ai-platform\\packages\\ui\\src\\components\\GlassCard.tsx": {
+    "mtime": 1778774875.3266723,
+    "hash": "556b17898b749a855e83627e866eaf66"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\lib\\utils.ts": {
     "mtime": 1778762248.9902856,
     "hash": "d9837f38cc05303254571985e3164050"
+  },
+  "E:\\agri-ai-platform\\scratch\\check_supabase_data.js": {
+    "mtime": 1778849284.988667,
+    "hash": "835fb5f98c01df04bf31e41ce505fe27"
+  },
+  "E:\\agri-ai-platform\\scratch\\seed_mock_data.js": {
+    "mtime": 1778849341.0542703,
+    "hash": "143ece44548f336386c125b0d124612c"
+  },
+  "E:\\agri-ai-platform\\scratch\\sync_diseases.js": {
+    "mtime": 1778849574.1330414,
+    "hash": "a12c27d64d6bbfa965c88ff7db8b0856"
+  },
+  "E:\\agri-ai-platform\\scratch\\test_pipeline.py": {
+    "mtime": 1778847702.5772583,
+    "hash": "9cc1cc66b6698cfe9b50f665729489fa"
+  },
+  "E:\\agri-ai-platform\\scratch\\verify_db.py": {
+    "mtime": 1778846736.6625667,
+    "hash": "50d3bfcedeb58d36eb88d094cc1e1ee7"
+  },
+  "E:\\agri-ai-platform\\scripts\\check_db.py": {
+    "mtime": 1778785920.8931096,
+    "hash": "a56100dfc33b595966036dbba965a9a4"
+  },
+  "E:\\agri-ai-platform\\scripts\\scaffold_services.py": {
+    "mtime": 1778844627.0499551,
+    "hash": "533731d633de2fbb484afb708946ae81"
+  },
+  "E:\\agri-ai-platform\\scripts\\schema.sql": {
+    "mtime": 1778843883.975406,
+    "hash": "f17794b7f4398c25665da362fa47b59a"
+  },
+  "E:\\agri-ai-platform\\scripts\\seed_database.py": {
+    "mtime": 1778846199.0838158,
+    "hash": "41d0bd4a2a1e9ea1d0c65e34a9359552"
+  },
+  "E:\\agri-ai-platform\\services\\advisory-service\\list_models.py": {
+    "mtime": 1778782706.1780348,
+    "hash": "fa3676859e49f9aae823ed51325d9125"
+  },
+  "E:\\agri-ai-platform\\services\\advisory-service\\app\\main.py": {
+    "mtime": 1778781781.8458278,
+    "hash": "85ad396c9f63358caa71ae4d2f5aee56"
+  },
+  "E:\\agri-ai-platform\\services\\advisory-service\\app\\schemas\\chat.py": {
+    "mtime": 1778780698.4697838,
+    "hash": "a166bdfe7b91e6138e5352b3c356a853"
+  },
+  "E:\\agri-ai-platform\\services\\advisory-service\\app\\services\\gemini_service.py": {
+    "mtime": 1778842485.1177313,
+    "hash": "0bf6eb63edd8d58dbc0acfab8ec06b91"
+  },
+  "E:\\agri-ai-platform\\services\\agent-orchestrator\\app\\main.py": {
+    "mtime": 1778849542.3808193,
+    "hash": "7ba4085d9bcb56975637fd866de643ed"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\appapi__init__.py": {
     "mtime": 1778761262.7617633,
@@ -231,9 +491,37 @@
     "mtime": 1778761284.9855943,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
+  "E:\\agri-ai-platform\\services\\crop-routing-service\\app\\main.py": {
+    "mtime": 1778844346.5515075,
+    "hash": "ad02da04113c94a3bf2c047f80e1b07a"
+  },
+  "E:\\agri-ai-platform\\services\\disease-brassica-service\\app\\main.py": {
+    "mtime": 1778844346.5515075,
+    "hash": "9b18c9177dfedca1e2da2ecaa5414253"
+  },
+  "E:\\agri-ai-platform\\services\\disease-corn-service\\app\\main.py": {
+    "mtime": 1778844346.5515075,
+    "hash": "c8361cc73be5de398fe7a372d97f7454"
+  },
+  "E:\\agri-ai-platform\\services\\disease-potato-service\\app\\main.py": {
+    "mtime": 1778844346.5556567,
+    "hash": "1f41e32a64fb2abc34be31a89191fa0f"
+  },
+  "E:\\agri-ai-platform\\services\\disease-rice-service\\app\\main.py": {
+    "mtime": 1778844346.5556567,
+    "hash": "15af594fecb82709a2e6810db51a744c"
+  },
+  "E:\\agri-ai-platform\\services\\disease-wheat-service\\app\\main.py": {
+    "mtime": 1778844346.5556567,
+    "hash": "8664b1024a377877b0cfd3aeaafa9f89"
+  },
   "E:\\agri-ai-platform\\AGENTS.md": {
-    "mtime": 1778765101.3572521,
-    "hash": "4cb3ebd350f58537c5ff886c7a066e2d"
+    "mtime": 1778827225.9038906,
+    "hash": "44513b74839549a30544ffcccee0ebf6"
+  },
+  "E:\\agri-ai-platform\\CURRENT_STATE.md": {
+    "mtime": 1778871395.1735098,
+    "hash": "934127576ef00b57353672d2d6da3544"
   },
   "E:\\agri-ai-platform\\docker-compose.yml": {
     "mtime": 1778761629.059615,
@@ -248,8 +536,8 @@
     "hash": "bd39e307eb90ed0cb166ff5262bb151f"
   },
   "E:\\agri-ai-platform\\README.md": {
-    "mtime": 1778749739.0300672,
-    "hash": "86f86c5f36752f34c751c463033d6976"
+    "mtime": 1778871384.6727016,
+    "hash": "af2b64974c2ee4973d3072052faa88b1"
   },
   "E:\\agri-ai-platform\\requirements.txt": {
     "mtime": 1778760553.6970696,
@@ -280,24 +568,80 @@
     "hash": "f15aaa42d5d299d091b1171097ea56ad"
   },
   "E:\\agri-ai-platform\\docs\\01_PROJECT_OVERVIEW.md": {
-    "mtime": 1778752558.630737,
-    "hash": "6d51b8fc090fa040d2a53e80c067a046"
+    "mtime": 1778871371.2377353,
+    "hash": "08a9e7b0f58450ea17a51bc030e3da5b"
   },
   "E:\\agri-ai-platform\\docs\\02_SYSTEM_ARCHITECTURE.md": {
     "mtime": 1778752549.8491552,
     "hash": "17af203281f591d8cd79a01b50240001"
   },
   "E:\\agri-ai-platform\\docs\\03_DESIGN_ARCHITECTURE.md": {
-    "mtime": 1778753888.018543,
-    "hash": "7096c1cf9fa0c665787275a8453046ee"
+    "mtime": 1778871404.7072666,
+    "hash": "5374cee31381790d83ee3cec5dfb6e0c"
+  },
+  "E:\\agri-ai-platform\\docs\\backend\\integration_manual.md": {
+    "mtime": 1778781581.8234725,
+    "hash": "58a702acdca1df5e13057d3366deac49"
+  },
+  "E:\\agri-ai-platform\\docs\\backend\\maps_features.md": {
+    "mtime": 1778846155.1665194,
+    "hash": "894bfcb566ac7412b9785a9a12ca0a31"
   },
   "E:\\agri-ai-platform\\docs\\developers manual\\ai_agents_usage_manual.md": {
     "mtime": 1778754203.669007,
     "hash": "be8c7fb5f6fff22f5d49a1c8fbb8181e"
   },
+  "E:\\agri-ai-platform\\docs\\progress report\\FINAL_INTEGRATION_REPORT.md": {
+    "mtime": 1778840350.7999158,
+    "hash": "e103e0d7da2c5c775ae2a7e1458df70f"
+  },
   "E:\\agri-ai-platform\\docs\\progress report\\PHASE_0_COMPLETION.md": {
     "mtime": 1778763077.5317988,
     "hash": "97de48a511d8bda7ed68ca72c68a9ea1"
+  },
+  "E:\\agri-ai-platform\\docs\\progress report\\PHASE_1_AUTH_UI_UPDATE.md": {
+    "mtime": 1778792407.674867,
+    "hash": "47e9e712efdd61df7376f5fa8dfaebe8"
+  },
+  "E:\\agri-ai-platform\\docs\\progress report\\PHASE_2_ADMIN_INTEGRATION.md": {
+    "mtime": 1778837438.7583554,
+    "hash": "58f77bfed13b04d512d6dcdccd66e390"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\components_design.md": {
+    "mtime": 1778776481.0495408,
+    "hash": "bd5275bca89e5ba3a125fe7b25abc802"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\DESIGN_SYSTEM.md": {
+    "mtime": 1778776154.9793894,
+    "hash": "058169d318d3aa5f0cecfbb03a724a81"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\PAGE_INVENTORY.md": {
+    "mtime": 1778768451.5561635,
+    "hash": "2221a91310bb22cfbbf420c9178ee970"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\planning.md": {
+    "mtime": 1778767174.0606568,
+    "hash": "61d5cbfecf0ffed728a12356f059a254"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\STITCH_GUIDE.md": {
+    "mtime": 1778767132.19604,
+    "hash": "026014cb11c5003109d618b22faabfce"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\page-specs\\diagnosis-page.md": {
+    "mtime": 1778767167.9299276,
+    "hash": "926baa203d026f79fea9c2b9f8d0973c"
+  },
+  "E:\\agri-ai-platform\\docs\\ui\\page-specs\\landing-page.md": {
+    "mtime": 1778769917.9765103,
+    "hash": "35fe542855d1f38456593bf2e7317708"
+  },
+  "E:\\agri-ai-platform\\scratch\\test_output.txt": {
+    "mtime": 1778847757.995398,
+    "hash": "07f3c0ace3c6537578fe57240ed51d42"
+  },
+  "E:\\agri-ai-platform\\services\\advisory-service\\requirements.txt": {
+    "mtime": 1778780726.1086245,
+    "hash": "d724e312f0d4bc027e735f8fdcd23309"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\requirements.txt": {
     "mtime": 1778761357.4349709,
@@ -323,6 +667,218 @@
     "mtime": 1778755960.5120766,
     "hash": "a2760511c65806022ad20adf74370ff3"
   },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cabbage_alternaria_spot.jpg": {
+    "mtime": 1772482219.6611078,
+    "hash": "c5db017f514e1ef3bd894e774108a74c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cabbage_black_rot.jpg": {
+    "mtime": 1772482219.4225464,
+    "hash": "09aa797bc4e772a96462f4333fbf5227"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cabbage_downy_mildew.jpg": {
+    "mtime": 1772862026.3954358,
+    "hash": "3f22e0bb6743e0cd2bed0e928d2184e0"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cabbage_healthy_leaf.jpg": {
+    "mtime": 1772482219.5425637,
+    "hash": "a1d55a869934f7f760f1282b22ce865c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_alternaria_disease.jpg": {
+    "mtime": 1772862026.7656627,
+    "hash": "3ca867ae8d144f00b22262b12eee8d24"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_bacterial_soft_rot.jpg": {
+    "mtime": 1772492053.6174333,
+    "hash": "75bb055839f98439b5b1da8d93dd9836"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_bacterial_spot.jpg": {
+    "mtime": 1772862038.9854536,
+    "hash": "b5de31ddaa4c6423dd57141e5e23a556"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_black_spot.jpg": {
+    "mtime": 1772862043.978564,
+    "hash": "9c1c3a79089d4629a15d310b0e65d945"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_downy_mildew.jpg": {
+    "mtime": 1772862053.5199826,
+    "hash": "e8872ca573dec640b6dc5d5b6e831e37"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_healthy.jpg": {
+    "mtime": 1772862065.80005,
+    "hash": "a8a7fb70af97ee4329a4be64194a20f5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\cauliflower_nutrient_deficiency.jpg": {
+    "mtime": 1772862031.5880792,
+    "hash": "eb8c8abe130db912ab29ad788e242835"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\chili_bacterial_spot.jpg": {
+    "mtime": 1772862036.8746755,
+    "hash": "11b6cd673f14974534171cccd312c2ee"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\chili_cercospora_leaf_spot.jpg": {
+    "mtime": 1772862037.7208412,
+    "hash": "4de42e152c2b7bc93b906c3cd9df2828"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\chili_curl_virus.jpg": {
+    "mtime": 1772862038.5261204,
+    "hash": "9b5c2db34a4630da77284f7857dc108f"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\chili_healthy_leaf.jpg": {
+    "mtime": 1772862039.5533807,
+    "hash": "546e63a947c48dec6189731c4bae355c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\eggplant_healthy_leaf.jpg": {
+    "mtime": 1772862040.5981076,
+    "hash": "93509b6a8a74ad43690d28384607bfeb"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\eggplant_insect_pest_disease.jpg": {
+    "mtime": 1772862043.6801736,
+    "hash": "b5a346637ad93704fbed3b157edd5978"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\eggplant_leaf_spot_disease.jpg": {
+    "mtime": 1772862028.4633741,
+    "hash": "11ccac44ab7cef3cc29471c48604d7af"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\eggplant_mosaic_virus_disease.jpg": {
+    "mtime": 1772862029.312724,
+    "hash": "bb66f257e4570765baff04d70907be4c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\eggplant_wilt_disease.jpg": {
+    "mtime": 1772862030.9014714,
+    "hash": "4495edf393a435d87d0397d34ba5b9c3"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\gourd_alternaria_leaf_blight.jpg": {
+    "mtime": 1772862031.4529743,
+    "hash": "f151bc938a12ebde8a0d1481a92bd7d5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\gourd_downy_mildew.jpg": {
+    "mtime": 1772862034.1040866,
+    "hash": "9d39b8dbcfd8aac609a35c70941fa162"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\gourd_healthy_leaf.jpg": {
+    "mtime": 1772862034.7207391,
+    "hash": "07141761056be5761fa9ab67d1a1617a"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\brassica\\gourd_mosaic_virus.jpg": {
+    "mtime": 1772862035.3473816,
+    "hash": "873c533536eb1bafc30842da32f97b73"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\fruits\\guava_algal_leaf_spot.jpg": {
+    "mtime": 1772862038.4668555,
+    "hash": "cf2ae21294b936855aa15565774a5ea8"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\fruits\\guava_dry_leaf.jpg": {
+    "mtime": 1772862026.7551515,
+    "hash": "d9ff1544d275847125dfb5de4400a1d0"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\fruits\\guava_healthy.jpg": {
+    "mtime": 1772862028.8967776,
+    "hash": "c6c7966e1e3355abefbd1506fe77958c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\fruits\\guava_insect_pest_disease.jpg": {
+    "mtime": 1772862036.1075597,
+    "hash": "872f5e7a75cc2030a2a941d851ac6ee5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\fruits\\guava_red_rust.jpg": {
+    "mtime": 1772862042.7643692,
+    "hash": "2b6e0e78e156589076e7d2f721e20684"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\potato\\potato_early_blight.jpg": {
+    "mtime": 1772862046.2183888,
+    "hash": "878cc7afc95ac87f96865e4ce9c8d0f3"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\potato\\potato_healthy_leaf.jpg": {
+    "mtime": 1772862057.0573716,
+    "hash": "d36b5cc06491c6b9fcfd3fa340aa7a59"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\potato\\potato_late_blight.jpg": {
+    "mtime": 1772862058.8968015,
+    "hash": "7bd22800c3b13e48a2b0676aa77f35c9"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\bacterial leaf blight.png": {
+    "mtime": 1778839088.1813114,
+    "hash": "56dc53ba831b3bba94a0a0e0e16f0fc1"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\brown spot.png": {
+    "mtime": 1778839116.157096,
+    "hash": "3b9130e7e5bed12f203d2ea5666b3cf4"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\healthy.png": {
+    "mtime": 1778839144.7922592,
+    "hash": "71dfec72e30d6e34c39999e86ed3e756"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\leaf blast.png": {
+    "mtime": 1778839169.1738532,
+    "hash": "b5826f228c825aaac415e1a7af2e6c7b"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\leaf sclad.png": {
+    "mtime": 1778839201.6818402,
+    "hash": "6295855571db665726a057c29fca0c62"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\narrow brown leaf spot.png": {
+    "mtime": 1778839231.7213094,
+    "hash": "2e04835a991405715d7914fbab19651a"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice hispa.png": {
+    "mtime": 1778839261.0650997,
+    "hash": "221a37edbad6dad830df7dda1ac7b75d"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_bacterial_leaf_blight.jpg": {
+    "mtime": 1772862035.668727,
+    "hash": "82ba9dbb9b4362c9835c5b7bdf6f465b"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_brown_spot.jpg": {
+    "mtime": 1772862037.5546594,
+    "hash": "cceffad8f63449d078b2f0a456fe22a0"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_healthy_leaf.jpg": {
+    "mtime": 1772862039.4246025,
+    "hash": "cf0b0c38faac59d5fed92b10f8a3d483"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_leaf_blast.jpg": {
+    "mtime": 1772862043.1171672,
+    "hash": "0d9594d7fe4bed86d9a41584df714a36"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_leaf_scald.jpg": {
+    "mtime": 1772862045.0658503,
+    "hash": "35912ae7146d18d02365d9c85aa58241"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_narrow_brown_leaf_spot.jpg": {
+    "mtime": 1772862046.9543977,
+    "hash": "0df3309d8b695792be461863a7e9045e"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_rice_hispa.jpg": {
+    "mtime": 1772862027.7311928,
+    "hash": "a5a22b6fcdebafa434a0898cd4e58120"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\rice_sheath_blight.jpg": {
+    "mtime": 1772862029.6514935,
+    "hash": "f16e0e9c76c64a0cd213a7419bd24ccb"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\rice\\sheath blight.png": {
+    "mtime": 1778839285.768818,
+    "hash": "cf56743327ea76311a41cec8e593cafb"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\tomato\\tomato_bacterial_spot.jpg": {
+    "mtime": 1772862031.4749668,
+    "hash": "179d962e83efc4a573246a691eddadd5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\tomato\\tomato_early_blight.jpg": {
+    "mtime": 1772862031.9414947,
+    "hash": "fb70568767aa587f3445b4ac8373f8a5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\tomato\\tomato_healthy_leaf.jpg": {
+    "mtime": 1772862032.1976876,
+    "hash": "6eb3b106356f7f376393a0898e2fa1f7"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\tomato\\tomato_late_blight.jpg": {
+    "mtime": 1772862032.6919858,
+    "hash": "a7169cd0a57517d9fcd7099f2f7e01d5"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\public\\assets\\diseases\\tomato\\tomato_mosaic_virus.jpg": {
+    "mtime": 1772862033.6565714,
+    "hash": "c750540a5abbb19ed8f71fd53f6c6011"
+  },
   "E:\\agri-ai-platform\\apps\\web\\public\\file.svg": {
     "mtime": 1778755960.3885117,
     "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
@@ -342,6 +898,1802 @@
   "E:\\agri-ai-platform\\apps\\web\\public\\window.svg": {
     "mtime": 1778755960.5120766,
     "hash": "a2760511c65806022ad20adf74370ff3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0001.jpg": {
+    "mtime": 1772482219.6611078,
+    "hash": "c5db017f514e1ef3bd894e774108a74c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0002.jpg": {
+    "mtime": 1772482219.6901145,
+    "hash": "d9d93eea089aa554570da27113fa61c9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0003.jpg": {
+    "mtime": 1772482219.676243,
+    "hash": "b6d6e11467d53798de1344349df56c67"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0004.jpg": {
+    "mtime": 1772482219.6722317,
+    "hash": "c5899a1e57b4e0fd21f5769d8629e824"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0005.jpg": {
+    "mtime": 1772482219.6314063,
+    "hash": "5ef15c2860e4bd9fd97ce7b2d9785fd5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0006.jpg": {
+    "mtime": 1772482219.6374228,
+    "hash": "645ad295c7847fc287e547a360269faf"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0007.jpg": {
+    "mtime": 1772482219.6520097,
+    "hash": "d4ff882bcdf63cccbb84a47aa75e9451"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0008.jpg": {
+    "mtime": 1772482219.6570969,
+    "hash": "1497d60a3329b489832e2b49f674be3c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0009.jpg": {
+    "mtime": 1772482219.6611078,
+    "hash": "bb5b5252779c3cd0f206d010562ef7a6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Alternaria_Spot\\0010.jpg": {
+    "mtime": 1772482219.609635,
+    "hash": "6bcce2647800df008bc9fcfc888f33bc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0001.jpg": {
+    "mtime": 1772482219.4225464,
+    "hash": "09aa797bc4e772a96462f4333fbf5227"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0002.jpg": {
+    "mtime": 1772482219.4225464,
+    "hash": "e6d4696ddaec72c548f174489e152cb3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0003.jpg": {
+    "mtime": 1772482219.4504128,
+    "hash": "55cc9ea70e3dc37d11b63f94e906960e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0004.jpg": {
+    "mtime": 1772482219.4572182,
+    "hash": "79e1295458f2cc7a5f8c22f03203ee2f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0005.jpg": {
+    "mtime": 1772482219.441851,
+    "hash": "e48fd53eb94aaa5464bbaa24f61e131f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0006.jpg": {
+    "mtime": 1772482219.4514194,
+    "hash": "472f2dc78276fd169076204f7689dad6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Black_Rot\\0007.jpg": {
+    "mtime": 1772482219.4225464,
+    "hash": "43f300c7bb6b13408069441df3bdee37"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Downy_Mildew\\0001.jpg": {
+    "mtime": 1772862026.3954358,
+    "hash": "3f22e0bb6743e0cd2bed0e928d2184e0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Downy_Mildew\\0002.webp": {
+    "mtime": 1772862026.5312862,
+    "hash": "3f05dab3dd0e46e98c83c64212f2b1d3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Downy_Mildew\\0003.jpg": {
+    "mtime": 1772482219.5969758,
+    "hash": "e6c5c90fb9902db467fd10ceb35e92e1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Downy_Mildew\\0004.jpg": {
+    "mtime": 1772862026.5434911,
+    "hash": "d16049b92cce185c09deab6b75089f50"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Downy_Mildew\\0005.jpg": {
+    "mtime": 1772862026.553661,
+    "hash": "705a6af8dad238a8d6bd43776022cbf6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772482219.5425637,
+    "hash": "a1d55a869934f7f760f1282b22ce865c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772482219.514864,
+    "hash": "0b271f225976d5ba721a228ded30ab90"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772482219.4925973,
+    "hash": "477bf9153953a6cbfe34ec60056500a4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772482219.514864,
+    "hash": "7fb177a2271fe67e00eb729876e88bcc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772482219.5073867,
+    "hash": "16e68ef1514864ebb2a6054ea6fa685b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772482219.514864,
+    "hash": "ebacc12dba0070052f97bf39c0eb3a06"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772482219.5345397,
+    "hash": "21849424edde12843f7696ea71560450"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772482219.5365458,
+    "hash": "8207a6409e32250c86764688cee7e485"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772482219.4825692,
+    "hash": "c3d8e45360c373f38cf2d263bcc8c64e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cabbage__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772482219.5425637,
+    "hash": "849b19d887e9cfd2f5418616ab68c88d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0001.jpg": {
+    "mtime": 1772862026.7656627,
+    "hash": "3ca867ae8d144f00b22262b12eee8d24"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0002.jpg": {
+    "mtime": 1772862026.9690316,
+    "hash": "a81f113f303ee76475de6e667b747979"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0003.jpg": {
+    "mtime": 1772862027.208521,
+    "hash": "f48fbb52ec0fa1a647862d0929b8cfcb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0004.jpg": {
+    "mtime": 1772862027.2403712,
+    "hash": "b231f3a492ee398c47a7c30bea611cfa"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0005.jpg": {
+    "mtime": 1772862027.4094567,
+    "hash": "2d33b4f5ecdd307f132f7263dc1a5bd9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0006.jpg": {
+    "mtime": 1772862027.5332139,
+    "hash": "8e1194615e91719cc4e9500f1efbc5d4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0007.jpg": {
+    "mtime": 1772862027.7733793,
+    "hash": "414936d4607b13597dac94d835e24277"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0008.jpg": {
+    "mtime": 1772862027.7863808,
+    "hash": "e1df18d4da33cf4d766204a4fab5c44d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0009.jpg": {
+    "mtime": 1772862027.827127,
+    "hash": "309195a4d1daf0e0793ce8d8e973c224"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Alternaria_Disease\\0010.jpg": {
+    "mtime": 1772862027.8511958,
+    "hash": "1e564c7501cd9ed734aac78c2b8fb2e0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0001.jpg": {
+    "mtime": 1772492053.6174333,
+    "hash": "75bb055839f98439b5b1da8d93dd9836"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0002.jpg": {
+    "mtime": 1772862035.3890665,
+    "hash": "cc899cb224e39213ecc0e5516ab45440"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0003.jpg": {
+    "mtime": 1772492052.889888,
+    "hash": "75cc9c45dd9b2c3875158f41da3734bb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0004.jpg": {
+    "mtime": 1772862035.6401682,
+    "hash": "25b84a4573f2ad7831837e4cfb502098"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0005.jpg": {
+    "mtime": 1772862035.8630888,
+    "hash": "87673fb9b9d9f2a8a170144cb817df0e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0006.jpg": {
+    "mtime": 1772492052.5323663,
+    "hash": "1f6fbff016f62ddc37317b7396eb6d5d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0007.jpg": {
+    "mtime": 1772862035.8901215,
+    "hash": "8a63dcf61730c73d177db1929e04a3fa"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0008.jpg": {
+    "mtime": 1772862036.0927873,
+    "hash": "da515d575d67ffbc7e202a9a4dd907f5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0009.jpg": {
+    "mtime": 1772862036.3227696,
+    "hash": "d03771c3697bc1f6fc2581cdff1a242b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Soft_Rot\\0010.jpg": {
+    "mtime": 1772862036.3380325,
+    "hash": "7ae72f1fe1720d5458c392f94bb1c837"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0001.png": {
+    "mtime": 1772862038.9854536,
+    "hash": "b5de31ddaa4c6423dd57141e5e23a556"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0002.png": {
+    "mtime": 1772862039.0205953,
+    "hash": "d59d6a1ff9c66205fa1ce4247adbd2a9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0003.jpg": {
+    "mtime": 1772862039.148225,
+    "hash": "942a2ba16484c8fc52e48cf76e3dd69b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0004.png": {
+    "mtime": 1772862039.1835322,
+    "hash": "c278213ad3f6b40d1d54c8d6da93d55c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0005.jpg": {
+    "mtime": 1772862039.1936467,
+    "hash": "b986157eec2ea3c2c9f1c71c47d120a2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0006.jpg": {
+    "mtime": 1772862039.4646904,
+    "hash": "60b766824430dc7a1e3b4caa75c91bcc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0007.jpg": {
+    "mtime": 1772862039.4806845,
+    "hash": "d9b75101def65097c7c09b735022bc2c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0008.jpg": {
+    "mtime": 1772862039.4925852,
+    "hash": "bea8b63163479424381c1146489bc00f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0009.jpg": {
+    "mtime": 1772862039.560754,
+    "hash": "f1e66fc5f1a854687a06cb8b24f20069"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Bacterial_Spot\\0010.jpg": {
+    "mtime": 1772862039.5726328,
+    "hash": "3ece408e8ce7deb8b63ac339521613d4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0001.jpg": {
+    "mtime": 1772862043.978564,
+    "hash": "9c1c3a79089d4629a15d310b0e65d945"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0002.jpg": {
+    "mtime": 1772862044.2279134,
+    "hash": "29b3a0cb969ef5035e2a4c49d0c75854"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0003.jpg": {
+    "mtime": 1772862044.451772,
+    "hash": "f0ffcafdfa5596f53d0f39181ed24971"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0004.jpg": {
+    "mtime": 1772862044.7010305,
+    "hash": "aba1a0b58e28b470bc0741c1bcc888f1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0005.jpg": {
+    "mtime": 1772862044.9824443,
+    "hash": "71b6ad1a1d8f8832b7f7bf686fe386cb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0006.jpg": {
+    "mtime": 1772862045.210937,
+    "hash": "93f16416b91ecc1448dc07d870fd4f03"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0007.jpg": {
+    "mtime": 1772862045.4416046,
+    "hash": "7e2f765978e54ac05314ee0407aad970"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0008.jpg": {
+    "mtime": 1772862045.68642,
+    "hash": "1c2a3c1b7c2157e388e0152e8842df1d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0009.jpg": {
+    "mtime": 1772862045.9252498,
+    "hash": "c7a65ade24cc2b7f3810077806e56d3e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Black_Spot\\0010.jpg": {
+    "mtime": 1772862046.1379893,
+    "hash": "1a905a58fe3e204531a517879c6b0aee"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0001.jpg": {
+    "mtime": 1772862053.5199826,
+    "hash": "e8872ca573dec640b6dc5d5b6e831e37"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0002.jpg": {
+    "mtime": 1772862053.7823937,
+    "hash": "fc69dc0f68d2f6593cbb0806560016dc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0003.jpg": {
+    "mtime": 1772862054.0892382,
+    "hash": "0b99c063148420b6404b9e515951cd38"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0004.jpg": {
+    "mtime": 1772862054.3679705,
+    "hash": "e38f7f4b3c6cba8504cba268ebd8020a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0005.jpg": {
+    "mtime": 1772862054.6647851,
+    "hash": "c87249a45a8fc0ea02469940da4ad741"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0006.jpg": {
+    "mtime": 1772862054.9841032,
+    "hash": "d5449e6a697b3f553ad5c9d445116ece"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0007.jpg": {
+    "mtime": 1772862055.0178394,
+    "hash": "7cedb28a435b40f4db4d06b1a4c91696"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0008.jpg": {
+    "mtime": 1772862055.033174,
+    "hash": "0993f18e1f38ed33b5d82631bd8f3a17"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0009.jpg": {
+    "mtime": 1772862055.0551243,
+    "hash": "a52417c2d681058bc058d02b781eecda"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Downy_Mildew\\0010.jpg": {
+    "mtime": 1772862055.0718613,
+    "hash": "75def60b2a8dfc7048ca262040b476af"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0001.png": {
+    "mtime": 1772862065.80005,
+    "hash": "a8a7fb70af97ee4329a4be64194a20f5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0002.jpg": {
+    "mtime": 1772862065.8511362,
+    "hash": "9f496dae119487c1ba11c8fb389d3db9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0003.jpg": {
+    "mtime": 1772862066.145733,
+    "hash": "34175c0eecbd8675c9d2e342a0734f6e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0004.jpg": {
+    "mtime": 1772862066.1961,
+    "hash": "3439b4ad79fc3eb750889e99d8ece356"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0005.png": {
+    "mtime": 1772862066.2478015,
+    "hash": "7f4fdde75952bd8a4ee5c23938c7a872"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0006.jpg": {
+    "mtime": 1772492071.5488648,
+    "hash": "47eb97ad7b6eb5910f7e485073ed8e0b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0007.jpg": {
+    "mtime": 1772862066.5153017,
+    "hash": "72a5774ca76bf9f9a96cc48f50e7a725"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0008.jpg": {
+    "mtime": 1772862066.5668957,
+    "hash": "1aaac9575cf0b8004bf259dc62387036"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0009.jpg": {
+    "mtime": 1772862066.5900126,
+    "hash": "e346fd03dfaf1adaa855aed7e0d36c2f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Healthy\\0010.jpg": {
+    "mtime": 1772492071.2125561,
+    "hash": "98d3833edcc99719fc420a6e9b6d0bb1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0001.jpg": {
+    "mtime": 1772862031.5880792,
+    "hash": "eb8c8abe130db912ab29ad788e242835"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0002.jpg": {
+    "mtime": 1772862031.803633,
+    "hash": "fa3288c7bac50fb1f30e196239e39383"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0003.jpg": {
+    "mtime": 1772862032.1976876,
+    "hash": "70621bc90c56611c553b6922df3f8d40"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0004.jpg": {
+    "mtime": 1772862032.4769816,
+    "hash": "8a03ad03461a347ede2303509545ad7d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0005.jpg": {
+    "mtime": 1772862032.687751,
+    "hash": "d38d9946175138ef0a6b76ec3a374a83"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0006.jpg": {
+    "mtime": 1772862032.895461,
+    "hash": "d3ca693531f977ba8602f93e28cfd3f7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0007.jpg": {
+    "mtime": 1772862033.1083598,
+    "hash": "bd645a965eca4a2e3dfd978aa055df3b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0008.jpg": {
+    "mtime": 1772862033.3229723,
+    "hash": "5647b0097f1bcc6e20baa9c621464a45"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0009.jpg": {
+    "mtime": 1772862033.5390284,
+    "hash": "3c952104e798ab8f038bf7b87515e8eb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Cauliflower__Nutrient_Deficiency\\0010.jpg": {
+    "mtime": 1772862033.7586608,
+    "hash": "6dd85a21110a1e252624111734d40783"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0001.jpg": {
+    "mtime": 1772862036.8746755,
+    "hash": "11b6cd673f14974534171cccd312c2ee"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0002.jpg": {
+    "mtime": 1772862036.8989296,
+    "hash": "18ce2a4c8f1d7752d2b612a19ca06737"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0003.jpg": {
+    "mtime": 1772862036.9247909,
+    "hash": "0f30f5f7e0bba24e870c21c4e889f499"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0004.jpg": {
+    "mtime": 1772862036.951113,
+    "hash": "a4a870766282a26ad75f0ed0183cd162"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0005.jpg": {
+    "mtime": 1772862036.9756253,
+    "hash": "f963122c73e94b9af034e75128750526"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0006.jpg": {
+    "mtime": 1772862037.0029566,
+    "hash": "891744bd9e0ebea2e0abc448961523f4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0007.jpg": {
+    "mtime": 1772862037.0287135,
+    "hash": "c43648353206ed39617954c4e745d2a3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0008.jpg": {
+    "mtime": 1772862037.054509,
+    "hash": "9b7950f2e4c7930e4bd31c1d3c1b4633"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0009.jpg": {
+    "mtime": 1772862037.0787637,
+    "hash": "33111e0bef1c9591b3d6b7e610d94753"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Bacterial_Spot\\0010.jpg": {
+    "mtime": 1772862037.1039648,
+    "hash": "62d1311efbbfcf6c62f4807843f9d900"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0001.jpg": {
+    "mtime": 1772862037.7208412,
+    "hash": "4de42e152c2b7bc93b906c3cd9df2828"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0002.jpg": {
+    "mtime": 1772862037.7492812,
+    "hash": "73572047622b2c6be6aaf1b566361529"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0003.jpg": {
+    "mtime": 1772862037.775035,
+    "hash": "e7992bcb03872a75f1af1f6e6078705e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0004.jpg": {
+    "mtime": 1772862037.8003387,
+    "hash": "b1c014a235b9f7c76319ad23dc3042c5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0005.jpg": {
+    "mtime": 1772862037.8247633,
+    "hash": "470de6186d751635ed0ba5609fed05c3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0006.jpg": {
+    "mtime": 1772862037.8514938,
+    "hash": "40b5c6e0c3e922ba17deec9edf042394"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0007.jpg": {
+    "mtime": 1772862037.8746257,
+    "hash": "e7cf3486c6915a88d314ecb1c03abe54"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0008.jpg": {
+    "mtime": 1772862037.9049082,
+    "hash": "5b2dfe6276bc44f07be104a7ffd6b726"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0009.jpg": {
+    "mtime": 1772862037.9297101,
+    "hash": "297f212c193e2a5fe04dd9c26acae24d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Cercospora_Leaf_Spot\\0010.jpg": {
+    "mtime": 1772862037.9546375,
+    "hash": "cfe908733d4825ee0e0e9b2e1b3fd982"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0001.jpg": {
+    "mtime": 1772862038.5261204,
+    "hash": "9b5c2db34a4630da77284f7857dc108f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0002.jpg": {
+    "mtime": 1772862038.5548089,
+    "hash": "133c482c234507d4c550f709875a404f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0003.jpg": {
+    "mtime": 1772862038.5817227,
+    "hash": "f94daa6a04d4bd1482c379afbb61a192"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0004.jpg": {
+    "mtime": 1772862038.6103017,
+    "hash": "b9f50c1e268248d88d90f4d0d3da8e3e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0005.jpg": {
+    "mtime": 1772862038.6358047,
+    "hash": "63050f9c07b817cbd0c54bf9d7befad4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0006.jpg": {
+    "mtime": 1772862038.6745698,
+    "hash": "da4a81ad18b5eca9f25cc91b11343e42"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0007.jpg": {
+    "mtime": 1772862038.7024047,
+    "hash": "3eeed60732c49adf7e6217b9512c856b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0008.jpg": {
+    "mtime": 1772862038.728731,
+    "hash": "73d291e0d2d27af2378f0d65977d9d0e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0009.jpg": {
+    "mtime": 1772862038.7563767,
+    "hash": "5e8d85091ca5a2bdae1c1710cec3555d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Curl_Virus\\0010.jpg": {
+    "mtime": 1772862038.794327,
+    "hash": "5d96da432387071060243c404bcd7fad"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772862039.5533807,
+    "hash": "546e63a947c48dec6189731c4bae355c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772862039.5826657,
+    "hash": "ca2248a9f65ea10054707dd376582797"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862039.608414,
+    "hash": "ffd514415c21a2857312d6950d450b32"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772862039.63571,
+    "hash": "a03a06b6e07d4b5b0538bd9ad15ef066"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772862039.6660109,
+    "hash": "018eb12f94ee0d145085ab9dedb69cf8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772862039.6928003,
+    "hash": "f4b6b25a73d444203ca596ccacc55de6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772862039.7214556,
+    "hash": "99923a0d0d0a45cbb967d234ad8e6e2c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772862039.7513978,
+    "hash": "7f0a88b8960dce51b4d1a0e5a7d71b6b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862039.7808049,
+    "hash": "d50180e790a1e52cd5b264db36ffb573"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Chili__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772862039.8062851,
+    "hash": "530fcb8ec865c88a96d316888c9f607a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772862040.5981076,
+    "hash": "93509b6a8a74ad43690d28384607bfeb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772862040.6087537,
+    "hash": "87624beb335f76212d337bf7a3421840"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862040.628125,
+    "hash": "f247f2eceafaa24d9de0c00efe195e38"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772862040.6470275,
+    "hash": "b279b0f701ecebcf920f05c58a8f8b19"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772862040.6660373,
+    "hash": "374d0627b675204b6b87a3f1a5033aaa"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772862040.6875505,
+    "hash": "ba26ab610d1220bd56790b5ca088d9a7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772862040.708562,
+    "hash": "da08098126b6552195e08a1b08b598c1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772862040.7290096,
+    "hash": "3ba86f7b2e5e7d220ebf08a660dfbfcb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862040.7547712,
+    "hash": "1d4d75b2aa3cc74ee330c54c74db178d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772862040.777156,
+    "hash": "7add568eb41ea860a6cd571f0dbd58b7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0001.jpg": {
+    "mtime": 1772862043.6801736,
+    "hash": "b5a346637ad93704fbed3b157edd5978"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0002.jpg": {
+    "mtime": 1772862043.6991663,
+    "hash": "463142e213eeae9804acaef04552bdeb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0003.jpg": {
+    "mtime": 1772862043.7182505,
+    "hash": "697f4bb1d32dd6a52b30b27e88525a27"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0004.jpg": {
+    "mtime": 1772862043.7388008,
+    "hash": "787a29a99f37ab955b35f19fcd631117"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0005.jpg": {
+    "mtime": 1772862043.7599616,
+    "hash": "ccbd03029ec02a2b7785d2f6469c928b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0006.jpg": {
+    "mtime": 1772862043.778909,
+    "hash": "dadc777a8083a66ace2bab074b5c100e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0007.jpg": {
+    "mtime": 1772862043.789996,
+    "hash": "d5408d23f5ddef78d03a9a67eaa632e5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0008.jpg": {
+    "mtime": 1772862043.8015287,
+    "hash": "42b98daa5ec730033b9be41c0e1369b5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0009.jpg": {
+    "mtime": 1772862043.823674,
+    "hash": "28659cd6a61fe69d9fe0634d03ba2e43"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Insect_Pest_Disease\\0010.jpg": {
+    "mtime": 1772862043.842964,
+    "hash": "e2f0719fec1fc77cd89750b244ea0694"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0001.jpg": {
+    "mtime": 1772862028.4633741,
+    "hash": "11ccac44ab7cef3cc29471c48604d7af"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0002.jpg": {
+    "mtime": 1772862028.478135,
+    "hash": "33ef6197f56e9a60ec93f7bc4cd694f7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0003.jpg": {
+    "mtime": 1772862028.4895022,
+    "hash": "2cac7e0e1e1c283e27625efe9d3f6ff8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0004.jpg": {
+    "mtime": 1772862028.4990125,
+    "hash": "74c1998d9b1459d2e99305718093560f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0005.jpg": {
+    "mtime": 1772862028.5232003,
+    "hash": "56d02977afd41542679b758893b2bfd2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0006.jpg": {
+    "mtime": 1772862028.5343091,
+    "hash": "3bcef05f98fd495effd0d6af297e7797"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0007.jpg": {
+    "mtime": 1772862028.5667658,
+    "hash": "b5250e1a87f1f89dbe027a1f0b390799"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0008.jpg": {
+    "mtime": 1772862028.5875158,
+    "hash": "74e0811fd37ab49586e09a7f0a1a2dbf"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0009.jpg": {
+    "mtime": 1772862028.6161323,
+    "hash": "f6e2c4dc496664c2a287565e0d3422bf"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Leaf_Spot_Disease\\0010.jpg": {
+    "mtime": 1772862028.6270432,
+    "hash": "e710e3b471ed49b868cb93ff326dbb3e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0001.jpg": {
+    "mtime": 1772862029.312724,
+    "hash": "bb66f257e4570765baff04d70907be4c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0002.jpg": {
+    "mtime": 1772862029.3341599,
+    "hash": "45067875a3a256fdd68f3ccb38c857fa"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0003.jpg": {
+    "mtime": 1772862029.358625,
+    "hash": "68efe31d0087e34093a28adf55ab5250"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0004.jpg": {
+    "mtime": 1772862029.371295,
+    "hash": "2cf51ff0a0fee653cb109d339a6afae0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0005.jpg": {
+    "mtime": 1772862029.3881621,
+    "hash": "2ae1f97326995eba130b821f67327f83"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0006.jpg": {
+    "mtime": 1772862029.4114902,
+    "hash": "338136e0b65d66cf446b73f94568f4af"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0007.jpg": {
+    "mtime": 1772862029.4361284,
+    "hash": "01f2c6afb31cf88a3dfb136a0288d9fa"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0008.jpg": {
+    "mtime": 1772862029.4536734,
+    "hash": "716c2ead0e9f3ed0138c9e6fe24ae695"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0009.jpg": {
+    "mtime": 1772862029.4711113,
+    "hash": "b32f5436bfa511eed4eba548a5a1be90"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Mosaic_Virus_Disease\\0010.jpg": {
+    "mtime": 1772862029.4895623,
+    "hash": "145741bb375cca01a498c1f9d29c260b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0001.jpg": {
+    "mtime": 1772862030.9014714,
+    "hash": "4495edf393a435d87d0397d34ba5b9c3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0002.jpg": {
+    "mtime": 1772862030.911141,
+    "hash": "54630653058c9dbf21601c1d8feeea4f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0003.jpg": {
+    "mtime": 1772862030.9209397,
+    "hash": "c89ee7f6fc6edf91592b4297d4331964"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0004.jpg": {
+    "mtime": 1772862030.931023,
+    "hash": "01728043d711f6762f18d246396bafc0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0005.jpg": {
+    "mtime": 1772862030.9512372,
+    "hash": "38a9a29f329e74382054daadc734bd17"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0006.jpg": {
+    "mtime": 1772862030.9633985,
+    "hash": "3e8e1c990846ed62a73ca5c054426a25"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0007.jpg": {
+    "mtime": 1772862030.975698,
+    "hash": "22d83ad31a7083213c392ef0480b25da"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0008.jpg": {
+    "mtime": 1772862030.9875877,
+    "hash": "7ffb7e095aca2873ef49d7b951557c53"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0009.jpg": {
+    "mtime": 1772862031.010707,
+    "hash": "af4df144862199f57077aca4c7801db2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Eggplant__Wilt_Disease\\0010.jpg": {
+    "mtime": 1772862031.030986,
+    "hash": "4a52b2557b69ca1c6a09ce8211a92364"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0001.jpg": {
+    "mtime": 1772862031.4529743,
+    "hash": "f151bc938a12ebde8a0d1481a92bd7d5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0002.jpg": {
+    "mtime": 1772862031.5494573,
+    "hash": "aad240f3bba47777eef183bf2fc0586b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0003.jpg": {
+    "mtime": 1772862031.6511471,
+    "hash": "7c800f056f7f19b5aaa716b2e6a76427"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0004.jpg": {
+    "mtime": 1772862031.734506,
+    "hash": "c1eec5bf683b29eaaef4b2ab515179b2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0005.jpg": {
+    "mtime": 1772862031.8262558,
+    "hash": "bc73f736502fc1db5f3998b182f96a72"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0006.jpg": {
+    "mtime": 1772862031.9075606,
+    "hash": "8aa9561cd49a2c7825e166cd41e96f9c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0007.jpg": {
+    "mtime": 1772862031.9830532,
+    "hash": "2ed58f2a6533eb0b3bb4d09d3e6e2c64"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0008.jpg": {
+    "mtime": 1772862032.093316,
+    "hash": "2cc5ceb91b1b8a19d2e101502df85840"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0009.jpg": {
+    "mtime": 1772862032.199685,
+    "hash": "c7e1d97cf533467471b6323219427176"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Alternaria_Leaf_Blight\\0010.jpg": {
+    "mtime": 1772862032.2803583,
+    "hash": "06825a05f3e04453bc3f79583e9e2dad"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0001.png": {
+    "mtime": 1772862034.1040866,
+    "hash": "9d39b8dbcfd8aac609a35c70941fa162"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0002.png": {
+    "mtime": 1772862034.143075,
+    "hash": "dac50ae4c543521da5b17a5beb055a2f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0003.jpg": {
+    "mtime": 1772862034.233795,
+    "hash": "fe89d5948d661b54f456abf8fea2b1b5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0004.jpg": {
+    "mtime": 1772862034.3334577,
+    "hash": "f73b112c707ebc9d6b8d384f192eab29"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0005.png": {
+    "mtime": 1772862034.372827,
+    "hash": "c3cafe4a12c055cea1fb3c1e3b99d249"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0006.jpg": {
+    "mtime": 1772862034.459591,
+    "hash": "0451f8a1f5566694c25cb8de8428d0d4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0007.png": {
+    "mtime": 1772862034.508722,
+    "hash": "8b88c4f1713fce51450ba2d7a0891565"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Downy_Mildew\\0008.jpg": {
+    "mtime": 1772862034.6382153,
+    "hash": "290be8d9282c43185aaa8419dc5ec229"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0001.png": {
+    "mtime": 1772862034.7207391,
+    "hash": "07141761056be5761fa9ab67d1a1617a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0002.png": {
+    "mtime": 1772862034.7676985,
+    "hash": "f6f4f481e676faa6161e749817157bb5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862034.855832,
+    "hash": "2e6459da8ba462a710e76b9997fd1745"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0004.png": {
+    "mtime": 1772862034.9328585,
+    "hash": "d96d26e98714ce50893a5720bc730c04"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0005.png": {
+    "mtime": 1772862035.0187027,
+    "hash": "c2016a7d45361452f65c20fb7d5f78c4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0006.png": {
+    "mtime": 1772862035.0729032,
+    "hash": "5c94c81269a5de817aaa0c29b23a08cd"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0007.png": {
+    "mtime": 1772862035.1458266,
+    "hash": "79b8f84a8fc03f16a2d9863efa0f2ba9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0008.png": {
+    "mtime": 1772862035.1913505,
+    "hash": "6cefc4709ddc6da8d08894fdec95393f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862035.2760785,
+    "hash": "ae847668059b5180521346b1943ab9d6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0001.jpg": {
+    "mtime": 1772862035.3473816,
+    "hash": "873c533536eb1bafc30842da32f97b73"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0002.png": {
+    "mtime": 1772862035.3910658,
+    "hash": "78da691bd8f05a85964086444465803a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0003.png": {
+    "mtime": 1772862035.4357257,
+    "hash": "be29817c84d983bff29a671607b78c46"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0004.jpg": {
+    "mtime": 1772862035.5308268,
+    "hash": "a125961e66cd9f98d086ca5c7f8f2873"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0005.jpg": {
+    "mtime": 1772862035.580609,
+    "hash": "1a283db7c1d0ce36a850737b3feb5ecb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0006.jpg": {
+    "mtime": 1772862035.682782,
+    "hash": "d8d64917499644c522e69ae421a07801"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0007.jpg": {
+    "mtime": 1772862035.7801294,
+    "hash": "50141d839084f4944c5c4da4815b9188"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0008.jpg": {
+    "mtime": 1772862035.9136822,
+    "hash": "614230ffbf882f6456d0c878091ccfdd"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0009.jpg": {
+    "mtime": 1772862036.0620103,
+    "hash": "33b37ef3fd1267f96ced5edbbd52d95e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Gourd__Mosaic_Virus\\0010.jpg": {
+    "mtime": 1772862036.1165614,
+    "hash": "ae4bc09b9af0cc34ce922ca3353f5041"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0001.jpg": {
+    "mtime": 1772862038.4668555,
+    "hash": "cf2ae21294b936855aa15565774a5ea8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0002.jpg": {
+    "mtime": 1772862038.724713,
+    "hash": "c27294785be1d6e30b9c96a50a168358"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0003.jpg": {
+    "mtime": 1772862038.9504187,
+    "hash": "341908ee98bdeade4a87f4f28cea64c1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0004.jpg": {
+    "mtime": 1772862039.1810715,
+    "hash": "07b94fd1f349e9fe248abfd1a9c04b5a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0005.jpg": {
+    "mtime": 1772862039.4451036,
+    "hash": "6ab4b06cdee2cb7317599a79d08667fe"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0006.jpg": {
+    "mtime": 1772862039.6765804,
+    "hash": "c17c6c41029c4da3031c20f8929db903"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0007.jpg": {
+    "mtime": 1772862039.9075346,
+    "hash": "81b027f5e3ebc25234721d5da35f1902"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0008.jpg": {
+    "mtime": 1772862040.2164757,
+    "hash": "d2d7ee9f1866dbc8f3b5a30ac82183f5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0009.jpg": {
+    "mtime": 1772862040.5061138,
+    "hash": "86b8c1e8c3c1cb7d718fa7c7bd9efb5a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Algal_Leaf_Spot\\0010.jpg": {
+    "mtime": 1772862040.7832093,
+    "hash": "62bff4734ea76851e5a7bfea01572bed"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0001.jpg": {
+    "mtime": 1772862026.7551515,
+    "hash": "d9ff1544d275847125dfb5de4400a1d0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0002.jpg": {
+    "mtime": 1772862027.0213985,
+    "hash": "b5db7fa12408b2c2ee75336e70fcc52b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0003.jpg": {
+    "mtime": 1772862027.2903693,
+    "hash": "c3d699469f3c5272d70a68150f199e4f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0004.jpg": {
+    "mtime": 1772862027.5463965,
+    "hash": "e1fd4071fb60a6ce8ee6f0282f4ed111"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0005.jpg": {
+    "mtime": 1772862027.795026,
+    "hash": "30692d3ac3c5336ca7be7d0600c18bc7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0006.jpg": {
+    "mtime": 1772862028.061968,
+    "hash": "ad5c26e77357023252dc468962e8fd6f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0007.jpg": {
+    "mtime": 1772862028.3040335,
+    "hash": "915e91cc6ea87ab94e08d6c9b464d2c7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0008.jpg": {
+    "mtime": 1772862028.5211778,
+    "hash": "cd1132b42d111c1fd0848bccc062d647"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Dry_Leaf\\0009.jpg": {
+    "mtime": 1772862028.7331605,
+    "hash": "ceee447358750aaee26b8b6dc91bf6ff"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0001.jpg": {
+    "mtime": 1772862028.8967776,
+    "hash": "c6c7966e1e3355abefbd1506fe77958c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0002.jpg": {
+    "mtime": 1772862029.103851,
+    "hash": "42951b549710a4a227aec70f0b857396"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0003.jpg": {
+    "mtime": 1772862029.3453395,
+    "hash": "3981665651280927f235c757de0405b0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0004.jpg": {
+    "mtime": 1772862029.593144,
+    "hash": "77e42f3988fba44184ec60d9ff50608d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0005.jpg": {
+    "mtime": 1772862029.7914598,
+    "hash": "1ade682c6778c114db5bb0d4a15703b5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0006.jpg": {
+    "mtime": 1772862030.119025,
+    "hash": "d3fe75e548672661db5220646118b271"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0007.jpg": {
+    "mtime": 1772862030.368971,
+    "hash": "c607f1a85ca34a49b993301fe48dc971"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0008.jpg": {
+    "mtime": 1772862030.6189995,
+    "hash": "21aab5d05515c23b528fafc134bf6520"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0009.jpg": {
+    "mtime": 1772862030.8250155,
+    "hash": "8f26a612cc7e319cb8205d115301a335"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Healthy\\0010.jpg": {
+    "mtime": 1772862031.114952,
+    "hash": "5e5f57bbf5bbd3ff37d510dc9cd28954"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0001.jpg": {
+    "mtime": 1772862036.1075597,
+    "hash": "872f5e7a75cc2030a2a941d851ac6ee5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0002.jpg": {
+    "mtime": 1772862036.2970686,
+    "hash": "90a123fa382a7e160ce6d4c7943f6733"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0003.jpg": {
+    "mtime": 1772862036.5496573,
+    "hash": "bdb61388cec134c867646492f70ecf50"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0004.jpg": {
+    "mtime": 1772862036.8007584,
+    "hash": "dbac9eabc7f90007ace8372430306940"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0005.jpg": {
+    "mtime": 1772862037.0166266,
+    "hash": "4288a6c3a666ffe93aab3330a88a0438"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0006.jpg": {
+    "mtime": 1772862037.2649648,
+    "hash": "12d7f9a639753a5c37c42cb71ada09e1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0007.jpg": {
+    "mtime": 1772862037.516137,
+    "hash": "cc4f5100c773d32a752f9a2148a52907"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0008.jpg": {
+    "mtime": 1772862037.7709508,
+    "hash": "11b3996f2fcc1712e6106ea6c6d37739"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0009.jpg": {
+    "mtime": 1772862038.0288162,
+    "hash": "274f9c8ee1aafc67ce4750486745efbe"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Insect_Pest_Disease\\0010.jpg": {
+    "mtime": 1772862038.3102064,
+    "hash": "f3cf24953bc3a47e8e04d67051bb7d03"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0001.jpg": {
+    "mtime": 1772862042.7643692,
+    "hash": "2b6e0e78e156589076e7d2f721e20684"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0002.jpg": {
+    "mtime": 1772862042.986682,
+    "hash": "5ffae0b75f87c170255ca3401c1de6a3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0003.jpg": {
+    "mtime": 1772862043.2591403,
+    "hash": "09c9431719d755b9f24db0958bb4b209"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0004.jpg": {
+    "mtime": 1772862043.5103173,
+    "hash": "1896c226de57496b83a59d9b0f303a77"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0005.jpg": {
+    "mtime": 1772862043.7244625,
+    "hash": "f801e73460dbb29815db2ba01f9b7926"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0006.jpg": {
+    "mtime": 1772862043.9533918,
+    "hash": "d5f244aa08cf3fa9670110840084f928"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0007.jpg": {
+    "mtime": 1772862044.1659808,
+    "hash": "055e887108a7793c37d5d406adef2bc0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0008.jpg": {
+    "mtime": 1772862044.3874314,
+    "hash": "ea5e4fc81976d9a9fa0ee4a69e4de424"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0009.jpg": {
+    "mtime": 1772862044.6404727,
+    "hash": "1a4b0cc53561aa9d16b6cd8fe22b1acf"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Guava__Red_Rust\\0010.jpg": {
+    "mtime": 1772862044.831577,
+    "hash": "1c68cb688f3bf914719a90c6c29d33b5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0001.jpg": {
+    "mtime": 1772862046.2183888,
+    "hash": "878cc7afc95ac87f96865e4ce9c8d0f3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0002.jpg": {
+    "mtime": 1772862046.2706902,
+    "hash": "de8cd7487f6b2c2df7b9bf50dee9b998"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0003.jpg": {
+    "mtime": 1772862046.318085,
+    "hash": "77c830bcb5261814b197ffcef703f53e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0004.jpg": {
+    "mtime": 1772862046.3653812,
+    "hash": "49369c5bfdf33cf7db43be61360c645f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0005.jpg": {
+    "mtime": 1772862046.4119902,
+    "hash": "dd3ff922fb9d380c2ae66fd2ed473392"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0006.jpg": {
+    "mtime": 1772862046.4581048,
+    "hash": "769471a7102469b7cda41f77f8f59aa1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0007.jpg": {
+    "mtime": 1772862046.5059235,
+    "hash": "58a264f4b4f5b2a617c5e27733d39287"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0008.jpg": {
+    "mtime": 1772862046.553441,
+    "hash": "09566d7d45525667352fb0c90528414a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0009.jpg": {
+    "mtime": 1772862046.600968,
+    "hash": "08cc970762a20bd91e5a261eac9fd3a8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Early_Blight\\0010.jpg": {
+    "mtime": 1772862046.6474469,
+    "hash": "37f8f92b48a7344a4f7fc63eff33cd2d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772862057.0573716,
+    "hash": "d36b5cc06491c6b9fcfd3fa340aa7a59"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772862057.1368659,
+    "hash": "bc8815d62053229364fda7d1ef7dc254"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862057.1921208,
+    "hash": "6d71f5570f024e6244af95a155f10d01"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772862057.2503188,
+    "hash": "94c5aa1b0de4211d18eb5a96ee6fa3be"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772862057.3067136,
+    "hash": "0d26910b7237cba16453e25eb7943d8a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772862057.362729,
+    "hash": "736ef8af98f09cf3a33cd7c72353be2e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772862057.4229193,
+    "hash": "7c81025d459e071036ef48ce86aa112f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772862057.4799223,
+    "hash": "695912de5e256228ac6bdda6ffdac128"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862057.538404,
+    "hash": "22920a629e42aa0fff4dd16020b194bc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772862057.597558,
+    "hash": "d8f21e953baf6b286937958f68dd34cc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0001.jpg": {
+    "mtime": 1772862058.8968015,
+    "hash": "7bd22800c3b13e48a2b0676aa77f35c9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0002.jpg": {
+    "mtime": 1772862058.9528267,
+    "hash": "6458881afbc27b70ef4f816d44a29435"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0003.jpg": {
+    "mtime": 1772862059.0124564,
+    "hash": "b65dd19c1e6a83e27c7d9f9530a8ebe3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0004.jpg": {
+    "mtime": 1772862059.0698037,
+    "hash": "d50b140ee0c081556c8c028a48e722ea"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0005.jpg": {
+    "mtime": 1772862059.1308944,
+    "hash": "261ae4f973dabd6031c3d5df4a2d532b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0006.jpg": {
+    "mtime": 1772862059.1890652,
+    "hash": "c1877767da6efda8f299e8f4e04554e7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0007.jpg": {
+    "mtime": 1772862059.2468235,
+    "hash": "7b6b176a0f5b4e8fc404f44f15cebf2a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0008.jpg": {
+    "mtime": 1772862059.3042457,
+    "hash": "a9300b8383e330923126798ce10b5006"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0009.jpg": {
+    "mtime": 1772862059.3635137,
+    "hash": "b91ca2518fa6cb6155556e0246a3a380"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Potato__Late_Blight\\0010.jpg": {
+    "mtime": 1772862059.4218109,
+    "hash": "3ef5b9cda888b335c847c8be527be215"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0001.jpg": {
+    "mtime": 1772862035.668727,
+    "hash": "82ba9dbb9b4362c9835c5b7bdf6f465b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0002.jpg": {
+    "mtime": 1772862035.7267609,
+    "hash": "13a69ba5c0ab6ad8d5f4b6e35bff2e95"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0003.jpg": {
+    "mtime": 1772862035.7869973,
+    "hash": "b3565fac5bb2a8e3a5b0e23a6f50629a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0004.jpg": {
+    "mtime": 1772862035.8432188,
+    "hash": "a842e1bc48efdc1be06848dabc7b5a7a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0005.jpg": {
+    "mtime": 1772862035.894119,
+    "hash": "da5ceec006c7685425bb5fc13ccffe43"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0006.jpg": {
+    "mtime": 1772862035.9458709,
+    "hash": "fadeeaf9f2717c60d44f993fa58ae936"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0007.jpg": {
+    "mtime": 1772862035.9967587,
+    "hash": "7e1a5b8397db9fe8a02f38324ea1efa8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0008.jpg": {
+    "mtime": 1772862036.0512788,
+    "hash": "6231a1664b789a6ae633708c43805ed6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0009.jpg": {
+    "mtime": 1772862036.0983062,
+    "hash": "8494b7ae718dc3d6cac313c361fef2bb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Bacterial_Leaf_Blight\\0010.jpg": {
+    "mtime": 1772862036.164668,
+    "hash": "a38223d1d136b14abe52c2b8e62e629a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0001.jpg": {
+    "mtime": 1772862037.5546594,
+    "hash": "cceffad8f63449d078b2f0a456fe22a0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0002.jpg": {
+    "mtime": 1772862037.6004984,
+    "hash": "980f70a7c2ade7c9607e0769ac2caa73"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0003.jpg": {
+    "mtime": 1772862037.6470833,
+    "hash": "bedddbddac6683c5162f188685d42ca0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0004.jpg": {
+    "mtime": 1772862037.696632,
+    "hash": "8505fefc57b4a81f871e65609275060b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0005.jpg": {
+    "mtime": 1772862037.7462816,
+    "hash": "9fcf23a88e98f90eeb8b8316964eaa39"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0006.jpg": {
+    "mtime": 1772862037.792148,
+    "hash": "9fa0dbb277afb70a9d88fae741a35a01"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0007.jpg": {
+    "mtime": 1772862037.8379798,
+    "hash": "fa979d51d6a18c7132c777ba7166d0d4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0008.jpg": {
+    "mtime": 1772862037.88065,
+    "hash": "85fa93c8eebc53994fbde5f0e0de372e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0009.jpg": {
+    "mtime": 1772862037.9271767,
+    "hash": "477f9e7b848da7acaba85de3894484f5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Brown_Spot\\0010.jpg": {
+    "mtime": 1772862037.9792862,
+    "hash": "3c56dae227b11cb180662670c92d4599"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772862039.4246025,
+    "hash": "cf0b0c38faac59d5fed92b10f8a3d483"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772862039.4726207,
+    "hash": "6d3feaaca1ca9bec98bd32d1b46b0b61"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862039.536,
+    "hash": "767a029d833479b32ef62c9bfc79f2ab"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772862039.5894835,
+    "hash": "5d10c44542f1acc20e7da8675c2c2db3"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772862039.6427107,
+    "hash": "4ae601a78e61ce47b5c641ff1b753c2e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772862039.9173973,
+    "hash": "f7d45fc1310ab4f787119c61d8aae87c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772862040.0920215,
+    "hash": "75d9681d6eda0b5579a98be045296af9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772862040.258021,
+    "hash": "981bd5c6a5090e87697d4b31d052562a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862040.310819,
+    "hash": "9bc49c30f238d4b5c58e306064bd67b0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772862040.4604323,
+    "hash": "299e1a0f70c4c3e70d7f5b169b0db960"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0001.jpg": {
+    "mtime": 1772862043.1171672,
+    "hash": "0d9594d7fe4bed86d9a41584df714a36"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0002.jpg": {
+    "mtime": 1772862043.1704204,
+    "hash": "a47cc3a7516f71fadcb8200b0745952c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0003.jpg": {
+    "mtime": 1772862043.218186,
+    "hash": "f7e78bd28cf5be1dcecc8fb6706ac91f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0004.jpg": {
+    "mtime": 1772862043.2666535,
+    "hash": "fd4677f03237fe844e8a0ab648f1ac1e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0005.jpg": {
+    "mtime": 1772862043.317955,
+    "hash": "1a1ac44b89783a904854e9d63731084e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0006.jpg": {
+    "mtime": 1772862043.3660944,
+    "hash": "67f7637af5020a27e0e515749a470a69"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0007.jpg": {
+    "mtime": 1772862043.4138653,
+    "hash": "e59daf0571c9a93808a7526dba3b40cf"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0008.jpg": {
+    "mtime": 1772862043.4630768,
+    "hash": "fab90d6f2de02171fed9e66c3eef8eda"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0009.jpg": {
+    "mtime": 1772862043.5158415,
+    "hash": "b31163aecc5c8be3d9924c91fbc62903"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Blast\\0010.jpg": {
+    "mtime": 1772862043.5809906,
+    "hash": "9fae1f87fd4f5937568e71bdd2bd8fb5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0001.jpg": {
+    "mtime": 1772862045.0658503,
+    "hash": "35912ae7146d18d02365d9c85aa58241"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0002.jpg": {
+    "mtime": 1772862045.11216,
+    "hash": "d9523d38b91ebed9daabcb93a0c590f1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0003.jpg": {
+    "mtime": 1772862045.1609237,
+    "hash": "38878216d3f2cc6013cb5965aead2899"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0004.jpg": {
+    "mtime": 1772862045.2089372,
+    "hash": "9205d1e722ab4304f3b9b51663b14ea8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0005.jpg": {
+    "mtime": 1772862045.26296,
+    "hash": "1d6ee0696116126f3cb909e00e838ae9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0006.jpg": {
+    "mtime": 1772862045.3143854,
+    "hash": "f2a3a79c30aa04167c0e1fe95ae9d775"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0007.jpg": {
+    "mtime": 1772862045.3656404,
+    "hash": "a5cbeb1b661b2211bdc0c89982dad592"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0008.jpg": {
+    "mtime": 1772862045.4212248,
+    "hash": "ab76f78059a8782f8ca403e7c6554bd6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0009.jpg": {
+    "mtime": 1772862045.472524,
+    "hash": "4dce4c5c6d5d5e1c9c6cd35abb21da96"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Leaf_Scald\\0010.jpg": {
+    "mtime": 1772862045.5305645,
+    "hash": "7f4f594fd88e448a04e0eb804972984d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0001.jpg": {
+    "mtime": 1772862046.9543977,
+    "hash": "0df3309d8b695792be461863a7e9045e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0002.jpg": {
+    "mtime": 1772862047.0078547,
+    "hash": "909a012eeba4259273c58c9e750aa02d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0003.jpg": {
+    "mtime": 1772862047.0613136,
+    "hash": "03d03a6425a4d765b33e99f017842948"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0004.jpg": {
+    "mtime": 1772862047.1244578,
+    "hash": "9744a8eab4010d08b6248e68bace47e1"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0005.jpg": {
+    "mtime": 1772862047.1791549,
+    "hash": "9b7591d5f77af7f7ab8f1c14d91ced71"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0006.jpg": {
+    "mtime": 1772862047.2353857,
+    "hash": "158651a7911acbaffb7c997f5aafa403"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0007.jpg": {
+    "mtime": 1772862047.2877636,
+    "hash": "057d293f2aa2d36acd5e340a8c375474"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0008.jpg": {
+    "mtime": 1772862026.4640746,
+    "hash": "11a17501f6480241b8405b21b34bceb9"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0009.jpg": {
+    "mtime": 1772862026.5123987,
+    "hash": "ef9d99923a952e7967b2e52ac424fe52"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Narrow_Brown_Leaf_Spot\\0010.jpg": {
+    "mtime": 1772862026.5632007,
+    "hash": "3e803065d2cd623e98cc6df43544c588"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0001.jpg": {
+    "mtime": 1772862027.7311928,
+    "hash": "a5a22b6fcdebafa434a0898cd4e58120"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0002.jpg": {
+    "mtime": 1772862027.7833016,
+    "hash": "ae05b0dd945fe549d48a2ab4048c7a20"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0003.jpg": {
+    "mtime": 1772862027.8552713,
+    "hash": "6d40e7d534a1ae5e445e420c21f38e0f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0004.jpg": {
+    "mtime": 1772862027.8989384,
+    "hash": "4e2afe6031fd46e7eeef8f29758112d6"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0005.jpg": {
+    "mtime": 1772862027.9529278,
+    "hash": "d3828d9edb9e84204abbf1b783f20cc4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0006.jpg": {
+    "mtime": 1772862028.0023732,
+    "hash": "095591e8763ec5827f0d47b8023edaff"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0007.jpg": {
+    "mtime": 1772862028.0841885,
+    "hash": "75f86406bad5da26344ef49a2d39b345"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0008.jpg": {
+    "mtime": 1772862028.3941817,
+    "hash": "da8ae2bf01a7defe9b6952d81dbb2d5e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0009.jpg": {
+    "mtime": 1772862028.4411464,
+    "hash": "02b67650e7c0eca879297ec8e62a9b4b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Rice_Hispa\\0010.jpg": {
+    "mtime": 1772862028.4821665,
+    "hash": "4e0e2e34bbda3a8590fb93a2292fe96e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0001.jpg": {
+    "mtime": 1772862029.6514935,
+    "hash": "f16e0e9c76c64a0cd213a7419bd24ccb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0002.jpg": {
+    "mtime": 1772862029.6970658,
+    "hash": "344ba9f071d5098ebfd1103bec422c37"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0003.jpg": {
+    "mtime": 1772862029.7680168,
+    "hash": "14364aa1ff298b70ddbd116ec95837a8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0004.jpg": {
+    "mtime": 1772862029.8144023,
+    "hash": "2a7c34d6678f292203f23daf00cfd296"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0005.jpg": {
+    "mtime": 1772862029.865281,
+    "hash": "73438cdc2dda0cf6cb4de9ffadc5780c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0006.jpg": {
+    "mtime": 1772862029.9164512,
+    "hash": "b384c62ff8755e1c3e4aed4c10fd316a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0007.jpg": {
+    "mtime": 1772862029.965358,
+    "hash": "c37baaf77e0275319ea92b47c8206cfb"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0008.jpg": {
+    "mtime": 1772862030.012066,
+    "hash": "db5b3a08868f41f8e5a90af2fd23d810"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0009.jpg": {
+    "mtime": 1772862030.0618176,
+    "hash": "93753177661fb329a3d1dcd8893e4146"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Rice__Sheath_Blight\\0010.jpg": {
+    "mtime": 1772862030.0901494,
+    "hash": "56ba52a7dec22db9687da10032f49f7d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0001.jpg": {
+    "mtime": 1772862031.4749668,
+    "hash": "179d962e83efc4a573246a691eddadd5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0002.jpg": {
+    "mtime": 1772862031.5047348,
+    "hash": "d8dc8489d6f9180f57326d995b8a5aab"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0003.jpg": {
+    "mtime": 1772862031.515733,
+    "hash": "772d242d5711167c45c0a7cb700bd9b4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0004.jpg": {
+    "mtime": 1772862031.541938,
+    "hash": "ff8139abca01dc21de01dcb2135e95d2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0005.jpg": {
+    "mtime": 1772862031.5589695,
+    "hash": "e48af9101405795884cf1fda4877c10e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0006.jpg": {
+    "mtime": 1772862031.568728,
+    "hash": "e63d6a48994d42f2f8f317200bcc0338"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0007.jpg": {
+    "mtime": 1772862031.577521,
+    "hash": "b1feb38feab9c327cf583cd0b3ef6c78"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0008.jpg": {
+    "mtime": 1772862031.5934868,
+    "hash": "a17b698578dd7542abc592e2c7b59b0d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0009.jpg": {
+    "mtime": 1772862031.617184,
+    "hash": "87e97fb0228a5e93e1f5f1881a8fd55c"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Bacterial_Spot\\0010.jpg": {
+    "mtime": 1772862031.7747045,
+    "hash": "498d7a20d0f8ece676af061158183809"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0001.jpg": {
+    "mtime": 1772862031.9414947,
+    "hash": "fb70568767aa587f3445b4ac8373f8a5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0002.jpg": {
+    "mtime": 1772470705.780008,
+    "hash": "ca851266c265ef3715c2f2c0b827266a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0003.jpg": {
+    "mtime": 1772862031.9583044,
+    "hash": "c7546ce4748520f487df13e46e36a67f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0004.jpg": {
+    "mtime": 1772862032.0263417,
+    "hash": "64b6ae8f947ab61571abfa6991912c40"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0005.jpg": {
+    "mtime": 1772862032.0458736,
+    "hash": "95fd6725e7a05930867688a28d727871"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0006.jpg": {
+    "mtime": 1772470705.8698905,
+    "hash": "635102de2cc08d96f66210c5c9e15be7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0007.jpg": {
+    "mtime": 1772862032.0729806,
+    "hash": "b87a9a51b632c8b035de5899abe78160"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0008.jpg": {
+    "mtime": 1772862032.0873144,
+    "hash": "1f3bb400ce87b9f079ee7918e6bc0c8b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0009.jpg": {
+    "mtime": 1772862032.10083,
+    "hash": "c10deb628b0b70923b1591791fedc6ec"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Early_Blight\\0010.jpg": {
+    "mtime": 1772862032.114887,
+    "hash": "e2e783c0fda5ea45bf2fa91959c47c4f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0001.jpg": {
+    "mtime": 1772862032.1976876,
+    "hash": "6eb3b106356f7f376393a0898e2fa1f7"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0002.jpg": {
+    "mtime": 1772862032.2528322,
+    "hash": "bee73d21a991b20c2151278f2dc3f48f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0003.jpg": {
+    "mtime": 1772862032.3556082,
+    "hash": "aa5e1ac6d7c6279da5ac19414dad9c39"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0004.jpg": {
+    "mtime": 1772862032.397707,
+    "hash": "ce06b56c78a149dfc7c8fc0cb1f6759d"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0005.jpg": {
+    "mtime": 1772862032.4195237,
+    "hash": "eec68455728990953732a097346f2761"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0006.jpg": {
+    "mtime": 1772862032.4287887,
+    "hash": "3cdfa280b6787687e68a88e82d3eb546"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0007.jpg": {
+    "mtime": 1772862032.457793,
+    "hash": "5d97953467ffe13bba882439aa905978"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0008.jpg": {
+    "mtime": 1772862032.6138287,
+    "hash": "419c2644218c35147b611896cb6bf649"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0009.jpg": {
+    "mtime": 1772862032.6289523,
+    "hash": "ff2ebcf343b3f81a5b958c3cc127d094"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Healthy_Leaf\\0010.jpg": {
+    "mtime": 1772862032.6555097,
+    "hash": "3a468956a46842498f959c0f2ce1d98b"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0001.jpg": {
+    "mtime": 1772862032.6919858,
+    "hash": "a7169cd0a57517d9fcd7099f2f7e01d5"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0002.jpg": {
+    "mtime": 1772862032.721122,
+    "hash": "f44086fd6efa7e3a4bd8c6c78d77e880"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0003.jpg": {
+    "mtime": 1772862032.7382,
+    "hash": "b82619e5445baa829723437e7cf6d48a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0004.jpg": {
+    "mtime": 1772862032.7507088,
+    "hash": "123b6a1e2eea5a05d6c1a2e1481a60b0"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0005.jpg": {
+    "mtime": 1772862032.7902849,
+    "hash": "14f6ca278fff2becb9162850849335ec"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0006.jpg": {
+    "mtime": 1772862032.7988822,
+    "hash": "12e24fb2b334b7e711d30f9d7f9d960e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0007.jpg": {
+    "mtime": 1772862032.8859084,
+    "hash": "afe0388a166bbd9f08bf252b5cff2c1f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0008.jpg": {
+    "mtime": 1772862032.89747,
+    "hash": "2237fb523b75be3fd5b7cd1440cf788f"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0009.jpg": {
+    "mtime": 1772862032.9121394,
+    "hash": "753ee00e9eec6c2efde4b790733e090a"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Late_Blight\\0010.jpg": {
+    "mtime": 1772862033.1269374,
+    "hash": "f28be6125ea1f648b6b5cd99552a4721"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0001.jpg": {
+    "mtime": 1772862033.6565714,
+    "hash": "c750540a5abbb19ed8f71fd53f6c6011"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0002.jpg": {
+    "mtime": 1772862033.6675696,
+    "hash": "2f5b3a47a13b5bcdab64c5d04de9f328"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0003.jpg": {
+    "mtime": 1772862033.6975212,
+    "hash": "8c44fb6a1b8485f83f785b178e054bb8"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0004.jpg": {
+    "mtime": 1772470707.0132055,
+    "hash": "7cfb527459b53156a223350ebe295220"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0005.jpg": {
+    "mtime": 1772862033.7087655,
+    "hash": "2d8071125cd8ae277b29b47decd068f2"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0006.jpg": {
+    "mtime": 1772862033.7164626,
+    "hash": "d7dcfac40bef7a4f9dab427c9d167ac4"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0007.jpg": {
+    "mtime": 1772862033.7291381,
+    "hash": "aeaa1415220ed33135cb108cb9c18d54"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0008.jpg": {
+    "mtime": 1772862033.7484787,
+    "hash": "925cc1b21a47ac23b6f093194f32c792"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\models\\Tomato__Mosaic_Virus\\0009.jpg": {
+    "mtime": 1772862033.771005,
+    "hash": "ebef5acee6a33853460b9524abc0062e"
+  },
+  "E:\\agri-ai-platform\\assets\\banner.png": {
+    "mtime": 1778837761.7840948,
+    "hash": "99080790b624938e207187a7228bb36e"
+  },
+  "E:\\agri-ai-platform\\assets\\drone_image.png": {
+    "mtime": 1778837714.6602652,
+    "hash": "884ec61a1b8dfa1c3c33d1bb397d0c40"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\brassica\\all.png": {
+    "mtime": 1778840052.091704,
+    "hash": "1d1c79107ffd7103ca438fd474c9e7c0"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\bacterial leaf blight.png": {
+    "mtime": 1778839088.1813114,
+    "hash": "56dc53ba831b3bba94a0a0e0e16f0fc1"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\brown spot.png": {
+    "mtime": 1778839116.157096,
+    "hash": "3b9130e7e5bed12f203d2ea5666b3cf4"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\cabbage alternaria spot.png": {
+    "mtime": 1778840131.7057061,
+    "hash": "adba637d27dba8183532022412eb052d"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\healthy.png": {
+    "mtime": 1778839144.7922592,
+    "hash": "71dfec72e30d6e34c39999e86ed3e756"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\leaf blast.png": {
+    "mtime": 1778839169.1738532,
+    "hash": "b5826f228c825aaac415e1a7af2e6c7b"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\leaf sclad.png": {
+    "mtime": 1778839201.6818402,
+    "hash": "6295855571db665726a057c29fca0c62"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\narrow brown leaf spot.png": {
+    "mtime": 1778839231.7213094,
+    "hash": "2e04835a991405715d7914fbab19651a"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\rice hispa.png": {
+    "mtime": 1778839261.0650997,
+    "hash": "221a37edbad6dad830df7dda1ac7b75d"
+  },
+  "E:\\agri-ai-platform\\assets\\diseases\\rice\\sheath blight.png": {
+    "mtime": 1778839285.768818,
+    "hash": "cf56743327ea76311a41cec8e593cafb"
   },
   "E:\\agri-ai-platform\\models\\test images\\Cabbage__Alternaria_Spot\\0001.jpg": {
     "mtime": 1772482219.6611078,
@@ -2090,5 +4442,17 @@
   "E:\\agri-ai-platform\\models\\test images\\Tomato__Mosaic_Virus\\0009.jpg": {
     "mtime": 1772862033.771005,
     "hash": "ebef5acee6a33853460b9524abc0062e"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\public\\assets\\demo.mp4": {
+    "mtime": 1778838957.9464657,
+    "hash": "b30579b5d612c9da639d23cd31205e50"
+  },
+  "E:\\agri-ai-platform\\assets\\demo.mp4": {
+    "mtime": 1778838957.9464657,
+    "hash": "b30579b5d612c9da639d23cd31205e50"
+  },
+  "E:\\agri-ai-platform\\assets\\Overview_Videomp_.mp4": {
+    "mtime": 1778838169.1686225,
+    "hash": "f8136f2710c48944063d522097a6de73"
   }
 }

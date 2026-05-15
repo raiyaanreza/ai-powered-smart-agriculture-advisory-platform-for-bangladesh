@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/FastAPI-0.136-009688?style=for-the-badge&logo=fastapi" />
   <img src="https://img.shields.io/badge/Supabase-Realtime-3FCF8E?style=for-the-badge&logo=supabase" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css" />
+  <img src="https://img.shields.io/badge/LangGraph-Orchestration-blue?style=for-the-badge&logo=langchain" />
 </p>
 
 ---
@@ -21,138 +22,114 @@
 
 **AgriVision** is an AI-native agricultural operating system designed to empower the Bangladeshi agricultural sector. It bridges the gap between rural farmers and government expertise using advanced computer vision, multi-agent orchestration, and real-time geospatial intelligence.
 
-> [!IMPORTANT]
-> This platform is architected for horizontal scalability, supporting millions of farmers with localized, expert-verified advisory services.
+The platform is built on a **Modular Monorepo Architecture**, separating public-facing farmer tools from high-security administrative command centers.
 
 ---
 
-## ✨ Core Features
+## 🚀 The AgriVision Journey (Sequential Modules)
 
-### 📡 National Command Center (Admin)
-*   **GIS Outbreak Intelligence**: Real-time interactive map showing disease hotspots across Bangladesh.
-*   **National Alert System**: Instant broadcast of critical weather and pest warnings to targeted farmer regions.
-*   **Farmer Verification**: Automated and manual approval workflows for high-trust agricultural data.
-*   **Encyclopedia Management**: Dynamic control over the national disease library and treatment protocols.
+AgriVision is organized into logical layers that work together to deliver a seamless experience.
 
-### 🚜 Farmer Operations (Public Web)
-*   **AI Disease Diagnosis**: Upload a photo to receive instant identification and treatment steps in Bangla.
-*   **Operational Dashboard**: Track farm health metrics, historical diagnoses, and regional environmental risks.
-*   **AgriBot Advisor**: A LangGraph-powered conversational agent for context-aware agricultural advice.
-*   **Expert Consultation**: Direct access to verified agricultural officers and pathologists.
+### 1. 🚜 Farmer Portal (`apps/web`)
+The primary interface for farmers to interact with the AI.
+*   **AI Disease Diagnosis**: Instant identification of rice diseases (Leaf Blast, Brown Spot, etc.) via image uploads.
+*   **Multi-turn AI Advisor**: A conversational agent that remembers history and provides localized treatment steps in Bangla.
+*   **Farmer Dashboard**: A premium glassmorphic interface featuring an **Animated Semantic Map** of Bangladesh for contextual awareness.
+*   **Onboarding**: Tailored experience for new farmers to set up their crop profiles.
 
----
+### 2. 🏛️ National Command Center (`apps/admin`)
+The "War Room" for agricultural officials and experts.
+*   **GIS Outbreak Intelligence**: Real-time hotspot mapping across districts (Dhaka, Rajshahi, etc.).
+*   **National Alert System**: Broadcast emergency pest/weather warnings to thousands of farmers instantly.
+*   **Disease Library Management**: A visual reference gallery used to update and verify the national agricultural knowledge base.
+*   **Farmer Verification**: Ensuring data integrity across the platform.
 
-## 🏗️ System Architecture
+### 3. 🤖 Intelligence Layer (`services/`)
+The brain of the platform, powered by Python and FastAPI.
+*   **Advisory Service**: Orchestrates LangGraph agents to process diagnosis results and generate expert advice.
+*   **Crop Routing**: Automatically routes images to specialized models for higher accuracy.
+*   **RAG Knowledge Engine**: Grounds AI responses in official BARI/BRRI research data.
 
-```mermaid
-graph TD
-    User((Farmer)) --> WebApp[Public Web App]
-    Admin((Ministry)) --> AdminApp[Admin Command Center]
-    
-    subgraph "Frontend Layer"
-        WebApp
-        AdminApp
-    end
-    
-    subgraph "Orchestration Layer"
-        Agent[LangGraph Multi-Agent Engine]
-    end
-    
-    subgraph "AI & Model Services"
-        Classifier[Crop Classifier]
-        DiseaseModel[Specialized Disease Models]
-        RAG[BARI/BRRI Knowledge Engine]
-    end
-    
-    subgraph "Data Layer"
-        DB[(PostgreSQL + Supabase)]
-        Vector[(Qdrant Vector DB)]
-        Storage[(Object Storage)]
-    end
-    
-    WebApp & AdminApp --> Agent
-    Agent --> Classifier
-    Agent --> DiseaseModel
-    Agent --> RAG
-    Agent --> DB
-    WebApp & AdminApp --> DB
-```
+### 4. 📦 Shared Infrastructure (`packages/`)
+Common logic used across all applications.
+*   **`@agri/ui`**: Shared React components and glassmorphic design tokens.
+*   **`@agri/schemas`**: Unified Zod/Pydantic contracts for frontend-backend parity.
+*   **`@agri/prompts`**: Centralized repository for all LLM instructions.
 
 ---
 
-## 🗺️ Project Roadmap & Status
+## 🛠️ Technology Stack
 
-| Milestone | Feature | Status |
-| :--- | :--- | :--- |
-| **Phase 1** | **Foundation & Auth** | ✅ Done |
-| | **Onboarding Questionnaire** | ✅ Done |
-| **Phase 2** | **Admin Command Center** | ✅ Done |
-| | **Real-time National Alerts** | ✅ Done |
-| | **Interactive GIS Outbreak Map** | ✅ Done |
-| **Phase 3** | **Satellite Field Health (NDVI)** | ⏳ Planned |
-| | **Bengali Voice Interaction** | ⏳ Planned |
-| | **Marketplace Price Tracker** | ⏳ Planned |
-| **Phase 4** | **IoT Sensor Integration** | 📅 Q4 2026 |
-| | **Expert Video Consultation** | 📅 Q4 2026 |
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | Next.js 16 (App Router), React 19, TypeScript 6 |
+| **Backend** | FastAPI (Python 3.12), SQLAlchemy 2.0 |
+| **Styling** | Tailwind CSS 4, Framer Motion (Animations), Shadcn UI |
+| **Database** | Supabase (PostgreSQL), Realtime Sync |
+| **AI/Agents** | Google Gemini 1.5 Flash, LangGraph, LangChain |
+| **Mapping** | Leaflet.js with custom Pulse Animations |
 
 ---
 
-## 🚀 Getting Started
+## 🗺️ Roadmap & Status
+
+| Phase | Milestone | Features | Status |
+| :--- | :--- | :--- | :---: |
+| **1** | **Foundation** | Auth, Onboarding, Basic Diagnosis | ✅ |
+| **2** | **Intelligence** | LangGraph Advisor, Multi-turn Chat, History | ✅ |
+| **3** | **Command** | GIS Heatmaps, National Alerts, Admin Portal | ✅ |
+| **4** | **Stability** | Unified UI, Asset Sync, Model Optimization | ✅ |
+| **5** | **Scale** | Satellite NDVI, Voice Interaction, Marketplace | ⏳ |
+
+---
+
+## 🏃 Getting Started
 
 ### Prerequisites
-*   **Node.js**: v20 or higher
-*   **pnpm**: v9 or higher
-*   **Supabase Account**: For Database, Auth, and Real-time
+* **Node.js**: v20+
+* **Python**: 3.12+
+* **pnpm**: v9+
+* **Supabase CLI** (optional)
 
-### Installation
+### Setup & Installation
 
-1. **Clone the repository**:
+1. **Clone & Install**:
    ```bash
-   git clone https://github.com/your-username/agri-ai-platform.git
-   cd agri-ai-platform
-   ```
-
-2. **Install dependencies**:
-   ```bash
+   git clone https://github.com/RaiyaanReza/I-Powered-Smart-Agriculture-Advisory-Platform-for-Bangladesh.git
    pnpm install
    ```
 
-3. **Configure Environment Variables**:
-   Create `.env.local` in `apps/web/` and `apps/admin/`:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
+2. **Environment Configuration**:
+   Follow the templates in `.env.example` (if provided) or create:
+   - `apps/web/.env.local`
+   - `apps/admin/.env.local`
+   - `services/advisory-service/.env`
 
-4. **Initialize Database**:
-   Run the SQL scripts located in `docs/sql/` in your Supabase SQL Editor.
+3. **Database Migration**:
+   Apply SQL scripts from `docs/sql/` to your Supabase instance.
 
-### Running the Apps
+### Running the Ecosystem
 
-*   **Public Web App**:
+*   **Run Everything (Turbo)**:
     ```bash
-    pnpm dev --filter web
+    pnpm dev
     ```
-*   **Admin Command Center**:
+*   **Run Specific App**:
     ```bash
-    pnpm dev --filter admin
+    pnpm dev --filter web   # Farmer Portal (:3000)
+    pnpm dev --filter admin # Admin Center (:3001)
     ```
 
 ---
 
-## 🛠️ Tech Stack Details
+## 📂 Documentation Guide
 
-*   **Frontend**: [Next.js 16](https://nextjs.org), [React 19](https://react.dev), [Framer Motion](https://www.framer.com/motion/)
-*   **Styling**: [Tailwind CSS 4](https://tailwindcss.com), [Lucide React Icons](https://lucide.dev)
-*   **Backend**: [FastAPI](https://fastapi.tiangolo.com), [Supabase](https://supabase.com)
-*   **AI**: [Google Gemini 2.0](https://ai.google.dev), [LangGraph](https://www.langchain.com/langgraph)
-*   **Mapping**: [Leaflet.js](https://leafletjs.com)
+For deeper dives, explore our specialized documentation:
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+*   📑 **[Project Overview](docs/01_PROJECT_OVERVIEW.md)**: Vision and product philosophy.
+*   🏗️ **[System Architecture](docs/02_SYSTEM_ARCHITECTURE.md)**: Technical deep dive into services and agents.
+*   🎨 **[Design Architecture](docs/03_DESIGN_ARCHITECTURE.md)**: UI patterns, tokens, and UX strategy.
+*   📜 **[Current State](CURRENT_STATE.md)**: Latest sprint progress and active tasks.
 
 ---
 

@@ -28,43 +28,18 @@
 
 ---
 
-## 🚜 Core Functionalities
+### 🚜 System Functionalities & UI
 
-### 1. High-Fidelity Farmer Dashboard
-The Farmer Portal is designed with a **Premium Glassmorphic UI**, balancing technical density with rural accessibility. 
-*   **Animated Semantic Map**: A live, glowing background map of Bangladesh that provides contextual regional awareness.
-*   **Health Tracking**: Monitor farm health trends, historical diagnoses, and active alerts in a unified view.
-
-<p align="center">
-  <img src="assets/farmer_dashboard.png" width="600" alt="Farmer Dashboard Mockup" />
-</p>
-
-### 2. AI-Powered Disease Diagnosis
-Leveraging specialized computer vision models, AgriVision provides instant, high-accuracy diagnosis for critical Bangladeshi crops.
-*   **Domain Routing**: Automatically routes images to specialized models (Rice, Wheat, Corn, etc.).
-*   **Detailed Analytics**: Receive confidence scores, severity estimates, and immediate treatment protocols.
-
-<p align="center">
-  <img src="assets/diagnosis.png" width="600" alt="AI Diagnosis Mockup" />
-</p>
-
-### 3. AgriBot: LangGraph Multi-Agent Advisor
-AgriBot is not just a chatbot; it is a sophisticated orchestration of multiple agents that provide context-aware, research-grounded advice.
-*   **Contextual Memory**: Remembers your previous questions and farm history.
-*   **RAG Integration**: Grounds all advice in official BARI/BRRI research documents for maximum trust.
-
-<p align="center">
-  <img src="assets/agribot.png" width="600" alt="AgriBot Advisor Mockup" />
-</p>
-
-### 4. National Command Center (GIS)
-The administrative "War Room" for the Ministry of Agriculture to monitor and respond to national outbreaks.
-*   **Live Hotspot Mapping**: Real-time interactive GIS map showing disease hotspots with pulse animations.
-*   **Emergency Broadcast**: One-click national alerts to thousands of farmers in high-risk regions.
-
-<p align="center">
-  <img src="assets/admin_gis.png" width="600" alt="Admin Command Center Mockup" />
-</p>
+<table align="center">
+  <tr>
+    <td align="center"><b>Farmer Dashboard</b><br/><img src="assets/farmer_dashboard.png" width="400" alt="Dashboard"/></td>
+    <td align="center"><b>AI Disease Diagnosis</b><br/><img src="assets/diagnosis.png" width="400" alt="Diagnosis"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>AgriBot AI Advisor</b><br/><img src="assets/agribot.png" width="400" alt="AgriBot"/></td>
+    <td align="center"><b>National Command Center</b><br/><img src="assets/admin_gis.png" width="400" alt="Admin GIS"/></td>
+  </tr>
+</table>
 
 ---
 

@@ -43,9 +43,32 @@ export async function POST(req: Request) {
     ]);
 
     const responseText = result.response.text();
-    // Clean potential markdown code blocks
     const jsonStr = responseText.replace(/```json/g, "").replace(/```/g, "").trim();
     const diagnosis = JSON.parse(jsonStr);
+
+    // Save to DB if userId is provided or from session
+    const { userId } = await req.json().catch(() => ({})); 
+    // Note: In a real app, we would get this from the session/token for security.
+    
+    if (userId) {
+      const { createClient } = await import("@supabase/supabase-js");
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      );
+
+      await supabase.from("diagnoses").insert([{
+        user_id: userId,
+        crop: diagnosis.crop,
+        disease: diagnosis.disease,
+        pathogen: diagnosis.pathogen,
+        confidence: diagnosis.confidence,
+        severity: diagnosis.severity,
+        description: diagnosis.description,
+        treatment_bn: diagnosis.treatment_bn,
+        image_url: image.substring(0, 50) // Storing prefix for now, real app uses S3
+      }]);
+    }
 
     return NextResponse.json(diagnosis);
   } catch (error: any) {

@@ -6,8 +6,10 @@ import { ImageUploader } from "./ImageUploader";
 import { ResultDisplay } from "./ResultDisplay";
 import { OutbreakMap } from "./OutbreakMap";
 import { toast } from "sonner";
+import { useAuth } from "@/features/auth/hooks/useAuth";
 
 export function DiagnosisContainer() {
+  const { user, profile } = useAuth();
   const [step, setStep] = useState<"upload" | "processing" | "result">("upload");
   const [image, setImage] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
@@ -29,7 +31,11 @@ export function DiagnosisContainer() {
       const res = await fetch("/api/diagnose", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: base64, language: "bn" }),
+        body: JSON.stringify({ 
+          image: base64, 
+          language: "bn",
+          userId: profile?.id || user?.id
+        }),
       });
       const data = await res.json();
       if (data.error) throw new Error(data.error);

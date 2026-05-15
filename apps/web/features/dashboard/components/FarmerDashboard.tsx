@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 import { 
   Activity, 
   AlertTriangle, 
@@ -19,7 +21,25 @@ import Link from "next/link";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 
 export function FarmerDashboard() {
-  const { profile, loading } = useAuth();
+  const { user, profile, loading } = useAuth();
+  const [realHistory, setRealHistory] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (user) {
+      fetchRealHistory();
+    }
+  }, [user]);
+
+  const fetchRealHistory = async () => {
+    const { data } = await supabase
+      .from("diagnoses")
+      .select("*")
+      .eq("user_id", user?.id)
+      .order("created_at", { ascending: false })
+      .limit(3);
+    
+    if (data) setRealHistory(data);
+  };
   
   const futureFeatures = [
     { name: "Satellite Monitoring", desc: "Daily NDVI vegetation index maps", icon: Lock },
@@ -60,8 +80,8 @@ export function FarmerDashboard() {
                <div className="h-1.5 w-1.5 rounded-full bg-[#2D5A27] animate-pulse" />
                Operational Dashboard
             </div>
-            <h1 className="text-5xl font-black text-[#1A2E1A] tracking-tighter">Welcome, Raiyan.</h1>
-            <p className="text-slate-500 font-medium">Monitoring 12.4 acres across Rajshahi Division.</p>
+            <h1 className="text-5xl font-black text-[#1A2E1A] tracking-tighter">Welcome, {profile?.full_name?.split(' ')[0] || user?.email?.split('@')[0]}.</h1>
+            <p className="text-slate-500 font-medium">Monitoring activity across your agricultural sectors.</p>
           </div>
           
           <div className="flex items-center gap-3">
@@ -200,7 +220,7 @@ export function FarmerDashboard() {
                 <h3 className="text-lg font-black text-[#1A2E1A] tracking-tight flex items-center gap-3">
                    <History className="h-5 w-5 text-[#2D5A27]" /> Diagnostic History
                 </h3>
-                <Link href="/history" className="text-[10px] font-black uppercase tracking-widest text-[#2D5A27] hover:underline">View Ledger</Link>
+                <Link href="/farmer/history" className="text-[10px] font-black uppercase tracking-widest text-[#2D5A27] hover:underline">View Ledger</Link>
              </div>
              
              <div className="overflow-x-auto">
@@ -214,30 +234,30 @@ export function FarmerDashboard() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50">
-                    {[
-                      { unit: "Paddy - Sector A", finding: "Bacterial Blight", date: "May 12", status: "Verified", color: "text-green-600 bg-green-50" },
-                      { unit: "Tomato - Polyhouse 2", finding: "Early Blight", date: "May 08", status: "Pending", color: "text-orange-600 bg-orange-50" },
-                      { unit: "Potato - West Field", finding: "No Disease", date: "Apr 28", status: "Verified", color: "text-green-600 bg-green-50" },
-                    ].map((row, i) => (
+                    {realHistory.length > 0 ? realHistory.map((row, i) => (
                       <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
                         <td className="py-6 pr-4">
-                           <div className="text-[13px] font-black text-slate-900">{row.unit}</div>
+                           <div className="text-[13px] font-black text-slate-900">{row.crop}</div>
                         </td>
                         <td className="py-6 pr-4">
-                           <div className="text-[13px] font-bold text-slate-500">{row.finding}</div>
+                           <div className="text-[13px] font-bold text-slate-500">{row.disease}</div>
                         </td>
                         <td className="py-6 pr-4">
                            <div className="text-[12px] font-medium text-slate-400 flex items-center gap-2">
-                              <Calendar className="h-3.5 w-3.5" /> {row.date}
+                              <Calendar className="h-3.5 w-3.5" /> {new Date(row.created_at).toLocaleDateString()}
                            </div>
                         </td>
                         <td className="py-6 text-right">
-                           <span className={`px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest ${row.color}`}>
-                              {row.status}
+                           <span className={`px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest ${row.confidence > 0.9 ? 'text-green-600 bg-green-50' : 'text-orange-600 bg-orange-50'}`}>
+                              {row.confidence > 0.9 ? 'Verified' : 'Reviewing'}
                            </span>
                         </td>
                       </tr>
-                    ))}
+                    )) : (
+                      <tr>
+                        <td colSpan={4} className="py-12 text-center text-slate-400 text-xs font-bold uppercase tracking-widest">No recent diagnoses found</td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
              </div>

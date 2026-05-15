@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe, LogIn, Leaf, Zap, BookOpen, MessageSquare, ShoppingCart, Search, Layout, ShieldCheck, User } from "lucide-react";
+import { Menu, X, Globe, LogIn, Leaf, Zap, BookOpen, MessageSquare, ShoppingCart, Search, LayoutDashboard, ShieldCheck, User, Bell, History } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { useAuth } from "@/features/auth/hooks/useAuth";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 const staticLinks = [
   { name: "Diagnosis", href: "/diagnose", icon: Zap },
@@ -17,22 +19,55 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [notificationOpen, setNotificationOpen] = useState(false);
   const { user, profile, signOut } = useAuth();
   const pathname = usePathname();
 
+  const [notifications, setNotifications] = useState<any[]>([]);
   const userRole = profile?.role || user?.user_metadata?.role || "user";
 
   const navLinks = [
-    ...(userRole === "farmer" ? [{ name: "Dashboard", href: "/farmer", icon: Layout }] : []),
-    ...(userRole === "admin" ? [{ name: "Admin Panel", href: "/admin", icon: ShieldCheck }] : []),
+    ...(userRole === "farmer" ? [
+      { name: "Dashboard", href: "/farmer", icon: LayoutDashboard },
+      { name: "History", href: "/farmer/history", icon: History }
+    ] : []),
+    ...(userRole === "admin" ? [{ name: "Admin Portal", href: "http://localhost:3001", icon: ShieldCheck }] : []),
     ...staticLinks,
   ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
+    
+    if (user) {
+      fetchNotifications();
+      const channel = supabase
+        .channel('schema-db-changes')
+        .on('postgres_changes', 
+          { event: 'INSERT', schema: 'public', table: 'notifications' }, 
+          (payload) => {
+            setNotifications(prev => [payload.new, ...prev]);
+            toast.info(`New Alert: ${payload.new.title}`);
+          }
+        ).subscribe();
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        supabase.removeChannel(channel);
+      };
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [user]);
+
+  const fetchNotifications = async () => {
+    const { data } = await supabase
+      .from("notifications")
+      .select("*")
+      .or(`target_role.eq.all,target_role.eq.${userRole}`)
+      .order("created_at", { ascending: false })
+      .limit(10);
+    if (data) setNotifications(data);
+  };
 
   return (
     <header 
@@ -82,10 +117,56 @@ export function Navbar() {
             </button>
             <div className="h-5 w-[1px] bg-slate-200 mx-1" />
             
+            {user && (
+              <div className="relative">
+                <button 
+                  onClick={() => setUserMenuOpen(false) || setNotificationOpen(!notificationOpen)}
+                  className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-all relative"
+                >
+                  <Bell className="h-5 w-5" />
+                  <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 border-2 border-white" />
+                </button>
+
+                <AnimatePresence>
+                  {notificationOpen && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      className="absolute right-0 mt-2 w-80 bg-white border border-slate-100 rounded-3xl shadow-2xl shadow-slate-200/50 py-4 z-50 overflow-hidden"
+                    >
+                      <div className="px-6 pb-4 border-b border-slate-50 flex items-center justify-between">
+                        <span className="text-xs font-black text-slate-900 uppercase tracking-widest">Alert Center</span>
+                        <span className="text-[10px] font-black text-[#2D5A27] uppercase tracking-widest cursor-pointer hover:underline">Mark all read</span>
+                      </div>
+                      <div className="max-h-[400px] overflow-y-auto">
+                        {notifications.length === 0 ? (
+                          <div className="px-6 py-10 text-center text-slate-400 text-[10px] font-bold">No active alerts.</div>
+                        ) : (
+                          notifications.map((n) => (
+                            <NotificationItem 
+                              key={n.id}
+                              title={n.title} 
+                              msg={n.message} 
+                              type={n.type}
+                              time={new Date(n.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            />
+                          ))
+                        )}
+                      </div>
+                      <div className="px-6 pt-4 border-t border-slate-50">
+                        <button className="w-full py-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-slate-900 transition-colors">View All History</button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )}
+
             {user ? (
               <div className="relative">
                 <button 
-                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  onClick={() => setNotificationOpen(false) || setUserMenuOpen(!userMenuOpen)}
                   className="flex items-center gap-3 p-1 pr-3 rounded-full border border-slate-200 hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-[#2D5A27]/20"
                 >
                   <div className="h-8 w-8 rounded-full bg-[#052E16] flex items-center justify-center overflow-hidden">
@@ -95,7 +176,7 @@ export function Navbar() {
                       <User className="h-4 w-4 text-white" />
                     )}
                   </div>
-                  <div className="flex flex-col items-start">
+                  <div className="flex flex-col items-start text-left">
                     <span className="text-[11px] font-black text-slate-900 leading-none tracking-tight">
                       {profile?.full_name?.split(' ')[0] || user.email?.split('@')[0]}
                     </span>
@@ -201,6 +282,29 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+function NotificationItem({ title, msg, type, time }: { title: string, msg: string, type: 'info' | 'warning' | 'critical', time: string }) {
+  const icons = {
+    info: <div className="h-2 w-2 rounded-full bg-blue-500" />,
+    warning: <div className="h-2 w-2 rounded-full bg-amber-500" />,
+    critical: <div className="h-2 w-2 rounded-full bg-red-500" />
+  };
+
+  return (
+    <div className="px-6 py-4 hover:bg-slate-50 transition-colors cursor-pointer border-b border-slate-50 last:border-0 group">
+      <div className="flex items-center justify-between mb-1">
+        <div className="flex items-center gap-2">
+          {icons[type]}
+          <span className="text-[11px] font-black text-slate-900 uppercase tracking-tight group-hover:text-[#2D5A27] transition-colors">{title}</span>
+        </div>
+        <span className="text-[9px] font-medium text-slate-400">{time}</span>
+      </div>
+      <p className="text-[10px] text-slate-500 leading-relaxed font-medium">
+        {msg}
+      </p>
+    </div>
   );
 }
 

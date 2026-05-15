@@ -2,20 +2,36 @@
 import { useState, useMemo } from "react";
 import { LibraryHero, LibrarySidebar } from "./LibraryLayout";
 import { LibraryGrid, LibraryDetails } from "./LibraryContent";
-import { diseases, Disease } from "../data/diseases";
+import { diseases as staticDiseases, Disease } from "../data/diseases";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ChevronDown, Zap, MessageSquare, FilterX } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
 export function LibraryContainer() {
+  const [dbDiseases, setDbDiseases] = useState<Disease[]>([]);
   const [selectedDisease, setSelectedDisease] = useState<Disease | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCrops, setSelectedCrops] = useState<string[]>(["Rice"]);
   const [selectedSeverities, setSelectedSeverities] = useState<string[]>([]);
   const [visibleCount, setVisibleCount] = useState(20);
 
+  useEffect(() => {
+    fetchDbDiseases();
+  }, []);
+
+  const fetchDbDiseases = async () => {
+    const { data } = await supabase.from("diseases").select("*");
+    if (data) setDbDiseases(data as Disease[]);
+  };
+
+  const allDiseases = useMemo(() => {
+    return [...dbDiseases, ...staticDiseases];
+  }, [dbDiseases]);
+
   const filteredDiseases = useMemo(() => {
-    return diseases.filter(d => {
+    return allDiseases.filter(d => {
       const matchesSearch = d.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             d.nameBn.includes(searchQuery) ||
                             d.crop.toLowerCase().includes(searchQuery.toLowerCase());

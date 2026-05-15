@@ -18,22 +18,27 @@ You are an AI coding agent working on a **government‑scale, modular, AI‑nati
    → Do not modify multiple features or services in one request.  
    → Do not accept parallel edits on the same module from different agents.
 
-3. **Humans do cheap repetitive setup**  
+3. **Strict App Separation**
+   → **Admin Features** (National Intelligence, GIS Maps, Farmer Verification, Broadcasts) MUST reside in `apps/admin/`.
+   → **Public/Farmer Features** (Diagnosis, Advisory, Marketplace) MUST reside in `apps/web/`.
+   → Never add admin-only routes to the public `web` app.
+
+4. **Humans do cheap repetitive setup**  
    → You will never be asked to install packages, initialise frameworks, or configure Docker.
 
-4. **Use Graphify before searching the repo**  
+5. **Use Graphify before searching the repo**  
    → Always consult `graphify-out/GRAPH_REPORT.md` or run `/graphify query` before glob/grep.
 
-5. **Never explore the whole repository**  
+6. **Never explore the whole repository**  
    → The user will provide exact folders, APIs, and schemas. Stay inside them.
 
-6. **Contract‑first development**  
+7. **Contract‑first development**  
    → Schemas in `packages/schemas/` (Zod) and `services/*/app/schemas/` (Pydantic) are the source of truth.
 
-7. **AI prompts must stay in `packages/prompts/`**  
+8. **AI prompts must stay in `packages/prompts/`**  
    → Never hardcode LLM instructions inside frontend components or backend endpoints.
 
-8. **Each service/feature must have a local `AGENTS.md`**  
+9. **Each service/feature must have a local `AGENTS.md`**  
    → When you enter a new folder, read its `AGENTS.md` for local conventions.
 
 ---

@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { createClient } from "@supabase/supabase-js";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 export async function POST(req: Request) {
   try {
-    const { image, language = "bn" } = await req.json();
+    const body = await req.json();
+    const { image, language = "bn", userId } = body;
 
     if (!image) {
       return NextResponse.json({ error: "No image provided" }, { status: 400 });
@@ -35,8 +37,6 @@ export async function POST(req: Request) {
           yoloDisease = orchData.diagnosis.disease_class;
           yoloConfidence = orchData.diagnosis.confidence || 0.0;
         }
-      } else {
-        console.warn("Orchestrator returned error, falling back to pure Gemini:", await orchestratorRes.text());
       }
     } catch (e) {
       console.warn("Could not reach local agent-orchestrator, falling back to pure Gemini:", e);
@@ -55,18 +55,17 @@ export async function POST(req: Request) {
       (Confidence: ${yoloConfidence})
       
       If the vision model says "Unknown", rely entirely on the image to make your own judgment.
-      If the vision model provides a specific crop and disease, base your treatment plan on that, but visually verify it makes sense.
-
-      BE CONCISE AND TOKEN-SAVING. Use this JSON format strictly:
+      
+      BE CONCISE. Use this JSON format:
       {
         "crop": "Crop Name",
         "disease": "Disease Name",
-        "pathogen": "Scientific name of pathogen",
+        "pathogen": "Scientific name",
         "confidence": 0.95,
         "severity": "Low|Medium|High",
         "description": "Short description",
-        "treatment_en": ["Step 1 EN", "Step 2 EN"],
-        "treatment_bn": ["Step 1 BN", "Step 2 BN"],
+        "treatment_en": ["Step 1 EN"],
+        "treatment_bn": ["Step 1 BN"],
         "prevention": "One sentence tip"
       }
     `;
@@ -85,34 +84,28 @@ export async function POST(req: Request) {
     const jsonStr = responseText.replace(/```json/g, "").replace(/```/g, "").trim();
     const diagnosis = JSON.parse(jsonStr);
 
-    // Override with YOLO confidence if YOLO was successful and confident
-    if (yoloDisease !== "Unknown" && yoloConfidence > 0.5) {
-        diagnosis.crop = yoloCrop !== "Unknown" ? yoloCrop : diagnosis.crop;
-        diagnosis.disease = yoloDisease;
-        diagnosis.confidence = yoloConfidence;
-    }
+    // Hard-fix for Rice bug: Ensure we use the actual detected crop
+    const finalCrop = yoloCrop !== "Unknown" ? yoloCrop : diagnosis.crop;
 
-    // Save to DB if userId is provided
-    const { userId } = await req.json().catch(() => ({})); 
-    
+    // Save to DB using service role to bypass RLS for demo
     if (userId) {
-      const { createClient } = await import("@supabase/supabase-js");
-      const supabase = createClient(
+      const supabaseAdmin = createClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+        process.env.SUPABASE_SERVICE_ROLE_KEY! || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
       );
 
-      await supabase.from("diagnoses").insert([{
+      await supabaseAdmin.from("diagnoses").insert([{
         farmer_id: userId,
-        disease_detected: `${diagnosis.crop} - ${diagnosis.disease}`,
+        crop_type: finalCrop, // Correctly saving the crop type
+        disease_detected: diagnosis.disease,
         confidence_score: diagnosis.confidence,
         severity: diagnosis.severity,
-        expert_notes: diagnosis.treatment_en?.[0] || diagnosis.description,
-        image_url: image.substring(0, 50) 
+        expert_notes: diagnosis.description,
+        image_url: image.substring(0, 100) 
       }]);
     }
 
-    return NextResponse.json(diagnosis);
+    return NextResponse.json({ ...diagnosis, crop: finalCrop });
   } catch (error: any) {
     console.error("Diagnosis Error:", error);
     return NextResponse.json({ error: "Failed to process image" }, { status: 500 });

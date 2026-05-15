@@ -4,10 +4,9 @@ import { Navbar, Footer } from "../features/landing/components/Layout";
 import { Hero } from "../features/landing/components/Hero";
 import { TrustedBy } from "../features/landing/components/TrustedBy";
 import { Features } from "../features/landing/components/Features";
-import { HowItWorks } from "../features/landing/components/HowItWorks";
-import { Testimonials } from "../features/landing/components/Testimonials";
 import { Impact } from "../features/landing/components/Impact";
 import { CTA } from "../features/landing/components/CTA";
+import { PipelineAnimation } from "../features/landing/components/PipelineAnimation";
 
 export const metadata: Metadata = {
   title: "AgriVision | National AI Platform for Smart Farming",
@@ -33,8 +32,7 @@ export default function LandingPage() {
         <Hero />
         <TrustedBy />
         <Features />
-        <HowItWorks />
-        <Testimonials />
+        <PipelineAnimation />
         <Impact />
         <CTA />
       </main>

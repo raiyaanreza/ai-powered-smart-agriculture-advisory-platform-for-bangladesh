@@ -36,7 +36,7 @@ The Farmer Portal is designed with a **Premium Glassmorphic UI**, balancing tech
 *   **Health Tracking**: Monitor farm health trends, historical diagnoses, and active alerts in a unified view.
 
 <p align="center">
-  <img src="assets/farmer_dashboard.png" width="90%" alt="Farmer Dashboard Mockup" />
+  <img src="assets/farmer_dashboard.png" width="600" alt="Farmer Dashboard Mockup" />
 </p>
 
 ### 2. AI-Powered Disease Diagnosis
@@ -45,7 +45,7 @@ Leveraging specialized computer vision models, AgriVision provides instant, high
 *   **Detailed Analytics**: Receive confidence scores, severity estimates, and immediate treatment protocols.
 
 <p align="center">
-  <img src="assets/diagnosis.png" width="90%" alt="AI Diagnosis Mockup" />
+  <img src="assets/diagnosis.png" width="600" alt="AI Diagnosis Mockup" />
 </p>
 
 ### 3. AgriBot: LangGraph Multi-Agent Advisor
@@ -54,7 +54,7 @@ AgriBot is not just a chatbot; it is a sophisticated orchestration of multiple a
 *   **RAG Integration**: Grounds all advice in official BARI/BRRI research documents for maximum trust.
 
 <p align="center">
-  <img src="assets/agribot.png" width="90%" alt="AgriBot Advisor Mockup" />
+  <img src="assets/agribot.png" width="600" alt="AgriBot Advisor Mockup" />
 </p>
 
 ### 4. National Command Center (GIS)
@@ -63,7 +63,7 @@ The administrative "War Room" for the Ministry of Agriculture to monitor and res
 *   **Emergency Broadcast**: One-click national alerts to thousands of farmers in high-risk regions.
 
 <p align="center">
-  <img src="assets/admin_gis.png" width="90%" alt="Admin Command Center Mockup" />
+  <img src="assets/admin_gis.png" width="600" alt="Admin Command Center Mockup" />
 </p>
 
 ---
@@ -111,6 +111,18 @@ graph TD
 *   **AI/Agents**: [Google Gemini 1.5 Flash](https://ai.google.dev), [LangGraph](https://www.langchain.com/langgraph), [LangChain](https://langchain.com)
 *   **Data Layer**: [Supabase](https://supabase.com), [PostgreSQL](https://postgresql.org), [Qdrant](https://qdrant.tech)
 *   **Styling**: [Tailwind CSS 4](https://tailwindcss.com), [Shadcn UI](https://ui.shadcn.com)
+
+---
+
+## 🚀 Future Expansion & Upcoming Features
+
+AgriVision is designed to evolve into a full-scale **National Agricultural Digital Twin**. Our future roadmap includes:
+
+- 🛰️ **Satellite Field Health (NDVI)**: Integrating Sentinel-2 data to monitor biomass, water stress, and crop growth across entire districts.
+- 🗣️ **Bengali Voice Interaction (NLP)**: Real-time speech-to-text advisory for farmers, supporting regional dialects and low-literacy accessibility.
+- 💰 **Marketplace Price Tracker**: Dynamic regional crop pricing and demand forecasting to help farmers maximize their profit margins.
+- 🌡️ **IoT Edge Integration**: Direct connectivity with soil moisture, pH, and nutrient sensors for precision fertilizer and irrigation guidance.
+- 📉 **Predictive Outbreak Modeling**: AI-driven forecasting that predicts pest and disease spread 14 days in advance based on weather and historical GIS data.
 
 ---
 

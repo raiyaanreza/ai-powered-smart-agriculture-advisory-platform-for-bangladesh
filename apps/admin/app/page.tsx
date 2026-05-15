@@ -181,7 +181,7 @@ export default function AdminDashboard() {
             Administrative access required. Please sign in with an authorized account to access monitoring tools.
           </p>
           <button 
-            onClick={() => window.location.href = "http://localhost:3000/login"}
+            onClick={() => window.location.href = "/login"}
             className="w-full h-14 rounded-2xl bg-[#052E16] text-white font-black text-xs uppercase tracking-widest hover:bg-black transition-all"
           >
             Sign In to Admin

@@ -11,6 +11,7 @@ export default function OnboardingPage() {
   const { user, profile, loading } = useAuth();
   const [role, setRole] = useState<UserRole | null>(null);
   const [step, setStep] = useState<"role" | "questions">("role");
+  const adminAppUrl = process.env.NEXT_PUBLIC_ADMIN_APP_URL || "http://localhost:3001";
 
   // Questionnaire state
   const [farmSize, setFarmSize] = useState("");
@@ -35,7 +36,10 @@ export default function OnboardingPage() {
       if (hasCompletedOnboarding) {
         const role = profile?.role || user?.user_metadata?.role || "user";
         let dest = "/";
-        if (role === "admin") dest = "/admin";
+        if (role === "admin") {
+          window.location.href = adminAppUrl;
+          return;
+        }
         else if (role === "farmer") dest = "/farmer";
         router.push(dest);
         return;
@@ -44,7 +48,7 @@ export default function OnboardingPage() {
       // If user has an existing role set (e.g., admin was assigned), skip onboarding
       const existingRole = profile?.role || user?.user_metadata?.role;
       if (existingRole === "admin") {
-        router.push("/admin");
+        window.location.href = adminAppUrl;
       }
     }
   }, [user, profile, loading, router]);
@@ -77,7 +81,10 @@ export default function OnboardingPage() {
 
       // Determine destination
       let dest = "/";
-      if (selectedRole === "admin") dest = "/admin";
+      if (selectedRole === "admin") {
+        window.location.href = adminAppUrl;
+        return;
+      }
       else if (selectedRole === "farmer") dest = "/farmer";
 
       router.push(dest);

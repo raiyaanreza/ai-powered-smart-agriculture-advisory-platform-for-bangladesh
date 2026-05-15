@@ -19,6 +19,7 @@ import {
 import Link from "next/link";
 
 import { useAuth } from "@/features/auth/hooks/useAuth";
+import { DashboardBackground } from "./DashboardBackground";
 
 export function FarmerDashboard() {
   const { user, profile, loading } = useAuth();
@@ -70,7 +71,9 @@ export function FarmerDashboard() {
   }
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen">
+    <div className="relative min-h-screen">
+      <DashboardBackground />
+      <div className="relative z-10">
       <div className="max-w-[1400px] mx-auto px-6 py-12">
         
         {/* Header Section */}
@@ -85,7 +88,7 @@ export function FarmerDashboard() {
           </div>
           
           <div className="flex items-center gap-3">
-             <div className="bg-white border border-slate-200 rounded-2xl p-1 flex items-center shadow-sm">
+             <div className="bg-white/60 backdrop-blur-xl border border-white/20 rounded-2xl p-1 flex items-center shadow-2xl">
                 <button className="px-5 py-2.5 rounded-xl bg-[#052E16] text-white text-[12px] font-black uppercase tracking-widest shadow-lg shadow-green-900/10">
                    Overview
                 </button>
@@ -104,7 +107,7 @@ export function FarmerDashboard() {
         <div className="grid lg:grid-cols-12 gap-6 mb-8">
           
           {/* Primary Health Metric */}
-          <div className="lg:col-span-8 bg-white border border-slate-200 rounded-[2.5rem] p-10 relative overflow-hidden group shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500">
+          <div className="lg:col-span-8 bg-white/70 backdrop-blur-lg border border-white/30 rounded-[2.5rem] p-10 relative overflow-hidden group shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all duration-500">
             <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
                <Activity className="h-48 w-48 text-slate-900" />
             </div>
@@ -169,7 +172,7 @@ export function FarmerDashboard() {
 
           {/* Regional Risk & Weather */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="bg-[#0F172A] rounded-[2.5rem] p-10 text-white shadow-sm overflow-hidden relative">
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] p-10 text-white shadow-2xl overflow-hidden relative border border-white/10">
                <div className="absolute top-0 right-0 p-8 opacity-20">
                   <CloudRain className="h-20 w-20" />
                </div>
@@ -190,7 +193,7 @@ export function FarmerDashboard() {
                </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm">
+            <div className="bg-white/70 backdrop-blur-lg border border-white/30 rounded-[2.5rem] p-10 shadow-xl">
                <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8">Quick Contacts</div>
                <div className="space-y-4">
                   {[
@@ -215,7 +218,7 @@ export function FarmerDashboard() {
         <div className="grid lg:grid-cols-12 gap-6">
           
           {/* History Section */}
-          <div className="lg:col-span-7 bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm overflow-hidden">
+          <div className="lg:col-span-7 bg-white/70 backdrop-blur-lg border border-white/30 rounded-[2.5rem] p-10 shadow-xl overflow-hidden">
              <div className="flex items-center justify-between mb-10">
                 <h3 className="text-lg font-black text-[#1A2E1A] tracking-tight flex items-center gap-3">
                    <History className="h-5 w-5 text-[#2D5A27]" /> Diagnostic History
@@ -288,8 +291,9 @@ export function FarmerDashboard() {
 
         </div>
 
+        </div>
+        </div>
       </div>
-    </div>
   );
 }
 

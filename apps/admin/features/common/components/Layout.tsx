@@ -117,7 +117,7 @@ export function Navbar() {
               </div>
             ) : (
               <Link 
-                href="http://localhost:3000/login"
+                href="/login"
                 className="h-9 px-5 rounded-full bg-[#052E16] text-white text-[12px] font-black flex items-center gap-2 hover:bg-[#064E3B] transition-all shadow-lg shadow-green-950/20 active:scale-95"
               >
                 <LogIn className="h-4 w-4 text-white" />

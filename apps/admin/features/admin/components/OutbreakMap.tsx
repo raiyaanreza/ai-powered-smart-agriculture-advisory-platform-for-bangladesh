@@ -1,21 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
-
-// Fix for Leaflet default icon issues in Next.js
-const DefaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
-
-L.Marker.prototype.options.icon = DefaultIcon;
 
 interface Report {
   id: string;
@@ -69,56 +55,78 @@ export default function OutbreakMap() {
     }
   };
 
+  const projectPoint = (latitude: number, longitude: number) => {
+    const lonMin = 88.0;
+    const lonMax = 92.9;
+    const latMin = 20.5;
+    const latMax = 26.8;
+
+    const x = ((longitude - lonMin) / (lonMax - lonMin)) * 100;
+    const y = (1 - (latitude - latMin) / (latMax - latMin)) * 100;
+
+    return {
+      left: `${Math.max(5, Math.min(95, x))}%`,
+      top: `${Math.max(5, Math.min(95, y))}%`,
+    };
+  };
+
   return (
-    <div className="h-[500px] w-full rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-inner bg-slate-50 relative z-10">
-      {loading ? (
-        <div className="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm z-20">
-          <div className="flex flex-col items-center gap-4">
-            <div className="h-10 w-10 border-4 border-[#052E16] border-t-transparent rounded-full animate-spin" />
-            <span className="text-xs font-black uppercase tracking-widest text-slate-400">Loading Geospatial Data...</span>
-          </div>
-        </div>
-      ) : (
-        <MapContainer 
-          center={[23.685, 90.3563]} 
-          zoom={7} 
-          style={{ height: "100%", width: "100%" }}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    <div className="h-125 w-full rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-inner bg-slate-50 relative z-10">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-br from-white via-slate-50 to-slate-100" />
+        <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full opacity-15 drop-shadow-2xl">
+          <path
+            d="M150 50 L250 50 L300 150 L350 250 L300 400 L200 450 L100 400 L50 250 L100 150 Z"
+            fill="#052E16"
+            stroke="#052E16"
+            strokeWidth="2"
           />
-          {reports.map((report) => (
-            <div key={report.id}>
-              <Marker position={[report.latitude, report.longitude]}>
-                <Popup className="custom-popup">
-                  <div className="p-2">
-                    <h3 className="text-sm font-black text-slate-900 mb-1">{report.disease_name}</h3>
-                    <p className="text-[10px] font-bold text-slate-500 mb-2">{report.location_name}</p>
-                    <div className={`px-2 py-0.5 rounded-full inline-block text-[8px] font-black uppercase tracking-widest text-white`} style={{ backgroundColor: getSeverityColor(report.severity) }}>
-                      {report.severity} Severity
-                    </div>
-                  </div>
-                </Popup>
-              </Marker>
-              <Circle 
-                center={[report.latitude, report.longitude]} 
-                radius={20000} // 20km
-                pathOptions={{ 
-                  fillColor: getSeverityColor(report.severity), 
-                  color: getSeverityColor(report.severity),
-                  fillOpacity: 0.1,
-                  weight: 1
-                }} 
-              />
+        </svg>
+
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '24px 24px' }}
+        />
+
+        {loading ? (
+          <div className="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm z-20">
+            <div className="flex flex-col items-center gap-4">
+              <div className="h-10 w-10 border-4 border-[#052E16] border-t-transparent rounded-full animate-spin" />
+              <span className="text-xs font-black uppercase tracking-widest text-slate-400">Loading Geospatial Data...</span>
             </div>
-          ))}
-        </MapContainer>
-      )}
+          </div>
+        ) : reports.length === 0 ? (
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <div className="rounded-2xl border border-slate-200 bg-white/90 px-5 py-3 text-[10px] font-black uppercase tracking-widest text-slate-400 shadow-lg">
+              No live outbreak reports yet.
+            </div>
+          </div>
+        ) : (
+          reports.map((report) => {
+            const position = projectPoint(report.latitude, report.longitude);
+            const severityColor = getSeverityColor(report.severity);
+
+            return (
+              <div key={report.id} className="absolute" style={{ left: position.left, top: position.top }}>
+                <div
+                  className="absolute -inset-4 rounded-full opacity-20"
+                  style={{ backgroundColor: severityColor }}
+                />
+                <div
+                  className="relative h-3 w-3 rounded-full shadow-lg border-2 border-white"
+                  style={{ backgroundColor: severityColor }}
+                />
+                <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded-lg shadow-sm border border-slate-100 text-[9px] font-black text-slate-900 z-20">
+                  {report.location_name}
+                </div>
+              </div>
+            );
+          })
+        )}
+      </div>
       
       {/* Map Legend */}
-      <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-xl z-[1000] space-y-2">
+      <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-xl z-1000 space-y-2">
         <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Outbreak Intensity</h4>
         <div className="flex items-center gap-3">
           <div className="h-3 w-3 rounded-full bg-red-500" />

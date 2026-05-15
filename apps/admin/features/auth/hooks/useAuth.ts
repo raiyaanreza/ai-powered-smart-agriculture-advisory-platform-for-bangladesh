@@ -20,6 +20,27 @@ export function useAuth() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const fetchProfile = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error("Error fetching profile:", error);
+        setProfile(null);
+      } else {
+        setProfile(data);
+      }
+    } catch (err) {
+      console.error("Error fetching profile:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     console.log("useAuth useEffect started");
     const timeout = setTimeout(() => {
@@ -60,26 +81,6 @@ export function useAuth() {
       return () => clearTimeout(timeout);
     }
   }, []);
-
-  async function fetchProfile(userId: string) {
-    try {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", userId)
-        .single();
-
-      if (error && error.code === "PGRST116") {
-        setProfile(null);
-      } else {
-        setProfile(data);
-      }
-    } catch (err) {
-      console.error("Error fetching profile:", err);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   async function signOut() {
     await supabase.auth.signOut();

@@ -79,6 +79,14 @@ export default function LoginPage() {
             </Link>
           </div>
           <AuthForm />
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm">
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+              Government staff and verified admins use the same sign-in flow.
+            </p>
+            <p className="mt-1 text-[11px] font-medium text-slate-500">
+              Approved admin profiles are routed to the Command Center after login.
+            </p>
+          </div>
         </motion.div>
       </div>
 

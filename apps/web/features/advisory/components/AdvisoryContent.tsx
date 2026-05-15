@@ -1,7 +1,6 @@
 "use client";
 import { Paperclip, Mic, Send, CheckCircle2, Leaf, Zap, X, Plus } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Message {
@@ -23,6 +22,7 @@ export function ChatInterface() {
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8001";
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -54,7 +54,7 @@ export function ChatInterface() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8001/advisory/chat", {
+      const response = await fetch(`${advisoryApiBase}/advisory/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 

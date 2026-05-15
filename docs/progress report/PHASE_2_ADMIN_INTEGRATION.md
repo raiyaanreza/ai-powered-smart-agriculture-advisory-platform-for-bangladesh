@@ -36,6 +36,12 @@ In this phase, we transformed the AgriVision Admin module from a static placehol
 - **Farmer Ledger**: Implemented a secure history view where farmers can track their past crop health, treatment steps, and expert verification status.
 - **Real-Time Sync**: The Farmer Dashboard now reflects live data from the diagnostic history.
 
+### 7. Verified Runtime Access Paths
+- **Public App**: Confirmed the landing page, diagnosis page, advisory page, farmer dashboard, and login flow render correctly in the browser.
+- **Advisory Chat**: Confirmed the advisor service responds successfully with Gemini 3.1 Flash Lite.
+- **Admin Access**: Added a local admin login route in `apps/admin` so the command center can be opened directly from the admin origin after sign-in.
+- **Dynamic Maps**: Verified the admin GIS map is backed by live `reports` data and updated the diagnosis map to read from the same live dataset instead of static demo points.
+
 ## 🛠️ Technical Implementation
 - **Database**: Created `notifications`, `diseases`, `reports`, and `diagnoses` tables in Supabase.
 - **GIS Engine**: Integrated `leaflet` and `react-leaflet` with dynamic SSR-safe rendering.

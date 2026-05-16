@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 
 import { Toaster } from "sonner";
 
+import { QueryProvider } from "@/components/providers/QueryProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,8 +26,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full scroll-smooth`}>
       {/* Force light background at the root to prevent flash */}
       <body className="min-h-full flex flex-col" style={{ color: "#1E293B" }}>
-        {children}
-        <Toaster position="top-center" richColors />
+        <QueryProvider>
+          {children}
+          <Toaster position="top-center" richColors />
+        </QueryProvider>
       </body>
     </html>
   );

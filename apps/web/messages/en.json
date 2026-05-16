@@ -1,0 +1,22 @@
+{
+  "Hero": {
+    "badge": "National AI Infrastructure · Bangladesh",
+    "title_start": "Protect Your Crops with",
+    "title_highlight": "Instant AI",
+    "title_end": "Diagnosis",
+    "subtitle": "Upload a photo of your affected crop. Get an expert-verified treatment plan in Bangla within seconds — completely free.",
+    "cta_primary": "Start Free Diagnosis",
+    "cta_secondary": "See How It Works",
+    "trust_1": "Govt. Verified",
+    "trust_2": "99.2% Accurate",
+    "trust_3": "Free for Farmers",
+    "stats_active": "Active Farmers",
+    "stats_accuracy": "AI Accuracy",
+    "stats_time": "Diagnosis Time",
+    "stats_districts": "Districts",
+    "upload_title": "Upload crop photo",
+    "upload_subtitle": "Drag & drop or tap to capture",
+    "view_report": "View Full Report in Bangla",
+    "live_status": "Live AI · Online"
+  }
+}

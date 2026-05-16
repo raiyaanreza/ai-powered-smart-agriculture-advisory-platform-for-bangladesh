@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 import {
   Activity,
   AlertTriangle,
@@ -273,7 +273,7 @@ export function FarmerDashboard() {
   }, [user]);
 
   const fetchRealHistory = async () => {
-    const { data } = await supabaseAdmin
+    const { data } = await supabase
       .from("diagnoses")
       .select("*")
       .eq("farmer_id", user?.id)

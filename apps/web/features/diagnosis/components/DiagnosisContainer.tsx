@@ -7,7 +7,7 @@ import { ResultDisplay } from "./ResultDisplay";
 import { OutbreakMap } from "./OutbreakMap";
 import { toast } from "sonner";
 import { useAuth } from "@/features/auth/hooks/useAuth";
-import { supabase, supabaseAdmin } from "@/lib/supabase";
+import { useDiagnosisStats, useDiagnoseImage } from "../hooks/useDiagnosis";
 
 export function DiagnosisContainer() {
   const { user, profile } = useAuth();
@@ -16,73 +16,17 @@ export function DiagnosisContainer() {
   const [result, setResult] = useState<any>(null);
   const [usageCount, setUsageCount] = useState(0);
 
-  // Dynamic Dashboard Stats
-  const [diagnosesToday, setDiagnosesToday] = useState<number>(0);
-  const [modelPrecision, setModelPrecision] = useState<string>("99.1%");
-  const [recentDiagnoses, setRecentDiagnoses] = useState<any[]>([]);
+  const { data: stats } = useDiagnosisStats();
+  const diagnoseMutation = useDiagnoseImage();
+
+  const diagnosesToday = stats?.diagnosesToday || 0;
+  const modelPrecision = stats?.modelPrecision || "99.1%";
+  const recentDiagnoses = stats?.recentDiagnoses || [];
 
   useEffect(() => {
     const count = parseInt(localStorage.getItem("agri_usage_count") || "0");
     setUsageCount(count);
-
-    // Fetch dynamic stats
-    fetchDynamicStats();
-
-    // Subscribe to realtime updates for diagnoses
-    const channel = supabase
-      .channel('public:diagnoses')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'diagnoses' }, (payload) => {
-        // Auto refresh when a new diagnosis arrives
-        fetchDynamicStats();
-      })
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
   }, []);
-
-  const fetchDynamicStats = async () => {
-    try {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      // 1. Diagnoses count today
-      const { count, error: countErr } = await supabaseAdmin
-        .from('diagnoses')
-        .select('*', { count: 'exact', head: true })
-        .gte('created_at', today.toISOString());
-
-      if (!countErr && count !== null) {
-        setDiagnosesToday(count + 1420); // Add base for visual realistically if low db count
-      }
-
-      // 2. Average precision
-      const { data: precData, error: precErr } = await supabaseAdmin
-        .from('diagnoses')
-        .select('confidence_score')
-        .gte('created_at', today.toISOString());
-
-      if (!precErr && precData && precData.length > 0) {
-        const sum = precData.reduce((acc, curr) => acc + (Number(curr.confidence_score) || 0.95), 0);
-        const avg = sum / precData.length;
-        setModelPrecision((avg * 100).toFixed(1) + "%");
-      }
-
-      // 3. Recent 3 Diagnoses
-      const { data: recent, error: recErr } = await supabaseAdmin
-        .from('diagnoses')
-        .select('crop_detected, disease_detected, district, created_at')
-        .order('created_at', { ascending: false })
-        .limit(3);
-
-      if (!recErr && recent) {
-        setRecentDiagnoses(recent);
-      }
-    } catch (e) {
-      console.error("Failed to fetch dynamic stats", e);
-    }
-  };
 
   const handleUpload = async (base64: string) => {
     if (usageCount >= 3) {
@@ -92,16 +36,11 @@ export function DiagnosisContainer() {
     setImage(base64);
     setStep("processing");
     try {
-      const res = await fetch("/api/diagnose", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          image: base64,
-          language: "bn",
-          userId: profile?.id || user?.id
-        }),
+      const data = await diagnoseMutation.mutateAsync({
+        image: base64,
+        userId: profile?.id || user?.id
       });
-      const data = await res.json();
+      
       if (data.error) throw new Error(data.error);
       setResult(data);
       setUsageCount(prev => prev + 1);
@@ -250,7 +189,7 @@ export function DiagnosisContainer() {
               </div>
 
               <div className="space-y-5">
-                {recentDiagnoses.length > 0 ? recentDiagnoses.map((item, i) => {
+                {recentDiagnoses.length > 0 ? recentDiagnoses.map((item: any, i: number) => {
                   const isHealthy = item.disease_detected?.toLowerCase().includes("healthy");
                   const iconComp = isHealthy ? Leaf : Sparkles;
                   const color = isHealthy ? "text-green-500" : "text-amber-500";

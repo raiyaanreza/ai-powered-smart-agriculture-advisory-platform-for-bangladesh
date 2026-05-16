@@ -45,12 +45,13 @@ data/processed/
 
 # --- Model Artifacts ---
 *.pth
-*.pt
 *.onnx
 *.bin
 *.weights
-models/*/
+# Ignore everything in models/ except the README and .pt weight files
+models/**
 !models/README.md
+!models/**/*.pt
 
 # --- AI / Agent / IDE ---
 .ai/

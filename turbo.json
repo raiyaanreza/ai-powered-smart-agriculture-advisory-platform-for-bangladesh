@@ -27,6 +27,11 @@
                 "^type-check"
             ]
         },
+        "test": {
+            "dependsOn": [
+                "^test"
+            ]
+        },
         "clean": {
             "cache": false
         }

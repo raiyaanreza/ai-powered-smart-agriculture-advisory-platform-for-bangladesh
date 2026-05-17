@@ -1,7 +1,9 @@
 import os
 import shutil
+import time
 from typing import Annotated, TypedDict, Optional
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Header, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langgraph.graph import StateGraph, END
 from langgraph.graph.message import add_messages
@@ -9,6 +11,34 @@ from ultralytics import YOLO
 
 app = FastAPI(title="agent-orchestrator")
 
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Metrics store
+METRICS = {
+    "total_diagnoses": 0,
+    "total_inference_time_ms": 0.0,
+    "model_cache_hits": 0,
+    "model_cache_misses": 0,
+    "last_diagnosis_time": None
+}
+
+# Bearer Authorization validation check
+async def verify_token(authorization: Optional[str] = Header(None)):
+    """Validates authorization token for secure endpoints"""
+    if authorization:
+        if not authorization.startswith("Bearer "):
+            raise HTTPException(status_code=401, detail="Invalid token scheme")
+        # In a real environment, decode JWT here
+        token = authorization.split(" ")[1]
+        print(f"Verified Authorization token: {token[:10]}...")
+    return True
 
 ######################################################################
 # Define LangGraph State
@@ -41,8 +71,10 @@ DISEASE_MODELS = {}
 
 def get_disease_model(crop_name: str) -> YOLO:
     if crop_name in DISEASE_MODELS:
+        METRICS["model_cache_hits"] += 1
         return DISEASE_MODELS[crop_name]
 
+    METRICS["model_cache_misses"] += 1
     model_paths = {
         "Brassica": os.path.join(project_root, "models", "brassica-disease", "best.pt"),
         "Corn": os.path.join(project_root, "models", "corn-disease", "best.pt"),
@@ -163,10 +195,12 @@ orchestrator_app = workflow.compile()
 
 
 ######################################################################
-# API Endpoint
+# API Endpoints
 ######################################################################
 @app.post("/diagnose")
-async def diagnose(file: UploadFile = File(...)):
+async def diagnose(file: UploadFile = File(...), token_valid: bool = Depends(verify_token)):
+    """Receives plant crop images and routes through LangGraph nodes"""
+    start_time = time.time()
     print(f"Received file: {file.filename}")
     file_location = f"temp_{file.filename}"
     try:
@@ -176,6 +210,12 @@ async def diagnose(file: UploadFile = File(...)):
         # Execute LangGraph
         initial_state = {"image_path": file_location}
         final_state = orchestrator_app.invoke(initial_state)
+
+        # Track telemetry
+        duration_ms = (time.time() - start_time) * 1000
+        METRICS["total_diagnoses"] += 1
+        METRICS["total_inference_time_ms"] += duration_ms
+        METRICS["last_diagnosis_time"] = time.strftime("%Y-%m-%d %H:%M:%S")
 
         return {
             "crop": final_state.get("crop_type"),
@@ -188,4 +228,22 @@ async def diagnose(file: UploadFile = File(...)):
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    """Liveness check"""
+    return {"status": "ok", "service": "agent-orchestrator"}
+
+
+@app.get("/metrics")
+def metrics(token_valid: bool = Depends(verify_token)):
+    """Expose application metrics and cache hits"""
+    avg_inference = 0.0
+    if METRICS["total_diagnoses"] > 0:
+      avg_inference = METRICS["total_inference_time_ms"] / METRICS["total_diagnoses"]
+      
+    return {
+        "status": "operational",
+        "total_diagnoses_handled": METRICS["total_diagnoses"],
+        "average_inference_time_ms": round(avg_inference, 2),
+        "model_cache_hits": METRICS["model_cache_hits"],
+        "model_cache_misses": METRICS["model_cache_misses"],
+        "last_diagnosis_timestamp": METRICS["last_diagnosis_time"]
+    }

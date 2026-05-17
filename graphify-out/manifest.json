@@ -496,48 +496,16 @@
     "hash": "1d6b069067ddeb9e7f70507c99422006"
   },
   "E:\\agri-ai-platform\\services\\agent-orchestrator\\app\\main.py": {
-    "mtime": 1778849542.3808193,
-    "hash": "7ba4085d9bcb56975637fd866de643ed"
+    "mtime": 1779008932.1225412,
+    "hash": "99b453d7b867bc2060f8e9b78a2194c2"
   },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appapi__init__.py": {
-    "mtime": 1778761262.7617633,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appcore__init__.py": {
-    "mtime": 1778761262.8643308,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appdomain__init__.py": {
-    "mtime": 1778761262.979155,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\apprepositories__init__.py": {
-    "mtime": 1778761263.297832,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appschemas__init__.py": {
-    "mtime": 1778761263.0806892,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appservices__init__.py": {
-    "mtime": 1778761263.1938407,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\appworkers__init__.py": {
-    "mtime": 1778761263.394431,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\app__init__.py": {
-    "mtime": 1778761262.6526067,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "E:\\agri-ai-platform\\services\\api-gateway\\tests__init__.py": {
-    "mtime": 1778761263.4941373,
-    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  "E:\\agri-ai-platform\\services\\analytics-service\\app\\main.py": {
+    "mtime": 1779009166.7140925,
+    "hash": "5564ac1a454d5bf7b1626ed060016c49"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\app\\main.py": {
-    "mtime": 1778761386.5004761,
-    "hash": "6de60cfa645a6f004f10fc7f384ba23b"
+    "mtime": 1779008898.3650198,
+    "hash": "e6db842fcd58ba897ae86f04e064252c"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\app\\__init__.py": {
     "mtime": 1778761284.9409165,
@@ -571,9 +539,21 @@
     "mtime": 1778761284.9828196,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
+  "E:\\agri-ai-platform\\services\\api-gateway\\tests\\test_gateway.py": {
+    "mtime": 1779009277.215128,
+    "hash": "075d2cfd33161e319693b992c18e25f7"
+  },
   "E:\\agri-ai-platform\\services\\api-gateway\\tests\\__init__.py": {
     "mtime": 1778761284.9855943,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "E:\\agri-ai-platform\\services\\auth-service\\app\\main.py": {
+    "mtime": 1779008967.6442163,
+    "hash": "95c5bcf4eb3e9af6d87885e4d34df88e"
+  },
+  "E:\\agri-ai-platform\\services\\auth-service\\tests\\test_auth.py": {
+    "mtime": 1779009272.0909896,
+    "hash": "6dc2910c63cb867ef8fe7f188c202b6f"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\app\\main.py": {
     "mtime": 1778844346.5515075,
@@ -598,6 +578,18 @@
   "E:\\agri-ai-platform\\services\\disease-wheat-service\\app\\main.py": {
     "mtime": 1778844346.5556567,
     "hash": "8664b1024a377877b0cfd3aeaafa9f89"
+  },
+  "E:\\agri-ai-platform\\services\\notification-service\\app\\main.py": {
+    "mtime": 1779009127.1725311,
+    "hash": "17d0715f7d3147c5b7fa94f0173f2166"
+  },
+  "E:\\agri-ai-platform\\services\\rag-service\\app\\main.py": {
+    "mtime": 1779009236.6382265,
+    "hash": "6c4d08ea8b1b2daaa356277e57c56c75"
+  },
+  "E:\\agri-ai-platform\\services\\report-service\\app\\main.py": {
+    "mtime": 1779009205.9418876,
+    "hash": "376481d6dbf546826b08fd46c0b1d2e1"
   },
   "E:\\agri-ai-platform\\AGENTS.md": {
     "mtime": 1778827225.9038906,
@@ -688,8 +680,8 @@
     "hash": "58f77bfed13b04d512d6dcdccd66e390"
   },
   "E:\\agri-ai-platform\\docs\\testing reports\\qa_audit_report_1.md": {
-    "mtime": 1779007585.730817,
-    "hash": "eabe8027445e18a6ca43e676a455ab8a"
+    "mtime": 1779009302.945616,
+    "hash": "118897b58842d77db45d9ccd88e14e2c"
   },
   "E:\\agri-ai-platform\\docs\\ui\\components_design.md": {
     "mtime": 1778776481.0495408,
@@ -727,9 +719,53 @@
     "mtime": 1778780726.1086245,
     "hash": "d724e312f0d4bc027e735f8fdcd23309"
   },
+  "E:\\agri-ai-platform\\services\\analytics-service\\requirements.txt": {
+    "mtime": 1779009143.8743799,
+    "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
+  },
   "E:\\agri-ai-platform\\services\\api-gateway\\requirements.txt": {
     "mtime": 1778761357.4349709,
     "hash": "07cc58be02592a08818cd088ea283a0b"
+  },
+  "E:\\agri-ai-platform\\services\\auth-service\\requirements.txt": {
+    "mtime": 1779008943.5203748,
+    "hash": "f9bc9a6e84b147afbca9e086d2d8bbd4"
+  },
+  "E:\\agri-ai-platform\\services\\crop-routing-service\\requirements.txt": {
+    "mtime": 1779008987.2811642,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\disease-brassica-service\\requirements.txt": {
+    "mtime": 1779009021.68728,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\disease-corn-service\\requirements.txt": {
+    "mtime": 1779009040.8947382,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\disease-potato-service\\requirements.txt": {
+    "mtime": 1779009061.748341,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\disease-rice-service\\requirements.txt": {
+    "mtime": 1779009003.6587749,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\disease-wheat-service\\requirements.txt": {
+    "mtime": 1779009082.2762878,
+    "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
+  },
+  "E:\\agri-ai-platform\\services\\notification-service\\requirements.txt": {
+    "mtime": 1779009107.636875,
+    "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
+  },
+  "E:\\agri-ai-platform\\services\\rag-service\\requirements.txt": {
+    "mtime": 1779009219.7899554,
+    "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
+  },
+  "E:\\agri-ai-platform\\services\\report-service\\requirements.txt": {
+    "mtime": 1779009183.0071445,
+    "hash": "c81434f562889b6bb51c24792ffc40e6"
   },
   "E:\\agri-ai-platform\\apps\\admin\\public\\file.svg": {
     "mtime": 1778755960.3885117,

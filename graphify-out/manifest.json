@@ -1084,8 +1084,8 @@
     "hash": "1c6e9775509a828444998bbc9246ef06"
   },
   "E:\\agri-ai-platform\\docker-compose.yml": {
-    "mtime": 1778761629.059615,
-    "hash": "679188fcc7cd1b85752f476f784ed743"
+    "mtime": 1779017740.12874,
+    "hash": "d422b405f91aaa5389b4077f85634fc2"
   },
   "E:\\agri-ai-platform\\GEMINI.md": {
     "mtime": 1778765344.2216296,
@@ -1164,8 +1164,8 @@
     "hash": "58f77bfed13b04d512d6dcdccd66e390"
   },
   "E:\\agri-ai-platform\\docs\\testing reports\\qa_audit_report_1.md": {
-    "mtime": 1779016728.063668,
-    "hash": "fe73664202184fec03511b7368350dcb"
+    "mtime": 1779017777.348307,
+    "hash": "0de5b6bc6714dd2f73bd0250b3a4fd8b"
   },
   "E:\\agri-ai-platform\\docs\\ui\\components_design.md": {
     "mtime": 1778776481.0495408,
@@ -1194,6 +1194,18 @@
   "E:\\agri-ai-platform\\docs\\ui\\page-specs\\landing-page.md": {
     "mtime": 1778769917.9765103,
     "hash": "35fe542855d1f38456593bf2e7317708"
+  },
+  "E:\\agri-ai-platform\\infrastructure\\ci-cd\\github-actions.yml": {
+    "mtime": 1779017752.28868,
+    "hash": "3b8303c6f0bbb9d1746e67048566a886"
+  },
+  "E:\\agri-ai-platform\\infrastructure\\kubernetes\\deployment.yml": {
+    "mtime": 1779017758.3779583,
+    "hash": "628a8448be2e53484d61680b64660e56"
+  },
+  "E:\\agri-ai-platform\\infrastructure\\monitoring\\prometheus.yml": {
+    "mtime": 1779017769.8434331,
+    "hash": "f2df884ea1092cf3ffb0f63d9aaed230"
   },
   "E:\\agri-ai-platform\\models\\dvc.yaml": {
     "mtime": 1779016681.741825,

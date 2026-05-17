@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+  # Infrastructure Services
   postgres:
     image: postgres:18-alpine
     container_name: agri-postgres
@@ -43,6 +44,7 @@ services:
       QDRANT__SERVICE__GRPC_PORT: 6334
       QDRANT__SERVICE__HTTP_PORT: 6333
 
+  # Core API Gateway Routing
   api-gateway:
     build:
       context: ./services/api-gateway
@@ -58,8 +60,125 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    volumes:
-      - ./services/api-gateway:/app
+
+  # Advisory Core API
+  advisory-service:
+    build:
+      context: ./services/advisory-service
+      dockerfile: Dockerfile
+    container_name: agri-advisory-service
+    ports:
+      - "8001:8001"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+  # Crop Routing Service
+  crop-routing-service:
+    build:
+      context: ./services/crop-routing-service
+      dockerfile: Dockerfile
+    container_name: agri-crop-routing-service
+    ports:
+      - "8002:8002"
+
+  # LangGraph Agent Orchestrator
+  agent-orchestrator:
+    build:
+      context: ./services/agent-orchestrator
+      dockerfile: Dockerfile
+    container_name: agri-agent-orchestrator
+    ports:
+      - "8003:8003"
+    environment:
+      - LANGCHAIN_TRACING_V2=true
+      - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+
+  # Auth Service
+  auth-service:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile
+    container_name: agri-auth-service
+    ports:
+      - "8004:8004"
+
+  # Notification Dispatcher
+  notification-service:
+    build:
+      context: ./services/notification-service
+      dockerfile: Dockerfile
+    container_name: agri-notification-service
+    ports:
+      - "8005:8005"
+
+  # Analytics Service
+  analytics-service:
+    build:
+      context: ./services/analytics-service
+      dockerfile: Dockerfile
+    container_name: agri-analytics-service
+    ports:
+      - "8006:8006"
+
+  # PDF Report Builder
+  report-service:
+    build:
+      context: ./services/report-service
+      dockerfile: Dockerfile
+    container_name: agri-report-service
+    ports:
+      - "8007:8007"
+
+  # Qdrant RAG Service
+  rag-service:
+    build:
+      context: ./services/rag-service
+      dockerfile: Dockerfile
+    container_name: agri-rag-service
+    ports:
+      - "8008:8008"
+
+  # Crop Disease Serving Classifiers
+  disease-rice-service:
+    build:
+      context: ./services/disease-rice-service
+      dockerfile: Dockerfile
+    container_name: agri-disease-rice-service
+    ports:
+      - "8010:8010"
+
+  disease-brassica-service:
+    build:
+      context: ./services/disease-brassica-service
+      dockerfile: Dockerfile
+    container_name: agri-disease-brassica-service
+    ports:
+      - "8011:8011"
+
+  disease-corn-service:
+    build:
+      context: ./services/disease-corn-service
+      dockerfile: Dockerfile
+    container_name: agri-disease-corn-service
+    ports:
+      - "8012:8012"
+
+  disease-potato-service:
+    build:
+      context: ./services/disease-potato-service
+      dockerfile: Dockerfile
+    container_name: agri-disease-potato-service
+    ports:
+      - "8013:8013"
+
+  disease-wheat-service:
+    build:
+      context: ./services/disease-wheat-service
+      dockerfile: Dockerfile
+    container_name: agri-disease-wheat-service
+    ports:
+      - "8014:8014"
 
 volumes:
   postgres_data:

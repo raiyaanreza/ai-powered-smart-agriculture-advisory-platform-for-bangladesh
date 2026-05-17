@@ -1,0 +1,40 @@
+name: AgriVision CI-CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node_version: '22'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 11.0.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Frontend compilation checks
+        run: pnpm run build
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python unit tests
+        run: |
+          pip install pytest httpx fastapi uvicorn
+          python -m pytest services/api-gateway/tests
+          python -m pytest services/auth-service/tests

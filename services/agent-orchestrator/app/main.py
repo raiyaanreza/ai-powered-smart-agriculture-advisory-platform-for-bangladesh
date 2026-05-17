@@ -14,7 +14,7 @@ app = FastAPI(title="agent-orchestrator")
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001").split(","),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

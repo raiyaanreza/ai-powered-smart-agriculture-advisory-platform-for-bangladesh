@@ -17,6 +17,7 @@
         "clean": "pnpm run --parallel clean && rm -rf node_modules"
     },
     "devDependencies": {
+        "@playwright/test": "^1.60.0",
         "prettier": "^3.6.0",
         "turbo": "^2.5.0",
         "typescript": "6.0.3"

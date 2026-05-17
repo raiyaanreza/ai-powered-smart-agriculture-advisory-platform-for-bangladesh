@@ -264,6 +264,49 @@ Programmatically compiled and deployed all missing core and service-specific arc
 - **No service discovery or internal API routing**: Services have no way to call each other. The `api-gateway` doesn't proxy to downstream services yet
 - **No message queue integration**: Celery is in `requirements.txt` but there's no Redis job queue configured anywhere
 
+### 🕵️ New Architectural Weaknesses Discovered (From Research)
+1. **Unsecured Inter-Service Communication**: Microservices lack signature/internal secret headers (`X-Internal-Token`) verifying if an incoming request was authorized by the API Gateway or initiated directly.
+2. **Environment Pollution & Divergent Env Configurations**: Frontends and FastAPI backends lack synchronous validation keys. Frontends maintain local `.env.local` files, whereas Python services use isolated `.env` instances, exposing configuration drift risks.
+3. **Absence of Shared TS types/Zod Parity**: TypeScript structures in Next.js frontends are manually declared instead of being dynamically synced with Pydantic JSON schemas.
+4. **Lack of Centralized Logger/Distributed Tracing**: FastAPI services utilize standard stdout prints without a dynamic logger mapping request-ids, making downstream debugging extremely difficult.
+
+---
+
+### 🗺️ Low-Level Execution Plan for Weaknesses Remediation
+
+#### 1. Unify Data Layer Boundaries (`Dual Supabase + PostgreSQL confusion`)
+* **Technical Action**: Deprecate direct `@supabase/supabase-js` imports inside Next.js frontends (`apps/web` & `apps/admin`). Phase out raw client queries from UI logic.
+* **Implementation Plan**:
+  * Step A: Channel all data mutations (e.g. notifications, user roles, logs) strictly through gateway HTTP points (`api-gateway:8000`).
+  * Step B: Have backend services handle direct PostgreSQL transactions via SQLAlchemy `async_session` layers or standard database repository pattern abstractions, utilizing Supabase strictly as a hosted PostgreSQL instance.
+
+#### 2. Protect GenAI Credentials (`Frontend calls Gemini directly`)
+* **Technical Action**: Extract AI prompt parameters from the frontend client and remove the `@google/generative-ai` package from `apps/web/package.json` to prevent client-side key leakage.
+* **Implementation Plan**:
+  * Step A: Frontends issue clean HTTP requests to `/advisory/chat` at the `api-gateway`.
+  * Step B: The backend `api-gateway` validates the Supabase JWT token, then proxies the request to `advisory-service` on Port `8001`, which queries Gemini using secure, backend-only keys.
+
+#### 3. Secure Inter-Service Requests (`Unsecured Inter-Service Communication`)
+* **Technical Action**: Enforce secure internal token validation on all downstream microservice paths.
+* **Implementation Plan**:
+  * Step A: Define a secure string `INTERNAL_SHARED_SECRET` in each microservice's local environment.
+  * Step B: Gateway HTTP clients include this key inside headers (`X-Internal-Token: <SECRET>`).
+  * Step C: Downstream FastAPI handlers use a global route Dependency verifying key matches before processing.
+
+#### 4. Configure Celery & Redis Task Broker (`No message queue integration`)
+* **Technical Action**: Instantiate an asynchronous worker pool using Redis as a broker and Celery as a distributed task scheduler to run long-running diagnostic exports.
+* **Implementation Plan**:
+  * Step A: Configure Celery client inside `packages/utils/celery_app.py` binding to `REDIS_URL`.
+  * Step B: Register long-running task decorators (e.g. `generate_pdf_report_task`).
+  * Step C: Launch worker container loops using `celery -A app.workers.worker worker --loglevel=info`.
+
+#### 5. Synchronous Type Registry (`Absence of Shared TS types/Zod Parity`)
+* **Technical Action**: Ensure contract changes in Python Pydantic models automatically update TypeScript interfaces.
+* **Implementation Plan**:
+  * Step A: Use a code generator like `pydantic-to-typescript` or export schemas to standard OpenAPI JSON files.
+  * Step B: Run schema compilation check tasks during local dev loops or CI actions to ensure frontends compile without type misalignment.
+
+
 ---
 
 ## PART 5 — STARTUP SCALABILITY ANALYSIS

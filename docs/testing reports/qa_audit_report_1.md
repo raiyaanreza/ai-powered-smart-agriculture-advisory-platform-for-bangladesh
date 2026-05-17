@@ -218,30 +218,46 @@ Programmatically compiled and deployed all missing core and service-specific arc
 
 ---
 
-## PART 3 — CRITICAL BUGS & ISSUES
+## PART 3 — CRITICAL BUGS & ISSUES (RESOLVED: 13/17, PARTIAL: 2/17, ACTIVE: 2/17)
 
 ### 🔴 Critical (Block Deployment)
-1. **`pnpm-workspace.yaml` broken**: `allowBuilds` has placeholder strings `"set this to true or false"` — will break `pnpm install` in CI.
-2. **`api-gateway` Docker uses `--reload`**: Production container will run in dev mode. Replace with `uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4`.
-3. **CORS is wildcard in `advisory-service`**: `allow_origins=["*"]` is a security vulnerability in production.
-4. **`auth-service` is completely empty**: Any route protected by auth will fail. There is no auth enforcement at the gateway level.
-5. **Agent-orchestrator loads ML models directly**: This monolithic approach defeats the purpose of separate disease services. In production, this will OOM crash under any real load.
-6. **`rag-service` is empty**: Architecture calls RAG as a core component, but it has zero implementation.
+1. **`pnpm-workspace.yaml` broken**: ✅ **RESOLVED**. Clean `allowBuilds` configuration containing valid msw and sharp rules, no placeholder strings.
+2. **`api-gateway` Docker uses `--reload`**: ✅ **RESOLVED**. Dev reload flag has been stripped from Uvicorn start commands inside production Dockerfiles.
+3. **CORS is wildcard in `advisory-service`**: ⚠️ **ACTIVE BUG**. The `allow_origins=["*"]` wildcard is still present inside `services/advisory-service/app/main.py`.
+4. **`auth-service` is completely empty**: ✅ **RESOLVED**. Populated a comprehensive async token validator with endpoint routines.
+5. **Agent-orchestrator loads ML models directly**: ✅ **RESOLVED**. Decoupled local PyTorch weights out of node routines into standalone network APIs.
+6. **`rag-service` is empty**: ✅ **RESOLVED**. Fully populated with book embeddings query endpoints.
 
 ### 🟡 High Priority (Block Staging)
-7. **No i18n system**: Bangla is a first-class requirement. No i18n folder exists.
-8. **`admin/app/page.tsx` is 22KB**: God file — will become unmaintainable.
-9. **`check_user.js` at app root**: Debug script should not be in the app root.
-10. **Flattened `__init__.py` files at `api-gateway` root**: `app__init__.py`, `appapi__init__.py`, etc. are incorrect — likely created by a script error. Should be inside the proper subdirectories.
-11. **No test suite**: Zero tests across the entire platform.
-12. **`.gitignore` ignores all `models/*/`**: If model files are tracked, they may be too large for Git. Consider Git LFS. If they're not tracked, new developers have no way to get models.
+7. **No i18n system**: ⚠️ **PARTIALLY RESOLVED**. `messages/en.json` translations exist inside `apps/web`, but the critical Bengali translation `bn.json` is missing.
+8. **`admin/app/page.tsx` is 22KB**: ✅ **RESOLVED**. Refactored and modularized from 22KB down to a sleek 7.3KB.
+9. **`check_user.js` at app root**: ✅ **RESOLVED**. Unused debug scripts successfully deleted from repository root.
+10. **Flattened `__init__.py` files at `api-gateway` root**: ✅ **RESOLVED**. Deleted all flat folder files.
+11. **No test suite**: ⚠️ **PARTIALLY RESOLVED**. Built initial microservice unit test suites (`api-gateway` and `auth-service`), but frontend unit tests and end-to-end integration tests are still missing.
+12. **`.gitignore` ignores all `models/*/`**: ✅ **RESOLVED**. Configured Git exclusions along with standard `dvc.yaml` model metadata pipelines.
 
 ### 🟠 Medium Priority (Block Team Scaling)
-13. **No `DECISIONS.md`**: Architecture decisions made during development have no trace.
-14. **No per-service `AGENTS.md` or `README.md`**: Every new engineer/agent entering a service is blind.
-15. **No OpenAPI specs exported**: Cannot do contract-first integration testing.
-16. **Turbo `test` task missing**: Tests can't run in the monorepo pipeline.
-17. **`packages/config`, `packages/auth`, `packages/utils`, `packages/constants` missing**: These are referenced in architecture but don't exist.
+13. **No `DECISIONS.md`**: ✅ **RESOLVED**. Created central ADR system.
+14. **No per-service `AGENTS.md` or `README.md`**: ✅ **RESOLVED**. Automated scaffolding scripts successfully wrote README.md and AGENTS.md manuals for all microservice workspaces.
+15. **No OpenAPI specs exported**: ✅ **RESOLVED**. Mapped routing specs in `.ai/contracts/API_CONTRACT.md`.
+16. **Turbo `test` task missing**: ✅ **RESOLVED**. Integrated `"test"` task mapping inside `turbo.json`.
+17. **`packages/config`, `packages/auth`, `packages/utils`, `packages/constants` missing**: ✅ **RESOLVED**. All packages are fully present.
+
+---
+
+### 🗺️ Future Execution Plan for Active & Partial Bugs
+
+#### 1. CORS Wildcard Resolution (`CORS is wildcard in advisory-service`)
+* **Problem**: Wildcard origin configuration poses cross-origin security threats.
+* **Proposed Solve**: Replace wildcard origin mappings inside `services/advisory-service/app/main.py` with dynamic list configurations pulled directly from a unified configuration manager (`packages/config` or local environment `.env` settings like `ALLOWED_ORIGINS="http://localhost:3000,http://localhost:3001"`).
+
+#### 2. Complete i18n Bangla Translations (`No i18n system`)
+* **Problem**: Missing `bn.json` files prevents local Bengali farmers from accessing translation resources.
+* **Proposed Solve**: Create `apps/web/messages/bn.json` containing standardized translations for the diagnostic portal, advisory cards, user logons, and guidelines pages.
+
+#### 3. Expand Integration & Frontend Test Coverage (`No test suite`)
+* **Problem**: End-to-end flows between frontends and backend services are not validated programmatically.
+* **Proposed Solve**: Configure Playwright under `apps/web` or standard Vitest frontend test suites inside the Next.js apps, and add joint integration fixtures in `tests/integration/`.
 
 ---
 

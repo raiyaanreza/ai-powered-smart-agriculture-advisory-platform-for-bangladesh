@@ -8,10 +8,11 @@ if project_root not in sys.path:
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from app.schemas.chat import ChatRequest, ChatResponse
+from app.schemas.chat import ChatRequest, ChatResponse, CropAnalysisRequest, CropAnalysisResponse
 from app.services.gemini_service import gemini_service
 
 app = FastAPI(title="AgriVision Advisory Service")
+
 
 # CORS configuration
 app.add_middleware(
@@ -30,6 +31,16 @@ async def health_check():
 async def chat_with_advisor(request: ChatRequest):
     try:
         response = await gemini_service.get_response(request.message, request.history, request.image_data)
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/advisory/crop-analysis", response_model=CropAnalysisResponse)
+async def generate_analysis(request: CropAnalysisRequest):
+    try:
+        response = await gemini_service.generate_crop_analysis(
+            request.crops, request.soil_type, request.district, request.season
+        )
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

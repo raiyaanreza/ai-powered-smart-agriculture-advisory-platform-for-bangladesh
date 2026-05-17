@@ -23,7 +23,9 @@
     "react-dom": "^19.0.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5",
-    "class-variance-authority": "^0.7.1"
+    "class-variance-authority": "^0.7.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.14.0"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

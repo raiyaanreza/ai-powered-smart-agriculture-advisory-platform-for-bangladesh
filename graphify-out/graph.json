@@ -4,12 +4,21 @@
   "graph": {},
   "nodes": [
     {
+      "label": "scratch_scaffold.py",
+      "file_type": "code",
+      "source_file": "scratch_scaffold.py",
+      "source_location": "L1",
+      "id": "scratch_scaffold_py",
+      "community": 53,
+      "norm_label": "scratch_scaffold.py"
+    },
+    {
       "label": "eslint.config.mjs",
       "file_type": "code",
       "source_file": "apps/admin/eslint.config.mjs",
       "source_location": "L1",
       "id": "apps_admin_eslint_config_mjs",
-      "community": 53,
+      "community": 54,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -18,7 +27,7 @@
       "source_file": "apps/admin/next-env.d.ts",
       "source_location": "L1",
       "id": "apps_admin_next_env_d_ts",
-      "community": 54,
+      "community": 55,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -27,7 +36,7 @@
       "source_file": "apps/admin/next.config.ts",
       "source_location": "L1",
       "id": "apps_admin_next_config_ts",
-      "community": 55,
+      "community": 56,
       "norm_label": "next.config.ts"
     },
     {
@@ -36,7 +45,7 @@
       "source_file": "apps/admin/postcss.config.mjs",
       "source_location": "L1",
       "id": "apps_admin_postcss_config_mjs",
-      "community": 56,
+      "community": 57,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -468,7 +477,7 @@
       "source_file": "apps/admin/features/library/data/diseases.ts",
       "source_location": "L1",
       "id": "apps_admin_features_library_data_diseases_ts",
-      "community": 57,
+      "community": 58,
       "norm_label": "diseases.ts"
     },
     {
@@ -585,7 +594,7 @@
       "source_file": "apps/admin/lib/supabase.ts",
       "source_location": "L1",
       "id": "apps_admin_lib_supabase_ts",
-      "community": 58,
+      "community": 59,
       "norm_label": "supabase.ts"
     },
     {
@@ -612,7 +621,7 @@
       "source_file": "apps/web/eslint.config.mjs",
       "source_location": "L1",
       "id": "apps_web_eslint_config_mjs",
-      "community": 59,
+      "community": 60,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -621,7 +630,7 @@
       "source_file": "apps/web/next-env.d.ts",
       "source_location": "L1",
       "id": "apps_web_next_env_d_ts",
-      "community": 60,
+      "community": 61,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -630,7 +639,7 @@
       "source_file": "apps/web/next.config.ts",
       "source_location": "L1",
       "id": "apps_web_next_config_ts",
-      "community": 61,
+      "community": 62,
       "norm_label": "next.config.ts"
     },
     {
@@ -774,7 +783,7 @@
       "source_file": "apps/web/app/diagnose/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_diagnose_page_tsx",
-      "community": 62,
+      "community": 63,
       "norm_label": "page.tsx"
     },
     {
@@ -855,7 +864,7 @@
       "source_file": "apps/web/app/login/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_login_page_tsx",
-      "community": 63,
+      "community": 64,
       "norm_label": "page.tsx"
     },
     {
@@ -882,7 +891,7 @@
       "source_file": "apps/web/app/premium/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_premium_page_tsx",
-      "community": 64,
+      "community": 65,
       "norm_label": "page.tsx"
     },
     {
@@ -1089,7 +1098,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisorySidebar.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_advisorysidebar_tsx",
-      "community": 65,
+      "community": 66,
       "norm_label": "advisorysidebar.tsx"
     },
     {
@@ -1152,7 +1161,7 @@
       "source_file": "apps/web/features/advisory/components/HistoryModal.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_historymodal_tsx",
-      "community": 66,
+      "community": 67,
       "norm_label": "historymodal.tsx"
     },
     {
@@ -1197,7 +1206,7 @@
       "source_file": "apps/web/features/dashboard/components/DashboardBackground.tsx",
       "source_location": "L1",
       "id": "apps_web_features_dashboard_components_dashboardbackground_tsx",
-      "community": 67,
+      "community": 68,
       "norm_label": "dashboardbackground.tsx"
     },
     {
@@ -1350,7 +1359,7 @@
       "source_file": "apps/web/features/landing/components/AnimatedBanner.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_animatedbanner_tsx",
-      "community": 68,
+      "community": 69,
       "norm_label": "animatedbanner.tsx"
     },
     {
@@ -1431,7 +1440,7 @@
       "source_file": "apps/web/features/landing/components/Impact.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_impact_tsx",
-      "community": 69,
+      "community": 70,
       "norm_label": "impact.tsx"
     },
     {
@@ -1566,7 +1575,7 @@
       "source_file": "apps/web/features/library/components/LibraryLayout.tsx",
       "source_location": "L1",
       "id": "apps_web_features_library_components_librarylayout_tsx",
-      "community": 70,
+      "community": 71,
       "norm_label": "librarylayout.tsx"
     },
     {
@@ -1575,7 +1584,7 @@
       "source_file": "apps/web/features/library/data/diseases.ts",
       "source_location": "L1",
       "id": "apps_web_features_library_data_diseases_ts",
-      "community": 71,
+      "community": 72,
       "norm_label": "diseases.ts"
     },
     {
@@ -1584,7 +1593,7 @@
       "source_file": "apps/web/lib/supabase.ts",
       "source_location": "L1",
       "id": "apps_web_lib_supabase_ts",
-      "community": 72,
+      "community": 73,
       "norm_label": "supabase.ts"
     },
     {
@@ -1593,7 +1602,7 @@
       "source_file": "apps/web/lib/supabaseAdmin.ts",
       "source_location": "L1",
       "id": "apps_web_lib_supabaseadmin_ts",
-      "community": 73,
+      "community": 74,
       "norm_label": "supabaseadmin.ts"
     },
     {
@@ -1629,7 +1638,7 @@
       "source_file": "packages/ai-tools/src/index.ts",
       "source_location": "L1",
       "id": "packages_ai_tools_src_index_ts",
-      "community": 74,
+      "community": 75,
       "norm_label": "index.ts"
     },
     {
@@ -1683,7 +1692,7 @@
       "source_file": "packages/config/src/index.ts",
       "source_location": "L1",
       "id": "packages_config_src_index_ts",
-      "community": 75,
+      "community": 76,
       "norm_label": "index.ts"
     },
     {
@@ -1692,7 +1701,7 @@
       "source_file": "packages/constants/src/index.ts",
       "source_location": "L1",
       "id": "packages_constants_src_index_ts",
-      "community": 76,
+      "community": 77,
       "norm_label": "index.ts"
     },
     {
@@ -1701,7 +1710,7 @@
       "source_file": "packages/prompts/advisory.py",
       "source_location": "L1",
       "id": "packages_prompts_advisory_py",
-      "community": 77,
+      "community": 78,
       "norm_label": "advisory.py"
     },
     {
@@ -1710,7 +1719,7 @@
       "source_file": "packages/prompts/src/index.ts",
       "source_location": "L1",
       "id": "packages_prompts_src_index_ts",
-      "community": 78,
+      "community": 79,
       "norm_label": "index.ts"
     },
     {
@@ -1719,7 +1728,7 @@
       "source_file": "packages/schemas/src/index.ts",
       "source_location": "L1",
       "id": "packages_schemas_src_index_ts",
-      "community": 79,
+      "community": 80,
       "norm_label": "index.ts"
     },
     {
@@ -1728,7 +1737,7 @@
       "source_file": "packages/types/src/index.ts",
       "source_location": "L1",
       "id": "packages_types_src_index_ts",
-      "community": 80,
+      "community": 81,
       "norm_label": "index.ts"
     },
     {
@@ -1845,7 +1854,7 @@
       "source_file": "packages/ui/src/components/Input.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_input_tsx",
-      "community": 81,
+      "community": 82,
       "norm_label": "input.tsx"
     },
     {
@@ -1854,7 +1863,7 @@
       "source_file": "packages/ui/src/components/Modal.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_modal_tsx",
-      "community": 82,
+      "community": 83,
       "norm_label": "modal.tsx"
     },
     {
@@ -1971,7 +1980,7 @@
       "source_file": "scratch/test_pipeline.py",
       "source_location": "L1",
       "id": "scratch_test_pipeline_py",
-      "community": 83,
+      "community": 84,
       "norm_label": "test_pipeline.py"
     },
     {
@@ -1998,7 +2007,7 @@
       "source_file": "scripts/check_db.py",
       "source_location": "L1",
       "id": "scripts_check_db_py",
-      "community": 84,
+      "community": 85,
       "norm_label": "check_db.py"
     },
     {
@@ -2268,7 +2277,7 @@
       "source_file": "scripts/scaffold_services.py",
       "source_location": "L1",
       "id": "scripts_scaffold_services_py",
-      "community": 85,
+      "community": 86,
       "norm_label": "scaffold_services.py"
     },
     {
@@ -2358,7 +2367,7 @@
       "source_file": "services/advisory-service/list_models.py",
       "source_location": "L1",
       "id": "services_advisory_service_list_models_py",
-      "community": 86,
+      "community": 87,
       "norm_label": "list_models.py"
     },
     {
@@ -2396,6 +2405,51 @@
       "id": "app_main_generate_analysis",
       "community": 9,
       "norm_label": "generate_analysis()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_init_py",
+      "community": 88,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_api_init_py",
+      "community": 89,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_core_init_py",
+      "community": 90,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_domain_init_py",
+      "community": 91,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_repositories_init_py",
+      "community": 92,
+      "norm_label": "__init__.py"
     },
     {
       "label": "chat.py",
@@ -2506,6 +2560,15 @@
       "norm_label": "cropanalysisrequest"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_schemas_init_py",
+      "community": 93,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "gemini_service.py",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
@@ -2549,6 +2612,33 @@
       "id": "services_gemini_service_geminiadvisoryservice_generate_crop_analysis",
       "community": 3,
       "norm_label": ".generate_crop_analysis()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_services_init_py",
+      "community": 94,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_app_workers_init_py",
+      "community": 95,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/advisory-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_advisory_service_tests_init_py",
+      "community": 96,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -2704,6 +2794,87 @@
       "norm_label": "expose application metrics and cache hits"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_init_py",
+      "community": 97,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_api_init_py",
+      "community": 98,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_core_init_py",
+      "community": 99,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_domain_init_py",
+      "community": 100,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_repositories_init_py",
+      "community": 101,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_schemas_init_py",
+      "community": 102,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_services_init_py",
+      "community": 103,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_app_workers_init_py",
+      "community": 104,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/agent-orchestrator/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_agent_orchestrator_tests_init_py",
+      "community": 105,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/analytics-service/app/main.py",
@@ -2747,6 +2918,87 @@
       "id": "app_main_rationale_32",
       "community": 2,
       "norm_label": "returns dynamic model detection metrics"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_init_py",
+      "community": 106,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_api_init_py",
+      "community": 107,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_core_init_py",
+      "community": 108,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_domain_init_py",
+      "community": 109,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_repositories_init_py",
+      "community": 110,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_schemas_init_py",
+      "community": 111,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_services_init_py",
+      "community": 112,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_app_workers_init_py",
+      "community": 113,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/analytics-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_analytics_service_tests_init_py",
+      "community": 114,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -2835,7 +3087,7 @@
       "source_file": "services/api-gateway/app/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_init_py",
-      "community": 87,
+      "community": 115,
       "norm_label": "__init__.py"
     },
     {
@@ -2844,7 +3096,7 @@
       "source_file": "services/api-gateway/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_api_init_py",
-      "community": 88,
+      "community": 116,
       "norm_label": "__init__.py"
     },
     {
@@ -2853,7 +3105,7 @@
       "source_file": "services/api-gateway/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_core_init_py",
-      "community": 89,
+      "community": 117,
       "norm_label": "__init__.py"
     },
     {
@@ -2862,7 +3114,7 @@
       "source_file": "services/api-gateway/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_domain_init_py",
-      "community": 90,
+      "community": 118,
       "norm_label": "__init__.py"
     },
     {
@@ -2871,7 +3123,7 @@
       "source_file": "services/api-gateway/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_repositories_init_py",
-      "community": 91,
+      "community": 119,
       "norm_label": "__init__.py"
     },
     {
@@ -2880,7 +3132,7 @@
       "source_file": "services/api-gateway/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_schemas_init_py",
-      "community": 92,
+      "community": 120,
       "norm_label": "__init__.py"
     },
     {
@@ -2889,7 +3141,7 @@
       "source_file": "services/api-gateway/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_services_init_py",
-      "community": 93,
+      "community": 121,
       "norm_label": "__init__.py"
     },
     {
@@ -2898,7 +3150,7 @@
       "source_file": "services/api-gateway/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_workers_init_py",
-      "community": 94,
+      "community": 122,
       "norm_label": "__init__.py"
     },
     {
@@ -2934,7 +3186,7 @@
       "source_file": "services/api-gateway/tests/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_tests_init_py",
-      "community": 95,
+      "community": 123,
       "norm_label": "__init__.py"
     },
     {
@@ -2992,6 +3244,78 @@
       "norm_label": "exposes current user session profile data"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_init_py",
+      "community": 124,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_api_init_py",
+      "community": 125,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_core_init_py",
+      "community": 126,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_domain_init_py",
+      "community": 127,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_repositories_init_py",
+      "community": 128,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_schemas_init_py",
+      "community": 129,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_services_init_py",
+      "community": 130,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_app_workers_init_py",
+      "community": 131,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "test_auth.py",
       "file_type": "code",
       "source_file": "services/auth-service/tests/test_auth.py",
@@ -3019,6 +3343,15 @@
       "norm_label": "test_auth_validation()"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/auth-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_auth_service_tests_init_py",
+      "community": 132,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/crop-routing-service/app/main.py",
@@ -3037,6 +3370,87 @@
       "norm_label": "predict()"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_init_py",
+      "community": 133,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_api_init_py",
+      "community": 134,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_core_init_py",
+      "community": 135,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_domain_init_py",
+      "community": 136,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_repositories_init_py",
+      "community": 137,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_schemas_init_py",
+      "community": 138,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_services_init_py",
+      "community": 139,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_app_workers_init_py",
+      "community": 140,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/crop-routing-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_crop_routing_service_tests_init_py",
+      "community": 141,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/disease-brassica-service/app/main.py",
@@ -3044,6 +3458,87 @@
       "id": "services_disease_brassica_service_app_main_py",
       "community": 2,
       "norm_label": "main.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_init_py",
+      "community": 142,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_api_init_py",
+      "community": 143,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_core_init_py",
+      "community": 144,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_domain_init_py",
+      "community": 145,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_repositories_init_py",
+      "community": 146,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_schemas_init_py",
+      "community": 147,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_services_init_py",
+      "community": 148,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_app_workers_init_py",
+      "community": 149,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-brassica-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_brassica_service_tests_init_py",
+      "community": 150,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -3055,6 +3550,87 @@
       "norm_label": "main.py"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_init_py",
+      "community": 151,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_api_init_py",
+      "community": 152,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_core_init_py",
+      "community": 153,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_domain_init_py",
+      "community": 154,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_repositories_init_py",
+      "community": 155,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_schemas_init_py",
+      "community": 156,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_services_init_py",
+      "community": 157,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_app_workers_init_py",
+      "community": 158,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-corn-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_corn_service_tests_init_py",
+      "community": 159,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/disease-potato-service/app/main.py",
@@ -3062,6 +3638,87 @@
       "id": "services_disease_potato_service_app_main_py",
       "community": 2,
       "norm_label": "main.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_init_py",
+      "community": 160,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_api_init_py",
+      "community": 161,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_core_init_py",
+      "community": 162,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_domain_init_py",
+      "community": 163,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_repositories_init_py",
+      "community": 164,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_schemas_init_py",
+      "community": 165,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_services_init_py",
+      "community": 166,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_app_workers_init_py",
+      "community": 167,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-potato-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_potato_service_tests_init_py",
+      "community": 168,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -3073,6 +3730,87 @@
       "norm_label": "main.py"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_init_py",
+      "community": 169,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_api_init_py",
+      "community": 170,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_core_init_py",
+      "community": 171,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_domain_init_py",
+      "community": 172,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_repositories_init_py",
+      "community": 173,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_schemas_init_py",
+      "community": 174,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_services_init_py",
+      "community": 175,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_app_workers_init_py",
+      "community": 176,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-rice-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_rice_service_tests_init_py",
+      "community": 177,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/disease-wheat-service/app/main.py",
@@ -3080,6 +3818,87 @@
       "id": "services_disease_wheat_service_app_main_py",
       "community": 2,
       "norm_label": "main.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_init_py",
+      "community": 178,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_api_init_py",
+      "community": 179,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_core_init_py",
+      "community": 180,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_domain_init_py",
+      "community": 181,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_repositories_init_py",
+      "community": 182,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_schemas_init_py",
+      "community": 183,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_services_init_py",
+      "community": 184,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_app_workers_init_py",
+      "community": 185,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/disease-wheat-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_disease_wheat_service_tests_init_py",
+      "community": 186,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -3116,6 +3935,87 @@
       "id": "app_main_rationale_28",
       "community": 2,
       "norm_label": "broadcasts dynamic agriculture warning alerts via websockets or sms"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_init_py",
+      "community": 187,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_api_init_py",
+      "community": 188,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_core_init_py",
+      "community": 189,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_domain_init_py",
+      "community": 190,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_repositories_init_py",
+      "community": 191,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_schemas_init_py",
+      "community": 192,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_services_init_py",
+      "community": 193,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_app_workers_init_py",
+      "community": 194,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/notification-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_notification_service_tests_init_py",
+      "community": 195,
+      "norm_label": "__init__.py"
     },
     {
       "label": "main.py",
@@ -3181,6 +4081,87 @@
       "norm_label": "indexes agriculture training texts into the vector database"
     },
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_init_py",
+      "community": 196,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_api_init_py",
+      "community": 197,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_core_init_py",
+      "community": 198,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_domain_init_py",
+      "community": 199,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_repositories_init_py",
+      "community": 200,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_schemas_init_py",
+      "community": 201,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_services_init_py",
+      "community": 202,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_workers_init_py",
+      "community": 203,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_rag_service_tests_init_py",
+      "community": 204,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "main.py",
       "file_type": "code",
       "source_file": "services/report-service/app/main.py",
@@ -3206,6 +4187,87 @@
       "id": "app_main_generate_report",
       "community": 2,
       "norm_label": "generate_report()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_init_py",
+      "community": 205,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/api/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_api_init_py",
+      "community": 206,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/core/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_core_init_py",
+      "community": 207,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/domain/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_domain_init_py",
+      "community": 208,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/repositories/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_repositories_init_py",
+      "community": 209,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/schemas/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_schemas_init_py",
+      "community": 210,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_services_init_py",
+      "community": 211,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/app/workers/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_app_workers_init_py",
+      "community": 212,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/report-service/tests/__init__.py",
+      "source_location": "L1",
+      "id": "services_report_service_tests_init_py",
+      "community": 213,
+      "norm_label": "__init__.py"
     },
     {
       "label": "Identifies the crop from the image.",
@@ -3239,7 +4301,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appapi__init__.py",
       "source_location": "L1",
-      "community": 96,
+      "community": 214,
       "norm_label": "appapi__init__.py",
       "id": "services_api_gateway_appapi_init_py"
     },
@@ -3248,7 +4310,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appcore__init__.py",
       "source_location": "L1",
-      "community": 97,
+      "community": 215,
       "norm_label": "appcore__init__.py",
       "id": "services_api_gateway_appcore_init_py"
     },
@@ -3257,7 +4319,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appdomain__init__.py",
       "source_location": "L1",
-      "community": 98,
+      "community": 216,
       "norm_label": "appdomain__init__.py",
       "id": "services_api_gateway_appdomain_init_py"
     },
@@ -3266,7 +4328,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/apprepositories__init__.py",
       "source_location": "L1",
-      "community": 99,
+      "community": 217,
       "norm_label": "apprepositories__init__.py",
       "id": "services_api_gateway_apprepositories_init_py"
     },
@@ -3275,7 +4337,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appschemas__init__.py",
       "source_location": "L1",
-      "community": 100,
+      "community": 218,
       "norm_label": "appschemas__init__.py",
       "id": "services_api_gateway_appschemas_init_py"
     },
@@ -3284,7 +4346,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appservices__init__.py",
       "source_location": "L1",
-      "community": 101,
+      "community": 219,
       "norm_label": "appservices__init__.py",
       "id": "services_api_gateway_appservices_init_py"
     },
@@ -3293,7 +4355,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appworkers__init__.py",
       "source_location": "L1",
-      "community": 102,
+      "community": 220,
       "norm_label": "appworkers__init__.py",
       "id": "services_api_gateway_appworkers_init_py"
     },
@@ -6998,9 +8060,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_43",
-      "target": "app_main_health_check",
-      "confidence_score": 1.0
+      "target": "app_main_health_check"
     },
     {
       "relation": "rationale_for",
@@ -7218,9 +8280,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_tokenvalidationrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -7228,9 +8290,9 @@
       "source_file": "services/notification-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_broadcastrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -7238,9 +8300,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_queryrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -7248,9 +8310,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_upsertrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -7258,9 +8320,9 @@
       "source_file": "services/report-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_reportrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "uses",
@@ -7370,9 +8432,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_agent_orchestrator_app_main_py",
-      "target": "app_main_verify_token",
-      "confidence_score": 1.0
+      "target": "app_main_verify_token"
     },
     {
       "relation": "contains",
@@ -7450,9 +8512,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_agent_orchestrator_app_main_py",
-      "target": "app_main_metrics",
-      "confidence_score": 1.0
+      "target": "app_main_metrics"
     },
     {
       "relation": "rationale_for",
@@ -7460,9 +8522,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_34",
-      "target": "app_main_verify_token",
-      "confidence_score": 1.0
+      "target": "app_main_verify_token"
     },
     {
       "relation": "inherits",
@@ -7491,9 +8553,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_110",
-      "target": "app_main_node_classify_crop",
-      "confidence_score": 1.0
+      "target": "app_main_node_classify_crop"
     },
     {
       "relation": "rationale_for",
@@ -7511,9 +8573,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_134",
-      "target": "app_main_node_diagnose_disease",
-      "confidence_score": 1.0
+      "target": "app_main_node_diagnose_disease"
     },
     {
       "relation": "rationale_for",
@@ -7531,9 +8593,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_175",
-      "target": "app_main_should_diagnose",
-      "confidence_score": 1.0
+      "target": "app_main_should_diagnose"
     },
     {
       "relation": "rationale_for",
@@ -7551,9 +8613,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_202",
-      "target": "app_main_diagnose",
-      "confidence_score": 1.0
+      "target": "app_main_diagnose"
     },
     {
       "relation": "contains",
@@ -7561,9 +8623,9 @@
       "source_file": "services/analytics-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_analytics_service_app_main_py",
-      "target": "app_main_health",
-      "confidence_score": 1.0
+      "target": "app_main_health"
     },
     {
       "relation": "contains",
@@ -7571,9 +8633,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_app_main_py",
-      "target": "app_main_health",
-      "confidence_score": 1.0
+      "target": "app_main_health"
     },
     {
       "relation": "contains",
@@ -7641,9 +8703,9 @@
       "source_file": "services/notification-service/app/main.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_notification_service_app_main_py",
-      "target": "app_main_health",
-      "confidence_score": 1.0
+      "target": "app_main_health"
     },
     {
       "relation": "contains",
@@ -7651,9 +8713,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_health",
-      "confidence_score": 1.0
+      "target": "app_main_health"
     },
     {
       "relation": "contains",
@@ -7661,9 +8723,9 @@
       "source_file": "services/report-service/app/main.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_report_service_app_main_py",
-      "target": "app_main_health",
-      "confidence_score": 1.0
+      "target": "app_main_health"
     },
     {
       "relation": "rationale_for",
@@ -7671,9 +8733,9 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L237",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_237",
-      "target": "app_main_metrics",
-      "confidence_score": 1.0
+      "target": "app_main_metrics"
     },
     {
       "relation": "contains",
@@ -7681,9 +8743,9 @@
       "source_file": "services/analytics-service/app/main.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_analytics_service_app_main_py",
-      "target": "app_main_get_outbreaks_telemetry",
-      "confidence_score": 1.0
+      "target": "app_main_get_outbreaks_telemetry"
     },
     {
       "relation": "contains",
@@ -7691,9 +8753,9 @@
       "source_file": "services/analytics-service/app/main.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_analytics_service_app_main_py",
-      "target": "app_main_get_diagnoses_metrics",
-      "confidence_score": 1.0
+      "target": "app_main_get_diagnoses_metrics"
     },
     {
       "relation": "rationale_for",
@@ -7701,9 +8763,9 @@
       "source_file": "services/analytics-service/app/main.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_20",
-      "target": "app_main_get_outbreaks_telemetry",
-      "confidence_score": 1.0
+      "target": "app_main_get_outbreaks_telemetry"
     },
     {
       "relation": "rationale_for",
@@ -7711,9 +8773,9 @@
       "source_file": "services/analytics-service/app/main.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_32",
-      "target": "app_main_get_diagnoses_metrics",
-      "confidence_score": 1.0
+      "target": "app_main_get_diagnoses_metrics"
     },
     {
       "relation": "contains",
@@ -7721,9 +8783,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api_gateway_app_main_py",
-      "target": "app_main_shutdown_event",
-      "confidence_score": 1.0
+      "target": "app_main_shutdown_event"
     },
     {
       "relation": "contains",
@@ -7741,9 +8803,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api_gateway_app_main_py",
-      "target": "app_main_reverse_proxy",
-      "confidence_score": 1.0
+      "target": "app_main_reverse_proxy"
     },
     {
       "relation": "contains",
@@ -7751,9 +8813,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api_gateway_app_main_py",
-      "target": "app_main_direct_diagnose",
-      "confidence_score": 1.0
+      "target": "app_main_direct_diagnose"
     },
     {
       "relation": "rationale_for",
@@ -7772,9 +8834,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_direct_diagnose",
-      "target": "app_main_reverse_proxy",
-      "confidence_score": 1.0
+      "target": "app_main_reverse_proxy"
     },
     {
       "relation": "rationale_for",
@@ -7782,9 +8844,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_57",
-      "target": "app_main_reverse_proxy",
-      "confidence_score": 1.0
+      "target": "app_main_reverse_proxy"
     },
     {
       "relation": "rationale_for",
@@ -7792,9 +8854,9 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_101",
-      "target": "app_main_direct_diagnose",
-      "confidence_score": 1.0
+      "target": "app_main_direct_diagnose"
     },
     {
       "relation": "contains",
@@ -7802,9 +8864,9 @@
       "source_file": "services/api-gateway/tests/test_gateway.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api_gateway_tests_test_gateway_py",
-      "target": "tests_test_gateway_test_gateway_root",
-      "confidence_score": 1.0
+      "target": "tests_test_gateway_test_gateway_root"
     },
     {
       "relation": "contains",
@@ -7812,9 +8874,9 @@
       "source_file": "services/api-gateway/tests/test_gateway.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api_gateway_tests_test_gateway_py",
-      "target": "tests_test_gateway_test_gateway_health",
-      "confidence_score": 1.0
+      "target": "tests_test_gateway_test_gateway_health"
     },
     {
       "relation": "contains",
@@ -7822,9 +8884,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_app_main_py",
-      "target": "app_main_tokenvalidationrequest",
-      "confidence_score": 1.0
+      "target": "app_main_tokenvalidationrequest"
     },
     {
       "relation": "contains",
@@ -7832,9 +8894,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_app_main_py",
-      "target": "app_main_validate_token",
-      "confidence_score": 1.0
+      "target": "app_main_validate_token"
     },
     {
       "relation": "contains",
@@ -7842,9 +8904,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_app_main_py",
-      "target": "app_main_user_info",
-      "confidence_score": 1.0
+      "target": "app_main_user_info"
     },
     {
       "relation": "calls",
@@ -7853,9 +8915,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_user_info",
-      "target": "app_main_tokenvalidationrequest",
-      "confidence_score": 1.0
+      "target": "app_main_tokenvalidationrequest"
     },
     {
       "relation": "calls",
@@ -7864,9 +8926,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_user_info",
-      "target": "app_main_validate_token",
-      "confidence_score": 1.0
+      "target": "app_main_validate_token"
     },
     {
       "relation": "rationale_for",
@@ -7874,9 +8936,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_27",
-      "target": "app_main_validate_token",
-      "confidence_score": 1.0
+      "target": "app_main_validate_token"
     },
     {
       "relation": "rationale_for",
@@ -7884,9 +8946,9 @@
       "source_file": "services/auth-service/app/main.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_65",
-      "target": "app_main_user_info",
-      "confidence_score": 1.0
+      "target": "app_main_user_info"
     },
     {
       "relation": "rationale_for",
@@ -7894,9 +8956,9 @@
       "source_file": "services/report-service/app/main.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_27",
-      "target": "app_main_generate_report",
-      "confidence_score": 1.0
+      "target": "app_main_generate_report"
     },
     {
       "relation": "contains",
@@ -7904,9 +8966,9 @@
       "source_file": "services/auth-service/tests/test_auth.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_tests_test_auth_py",
-      "target": "tests_test_auth_test_auth_health",
-      "confidence_score": 1.0
+      "target": "tests_test_auth_test_auth_health"
     },
     {
       "relation": "contains",
@@ -7914,9 +8976,9 @@
       "source_file": "services/auth-service/tests/test_auth.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_auth_service_tests_test_auth_py",
-      "target": "tests_test_auth_test_auth_validation",
-      "confidence_score": 1.0
+      "target": "tests_test_auth_test_auth_validation"
     },
     {
       "relation": "contains",
@@ -7984,9 +9046,9 @@
       "source_file": "services/notification-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_notification_service_app_main_py",
-      "target": "app_main_broadcastrequest",
-      "confidence_score": 1.0
+      "target": "app_main_broadcastrequest"
     },
     {
       "relation": "contains",
@@ -7994,9 +9056,9 @@
       "source_file": "services/notification-service/app/main.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_notification_service_app_main_py",
-      "target": "app_main_broadcast_notification",
-      "confidence_score": 1.0
+      "target": "app_main_broadcast_notification"
     },
     {
       "relation": "rationale_for",
@@ -8004,9 +9066,9 @@
       "source_file": "services/notification-service/app/main.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_28",
-      "target": "app_main_broadcast_notification",
-      "confidence_score": 1.0
+      "target": "app_main_broadcast_notification"
     },
     {
       "relation": "contains",
@@ -8014,9 +9076,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_queryrequest",
-      "confidence_score": 1.0
+      "target": "app_main_queryrequest"
     },
     {
       "relation": "contains",
@@ -8024,9 +9086,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_upsertrequest",
-      "confidence_score": 1.0
+      "target": "app_main_upsertrequest"
     },
     {
       "relation": "contains",
@@ -8034,9 +9096,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_query_knowledge_base",
-      "confidence_score": 1.0
+      "target": "app_main_query_knowledge_base"
     },
     {
       "relation": "contains",
@@ -8044,9 +9106,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_upsert_document",
-      "confidence_score": 1.0
+      "target": "app_main_upsert_document"
     },
     {
       "relation": "rationale_for",
@@ -8054,9 +9116,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_31",
-      "target": "app_main_query_knowledge_base",
-      "confidence_score": 1.0
+      "target": "app_main_query_knowledge_base"
     },
     {
       "relation": "rationale_for",
@@ -8064,9 +9126,9 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_56",
-      "target": "app_main_upsert_document",
-      "confidence_score": 1.0
+      "target": "app_main_upsert_document"
     },
     {
       "relation": "contains",
@@ -8074,9 +9136,9 @@
       "source_file": "services/report-service/app/main.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_report_service_app_main_py",
-      "target": "app_main_reportrequest",
-      "confidence_score": 1.0
+      "target": "app_main_reportrequest"
     },
     {
       "relation": "contains",
@@ -8084,9 +9146,9 @@
       "source_file": "services/report-service/app/main.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_report_service_app_main_py",
-      "target": "app_main_generate_report",
-      "confidence_score": 1.0
+      "target": "app_main_generate_report"
     },
     {
       "relation": "contains",
@@ -8122,5 +9184,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7997b1707b64f8810c2c2eb5e3488b1ed23754c3"
+  "built_at_commit": "5205fdd539162b15e334361df62f8e037ca7dd3c"
 }

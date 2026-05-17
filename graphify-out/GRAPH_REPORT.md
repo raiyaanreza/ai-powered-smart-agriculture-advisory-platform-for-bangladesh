@@ -1,16 +1,16 @@
 # Graph Report - agri-ai-platform  (2026-05-17)
 
 ## Corpus Check
-- 148 files · ~1,633,750 words
+- 266 files · ~1,634,114 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 423 nodes · 421 edges · 103 communities (98 shown, 5 thin omitted)
+- 541 nodes · 421 edges · 221 communities (216 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.6)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7997b170`
+- Built from commit: `5205fdd5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -61,7 +61,7 @@
 - `Alert()` --calls--> `alertVariants`  [EXTRACTED]
   apps/web/components/ui/alert.tsx → apps/admin/components/ui/alert.tsx
 
-## Communities (103 total, 5 thin omitted)
+## Communities (221 total, 5 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
@@ -136,11 +136,11 @@ Nodes (3): hasRole(), isAdmin(), isFarmer()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 0` to `Community 8`, `Community 10`, `Community 7`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Why does `health()` connect `Community 2` to `Community 3`, `Community 6`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `useAuth()` connect `Community 4` to `Community 5`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `Generate PDF version of the QA Audit Reverification Report Usage: python script`, `Download a font file if not already present.`, `Remove emoji characters that can't render in the font.` to the rest of the system?**
   _50 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**

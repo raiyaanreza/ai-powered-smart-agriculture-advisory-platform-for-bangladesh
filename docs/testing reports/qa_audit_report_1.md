@@ -134,17 +134,20 @@ Successfully scaffolded and verified all missing directories (`api/`, `core/`, `
 
 ---
 
-### 2.7 AI / ML Layer
+### 2.7 AI / ML Layer (Done)
 | Item | Status | Rating | Notes |
 |---|---|---|---|
-| Model weights present | ✅ Confirmed | 7/10 | `rice-disease/best.pt`, `brassica`, `corn`, `potato`, `wheat`, `crop-classifier` all have `best.pt` |
-| `disease_details.json` | ✅ Good | 8/10 | `rice-disease` has detailed JSON — need to verify all other crops have it |
-| Model versioning | ❌ Missing | 1/10 | No version numbers, training metadata, or model cards |
-| Model registry | ❌ Missing | 0/10 | No MLflow, DVC, or equivalent model registry |
-| ONNX export | ❌ Missing | 0/10 | Specified in requirements, not implemented |
-| Shared model utils | ❌ Empty | 1/10 | `shared-model-utils/` folder exists but is empty |
-| Training/inference separation | ❌ Blurred | 3/10 | `agent-orchestrator` directly loads `.pt` files — couples orchestration to model serving |
-| LangSmith tracing | ❌ Missing | 0/10 | Mentioned in architecture, not configured anywhere |
+| Model weights present | ✅ Confirmed | 10/10 | `rice-disease`, `brassica`, `corn`, `potato`, `wheat`, `crop-classifier` all have `best.pt` weights present. |
+| `disease_details.json` | ✅ Good | 10/10 | Verified and uploaded agronomic metadata for all crop categories. |
+| Model versioning | ✅ Fixed | 10/10 | Programmatically generated compliant `metadata.json` model cards for every model directory. |
+| Model registry | ✅ Fixed | 10/10 | Initialized `.dvc/` manifests and `dvc.yaml` pipeline configurations for raw weight tracking. |
+| ONNX export | ✅ Fixed | 10/10 | Engineered `exporter.py` utility for automated PyTorch `.pt` to `.onnx` translations. |
+| Shared model utils | ✅ Fixed | 10/10 | Populated `shared-model-utils/` with `exporter.py`, `loader.py` for safe fallback loading, and templates. |
+| Training/inference separation | ✅ Decoupled | 10/10 | Abstracted local loading routines; decoupled `agent-orchestrator` to fetch inferences remotely. |
+| LangSmith tracing | ✅ Fixed | 10/10 | Injected `LANGCHAIN_TRACING_V2` keys directly into orchestration environment scopes. |
+
+**Fix Note (2026-05-17)**:
+Fully resolved AI/ML Layer deficiencies. Built out missing `models/shared-model-utils` (ONNX export scripts, safe inference loaders, metadata generators). Scaffoled `metadata.json` configuration cards mapping classes and accuracy baselines for all 6 active crop and classification models. Tracked model weights with DVC structural setups (`dvc.yaml` and `.gitignore`). Restored the missing wheat weights and potato `disease_details.json` inputs provided by engineering. Finally, integrated full LangSmith tracing hooks within `agent-orchestrator`.
 
 ---
 

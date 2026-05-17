@@ -1,16 +1,16 @@
 # Graph Report - agri-ai-platform  (2026-05-17)
 
 ## Corpus Check
-- 266 files · ~1,634,114 words
+- 269 files · ~1,634,453 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 541 nodes · 421 edges · 221 communities (216 shown, 5 thin omitted)
+- 551 nodes · 428 edges · 223 communities (217 shown, 6 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.6)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5205fdd5`
+- Built from commit: `64bc77da`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -35,7 +35,8 @@
 - [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
-- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 54|Community 54]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 22 edges
@@ -47,7 +48,7 @@
 7. `GeminiAdvisoryService` - 8 edges
 8. `predict()` - 6 edges
 9. `Skeleton()` - 4 edges
-10. `rdate()` - 4 edges
+10. `ModelLoader` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `GeminiAdvisoryService` --uses--> `TreatmentStep`  [INFERRED]
@@ -61,11 +62,11 @@
 - `Alert()` --calls--> `alertVariants`  [EXTRACTED]
   apps/web/components/ui/alert.tsx → apps/admin/components/ui/alert.tsx
 
-## Communities (221 total, 5 thin omitted)
+## Communities (223 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.07
-Nodes (10): cn(), Alert(), alertVariants, cn(), Badge(), badgeVariants, Skeleton(), cn() (+2 more)
+Cohesion: 0.05
+Nodes (12): cn(), Alert(), alertVariants, cn(), Badge(), badgeVariants, CardAction(), cn() (+4 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -103,15 +104,15 @@ Nodes (9): ChartConfig, ChartContext, ChartContextProps, ChartLegendContent(), C
 Cohesion: 0.15
 Nodes (8): direct_diagnose(), health_check(), API Gateway Service - Entry Point with Asynchronous Reverse Proxying, Direct route for YOLO crop/disease diagnostics, Health check endpoint, Health check endpoint, Generically proxy incoming gateway traffic to downstream services, reverse_proxy()
 
-### Community 11 - "Community 11"
+### Community 10 - "Community 10"
 Cohesion: 0.39
 Nodes (6): iso(), AgriVision Platform - Database Seed Script (matching actual Supabase schema), rdate(), seed_diagnoses(), seed_notifications(), seed_reports()
 
-### Community 12 - "Community 12"
+### Community 11 - "Community 11"
 Cohesion: 0.25
 Nodes (5): geistMono, geistSans, metadata, RootLayout(), QueryProvider()
 
-### Community 14 - "Community 14"
+### Community 13 - "Community 13"
 Cohesion: 0.29
 Nodes (6): AI_CONFIG, SYSTEM_PROMPTS, User, UserDTO, UserRole, UserSchema
 
@@ -119,7 +120,7 @@ Nodes (6): AI_CONFIG, SYSTEM_PROMPTS, User, UserDTO, UserRole, UserSchema
 Cohesion: 0.47
 Nodes (3): handleDeleteReport(), handleGenerate(), saveReports()
 
-### Community 18 - "Community 18"
+### Community 17 - "Community 17"
 Cohesion: 0.6
 Nodes (3): handleNewChat(), handleSendMessage(), saveConversations()
 
@@ -128,23 +129,23 @@ Cohesion: 0.6
 Nodes (3): hasRole(), isAdmin(), isFarmer()
 
 ## Knowledge Gaps
-- **50 isolated node(s):** `Generate PDF version of the QA Audit Reverification Report Usage: python script`, `Download a font file if not already present.`, `Remove emoji characters that can't render in the font.`, `Remove **bold** markers from text.`, `Remove [text](url) markdown links.` (+45 more)
+- **52 isolated node(s):** `Exports a PyTorch YOLO model to ONNX format.`, `Safely loads inference models, preferring ONNX for speed with PyTorch fallback.`, `Generate PDF version of the QA Audit Reverification Report Usage: python script`, `Download a font file if not already present.`, `Remove emoji characters that can't render in the font.` (+47 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 0` to `Community 8`, `Community 10`, `Community 7`?**
+- **Why does `cn()` connect `Community 0` to `Community 8`, `Community 7`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Why does `health()` connect `Community 2` to `Community 3`, `Community 6`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `useAuth()` connect `Community 4` to `Community 5`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **What connects `Generate PDF version of the QA Audit Reverification Report Usage: python script`, `Download a font file if not already present.`, `Remove emoji characters that can't render in the font.` to the rest of the system?**
-  _50 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Exports a PyTorch YOLO model to ONNX format.`, `Safely loads inference models, preferring ONNX for speed with PyTorch fallback.`, `Generate PDF version of the QA Audit Reverification Report Usage: python script` to the rest of the system?**
+  _52 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.11 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

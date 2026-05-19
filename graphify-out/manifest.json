@@ -535,6 +535,10 @@
     "mtime": 1779018653.2352645,
     "hash": "ff72363d9ebcc83bbc6733c54757f006"
   },
+  "E:\\agri-ai-platform\\scripts\\generate_contribution_pdf.py": {
+    "mtime": 1779179974.628045,
+    "hash": "4617fe627b5be9117b7d20da53650202"
+  },
   "E:\\agri-ai-platform\\scripts\\generate_pdf_report.py": {
     "mtime": 1778908922.0600405,
     "hash": "27e66ea2a2f19468fd6a87a6b53e5fa2"
@@ -1486,6 +1490,10 @@
   "E:\\agri-ai-platform\\services\\report-service\\requirements.txt": {
     "mtime": 1779009183.0071445,
     "hash": "c81434f562889b6bb51c24792ffc40e6"
+  },
+  "E:\\agri-ai-platform\\docs\\cse499_contribution.pdf": {
+    "mtime": 1779179980.4583845,
+    "hash": "c75b7280e021858e6f5b227c226b0081"
   },
   "E:\\agri-ai-platform\\apps\\admin\\public\\file.svg": {
     "mtime": 1778755960.3885117,

@@ -61,6 +61,13 @@ const DEFAULT_CONVERSATIONS: ChatSession[] = [
   }
 ];
 
+/** Offline chat is the default until online Gemini advisory is restored. */
+const USE_OFFLINE_CHAT =
+  process.env.NEXT_PUBLIC_USE_OFFLINE_CHAT !== "false";
+
+const OFFLINE_CHAT_ERROR =
+  "দুঃখিত, অফলাইন পরামর্শ সার্ভারের সাথে সংযোগ করা যাচ্ছে না। অনুগ্রহ করে নিশ্চিত করুন যে advisory-service (পোর্ট 8001) চালু আছে।";
+
 export function AdvisoryDashboard() {
   const [activeTab, setActiveTab] = useState<string>("Chat History");
   const [conversations, setConversations] = useState<ChatSession[]>([]);
@@ -68,7 +75,8 @@ export function AdvisoryDashboard() {
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
   const [chatLoading, setChatLoading] = useState(false);
 
-  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8001";
+  const advisoryApiBase =
+    process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://127.0.0.1:8001";
 
   // Load conversations from local storage
   useEffect(() => {
@@ -153,49 +161,72 @@ export function AdvisoryDashboard() {
     saveConversations(updatedConversations);
     setChatLoading(true);
 
+    const persistBotReply = (botMsg: Message) => {
+      const finalSession = {
+        ...updatedSession,
+        messages: [...updatedMessages, botMsg],
+      };
+      saveConversations(
+        updatedConversations.map((c) =>
+          c.id === currentSessionId ? finalSession : c
+        )
+      );
+    };
+
     try {
-      const response = await fetch(`${advisoryApiBase}/advisory/chat`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: text,
-          image_data: image ? image.split(",")[1] : null,
-          history: updatedMessages.slice(0, -1).map(m => ({
-            role: m.role === "bot" ? "assistant" : "user",
-            content: m.text
-          }))
-        })
-      });
+      let data: { text: string; diagnosis?: Message["diagnosis"] };
 
-      if (!response.ok) throw new Error("Failed to connect to backend");
+      if (USE_OFFLINE_CHAT) {
+        const response = await fetch(
+          `${advisoryApiBase}/advisory/chat/offline`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              message: text,
+              history: [],
+              image_data: null,
+            }),
+          }
+        );
 
-      const data = await response.json();
-      
-      const botMsg: Message = {
+        if (!response.ok) throw new Error("Offline chat request failed");
+
+        data = await response.json();
+      } else {
+        const response = await fetch(`${advisoryApiBase}/advisory/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: text,
+            image_data: image ? image.split(",")[1] : null,
+            history: updatedMessages.slice(0, -1).map((m) => ({
+              role: m.role === "bot" ? "assistant" : "user",
+              content: m.text,
+            })),
+          }),
+        });
+
+        if (!response.ok) throw new Error("Online chat request failed");
+
+        data = await response.json();
+      }
+
+      persistBotReply({
         id: (Date.now() + 1).toString(),
         role: "bot",
         text: data.text,
-        diagnosis: data.diagnosis
-      };
-
-      const finalSession = {
-        ...updatedSession,
-        messages: [...updatedMessages, botMsg]
-      };
-
-      saveConversations(conversations.map(c => c.id === currentSessionId ? finalSession : c));
+        diagnosis: data.diagnosis,
+      });
     } catch (err) {
       console.error(err);
-      const botMsg: Message = {
+      persistBotReply({
         id: (Date.now() + 1).toString(),
         role: "bot",
-        text: "দুঃখিত, আমাদের বিশেষজ্ঞ সার্ভারের সাথে সংযোগ করা যাচ্ছে না। অনুগ্রহ করে নিশ্চিত করুন যে আপনার ইন্টারনেট সংযোগ ঠিক আছে এবং ব্যাকএন্ড সার্ভিসটি চালু আছে।"
-      };
-      const finalSession = {
-        ...updatedSession,
-        messages: [...updatedMessages, botMsg]
-      };
-      saveConversations(conversations.map(c => c.id === currentSessionId ? finalSession : c));
+        text: USE_OFFLINE_CHAT
+          ? OFFLINE_CHAT_ERROR
+          : "দুঃখিত, আমাদের বিশেষজ্ঞ সার্ভারের সাথে সংযোগ করা যাচ্ছে না। অনুগ্রহ করে নিশ্চিত করুন যে আপনার ইন্টারনেট সংযোগ ঠিক আছে এবং ব্যাকএন্ড সার্ভিসটি চালু আছে।",
+      });
     } finally {
       setChatLoading(false);
     }
@@ -223,13 +254,14 @@ export function AdvisoryDashboard() {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col relative overflow-hidden h-full">
-        <main className="flex-1 overflow-hidden h-full">
+        <main className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
           {activeTab === "Crop Analysis" ? (
             <CropAnalysisView />
           ) : (
-            <ChatInterface 
+            <ChatInterface
               messages={activeSession.messages}
               isLoading={chatLoading}
+              isOfflineMode={USE_OFFLINE_CHAT}
               onSendMessage={handleSendMessage}
             />
           )}

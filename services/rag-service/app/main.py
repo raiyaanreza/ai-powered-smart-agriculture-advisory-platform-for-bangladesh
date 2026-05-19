@@ -1,9 +1,17 @@
 import os
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-app = FastAPI(title="rag-service", version="0.1.0")
+async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
+    if request.url.path in ("/health", "/docs", "/openapi.json"):
+        return True
+    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    if not x_internal_token or x_internal_token != secret:
+        raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
+    return True
+
+app = FastAPI(title="rag-service", version="0.1.0", dependencies=[Depends(verify_internal_token)])
 
 app.add_middleware(
     CORSMiddleware,

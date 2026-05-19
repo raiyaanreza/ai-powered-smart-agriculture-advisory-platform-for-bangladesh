@@ -42,9 +42,7 @@ export function useAuth() {
   };
 
   useEffect(() => {
-    console.log("useAuth useEffect started");
     const timeout = setTimeout(() => {
-      console.log("useAuth timeout fired");
       setLoading(false);
     }, 3000);
 
@@ -52,7 +50,6 @@ export function useAuth() {
       supabase.auth
         .getSession()
         .then(({ data: { session } }) => {
-          console.log("useAuth session fetched", !!session);
           clearTimeout(timeout);
           setUser(session?.user ?? null);
           if (session?.user) fetchProfile(session.user.id);
@@ -66,7 +63,6 @@ export function useAuth() {
       const {
         data: { subscription },
       } = supabase.auth.onAuthStateChange((_event, session) => {
-        console.log("useAuth state changed", _event);
         clearTimeout(timeout);
         setUser(session?.user ?? null);
         if (session?.user) fetchProfile(session.user.id);

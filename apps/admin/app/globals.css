@@ -65,58 +65,62 @@
 
 @layer base {
   :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.129 0.042 264.695);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.129 0.042 264.695);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.129 0.042 264.695);
-    --primary: oklch(0.208 0.042 265.755);
-    --primary-foreground: oklch(0.984 0.003 247.858);
-    --secondary: oklch(0.961 0.01 263.109);
-    --secondary-foreground: oklch(0.208 0.042 265.755);
-    --muted: oklch(0.961 0.01 263.109);
-    --muted-foreground: oklch(0.464 0.035 264.127);
-    --accent: oklch(0.961 0.01 263.109);
-    --accent-foreground: oklch(0.208 0.042 265.755);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.985 0 0);
-    --border: oklch(0.922 0.011 265.171);
-    --input: oklch(0.922 0.011 265.171);
-    --ring: oklch(0.129 0.042 264.695);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --radius: 0.5rem;
-  }
+    /* Page */
+    --background:         #FAFAFA;
+    --foreground:         #1E293B;
 
-  .dark {
-    --background: oklch(0.129 0.042 264.695);
-    --foreground: oklch(0.984 0.003 247.858);
-    --card: oklch(0.129 0.042 264.695);
-    --card-foreground: oklch(0.984 0.003 247.858);
-    --popover: oklch(0.129 0.042 264.695);
-    --popover-foreground: oklch(0.984 0.003 247.858);
-    --primary: oklch(0.984 0.003 247.858);
-    --primary-foreground: oklch(0.129 0.042 264.695);
-    --secondary: oklch(0.215 0.042 264.695);
-    --secondary-foreground: oklch(0.984 0.003 247.858);
-    --muted: oklch(0.215 0.042 264.695);
-    --muted-foreground: oklch(0.701 0.034 262.33);
-    --accent: oklch(0.215 0.042 264.695);
-    --accent-foreground: oklch(0.984 0.003 247.858);
-    --destructive: oklch(0.396 0.141 25.723);
-    --destructive-foreground: oklch(0.984 0.003 247.858);
-    --border: oklch(0.215 0.042 264.695);
-    --input: oklch(0.215 0.042 264.695);
-    --ring: oklch(0.701 0.034 262.33);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
+    /* Cards */
+    --card:               #FFFFFF;
+    --card-foreground:    #1E293B;
+
+    /* Popover */
+    --popover:            #FFFFFF;
+    --popover-foreground: #1E293B;
+
+    /* Brand (aligned with web app) */
+    --primary:            #2D5A27;
+    --primary-foreground: #FFFFFF;
+
+    /* Secondary */
+    --secondary:          #F1F5F9;
+    --secondary-foreground: #1E293B;
+
+    /* Muted */
+    --muted:              #F1F5F9;
+    --muted-foreground:   #4B5563;
+
+    /* Accent (Harvest Gold) */
+    --accent:             #EAB308;
+    --accent-foreground:  #1A1A00;
+
+    /* Danger */
+    --destructive:        #EF4444;
+    --destructive-foreground: #FFFFFF;
+
+    /* Borders */
+    --border:             #E2E8F0;
+    --input:              #E2E8F0;
+    --ring:               rgba(45, 90, 39, 0.4);
+
+    /* Charts */
+    --chart-1:            #2D5A27;
+    --chart-2:            #EAB308;
+    --chart-3:            #3B82F6;
+    --chart-4:            #10B981;
+    --chart-5:            #EF4444;
+
+    /* Semantic Status Tokens */
+    --status-success:     #10B981;
+    --status-warning:     #F59E0B;
+    --status-danger:      #EF4444;
+    --status-info:        #3B82F6;
+
+    /* Severity Tokens */
+    --severity-low:       #10B981;
+    --severity-medium:    #F59E0B;
+    --severity-high:      #EF4444;
+
+    --radius: 0.75rem;
   }
 }
 
@@ -125,7 +129,265 @@
     @apply border-border;
     outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  ::selection {
+    background-color: rgba(45, 90, 39, 0.15);
+    color: #2D5A27;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2D5A27;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Utility Classes
+   ───────────────────────────────────────────── */
+@layer utilities {
+
+  /* ── Section backgrounds ── */
+  .bg-section-alt {
+    background: #F8FAFC;
+  }
+
+  .bg-dark-section {
+    background: linear-gradient(135deg, #1A321A 0%, #2D5A27 60%, #214020 100%);
+  }
+
+  /* ── Gradient text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #2D5A27 0%, #3D9150 50%, #2D7A3E 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #CA8A04 0%, #EAB308 50%, #A16207 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Cards ── */
+  .card-base {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-base:hover {
+    border-color: rgba(45, 90, 39, 0.25);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 12px 32px rgba(45, 90, 39, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-elevated {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  /* ── Pill badge ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .pill-green {
+    background: rgba(45, 90, 39, 0.08);
+    color: #2D5A27;
+    border: 1px solid rgba(45, 90, 39, 0.18);
+  }
+
+  .pill-gold {
+    background: rgba(234, 179, 8, 0.1);
+    color: #92400E;
+    border: 1px solid rgba(234, 179, 8, 0.25);
+  }
+
+  /* ── Stat number ── */
+  .stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #2D5A27;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2D5A27;
+  }
+
+  /* ── Fluid Type Scale ── */
+  .text-display {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  .text-heading-1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .text-heading-2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+
+  .text-heading-3 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .text-body-lg {
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .text-body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .text-caption {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--muted-foreground);
+  }
+
+  /* ── Divider line ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E2E8F0, transparent);
+  }
+
+  /* ── Glow ── */
+  .glow-green {
+    box-shadow: 0 0 30px rgba(45, 90, 39, 0.2), 0 0 60px rgba(45, 90, 39, 0.08);
+  }
+
+  /* ── Text sizes ── */
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY — Focus Styles
+   Consistent, visible focus indicators for keyboard navigation
+   ───────────────────────────────────────────── */
+
+/* Global focus-visible style for all interactive elements */
+*:focus-visible {
+  outline: 2px solid var(--primary, #2D5A27);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Override for buttons and links with their own focus styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary, #2D5A27);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.2);
+}
+
+/* Remove outline for mouse clicks, keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure focus is visible on dark backgrounds */
+.bg-green-950 *:focus-visible,
+.bg-slate-900 *:focus-visible,
+[class*="bg-[#052E16]"] *:focus-visible {
+  outline-color: #4ADE80;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.3);
+}
+
+/* Skip link visibility utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 100;
+}
+
+/* ─────────────────────────────────────────────
+   CUSTOM SCROLLBAR FOR PREMIUM UX
+   ───────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 99px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }

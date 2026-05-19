@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase, supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 
 interface Report {
@@ -46,48 +46,60 @@ export default function OutbreakMap() {
   }, []);
 
   const fetchAll = async () => {
-    const [reportsRes, diagnosesRes] = await Promise.all([
-      supabaseAdmin.from("reports").select("*").order("created_at", { ascending: false }),
-      supabaseAdmin.from("diagnoses").select("disease_detected, confidence_score, created_at").order("created_at", { ascending: false }).limit(200),
-    ]);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || "admin-mock-token";
 
-    if (reportsRes.data) setReports(reportsRes.data);
+      const response = await fetch("/api/outbreak-analytics", {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      if (response.ok) {
+        const payload = await response.json();
+        const reportsData = payload.reports || [];
+        const diagnoses = payload.diagnoses || [];
 
-    const diagnoses = diagnosesRes.data || [];
-    const byDisease: Record<string, number> = {};
-    const byDistrict: Record<string, number> = {};
-    let confSum = 0;
+        setReports(reportsData);
 
-    // Build 7-day trend
-    const now = new Date();
-    const trend7 = Array.from({ length: 7 }, (_, idx) => {
-      const day = new Date(now);
-      day.setDate(day.getDate() - (6 - idx));
-      const dayStr = day.toISOString().slice(0, 10);
-      return diagnoses.filter(d => d.created_at && d.created_at.slice(0, 10) === dayStr).length;
-    });
+        const byDisease: Record<string, number> = {};
+        const byDistrict: Record<string, number> = {};
+        let confSum = 0;
 
-    diagnoses.forEach(d => {
-      const raw = d.disease_detected || "";
-      const parts = raw.split(" - ");
-      const disease = parts.length > 1 ? parts[1] : raw;
-      byDisease[disease] = (byDisease[disease] || 0) + 1;
-      if (d.confidence_score) confSum += d.confidence_score;
-    });
+        // Build 7-day trend
+        const now = new Date();
+        const trend7 = Array.from({ length: 7 }, (_, idx) => {
+          const day = new Date(now);
+          day.setDate(day.getDate() - (6 - idx));
+          const dayStr = day.toISOString().slice(0, 10);
+          return diagnoses.filter((d: any) => d.created_at && d.created_at.slice(0, 10) === dayStr).length;
+        });
 
-    (reportsRes.data || []).forEach(r => {
-      byDistrict[r.location_name] = (byDistrict[r.location_name] || 0) + 1;
-    });
+        diagnoses.forEach((d: any) => {
+          const raw = d.disease_detected || "";
+          const parts = raw.split(" - ");
+          const disease = parts.length > 1 ? parts[1] : raw;
+          byDisease[disease] = (byDisease[disease] || 0) + 1;
+          if (d.confidence_score) confSum += d.confidence_score;
+        });
 
-    setAnalytics({
-      totalDiagnoses: diagnoses.length,
-      byDisease,
-      byDistrict,
-      trend7,
-      avgConfidence: diagnoses.length ? confSum / diagnoses.length : 0,
-    });
+        reportsData.forEach((r: any) => {
+          byDistrict[r.location_name] = (byDistrict[r.location_name] || 0) + 1;
+        });
 
-    setLoading(false);
+        setAnalytics({
+          totalDiagnoses: diagnoses.length,
+          byDisease,
+          byDistrict,
+          trend7,
+          avgConfidence: diagnoses.length ? confSum / diagnoses.length : 0,
+        });
+      }
+    } catch (err) {
+      console.error("Error loading outbreak analytics GIS data:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const getSeverityColor = (severity: string) => {

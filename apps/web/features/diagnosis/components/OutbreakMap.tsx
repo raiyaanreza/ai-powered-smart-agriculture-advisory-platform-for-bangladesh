@@ -21,18 +21,18 @@ export function OutbreakMap() {
     let mounted = true;
 
     const fetchReports = async () => {
-      const { data, error } = await supabase
-        .from("reports")
-        .select("id, disease_name, latitude, longitude, severity, location_name")
-        .order("created_at", { ascending: false })
-        .limit(5);
-
-      if (!mounted) return;
-
-      if (!error && data) {
-        setReports(data);
+      try {
+        const response = await fetch("/api/reports");
+        if (!mounted) return;
+        if (response.ok) {
+          const data = await response.json();
+          setReports(data);
+        }
+      } catch (err) {
+        console.error("Error fetching outbreak reports:", err);
+      } finally {
+        if (mounted) setLoading(false);
       }
-      setLoading(false);
     };
 
     fetchReports();

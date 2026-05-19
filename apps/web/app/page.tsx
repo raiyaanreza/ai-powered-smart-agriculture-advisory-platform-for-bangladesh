@@ -28,7 +28,7 @@ export default function LandingPage() {
       <AnimatedBanner />
       <Navbar />
 
-      <main>
+      <main id="main-content" role="main">
         <Hero />
         <TrustedBy />
         <Features />

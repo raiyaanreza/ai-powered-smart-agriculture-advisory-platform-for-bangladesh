@@ -140,5 +140,46 @@ class GeminiAdvisoryService:
                 climate_outlook="Reproductive বা ফুল আসার সময়ে আকস্মিক উচ্চ তাপমাত্রা বা অনাকাঙ্ক্ষিত ভারী বৃষ্টিপাত এড়াতে বপন কালীন সময়সূচী কঠোরভাবে মেনে চলুন।"
             )
 
+    async def generate_diagnosis(self, yolo_crop: str, yolo_disease: str, yolo_confidence: float, language: str, image_data: str) -> dict:
+        prompt = f"""
+        Act as an expert plant pathologist. Analyze this crop image.
+        Provide the diagnosis in { "Bangla" if language == "bn" else "English" }.
+        
+        The AI vision model has pre-identified this as:
+        Crop: {yolo_crop}
+        Condition/Disease: {yolo_disease}
+        (Confidence: {yolo_confidence})
+        
+        If the vision model says "Unknown", rely entirely on the image to make your own judgment.
+        
+        BE CONCISE. Use this JSON format:
+        {{
+          "crop": "Crop Name",
+          "disease": "Disease Name",
+          "pathogen": "Scientific name",
+          "confidence": 0.95,
+          "severity": "Low|Medium|High",
+          "description": "Short description",
+          "treatment_en": ["Step 1 EN"],
+          "treatment_bn": ["Step 1 BN"],
+          "prevention": "One sentence tip"
+        }}
+        """
+
+        model_name = "gemini-3.1-flash-lite"
+        model = genai.GenerativeModel(model_name=model_name)
+        
+        content = [prompt]
+        if image_data:
+            content.append({"mime_type": "image/jpeg", "data": image_data})
+
+        try:
+            response = await asyncio.to_thread(model.generate_content, content)
+            responseText = response.text
+            jsonStr = responseText.replace("```json", "").replace("```", "").strip()
+            return json.loads(jsonStr)
+        except Exception as e:
+            print(f"Error in generating diagnosis: {e}")
+            raise
 
 gemini_service = GeminiAdvisoryService()

@@ -67,9 +67,15 @@ export default function OnboardingPage() {
         application_data: selectedRole === "farmer" ? { farmSize, location, crop } : null
       };
 
-      const { error } = await supabase.from("profiles").upsert(updates);
-      if (error) {
-        console.warn("Profile upsert failed (possibly RLS), continuing with auth update:", error.message);
+      const response = await fetch("/api/onboarding", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ updates })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.warn("Profile upsert failed (possibly RLS), continuing with auth update:", errorData.error);
         toast.warning("Profile sync delayed, but continuing setup...");
       }
 

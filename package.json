@@ -17,7 +17,9 @@
         "clean": "pnpm run --parallel clean && rm -rf node_modules"
     },
     "devDependencies": {
+        "@axe-core/playwright": "^4.11.3",
         "@playwright/test": "^1.60.0",
+        "axe-core": "^4.11.4",
         "prettier": "^3.6.0",
         "turbo": "^2.5.0",
         "typescript": "6.0.3"

@@ -54,4 +54,20 @@ class CropAnalysisRequest(BaseModel):
     district: str
     season: str
 
+class DiagnosisRequest(BaseModel):
+    yolo_crop: str
+    yolo_disease: str
+    yolo_confidence: float
+    language: str
+    image_data: str
 
+class DiagnosisFullResponse(BaseModel):
+    crop: str
+    disease: str
+    pathogen: Optional[str] = None
+    confidence: float
+    severity: str
+    description: str
+    treatment_en: List[str]
+    treatment_bn: List[str]
+    prevention: str

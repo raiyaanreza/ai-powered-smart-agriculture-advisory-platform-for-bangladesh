@@ -1,5 +1,5 @@
 // @agri-packages/types
-export type UserRole = 'ADMIN' | 'FARMER' | 'EXPERT' | 'GUEST';
+export type UserRole = 'user' | 'farmer' | 'expert' | 'admin';
 
 export interface User {
   id: string;
@@ -34,7 +34,7 @@ export interface Notification {
 export interface FarmerProfile {
   id: string;
   full_name: string;
-  role: 'admin' | 'farmer' | 'user';
+  role: UserRole;
   is_verified: boolean;
   district: string;
   upazila?: string;

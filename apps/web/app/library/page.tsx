@@ -13,7 +13,7 @@ export default function LibraryPage() {
     <>
       <AnimatedBanner />
       <Navbar />
-      <main>
+      <main id="main-content" role="main">
         <LibraryContainer />
       </main>
       <Footer />

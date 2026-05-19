@@ -129,7 +129,7 @@
 
     /* Muted */
     --muted:              #F1F5F9;
-    --muted-foreground:   #64748B;
+    --muted-foreground:   #4B5563;
 
     /* Borders */
     --border:             #E2E8F0;
@@ -138,6 +138,17 @@
 
     /* Danger */
     --destructive:        #EF4444;
+
+    /* Semantic Status Tokens */
+    --status-success:     #10B981;
+    --status-warning:     #F59E0B;
+    --status-danger:      #EF4444;
+    --status-info:        #3B82F6;
+
+    /* Severity Tokens */
+    --severity-low:       #10B981;
+    --severity-medium:    #F59E0B;
+    --severity-high:      #EF4444;
   }
 }
 
@@ -160,7 +171,7 @@
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-inter), var(--font-bangla), system-ui, sans-serif;
   }
 
   ::selection {
@@ -266,9 +277,9 @@
     gap: 6px;
     border-radius: 999px;
     padding: 5px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
@@ -300,17 +311,17 @@
   /* ── Stat number ── */
   .stat-number {
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     line-height: 1;
     color: #2D5A27;
   }
 
   /* ── Section label ── */
   .section-label {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #2D5A27;
   }
@@ -349,4 +360,131 @@
   /* ── Text sizes ── */
   .text-balance { text-wrap: balance; }
   .text-pretty  { text-wrap: pretty; }
+
+  /* ── Fluid Type Scale ── */
+  .text-display {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  .text-heading-1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .text-heading-2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+
+  .text-heading-3 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .text-body-lg {
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .text-body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .text-caption {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--muted-foreground);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY — Focus Styles
+   Consistent, visible focus indicators for keyboard navigation
+   ───────────────────────────────────────────── */
+
+/* Global focus-visible style for all interactive elements */
+*:focus-visible {
+  outline: 2px solid var(--primary, #2D5A27);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Override for buttons and links with their own focus styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary, #2D5A27);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.2);
+}
+
+/* Remove outline for mouse clicks, keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure focus is visible on dark backgrounds */
+.bg-green-950 *:focus-visible,
+.bg-slate-900 *:focus-visible,
+[class*="bg-[#052E16]"] *:focus-visible {
+  outline-color: #4ADE80;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.3);
+}
+
+/* Skip link visibility utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 100;
+}
+
+/* ─────────────────────────────────────────────
+   CUSTOM SCROLLBAR FOR PREMIUM CHAT UX
+   ───────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 99px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }

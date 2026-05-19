@@ -17,7 +17,7 @@ def test_auth_health():
     assert response.json()["status"] == "healthy"
 
 def test_auth_validation():
-    response = client.post("/auth/validate", json={"token": "AgriVision@2026!"})
+    response = client.post("/auth/validate", json={"token": "admin-mock-token"}, headers={"X-Internal-Token": "super-secret-internal-key-2026"})
     assert response.status_code == 200
     assert response.json()["valid"] is True
     assert response.json()["user"]["role"] == "admin"

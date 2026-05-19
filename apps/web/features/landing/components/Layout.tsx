@@ -83,7 +83,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group" aria-label="AgriVision Home">
             <div className="h-8 w-8 rounded-lg bg-linear-to-br from-earth-700 to-earth-500 flex items-center justify-center shadow-lg shadow-green-900/10 group-hover:rotate-6 transition-transform duration-300">
               <Leaf className="h-5 w-5 text-white" />
             </div>
@@ -114,7 +114,10 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <button className="h-9 px-3 rounded-full flex items-center gap-2 text-slate-600 hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200">
+            <button 
+              className="h-9 px-3 rounded-full flex items-center gap-2 text-slate-600 hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200"
+              aria-label="Switch language to Bengali"
+            >
               <Globe className="h-4 w-4" />
               <span className="text-[10px] font-black uppercase tracking-widest">BN</span>
             </button>
@@ -125,6 +128,8 @@ export function Navbar() {
                 <button
                   onClick={() => { setUserMenuOpen(false); setNotificationOpen(!notificationOpen); }}
                   className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-all relative"
+                  aria-label="Notifications"
+                  aria-expanded={notificationOpen}
                 >
                   <Bell className="h-5 w-5" />
                   <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 border-2 border-white" />
@@ -171,6 +176,8 @@ export function Navbar() {
                 <button
                   onClick={() => { setNotificationOpen(false); setUserMenuOpen(!userMenuOpen); }}
                   className="flex items-center gap-3 p-1 pr-3 rounded-full border border-slate-200 hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-earth-700/20"
+                  aria-label="User menu"
+                  aria-expanded={userMenuOpen}
                 >
                   <div className="h-8 w-8 rounded-full bg-green-950 flex items-center justify-center overflow-hidden">
                     {profile?.avatar_url ? (
@@ -230,8 +237,10 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden h-9 w-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-900"
+            className="lg:hidden h-11 w-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-900"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>

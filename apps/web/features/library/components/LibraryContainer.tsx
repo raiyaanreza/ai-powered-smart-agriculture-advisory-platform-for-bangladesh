@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, ChevronDown, Zap, MessageSquare, FilterX, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
-import { supabase } from "@/lib/supabase";
 
 export function LibraryContainer() {
   const [dbDiseases, setDbDiseases] = useState<Disease[]>([]);
@@ -23,9 +22,17 @@ export function LibraryContainer() {
   }, []);
 
   const fetchDbDiseases = async () => {
-    const { data } = await supabase.from("diseases").select("*");
-    if (data) setDbDiseases(data as Disease[]);
-    setLoading(false);
+    try {
+      const response = await fetch("/api/diseases");
+      if (response.ok) {
+        const data = await response.json();
+        setDbDiseases(data as Disease[]);
+      }
+    } catch (err) {
+      console.error("Error fetching diseases library:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const allDiseases = useMemo(() => {

@@ -11,7 +11,9 @@ export default function AdvisoryPage() {
   return (
     <div className="flex flex-col h-screen bg-[#FAFAFA] overflow-hidden">
       <Navbar />
-      <AdvisoryDashboard />
+      <main id="main-content" role="main" className="flex-1 overflow-hidden flex flex-col">
+        <AdvisoryDashboard />
+      </main>
     </div>
   );
 }

@@ -3,8 +3,10 @@
 > **Role**: AI Local Coding Guidelines
 
 1. **Service Boundaries**:
-   - Maintain strict separation of concerns. Do not cross-import packages from other services directly.
+   - This service provides outbreak telemetry and diagnosis metrics. No inference or advisory logic.
 2. **Schema Validity**:
-   - Pydantic models inside `app/schemas/` serve as contract enforcement tools.
+   - Pydantic models in `app/schemas/` define analytics response contracts.
 3. **Database Boundaries**:
-   - All external repository calls must utilize standard db repositories patterns.
+   - Current endpoints return static data. Future implementation should query PostgreSQL for aggregated metrics.
+4. **Internal Token**:
+   - All requests must pass `X-Internal-Token` validation. Only the API Gateway should call this service.

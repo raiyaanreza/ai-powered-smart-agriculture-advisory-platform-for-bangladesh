@@ -2,14 +2,22 @@ import os
 import shutil
 import time
 from typing import Annotated, TypedDict, Optional
-from fastapi import FastAPI, UploadFile, File, HTTPException, Header, Depends
+from fastapi import FastAPI, UploadFile, File, HTTPException, Header, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langgraph.graph import StateGraph, END
 from langgraph.graph.message import add_messages
 from ultralytics import YOLO
 
-app = FastAPI(title="agent-orchestrator")
+async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
+    if request.url.path in ("/health", "/docs", "/openapi.json"):
+        return True
+    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    if not x_internal_token or x_internal_token != secret:
+        raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
+    return True
+
+app = FastAPI(title="agent-orchestrator", dependencies=[Depends(verify_internal_token)])
 
 # CORS configuration
 app.add_middleware(

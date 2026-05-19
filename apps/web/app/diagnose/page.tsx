@@ -15,7 +15,7 @@ export default function DiagnosisPage() {
       <AnimatedBanner />
       <Navbar />
       
-      <main>
+      <main id="main-content" role="main">
         <DiagnosisContainer />
       </main>
 

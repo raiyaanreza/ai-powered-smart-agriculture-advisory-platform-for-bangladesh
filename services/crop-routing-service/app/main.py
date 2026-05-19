@@ -1,9 +1,17 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
-import shutil
 import os
+from fastapi import FastAPI, UploadFile, File, HTTPException, Header, Depends, Request
+import shutil
 from ultralytics import YOLO
 
-app = FastAPI(title="crop-routing-service")
+async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
+    if request.url.path in ("/health", "/docs", "/openapi.json"):
+        return True
+    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    if not x_internal_token or x_internal_token != secret:
+        raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
+    return True
+
+app = FastAPI(title="crop-routing-service", dependencies=[Depends(verify_internal_token)])
 
 try:
     model = YOLO('../../models/crop-classifier/best.pt')

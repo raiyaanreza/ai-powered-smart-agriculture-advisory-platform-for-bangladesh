@@ -141,7 +141,7 @@ export function CropAnalysisView() {
   
   const [isGenerating, setIsGenerating] = useState(false);
   
-  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8001";
+  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8000/advisory";
 
   // Load from LocalStorage
   useEffect(() => {
@@ -299,9 +299,9 @@ export function CropAnalysisView() {
   );
 
   return (
-    <div className="flex h-full bg-[#FAFAFA] overflow-hidden">
-      {/* 1. Left Master List Pane */}
-      <div className="w-[340px] bg-white border-r border-slate-100 flex flex-col h-full shrink-0">
+    <div className="flex flex-col lg:flex-row h-full bg-[#FAFAFA] overflow-hidden">
+      {/* 1. Left Master List Pane - Full width on mobile, fixed width on desktop */}
+      <div className="w-full lg:w-[340px] bg-white border-b lg:border-b-0 lg:border-r border-slate-100 flex flex-col h-auto lg:h-full shrink-0 max-h-[40vh] lg:max-h-none">
         {/* Header Options */}
         <div className="p-6 border-b border-slate-100 space-y-4">
           <div className="flex justify-between items-center">
@@ -395,8 +395,8 @@ export function CropAnalysisView() {
         </div>
       </div>
 
-      {/* 2. Right Detail Pane */}
-      <div className="flex-1 overflow-y-auto h-full relative custom-scrollbar bg-slate-50/50">
+      {/* 2. Right Detail Pane - Full width on mobile */}
+      <div className="flex-1 overflow-y-auto h-full relative custom-scrollbar bg-slate-50/50 min-h-[60vh] lg:min-h-0">
         <AnimatePresence mode="wait">
           {/* STEP 1: Crop Selection Wizard */}
           {wizardStep === 1 && (

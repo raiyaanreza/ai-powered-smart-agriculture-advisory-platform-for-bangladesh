@@ -8,7 +8,9 @@ import {
   Settings, 
   Headphones,
   Search,
-  ChevronRight
+  ChevronRight,
+  Menu,
+  X
 } from "lucide-react";
 import { useState } from "react";
 
@@ -45,6 +47,7 @@ export function AdvisorySidebar({
   onOpenHistory
 }: AdvisorySidebarProps) {
   const [sidebarSearch, setSidebarSearch] = useState("");
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const menuItems = [
     { name: "Chat History", icon: History, id: "history" },
@@ -55,12 +58,15 @@ export function AdvisorySidebar({
     c.title.toLowerCase().includes(sidebarSearch.toLowerCase())
   );
 
-  return (
-    <aside className="w-72 bg-white border-r border-slate-100 flex flex-col h-full sticky top-0 shrink-0">
+  const SidebarContent = () => (
+    <>
       <div className="p-6 flex-1 flex flex-col overflow-hidden">
         {/* New Chat CTA Button */}
         <button 
-          onClick={onNewChat}
+          onClick={() => {
+            onNewChat();
+            setIsMobileOpen(false);
+          }}
           className="w-full py-4 rounded-2xl bg-[#2D5A27] text-white flex items-center justify-center gap-3 shadow-xl shadow-green-950/20 hover:bg-[#1A321A] active:scale-98 transition-all mb-8 group shrink-0"
         >
           <Plus className="h-5 w-5 group-hover:rotate-90 transition-transform" />
@@ -80,6 +86,7 @@ export function AdvisorySidebar({
                   if (item.name === "Chat History") {
                     onOpenHistory();
                   }
+                  setIsMobileOpen(false);
                 }}
                 className={`w-full flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-all active:scale-98 ${
                   isActive ? "bg-[#052E16] text-white shadow-lg" : "text-slate-400 hover:bg-slate-50 hover:text-slate-900"
@@ -97,7 +104,10 @@ export function AdvisorySidebar({
           <div className="flex items-center justify-between mb-3 shrink-0">
             <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">সাম্প্রতিক আলোচনা</span>
             <button 
-              onClick={onOpenHistory}
+              onClick={() => {
+                onOpenHistory();
+                setIsMobileOpen(false);
+              }}
               className="text-[9px] font-black text-green-700 hover:text-green-900 uppercase tracking-widest px-2 py-1 rounded-lg hover:bg-green-50 transition-all"
             >
               সব দেখুন
@@ -119,14 +129,17 @@ export function AdvisorySidebar({
           {/* Scrollable list */}
           <div className="flex-1 overflow-y-auto space-y-1.5 custom-scrollbar pr-1">
             {filteredConversations.length === 0 ? (
-              <p className="text-[11px] font-bold text-slate-400 px-5 py-4 text-center">কোনো আলোচনা পাওয়া যায়নি।</p>
+              <p className="text-[11px] font-bold text-slate-400 px-5 py-4 text-center">কোনো আলোচনা পাওয়া যায়নি।</p>
             ) : (
               filteredConversations.map((chat) => {
                 const isSelected = chat.id === currentChatId && activeTab === "Chat History";
                 return (
                   <button 
                     key={chat.id}
-                    onClick={() => onSelectChat(chat.id)}
+                    onClick={() => {
+                      onSelectChat(chat.id);
+                      setIsMobileOpen(false);
+                    }}
                     className={`w-full text-left px-5 py-3 text-[12px] font-bold rounded-xl transition-all truncate flex items-center justify-between ${
                       isSelected 
                         ? "bg-green-50 text-green-950 font-black border-l-4 border-[#2D5A27]" 
@@ -171,6 +184,38 @@ export function AdvisorySidebar({
            </div>
         </div>
       </div>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Mobile Toggle Button */}
+      <button
+        onClick={() => setIsMobileOpen(!isMobileOpen)}
+        className="lg:hidden fixed top-20 left-4 z-50 p-3 bg-white border border-slate-200 rounded-xl shadow-lg hover:bg-slate-50 transition-all"
+        aria-label="Toggle sidebar menu"
+      >
+        {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+      </button>
+
+      {/* Mobile Overlay */}
+      {isMobileOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar - Desktop: sticky, Mobile: fixed drawer */}
+      <aside className={`
+        w-72 bg-white border-r border-slate-100 flex flex-col h-full 
+        lg:sticky lg:top-0 lg:shrink-0 lg:translate-x-0
+        fixed top-0 left-0 z-45 h-full shadow-2xl transition-transform duration-300 ease-in-out
+        ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
+        <SidebarContent />
+      </aside>
+    </>
   );
 }
+

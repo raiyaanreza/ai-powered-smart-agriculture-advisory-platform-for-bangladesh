@@ -13,7 +13,7 @@ export function CardHeader({ children, className = '' }: { children: React.React
 }
 
 export function CardTitle({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <h3 className={`text-xl font-black text-slate-900 tracking-tight ${className}`}>{children}</h3>;
+  return <h3 className={`text-xl font-bold text-slate-900 tracking-tight ${className}`}>{children}</h3>;
 }
 
 export function CardContent({ children, className = '' }: { children: React.ReactNode; className?: string }) {

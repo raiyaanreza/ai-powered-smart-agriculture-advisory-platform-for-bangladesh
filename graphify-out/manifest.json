@@ -1,4 +1,8 @@
 {
+  "E:\\agri-ai-platform\\playwright.config.ts": {
+    "mtime": 1779018707.0402522,
+    "hash": "5a58aed0063b3db77f96a639823a7167"
+  },
   "E:\\agri-ai-platform\\scratch_scaffold.py": {
     "mtime": 1779014681.2020693,
     "hash": "f1ac49260159a2776253d76ad3e88c2f"
@@ -8,7 +12,7 @@
     "hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "E:\\agri-ai-platform\\apps\\admin\\next-env.d.ts": {
-    "mtime": 1779014802.6194437,
+    "mtime": 1779175364.6218276,
     "hash": "d0f8375ae1199dc7acd3977fc33b78b8"
   },
   "E:\\agri-ai-platform\\apps\\admin\\next.config.ts": {
@@ -20,12 +24,24 @@
     "hash": "239f3ebf717465dc636818a1a619398d"
   },
   "E:\\agri-ai-platform\\apps\\admin\\app\\layout.tsx": {
-    "mtime": 1778829786.5125535,
-    "hash": "2eb3439e144ee62297d24c455ec9c3ba"
+    "mtime": 1779171599.2652488,
+    "hash": "77ba46867a00509ecbed01ee57329c1f"
   },
   "E:\\agri-ai-platform\\apps\\admin\\app\\page.tsx": {
-    "mtime": 1779006355.250694,
-    "hash": "a08d9724a906eba534e18f15c615d6da"
+    "mtime": 1779177830.0280962,
+    "hash": "d00cf09de8e50251eb002f1bdbe2cb9a"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\app\\api\\admin\\broadcast\\route.ts": {
+    "mtime": 1779174891.9635825,
+    "hash": "840915ee4b6cba41d5ce0bbaed26e49c"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\app\\api\\admin\\farmers\\route.ts": {
+    "mtime": 1779177604.4301832,
+    "hash": "704e194e4e5f129bd331fef8495afef1"
+  },
+  "E:\\agri-ai-platform\\apps\\admin\\app\\api\\outbreak-analytics\\route.ts": {
+    "mtime": 1779177815.0469277,
+    "hash": "c5b2ea612a59301c2e6639304f694164"
   },
   "E:\\agri-ai-platform\\apps\\admin\\app\\login\\page.tsx": {
     "mtime": 1778835100.2460713,
@@ -47,10 +63,6 @@
     "mtime": 1778759088.8450563,
     "hash": "f493f1f077059a080b2c475873def5c0"
   },
-  "E:\\agri-ai-platform\\apps\\admin\\components\\ui\\chart.tsx": {
-    "mtime": 1778759089.3222091,
-    "hash": "ea3aef621225b35027a63a606b632c54"
-  },
   "E:\\agri-ai-platform\\apps\\admin\\components\\ui\\dialog.tsx": {
     "mtime": 1778759089.4231308,
     "hash": "f90fb0e1d56cd50ed487670c88f0e3cb"
@@ -68,12 +80,12 @@
     "hash": "485d47f9e6f866e564685e6584e1e747"
   },
   "E:\\agri-ai-platform\\apps\\admin\\features\\admin\\components\\OutbreakMap.tsx": {
-    "mtime": 1778847121.3793077,
-    "hash": "476b18fa56f96d5488df8f4c8ca709ea"
+    "mtime": 1779177836.9598396,
+    "hash": "701399c0ba0aeb81979a5eaa39de9ac4"
   },
   "E:\\agri-ai-platform\\apps\\admin\\features\\auth\\hooks\\useAuth.ts": {
-    "mtime": 1778837440.5781963,
-    "hash": "ac847fa51ceba800c89a8a99d942b15a"
+    "mtime": 1779174914.5838935,
+    "hash": "8a5c7d88597490b785438955f8786d98"
   },
   "E:\\agri-ai-platform\\apps\\admin\\features\\common\\components\\Layout.tsx": {
     "mtime": 1778835100.2020786,
@@ -111,9 +123,13 @@
     "mtime": 1779006325.0822406,
     "hash": "3eca99a36854347d649cf67bfbdc61d8"
   },
+  "E:\\agri-ai-platform\\apps\\admin\\lib\\auth.ts": {
+    "mtime": 1779174881.778824,
+    "hash": "70183c81fcd7d2cf4c70fd7f47b71c53"
+  },
   "E:\\agri-ai-platform\\apps\\admin\\lib\\supabase.ts": {
-    "mtime": 1778849508.5477026,
-    "hash": "c1f9d44148855e166ec5044542fc2939"
+    "mtime": 1779174803.4813468,
+    "hash": "5330bc5fc59aeafc617f856a2ac9ebd3"
   },
   "E:\\agri-ai-platform\\apps\\admin\\lib\\utils.ts": {
     "mtime": 1778759043.9718742,
@@ -124,8 +140,8 @@
     "hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "E:\\agri-ai-platform\\apps\\web\\next-env.d.ts": {
-    "mtime": 1779014802.936931,
-    "hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+    "mtime": 1779175995.2690961,
+    "hash": "2a74d3909800ca5467fa83b0ab4a4890"
   },
   "E:\\agri-ai-platform\\apps\\web\\next.config.ts": {
     "mtime": 1778830586.2602494,
@@ -135,21 +151,37 @@
     "mtime": 1778755960.3702683,
     "hash": "239f3ebf717465dc636818a1a619398d"
   },
+  "E:\\agri-ai-platform\\apps\\web\\vitest.config.ts": {
+    "mtime": 1779094645.7286975,
+    "hash": "4be8e7594ec7254d8e4fe5e78e39d225"
+  },
   "E:\\agri-ai-platform\\apps\\web\\app\\layout.tsx": {
-    "mtime": 1778909236.057517,
-    "hash": "917959e5ff0cd4844829f3ce5398372f"
+    "mtime": 1779171578.274655,
+    "hash": "c55f6b3dfd8f9de8939722c338171623"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\page.tsx": {
-    "mtime": 1778851891.6413023,
-    "hash": "79f95dc9d28161d15604690cecbff6b3"
+    "mtime": 1779171621.7974894,
+    "hash": "0d32e16b059eaa230951416da2712aa9"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\advisory\\page.tsx": {
-    "mtime": 1778991445.2334118,
-    "hash": "f392aa07abc8574fa925ec3e35647bb7"
+    "mtime": 1779175974.893973,
+    "hash": "7be50e6317dd9cb878adc7418b4ce811"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\api\\diagnose\\route.ts": {
-    "mtime": 1778851940.6061997,
-    "hash": "f168284ce9fc7b273178f941791c0dd8"
+    "mtime": 1779077515.0656624,
+    "hash": "3c77d7bda8be37ad201e27a45090cb66"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\diseases\\route.ts": {
+    "mtime": 1779020496.6870856,
+    "hash": "13fa62f9da08d6d4fb0dc99655237c71"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\onboarding\\route.ts": {
+    "mtime": 1779020594.1773446,
+    "hash": "c8d385623707ddd2101d70fa621a81cc"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\app\\api\\reports\\route.ts": {
+    "mtime": 1779020513.103066,
+    "hash": "0ac5c4be4506ea28beda99f8c6118e2c"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\api\\seed\\route.ts": {
     "mtime": 1778907803.8177693,
@@ -168,8 +200,8 @@
     "hash": "df0a76766dca7be34b162a8aae8c34f1"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\diagnose\\page.tsx": {
-    "mtime": 1778777950.3842413,
-    "hash": "8365ff1d2530ae9ce3767a96c78304cb"
+    "mtime": 1779171658.9222364,
+    "hash": "dbe69f5a6f032f4448bd02a7af770cf7"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\farmer\\layout.tsx": {
     "mtime": 1778842877.8057387,
@@ -184,16 +216,16 @@
     "hash": "dc717630c28fb6c542d4b5f763a07463"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\library\\page.tsx": {
-    "mtime": 1778778682.3859432,
-    "hash": "0f75d3d3549351b5a68c7720c25a7140"
+    "mtime": 1779171676.5785024,
+    "hash": "85181893747b3ad5084a2c9c825eba58"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\login\\page.tsx": {
     "mtime": 1778835100.2020786,
     "hash": "5aa3aa8ea9b4ceb33d2558d1d62307b2"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\onboarding\\page.tsx": {
-    "mtime": 1778835100.2020786,
-    "hash": "c625443c07dab69b9645e0be4ddb7c5c"
+    "mtime": 1779020612.777935,
+    "hash": "a3b173ffec0c0ae97ed938c690b39007"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\premium\\page.tsx": {
     "mtime": 1778789981.1771412,
@@ -244,24 +276,28 @@
     "hash": "485d47f9e6f866e564685e6584e1e747"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisoryContent.tsx": {
-    "mtime": 1778991440.6573222,
-    "hash": "b18264d5df200340fd90e7f49fe37a94"
+    "mtime": 1779176165.4306476,
+    "hash": "05e9fe2fd28e7ed99e9d7a8da6e89f30"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisoryDashboard.tsx": {
-    "mtime": 1778991401.0077631,
-    "hash": "f023aabcd437b95a804c0625b6305b25"
+    "mtime": 1779175979.7123933,
+    "hash": "f4cd1cc0bd81dcac538a40ed9eaeb93a"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisorySidebar.tsx": {
-    "mtime": 1778995277.0835147,
-    "hash": "85faf651f4e8a959340e43b8bbb25311"
+    "mtime": 1779174229.9670665,
+    "hash": "f735ddd4ab0bdd12157be1dbf5e0b99d"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\CropAnalysisView.tsx": {
-    "mtime": 1778991425.0446267,
-    "hash": "949f480092fcc5ff9f252c49f6622f4d"
+    "mtime": 1779170131.4396505,
+    "hash": "6cf31a2a46ac59c5b422ce3643b59640"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\HistoryModal.tsx": {
     "mtime": 1778991509.1998663,
     "hash": "752f1c8923157f53fbc5da4ea17e5396"
+  },
+  "E:\\agri-ai-platform\\apps\\web\\features\\auth\\components\\AuthForm.test.tsx": {
+    "mtime": 1779094756.0015814,
+    "hash": "ae9fd5489ab7f5c28ab3cd2bd67e556f"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\auth\\components\\AuthForm.tsx": {
     "mtime": 1778790907.025977,
@@ -288,8 +324,8 @@
     "hash": "88a8a55c7b031912e6e6cfc7cedeba6e"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\OutbreakMap.tsx": {
-    "mtime": 1778907642.1634288,
-    "hash": "7e4b59b38eecbed1c59b890b324f9ec3"
+    "mtime": 1779020539.885124,
+    "hash": "7ba8b6c0522abb9499e4a10983f12b3a"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\diagnosis\\components\\ResultDisplay.tsx": {
     "mtime": 1778848624.7315874,
@@ -328,8 +364,8 @@
     "hash": "126f6475a1e02b2d1aeeb3e0418b55d3"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\Layout.tsx": {
-    "mtime": 1778844674.954047,
-    "hash": "3465fa151dba7ab567801bf5473e1090"
+    "mtime": 1779171837.4037805,
+    "hash": "f9f13183563b39a09cad358900376580"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\PipelineAnimation.tsx": {
     "mtime": 1778854336.301834,
@@ -339,13 +375,17 @@
     "mtime": 1778775500.229363,
     "hash": "8e1c3433421c850474227be4ed91704a"
   },
+  "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\TrustedBy.test.tsx": {
+    "mtime": 1779094792.3164506,
+    "hash": "0265cc1174cf1892e6e2a42326438a1d"
+  },
   "E:\\agri-ai-platform\\apps\\web\\features\\landing\\components\\TrustedBy.tsx": {
     "mtime": 1778774701.1076586,
     "hash": "718caac5a75e8fafe6e47d96505d7c4e"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\library\\components\\LibraryContainer.tsx": {
-    "mtime": 1778844598.279565,
-    "hash": "5864183d5b38f85806970bfc59e6a84e"
+    "mtime": 1779020532.2568586,
+    "hash": "37b96ac4b7dba95dae46f1ebf05b38dd"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\library\\components\\LibraryContent.tsx": {
     "mtime": 1778837874.1293483,
@@ -360,8 +400,8 @@
     "hash": "2248cfd803d59d5e1a4bde5277e09226"
   },
   "E:\\agri-ai-platform\\apps\\web\\lib\\supabase.ts": {
-    "mtime": 1778907409.636522,
-    "hash": "2356dd6dd9120b4f0cacd54ba9865cd0"
+    "mtime": 1779174810.3246384,
+    "hash": "febdc4ce6f7c099a700f16c08beec763"
   },
   "E:\\agri-ai-platform\\apps\\web\\lib\\supabaseAdmin.ts": {
     "mtime": 1778907833.0853183,
@@ -416,40 +456,48 @@
     "hash": "390e9b4cbfbc289cdcd9854ca2781bb9"
   },
   "E:\\agri-ai-platform\\packages\\types\\src\\index.ts": {
-    "mtime": 1779007825.889602,
-    "hash": "334c5ec60c89d9bfcce6266987af2f01"
+    "mtime": 1779174937.846049,
+    "hash": "0716c71c39e2c373b2a3be0171a26401"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\index.ts": {
-    "mtime": 1779007812.2956746,
-    "hash": "257631e0b2dded2b9ebc2091cfb9f002"
+    "mtime": 1779171556.3820574,
+    "hash": "9ae79e8cc3f764a13d3d817aeaf6cd61"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Badge.tsx": {
-    "mtime": 1778770040.5524561,
-    "hash": "dd0b0fa4f0626bd598d88098b0aa3e1e"
+    "mtime": 1779098840.8032005,
+    "hash": "f791fed3173b3f1df891ede08f1c0290"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Button.tsx": {
     "mtime": 1778774893.018875,
     "hash": "4075cc722ff9cc1e2b97fb585bde1cd5"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Card.tsx": {
-    "mtime": 1779007797.5993738,
-    "hash": "49157f6038ca25e7176eb957679845f5"
+    "mtime": 1779098922.7890897,
+    "hash": "4a90cca6beb9d87c0313c71c0485b19f"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\GlassCard.tsx": {
-    "mtime": 1778774875.3266723,
-    "hash": "556b17898b749a855e83627e866eaf66"
+    "mtime": 1779098861.1860845,
+    "hash": "960cb8d99e409b09817314ea11c6ce4a"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Input.tsx": {
-    "mtime": 1779007790.6073194,
-    "hash": "700628067b76e138ef4556b7481a0b49"
+    "mtime": 1779098897.0977411,
+    "hash": "590dbd6717cc476ca10bc0b8c095b135"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\components\\Modal.tsx": {
-    "mtime": 1779007804.2816741,
-    "hash": "51dbdbc9233e9a18dd3be6d755b6051c"
+    "mtime": 1779098931.9247625,
+    "hash": "47999501d7361238054d106b05493f9c"
+  },
+  "E:\\agri-ai-platform\\packages\\ui\\src\\components\\SkipToContent.tsx": {
+    "mtime": 1779171522.392637,
+    "hash": "2ed255cf9bcdf958edf689868ed26777"
   },
   "E:\\agri-ai-platform\\packages\\ui\\src\\lib\\utils.ts": {
     "mtime": 1778762248.9902856,
     "hash": "d9837f38cc05303254571985e3164050"
+  },
+  "E:\\agri-ai-platform\\packages\\utils\\celery_app.py": {
+    "mtime": 1779077618.836444,
+    "hash": "005e4895d4490799ea3a57bf4ecf80f0"
   },
   "E:\\agri-ai-platform\\packages\\utils\\src\\index.ts": {
     "mtime": 1779007923.3627777,
@@ -462,6 +510,10 @@
   "E:\\agri-ai-platform\\scratch\\seed_mock_data.js": {
     "mtime": 1778849341.0542703,
     "hash": "143ece44548f336386c125b0d124612c"
+  },
+  "E:\\agri-ai-platform\\scratch\\start_all.py": {
+    "mtime": 1779175344.7312598,
+    "hash": "6ba5857ca9fe94905cafc3c655f8f9c3"
   },
   "E:\\agri-ai-platform\\scratch\\sync_diseases.js": {
     "mtime": 1778849574.1330414,
@@ -479,6 +531,10 @@
     "mtime": 1778909216.3020787,
     "hash": "a56100dfc33b595966036dbba965a9a4"
   },
+  "E:\\agri-ai-platform\\scripts\\fix_cors.py": {
+    "mtime": 1779018653.2352645,
+    "hash": "ff72363d9ebcc83bbc6733c54757f006"
+  },
   "E:\\agri-ai-platform\\scripts\\generate_pdf_report.py": {
     "mtime": 1778908922.0600405,
     "hash": "27e66ea2a2f19468fd6a87a6b53e5fa2"
@@ -486,6 +542,10 @@
   "E:\\agri-ai-platform\\scripts\\scaffold_services.py": {
     "mtime": 1778844627.0499551,
     "hash": "533731d633de2fbb484afb708946ae81"
+  },
+  "E:\\agri-ai-platform\\scripts\\scaffold_service_docs.py": {
+    "mtime": 1779018219.1182294,
+    "hash": "889fcec346f27d32804e2a52b5db6d48"
   },
   "E:\\agri-ai-platform\\scripts\\schema.sql": {
     "mtime": 1778843883.975406,
@@ -500,8 +560,8 @@
     "hash": "fa3676859e49f9aae823ed51325d9125"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\main.py": {
-    "mtime": 1778996328.8693278,
-    "hash": "8955fe6f02886966f773df3fd07d672b"
+    "mtime": 1779172594.0484197,
+    "hash": "e3172fe4155969d5c1ba179e012e26f2"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\__init__.py": {
     "mtime": 1779014397.7940986,
@@ -524,16 +584,16 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\schemas\\chat.py": {
-    "mtime": 1778991368.746747,
-    "hash": "52a5b4651d98f36cdb97c6037addff03"
+    "mtime": 1779077459.3190105,
+    "hash": "ce9243df2e7e9fd8cf10a69ca3f7a227"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\schemas\\__init__.py": {
     "mtime": 1779014397.7913718,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\services\\gemini_service.py": {
-    "mtime": 1779004039.1480794,
-    "hash": "1d6b069067ddeb9e7f70507c99422006"
+    "mtime": 1779077482.2806022,
+    "hash": "cb33b0be6b17f7b41584afefa98131ab"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\app\\services\\__init__.py": {
     "mtime": 1779014397.7918303,
@@ -543,13 +603,17 @@
     "mtime": 1779014397.7918303,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
+  "E:\\agri-ai-platform\\services\\advisory-service\\tests\\test_advisory.py": {
+    "mtime": 1779095478.5183606,
+    "hash": "2c62016ab9216891f2098c5b20c170e7"
+  },
   "E:\\agri-ai-platform\\services\\advisory-service\\tests\\__init__.py": {
     "mtime": 1779014397.7940986,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\agent-orchestrator\\app\\main.py": {
-    "mtime": 1779008932.1225412,
-    "hash": "99b453d7b867bc2060f8e9b78a2194c2"
+    "mtime": 1779172593.7949748,
+    "hash": "32ae0b6a5466ab318dd18b1259eabb7c"
   },
   "E:\\agri-ai-platform\\services\\agent-orchestrator\\app\\__init__.py": {
     "mtime": 1779014397.8004217,
@@ -588,8 +652,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\analytics-service\\app\\main.py": {
-    "mtime": 1779009166.7140925,
-    "hash": "5564ac1a454d5bf7b1626ed060016c49"
+    "mtime": 1779172550.2169814,
+    "hash": "a341f56f0a077cb2e1ce377f726367a0"
   },
   "E:\\agri-ai-platform\\services\\analytics-service\\app\\__init__.py": {
     "mtime": 1779014397.803446,
@@ -628,8 +692,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\app\\main.py": {
-    "mtime": 1779008898.3650198,
-    "hash": "e6db842fcd58ba897ae86f04e064252c"
+    "mtime": 1779077553.5424929,
+    "hash": "b7c6281eadbb09c1de96936abeea98b0"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\app\\__init__.py": {
     "mtime": 1778761284.9409165,
@@ -672,8 +736,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\app\\main.py": {
-    "mtime": 1779008967.6442163,
-    "hash": "95c5bcf4eb3e9af6d87885e4d34df88e"
+    "mtime": 1779174485.609498,
+    "hash": "41c69c8991620773816f2dd4d47883f7"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\app\\__init__.py": {
     "mtime": 1779014397.8080678,
@@ -708,16 +772,16 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\tests\\test_auth.py": {
-    "mtime": 1779009272.0909896,
-    "hash": "6dc2910c63cb867ef8fe7f188c202b6f"
+    "mtime": 1779174496.8632877,
+    "hash": "318560a61f8eb04a2af1fb8c909b0623"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\tests\\__init__.py": {
     "mtime": 1779014397.8080678,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\app\\main.py": {
-    "mtime": 1778844346.5515075,
-    "hash": "ad02da04113c94a3bf2c047f80e1b07a"
+    "mtime": 1779172550.1278584,
+    "hash": "ba2adc5b517da2255631b6c1207669a8"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\app\\__init__.py": {
     "mtime": 1779014397.8110669,
@@ -956,8 +1020,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\notification-service\\app\\main.py": {
-    "mtime": 1779009127.1725311,
-    "hash": "17d0715f7d3147c5b7fa94f0173f2166"
+    "mtime": 1779172550.1722364,
+    "hash": "afe23b33b0b02fec25792896d25b8aa9"
   },
   "E:\\agri-ai-platform\\services\\notification-service\\app\\__init__.py": {
     "mtime": 1779014397.8294866,
@@ -996,8 +1060,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\main.py": {
-    "mtime": 1779009236.6382265,
-    "hash": "6c4d08ea8b1b2daaa356277e57c56c75"
+    "mtime": 1779172550.5324805,
+    "hash": "49cc42465812539e65b062a29823b32f"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\__init__.py": {
     "mtime": 1779014397.8320844,
@@ -1036,8 +1100,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\report-service\\app\\main.py": {
-    "mtime": 1779009205.9418876,
-    "hash": "376481d6dbf546826b08fd46c0b1d2e1"
+    "mtime": 1779172550.3691173,
+    "hash": "2184b30b119bcabdf2e8f323aec637d7"
   },
   "E:\\agri-ai-platform\\services\\report-service\\app\\__init__.py": {
     "mtime": 1779014397.8320844,
@@ -1075,17 +1139,33 @@
     "mtime": 1779014397.8320844,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
+  "E:\\agri-ai-platform\\tests\\integration\\accessibility.spec.ts": {
+    "mtime": 1779171479.3157842,
+    "hash": "47932e0af5d298f39a7f92ac6f8107aa"
+  },
+  "E:\\agri-ai-platform\\tests\\integration\\dashboard.spec.ts": {
+    "mtime": 1779018725.9121654,
+    "hash": "cbab827a62b471c1b6b4ebad28181a5e"
+  },
   "E:\\agri-ai-platform\\AGENTS.md": {
     "mtime": 1778827225.9038906,
     "hash": "44513b74839549a30544ffcccee0ebf6"
   },
+  "E:\\agri-ai-platform\\ARCHITECTURE.md": {
+    "mtime": 1779018186.13303,
+    "hash": "841ad2328683782e04a5d9824d356384"
+  },
   "E:\\agri-ai-platform\\CURRENT_STATE.md": {
-    "mtime": 1779004619.2274623,
-    "hash": "1c6e9775509a828444998bbc9246ef06"
+    "mtime": 1779176211.331728,
+    "hash": "4bdd42676743b6dad762f00000dd58e7"
+  },
+  "E:\\agri-ai-platform\\DECISIONS.md": {
+    "mtime": 1779018180.1188202,
+    "hash": "38b19bfe804b3317ffd2f7cfcfc68524"
   },
   "E:\\agri-ai-platform\\docker-compose.yml": {
-    "mtime": 1779017740.12874,
-    "hash": "d422b405f91aaa5389b4077f85634fc2"
+    "mtime": 1779077642.051199,
+    "hash": "2931deb7b0317686a0fad4e405b5a6e3"
   },
   "E:\\agri-ai-platform\\GEMINI.md": {
     "mtime": 1778765344.2216296,
@@ -1135,6 +1215,10 @@
     "mtime": 1778871404.7072666,
     "hash": "5374cee31381790d83ee3cec5dfb6e0c"
   },
+  "E:\\agri-ai-platform\\docs\\PROJECT_OVERVIEW.md": {
+    "mtime": 1779176191.3104374,
+    "hash": "76e5194550792f98b09e27d6477bc3d1"
+  },
   "E:\\agri-ai-platform\\docs\\backend\\integration_manual.md": {
     "mtime": 1778781581.8234725,
     "hash": "58a702acdca1df5e13057d3366deac49"
@@ -1163,9 +1247,25 @@
     "mtime": 1778837438.7583554,
     "hash": "58f77bfed13b04d512d6dcdccd66e390"
   },
+  "E:\\agri-ai-platform\\docs\\testing reports\\backend_code_quality_test.md": {
+    "mtime": 1779098940.3987155,
+    "hash": "b60d20ed330be861985347ec13e86768"
+  },
+  "E:\\agri-ai-platform\\docs\\testing reports\\frontend_testing.md": {
+    "mtime": 1779171949.641262,
+    "hash": "91e4f40fee1d4fa0dd10aecdf3db7695"
+  },
   "E:\\agri-ai-platform\\docs\\testing reports\\qa_audit_report_1.md": {
-    "mtime": 1779017777.348307,
-    "hash": "0de5b6bc6714dd2f73bd0250b3a4fd8b"
+    "mtime": 1779177958.8892493,
+    "hash": "d7bc5237532cc448fe404b4f1340174d"
+  },
+  "E:\\agri-ai-platform\\docs\\testing reports\\qa_audit_report_2_phase2_structural.md": {
+    "mtime": 1779177050.8612976,
+    "hash": "b85a2937297aade17534d1464a4ab6a4"
+  },
+  "E:\\agri-ai-platform\\docs\\testing reports\\verification_qa_audit_1.md": {
+    "mtime": 1779175894.3405356,
+    "hash": "e998f8b25df6992202c4785fe6269067"
   },
   "E:\\agri-ai-platform\\docs\\ui\\components_design.md": {
     "mtime": 1778776481.0495408,
@@ -1208,172 +1308,180 @@
     "hash": "f2df884ea1092cf3ffb0f63d9aaed230"
   },
   "E:\\agri-ai-platform\\models\\dvc.yaml": {
-    "mtime": 1779016681.741825,
-    "hash": "f021bec52a4d8f44683042df8ac075e2"
+    "mtime": 1779172689.1038916,
+    "hash": "e6516294d2569b7338c50e943635fe7d"
+  },
+  "E:\\agri-ai-platform\\playwright-report\\index.html": {
+    "mtime": 1779018751.0601442,
+    "hash": "559669fbf0fe3faf09da232fa85a3d3c"
+  },
+  "E:\\agri-ai-platform\\playwright-report\\data\\e4da641e8bb9460c7f05e062d64bd380f15977da.md": {
+    "mtime": 1779018751.0318596,
+    "hash": "71e465eab57f99a2a930eb9a8f4a4128"
   },
   "E:\\agri-ai-platform\\scratch\\test_output.txt": {
     "mtime": 1778847757.995398,
     "hash": "07f3c0ace3c6537578fe57240ed51d42"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\AGENTS.md": {
-    "mtime": 1779014397.7940986,
-    "hash": "cbbe1f00c1e5b04488ac4803bd2554b8"
+    "mtime": 1779172297.1221187,
+    "hash": "2df2963af2d4782873ddcb1b5e78fbca"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\README.md": {
-    "mtime": 1779014397.7940986,
-    "hash": "c6437a1a21fa0b331fcbba8d601bda8d"
+    "mtime": 1779171456.138738,
+    "hash": "04da7765030ba740f2fb5abeb613bd35"
   },
   "E:\\agri-ai-platform\\services\\advisory-service\\requirements.txt": {
     "mtime": 1778780726.1086245,
     "hash": "d724e312f0d4bc027e735f8fdcd23309"
   },
   "E:\\agri-ai-platform\\services\\agent-orchestrator\\AGENTS.md": {
-    "mtime": 1779014397.800934,
-    "hash": "b97ac575494037b73f1298d9469a89ba"
+    "mtime": 1779172297.1781628,
+    "hash": "0e82eea454524be5a6e5fc9aa3fcef51"
   },
   "E:\\agri-ai-platform\\services\\agent-orchestrator\\README.md": {
-    "mtime": 1779014397.800934,
-    "hash": "ce186775cb8252bb49928dbdefd53dd8"
+    "mtime": 1779171456.199484,
+    "hash": "7111a71696f0ed250be14e5ef694db78"
   },
   "E:\\agri-ai-platform\\services\\analytics-service\\AGENTS.md": {
-    "mtime": 1779014397.8044505,
-    "hash": "e4d343d098a7fd5851451c506cc09831"
+    "mtime": 1779172297.3364077,
+    "hash": "2e9bf5af13809afda64ca0639767c9d4"
   },
   "E:\\agri-ai-platform\\services\\analytics-service\\README.md": {
-    "mtime": 1779014397.8044505,
-    "hash": "9b4ce37d68c2ea73e777b88f1a36939a"
+    "mtime": 1779018224.7294173,
+    "hash": "29fd139c2c6fb6ec58dfabddd1897392"
   },
   "E:\\agri-ai-platform\\services\\analytics-service\\requirements.txt": {
     "mtime": 1779009143.8743799,
     "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\AGENTS.md": {
-    "mtime": 1779014397.8054535,
-    "hash": "ffaaaf289acd23d5f7d3dfa4fc36ccb1"
+    "mtime": 1779172297.0359654,
+    "hash": "afeb2e6628bda16629794b8ca7447d59"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\README.md": {
-    "mtime": 1779014397.8044505,
-    "hash": "b720d4de368cd39ad78edb3f720b9494"
+    "mtime": 1779171456.0824826,
+    "hash": "31810405da0169906c2f65a10fca02ef"
   },
   "E:\\agri-ai-platform\\services\\api-gateway\\requirements.txt": {
     "mtime": 1778761357.4349709,
     "hash": "07cc58be02592a08818cd088ea283a0b"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\AGENTS.md": {
-    "mtime": 1779014397.8080678,
-    "hash": "9f2f22eea377f8607e86a487083e256f"
+    "mtime": 1779172297.2301338,
+    "hash": "a03de7ab56bd4333b04222ecc614a3a5"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\README.md": {
-    "mtime": 1779014397.8080678,
-    "hash": "56fbefe2f6a900afbb340e5e280bdcbb"
+    "mtime": 1779018224.7211778,
+    "hash": "d62fdd81a01f8042cd2764953b1cd9da"
   },
   "E:\\agri-ai-platform\\services\\auth-service\\requirements.txt": {
     "mtime": 1779008943.5203748,
     "hash": "f9bc9a6e84b147afbca9e086d2d8bbd4"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\AGENTS.md": {
-    "mtime": 1779014397.8110669,
-    "hash": "bebaae8eaf20515c4ab66c1ad5b1eff1"
+    "mtime": 1779172297.282348,
+    "hash": "1e2b11afc5f036c629bdebc7850f6a27"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\README.md": {
-    "mtime": 1779014397.8110669,
-    "hash": "9fc4556abf3d6553030c1ccda8d2b8ed"
+    "mtime": 1779018224.7247076,
+    "hash": "f25422e07a48d136b30a8b5a46cdde1c"
   },
   "E:\\agri-ai-platform\\services\\crop-routing-service\\requirements.txt": {
     "mtime": 1779008987.2811642,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\disease-brassica-service\\AGENTS.md": {
-    "mtime": 1779014397.8140676,
-    "hash": "f694cb97b5ed410898e0b053ac588f94"
+    "mtime": 1779172499.4156792,
+    "hash": "36841fd32582cf212ae73242a6f6ad8c"
   },
   "E:\\agri-ai-platform\\services\\disease-brassica-service\\README.md": {
-    "mtime": 1779014397.8140676,
-    "hash": "4e2d29f954c8e24fd866f50c3ad9ecf6"
+    "mtime": 1779018224.7257416,
+    "hash": "39568b6863e1de09a78130d362e7c642"
   },
   "E:\\agri-ai-platform\\services\\disease-brassica-service\\requirements.txt": {
     "mtime": 1779009021.68728,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\disease-corn-service\\AGENTS.md": {
-    "mtime": 1779014397.8178577,
-    "hash": "1f6653c0289c0e1df1d5bfb88d2e2f39"
+    "mtime": 1779172499.4927752,
+    "hash": "8ee13168eb3cfcbabd1cedfcb4bcab66"
   },
   "E:\\agri-ai-platform\\services\\disease-corn-service\\README.md": {
-    "mtime": 1779014397.8173556,
-    "hash": "39391d2740d445db163990c11bc130b8"
+    "mtime": 1779018224.726887,
+    "hash": "4ce3e8e40fe75271b3fc702d10e4d7af"
   },
   "E:\\agri-ai-platform\\services\\disease-corn-service\\requirements.txt": {
     "mtime": 1779009040.8947382,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\disease-potato-service\\AGENTS.md": {
-    "mtime": 1779014397.8208826,
-    "hash": "8725d411b7472389fcf927c8ed4cf50d"
+    "mtime": 1779172499.5878527,
+    "hash": "30bc366f3eeaadb93dc6412a8b9b6a70"
   },
   "E:\\agri-ai-platform\\services\\disease-potato-service\\README.md": {
-    "mtime": 1779014397.8198774,
-    "hash": "6e58b50b11b14e37c3fb637abb28a063"
+    "mtime": 1779018224.726887,
+    "hash": "415deab2918623ba0d2e6b39b4daaffa"
   },
   "E:\\agri-ai-platform\\services\\disease-potato-service\\requirements.txt": {
     "mtime": 1779009061.748341,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\disease-rice-service\\AGENTS.md": {
-    "mtime": 1779014397.8224096,
-    "hash": "2b845fb84a595246dccada197d21a96b"
+    "mtime": 1779172499.7263348,
+    "hash": "935a289b876b6bab1cefcaba1a70d951"
   },
   "E:\\agri-ai-platform\\services\\disease-rice-service\\README.md": {
-    "mtime": 1779014397.8224096,
-    "hash": "2593760b2c7ded9b1e63b252af4329a3"
+    "mtime": 1779018224.7247076,
+    "hash": "b4274b7bf0cc9bd46f9b4f2d5903f9e4"
   },
   "E:\\agri-ai-platform\\services\\disease-rice-service\\requirements.txt": {
     "mtime": 1779009003.6587749,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\disease-wheat-service\\AGENTS.md": {
-    "mtime": 1779014397.826959,
-    "hash": "2fcf9624442191c537c5ae3d3d68da8c"
+    "mtime": 1779172499.6531417,
+    "hash": "67561dbd2bb9b29fd4d888e18246ca32"
   },
   "E:\\agri-ai-platform\\services\\disease-wheat-service\\README.md": {
-    "mtime": 1779014397.8259597,
-    "hash": "46d63a45849428948e474dc56273418f"
+    "mtime": 1779018224.726887,
+    "hash": "7f5ef401729fc9971898b8ad3f92a806"
   },
   "E:\\agri-ai-platform\\services\\disease-wheat-service\\requirements.txt": {
     "mtime": 1779009082.2762878,
     "hash": "ef12e5836bb5456b5bde6f1b714b1a56"
   },
   "E:\\agri-ai-platform\\services\\notification-service\\AGENTS.md": {
-    "mtime": 1779014397.8300598,
-    "hash": "d097da9323958930fbc3634952175c6d"
+    "mtime": 1779172297.389051,
+    "hash": "e8e360106a89660c9fde097c8203b974"
   },
   "E:\\agri-ai-platform\\services\\notification-service\\README.md": {
-    "mtime": 1779014397.8294866,
-    "hash": "698ed2d5e7513b1bc51390bebcbfb765"
+    "mtime": 1779018224.7294173,
+    "hash": "2240e6f304a236f8181c7663f4f2c733"
   },
   "E:\\agri-ai-platform\\services\\notification-service\\requirements.txt": {
     "mtime": 1779009107.636875,
     "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\AGENTS.md": {
-    "mtime": 1779014397.8320844,
-    "hash": "9d8d3f9944eb440140246351d59d42d8"
+    "mtime": 1779172297.5156276,
+    "hash": "6d79c033eeb01ba07924b75eaa3b81c5"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\README.md": {
-    "mtime": 1779014397.8320844,
-    "hash": "611d9104f936b37490cdc8416e63e7f3"
+    "mtime": 1779018224.7294173,
+    "hash": "28af2284f09fe3879c9f2ec090c5c8e3"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\requirements.txt": {
     "mtime": 1779009219.7899554,
     "hash": "2707e3c28ea954cfcde972ffd7fb60d2"
   },
   "E:\\agri-ai-platform\\services\\report-service\\AGENTS.md": {
-    "mtime": 1779014397.8320844,
-    "hash": "0165b4803fefca36e59ac791f838af0b"
+    "mtime": 1779172297.4640288,
+    "hash": "18e0a555c48348a755d13a790f4cc176"
   },
   "E:\\agri-ai-platform\\services\\report-service\\README.md": {
-    "mtime": 1779014397.8320844,
-    "hash": "43bbf2d23a6ed3557735b73894e8696c"
+    "mtime": 1779018224.7294173,
+    "hash": "142b383107c26a82d34c95fb7b7e0f01"
   },
   "E:\\agri-ai-platform\\services\\report-service\\requirements.txt": {
     "mtime": 1779009183.0071445,

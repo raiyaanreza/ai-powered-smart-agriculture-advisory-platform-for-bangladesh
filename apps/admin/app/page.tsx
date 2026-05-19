@@ -2,11 +2,11 @@
 import { Navbar } from "@/features/common/components/Layout";
 import { ShieldCheck, Users, Terminal, Bell, LayoutDashboard, Database } from "lucide-react";
 import { useState, useEffect } from "react";
-import { supabaseAdmin } from "@/lib/supabase";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { AnimatePresence } from "framer-motion";
+import { supabase } from "@/lib/supabase";
 
 // Modular Feature Imports
 import { SidebarLink } from "@/features/common/components/SidebarLink";
@@ -43,45 +43,74 @@ export default function AdminDashboard() {
       router.push("/login");
     }
     if (user && profile?.role === "admin") {
-      fetchPending();
-      fetchDashboardStats();
+      fetchAdminData();
     }
   }, [profile, user, loading, router]);
 
-  const fetchDashboardStats = async () => {
-    const { count: usersCount } = await supabaseAdmin.from("profiles").select("*", { count: 'exact', head: true });
-    const { count: diagCount } = await supabaseAdmin.from("diagnoses").select("*", { count: 'exact', head: true });
-    
-    setDashboardMetrics(prev => ({
-      ...prev,
-      totalUsers: usersCount || 0,
-      diagnosesCount: diagCount || 0
-    }));
-  };
-
-  const fetchPending = async () => {
+  const fetchAdminData = async () => {
     setFetching(true);
-    const { data } = await supabaseAdmin
-      .from("profiles")
-      .select("*")
-      .eq("role", "farmer")
-      .eq("is_verified", false);
-    
-    if (data) setPendingFarmers(data);
-    setFetching(false);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || "admin-mock-token";
+
+      const response = await fetch("/api/admin/farmers", {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setPendingFarmers(data.pendingFarmers || []);
+        setDashboardMetrics(prev => ({
+          ...prev,
+          totalUsers: data.totalUsers || 0,
+          diagnosesCount: data.diagnosesCount || 0
+        }));
+      }
+    } catch (err) {
+      console.error("Error loading administrative data:", err);
+      toast.error("Failed to load dashboard metrics");
+    } finally {
+      setFetching(false);
+    }
   };
 
   const handleVerify = async (id: string, approve: boolean) => {
-    const { error } = await supabaseAdmin
-      .from("profiles")
-      .update({ is_verified: approve, role: approve ? "farmer" : "user" })
-      .eq("id", id);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || "admin-mock-token";
+
+      const response = await fetch("/api/admin/farmers", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({ farmerId: id, approve })
+      });
       
-    if (!error) {
-      toast.success(approve ? "Farmer approved successfully" : "Application rejected");
-      setPendingFarmers(prev => prev.filter(f => f.id !== id));
-      fetchDashboardStats();
-    } else {
+      if (response.ok) {
+        toast.success(approve ? "Farmer approved successfully" : "Application rejected");
+        setPendingFarmers(prev => prev.filter(f => f.id !== id));
+        // Refresh stats
+        const refreshResponse = await fetch("/api/admin/farmers", {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+        if (refreshResponse.ok) {
+          const data = await refreshResponse.json();
+          setDashboardMetrics(prev => ({
+            ...prev,
+            totalUsers: data.totalUsers || 0,
+            diagnosesCount: data.diagnosesCount || 0
+          }));
+        }
+      } else {
+        toast.error("Verification sync failed");
+      }
+    } catch (err) {
+      console.error("Error during farmer verification:", err);
       toast.error("Verification sync failed");
     }
   };
@@ -92,21 +121,34 @@ export default function AdminDashboard() {
       return;
     }
 
-    const { error } = await supabaseAdmin
-      .from("notifications")
-      .insert([{
-        title: alertForm.title,
-        message: alertForm.message,
-        type: alertForm.type.toLowerCase(),
-        target_role: alertForm.target === "All Users" ? "all" : "farmer"
-      }]);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || "admin-mock-token";
 
-    if (!error) {
-      toast.success("National Broadcast sent successfully!");
-      setAlertForm({ title: "", type: "Critical", target: "All Users", message: "" });
-    } else {
-      console.error("Broadcast Error:", error);
-      toast.error("Schema Mismatch: 'notifications' table missing. See System tab.");
+      const response = await fetch("/api/admin/broadcast", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          title: alertForm.title,
+          message: alertForm.message,
+          type: alertForm.type,
+          target: alertForm.target
+        })
+      });
+
+      if (response.ok) {
+        toast.success("National Broadcast sent successfully!");
+        setAlertForm({ title: "", type: "Critical", target: "All Users", message: "" });
+      } else {
+        const data = await response.json();
+        toast.error(data.error || "Failed to issue broadcast");
+      }
+    } catch (err) {
+      console.error("Error during alert broadcast:", err);
+      toast.error("Failed to issue broadcast");
     }
   };
 
@@ -160,7 +202,7 @@ export default function AdminDashboard() {
         </aside>
 
         {/* Main Workspace */}
-        <main className="flex-1 p-8 lg:p-14 overflow-x-hidden">
+        <main id="main-content" role="main" className="flex-1 p-8 lg:p-14 overflow-x-hidden">
           <AnimatePresence mode="wait">
             {activeTab === "overview" && (
               <OverviewTab metrics={dashboardMetrics} />

@@ -68,7 +68,7 @@ export function AdvisoryDashboard() {
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
   const [chatLoading, setChatLoading] = useState(false);
 
-  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8001";
+  const advisoryApiBase = process.env.NEXT_PUBLIC_ADVISORY_API_URL || "http://localhost:8000/advisory";
 
   // Load conversations from local storage
   useEffect(() => {
@@ -209,7 +209,7 @@ export function AdvisoryDashboard() {
   };
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-1 overflow-hidden h-full w-full">
       {/* Sidebar */}
       <AdvisorySidebar 
         activeTab={activeTab}

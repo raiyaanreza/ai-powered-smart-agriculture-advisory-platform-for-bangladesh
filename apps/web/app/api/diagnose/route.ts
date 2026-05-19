@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { createClient } from "@supabase/supabase-js";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 export async function POST(req: Request) {
   try {
@@ -42,47 +39,29 @@ export async function POST(req: Request) {
       console.warn("Could not reach local agent-orchestrator, falling back to pure Gemini:", e);
     }
 
-    // Step 2: Use Gemini to enrich the diagnosis with treatments
-    const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
-
-    const prompt = `
-      Act as an expert plant pathologist. Analyze this crop image.
-      Provide the diagnosis in ${language === "bn" ? "Bangla" : "English"}.
+    // Step 2: Use backend Advisory Service to enrich the diagnosis with treatments
+    let diagnosis;
+    try {
+      const advisoryRes = await fetch("http://127.0.0.1:8000/advisory/diagnose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          yolo_crop: yoloCrop,
+          yolo_disease: yoloDisease,
+          yolo_confidence: yoloConfidence,
+          language,
+          image_data: base64Data
+        })
+      });
       
-      The AI vision model has pre-identified this as:
-      Crop: ${yoloCrop}
-      Condition/Disease: ${yoloDisease}
-      (Confidence: ${yoloConfidence})
-      
-      If the vision model says "Unknown", rely entirely on the image to make your own judgment.
-      
-      BE CONCISE. Use this JSON format:
-      {
-        "crop": "Crop Name",
-        "disease": "Disease Name",
-        "pathogen": "Scientific name",
-        "confidence": 0.95,
-        "severity": "Low|Medium|High",
-        "description": "Short description",
-        "treatment_en": ["Step 1 EN"],
-        "treatment_bn": ["Step 1 BN"],
-        "prevention": "One sentence tip"
+      if (!advisoryRes.ok) {
+         throw new Error(`Advisory service failed: ${advisoryRes.statusText}`);
       }
-    `;
-
-    const result = await model.generateContent([
-      prompt,
-      {
-        inlineData: {
-          data: base64Data,
-          mimeType: "image/jpeg",
-        },
-      },
-    ]);
-
-    const responseText = result.response.text();
-    const jsonStr = responseText.replace(/```json/g, "").replace(/```/g, "").trim();
-    const diagnosis = JSON.parse(jsonStr);
+      diagnosis = await advisoryRes.json();
+    } catch (e) {
+      console.error("Advisory service call failed:", e);
+      return NextResponse.json({ error: "Failed to process image through backend" }, { status: 500 });
+    }
 
     // Hard-fix for Rice bug: Ensure we use the actual detected crop
     const finalCrop = yoloCrop !== "Unknown" ? yoloCrop : diagnosis.crop;

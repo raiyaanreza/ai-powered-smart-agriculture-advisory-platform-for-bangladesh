@@ -50,10 +50,22 @@ export function ChatInterface({
   };
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [messages]);
+    const scrollToBottom = () => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({
+          top: scrollRef.current.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    };
+    
+    // Scroll immediately to handle instant UI updates
+    scrollToBottom();
+    
+    // Defer scrolling slightly to account for rendering/reflow latency
+    const timer = setTimeout(scrollToBottom, 100);
+    return () => clearTimeout(timer);
+  }, [messages, isLoading]);
 
   return (
     <div className="flex flex-col h-full bg-[#FAFAFA] relative overflow-hidden">

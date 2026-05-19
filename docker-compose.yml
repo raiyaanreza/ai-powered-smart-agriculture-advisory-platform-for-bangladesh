@@ -129,6 +129,22 @@ services:
     container_name: agri-report-service
     ports:
       - "8007:8007"
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  # Celery Async Worker
+  celery-worker:
+    build:
+      context: ./services/report-service
+      dockerfile: Dockerfile
+    container_name: agri-celery-worker
+    command: ["celery", "-A", "packages.utils.celery_app", "worker", "--loglevel=info"]
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
 
   # Qdrant RAG Service
   rag-service:

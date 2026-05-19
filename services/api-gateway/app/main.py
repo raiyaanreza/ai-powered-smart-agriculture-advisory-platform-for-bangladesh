@@ -77,6 +77,9 @@ async def reverse_proxy(service_name: str, path: str, request: Request):
     # Remove host header to avoid routing loops/host header issues
     headers.pop("host", None)
     
+    # Add internal authentication token
+    headers["X-Internal-Token"] = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    
     try:
         response = await client.request(
             method=request.method,

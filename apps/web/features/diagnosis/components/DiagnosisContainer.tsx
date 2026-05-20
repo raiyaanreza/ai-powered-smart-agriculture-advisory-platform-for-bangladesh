@@ -126,17 +126,46 @@ export function DiagnosisContainer() {
                   key="loading"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="h-full min-h-[400px] rounded-[2rem] bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center justify-center p-12 text-center"
+                  className="h-full min-h-[420px] rounded-[2.5rem] bg-[#052E16] border border-emerald-950 shadow-2xl flex flex-col items-center justify-center p-12 text-center relative overflow-hidden"
                 >
-                  <div className="relative h-20 w-20 mb-6">
-                    <motion.div className="absolute inset-0 rounded-full border-4 border-slate-50" />
-                    <motion.div className="absolute inset-0 rounded-full border-4 border-t-[#2D7A3E]" animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Leaf className="h-8 w-8 text-[#2D7A3E] animate-pulse" />
+                  {/* Futuristic Laser Scanning Line */}
+                  <motion.div 
+                    animate={{ y: ["0%", "360px"] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#EAB308] to-transparent shadow-[0_0_20px_#EAB308,0_0_35px_#EAB308] z-20 pointer-events-none"
+                  />
+                  
+                  {/* Subtle Grid overlay inside scanner */}
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#FFF_1px,transparent_1px)] [background-size:20px_20px]" />
+                  
+                  {/* Deep glowing radial gradients in backend */}
+                  <div className="absolute inset-0 bg-radial-gradient(circle_at_center, rgba(234,179,8,0.12) 0%, transparent 65%) pointer-events-none" />
+
+                  <div className="relative h-24 w-24 mb-8">
+                    {/* Ring circles pulsing */}
+                    <motion.div 
+                      animate={{ scale: [1, 1.4, 1], opacity: [0.15, 0.45, 0.15] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute inset-0 rounded-full border border-emerald-400/20" 
+                    />
+                    <motion.div 
+                      animate={{ scale: [1, 1.18, 1] }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute inset-2 rounded-full border-2 border-emerald-400/30" 
+                    />
+                    <motion.div 
+                      className="absolute inset-4 rounded-full border-2 border-t-[#EAB308] border-r-transparent border-l-transparent border-b-transparent" 
+                      animate={{ rotate: 360 }} 
+                      transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }} 
+                    />
+                    <div className="absolute inset-4 flex items-center justify-center">
+                      <Leaf className="h-9 w-9 text-[#EAB308] animate-pulse" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-2">বিশ্লেষণ করা হচ্ছে...</h3>
-                  <p className="text-sm text-slate-400">Gemini 3.1 Flash Lite is analyzing your photo</p>
+
+                  <h3 className="text-3xl font-black text-white mb-3 tracking-tight font-bn">বিশ্লেষণ করা হচ্ছে...</h3>
+                  <p className="text-emerald-300/80 text-sm font-bold tracking-widest uppercase mb-1">Gemini 3.5 Flash is scanning</p>
+                  <p className="text-emerald-100/40 text-xs font-semibold max-w-xs mx-auto">Extracting pathological patterns and mapping regional outbreak models.</p>
                 </motion.div>
               )}
 

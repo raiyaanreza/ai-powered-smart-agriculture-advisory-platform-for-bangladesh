@@ -37,7 +37,26 @@ export function LibraryContainer() {
   };
 
   const allDiseases = useMemo(() => {
-    return [...dbDiseases, ...staticDiseases];
+    const seen = new Set<string>();
+    const unique: Disease[] = [];
+    
+    // Add DB items first
+    dbDiseases.forEach(d => {
+      if (d.id && !seen.has(d.id)) {
+        seen.add(d.id);
+        unique.push(d);
+      }
+    });
+    
+    // Add static items only if they don't exist in DB
+    staticDiseases.forEach(d => {
+      if (d.id && !seen.has(d.id)) {
+        seen.add(d.id);
+        unique.push(d);
+      }
+    });
+    
+    return unique;
   }, [dbDiseases]);
 
   const filteredDiseases = useMemo(() => {

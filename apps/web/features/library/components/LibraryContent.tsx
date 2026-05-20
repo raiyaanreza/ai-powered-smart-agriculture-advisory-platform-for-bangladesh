@@ -15,41 +15,52 @@ export function LibraryGrid({ diseases, onView }: LibraryGridProps) {
       {diseases.map((disease, i) => (
         <motion.div
           key={disease.id}
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -8, scale: 1.01 }}
-          transition={{ delay: i * 0.03, type: "spring", stiffness: 140, damping: 18 }}
-          className="bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-sm flex flex-col group hover:shadow-2xl transition-all duration-500"
+          whileHover={{ y: -10, scale: 1.02 }}
+          transition={{ delay: i * 0.03, type: "spring", stiffness: 120, damping: 14 }}
+          className="bg-white/80 backdrop-blur-xl rounded-[2rem] overflow-hidden border border-slate-100/80 shadow-md flex flex-col group hover:shadow-[0_25px_60px_-15px_rgba(5,46,22,0.12)] transition-all duration-500 relative"
         >
-          <div className="relative aspect-16/10 overflow-hidden bg-slate-50">
+          {/* Card Border Highlight Glow */}
+          <div className="absolute inset-0 rounded-[2rem] border-2 border-transparent group-hover:border-green-800/10 pointer-events-none transition-all duration-500" />
+          
+          <div className="relative aspect-[16/10.5] overflow-hidden bg-slate-50">
             <Image 
               src={disease.image} 
               alt={disease.name} 
               width={400}
               height={250}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108" 
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
+            {/* Elegant glassmorphic gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+            
             <div className="absolute top-4 left-4">
-               <span className={`px-2.5 py-1 rounded-lg text-[8px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-lg ${
-                 disease.severity === 'High' ? 'bg-[#B91C1C] text-white' : 
-                 disease.severity === 'Medium' ? 'bg-[#9A3412] text-white' : 
-                 'bg-[#1D4ED8] text-white'
-               }`}>
-                 <AlertTriangle className="h-3 w-3" /> {disease.severity}
-               </span>
+               <motion.span 
+                 whileHover={{ scale: 1.05 }}
+                 className={`px-3.5 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-xl backdrop-blur-md ${
+                   disease.severity === 'High' ? 'bg-red-600/90 text-white' : 
+                   disease.severity === 'Medium' ? 'bg-amber-600/90 text-white' : 
+                   'bg-blue-600/90 text-white'
+                 }`}
+               >
+                 <AlertTriangle className="h-3.5 w-3.5 animate-pulse" /> {disease.severity}
+               </motion.span>
             </div>
+
+            {/* Glowing ring animation on card hover */}
+            <div className="absolute inset-0 bg-radial-gradient(circle_at_center, rgba(234,179,8,0.1) 0%, transparent 70%) opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </div>
 
-          <div className="p-6 flex-1 flex flex-col">
-            <h3 className="text-lg font-black text-slate-900 leading-tight mb-1 font-bn">{disease.nameBn}</h3>
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">{disease.name}</p>
+          <div className="p-7 flex-1 flex flex-col relative z-10">
+            <h3 className="text-xl font-black text-slate-900 leading-snug mb-1 font-bn group-hover:text-green-950 transition-colors duration-300">{disease.nameBn}</h3>
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-5">{disease.name}</p>
 
-            <div className="space-y-1.5 mb-6">
+            <div className="space-y-2 mb-6 flex-1">
                 {(disease.symptoms || []).slice(0, 2).map((s, idx) => (
-                  <div key={idx} className="text-[12px] text-slate-500 font-medium flex items-start gap-2 font-bn leading-tight">
-                    <div className="h-1.5 w-1.5 rounded-full bg-slate-300 mt-1.5 shrink-0" />
+                  <div key={idx} className="text-[13px] text-slate-500 font-semibold flex items-start gap-2.5 font-bn leading-relaxed">
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-700/60 mt-2 shrink-0 group-hover:scale-125 transition-transform" />
                     {s}
                   </div>
                 ))}
@@ -57,9 +68,16 @@ export function LibraryGrid({ diseases, onView }: LibraryGridProps) {
 
             <button 
               onClick={() => onView(disease)}
-              className="mt-auto w-full py-3.5 rounded-xl bg-slate-50 text-slate-900 text-[10px] font-black uppercase tracking-widest hover:bg-green-950 hover:text-white transition-all active:scale-95"
+              className="w-full py-4 rounded-2xl bg-slate-50 hover:bg-green-950 text-slate-800 hover:text-white text-[10px] font-black uppercase tracking-widest transition-all duration-300 active:scale-98 shadow-sm group-hover:shadow-md flex items-center justify-center gap-2"
             >
               বিস্তারিত তথ্য
+              <motion.span 
+                className="inline-block"
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                
+              </motion.span>
             </button>
           </div>
         </motion.div>

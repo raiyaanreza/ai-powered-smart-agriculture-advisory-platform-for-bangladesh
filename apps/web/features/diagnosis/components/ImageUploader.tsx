@@ -24,9 +24,15 @@ export function ImageUploader({ onUpload }: ImageUploaderProps) {
   };
 
   return (
-    <div 
-      className={`relative h-full min-h-[400px] rounded-[2rem] p-12 border-2 border-dashed transition-all duration-300 flex flex-col items-center justify-center text-center cursor-pointer bg-white
-        ${dragActive ? "border-earth-700 bg-earth-50/20" : "border-slate-200 hover:border-earth-700/50"}
+    <motion.div 
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.995 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className={`relative h-full min-h-[420px] rounded-[2.5rem] p-12 border-2 border-dashed transition-all duration-500 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden
+        ${dragActive 
+          ? "border-emerald-600 bg-emerald-50/30 shadow-[0_20px_50px_rgba(16,185,129,0.15)]" 
+          : "border-slate-200/80 bg-white hover:border-emerald-600/50 hover:shadow-[0_30px_70px_-20px_rgba(5,46,22,0.08)]"
+        }
       `}
       onDragEnter={() => setDragActive(true)}
       onDragLeave={() => setDragActive(false)}
@@ -38,6 +44,13 @@ export function ImageUploader({ onUpload }: ImageUploaderProps) {
       }}
       onClick={() => inputRef.current?.click()}
     >
+      {/* Background Soft Ambient Light */}
+      <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-yellow-500/5 blur-3xl pointer-events-none" />
+
+      {/* Modern Scanning Grid Line decoration */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]" />
+
       <input 
         ref={inputRef}
         type="file" 
@@ -46,23 +59,32 @@ export function ImageUploader({ onUpload }: ImageUploaderProps) {
         onChange={(e) => handleFiles(e.target.files)}
       />
 
-      <div className="h-16 w-16 rounded-2xl bg-earth-50 flex items-center justify-center mb-6">
+      {/* Floating Animated Leaf/Uploader Icon */}
+      <motion.div 
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="h-20 w-20 rounded-3xl bg-emerald-50/80 flex items-center justify-center mb-6 shadow-sm border border-emerald-100/50 relative group"
+      >
         <div className="relative">
-          <ImageIcon className="h-8 w-8 text-earth-700" />
-          <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-white flex items-center justify-center border border-earth-700">
-             <span className="text-[10px] font-black text-earth-700">+</span>
+          <ImageIcon className="h-9 w-9 text-emerald-700 transition-transform duration-300 group-hover:scale-110" />
+          <div className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full bg-[#EAB308] flex items-center justify-center border border-white shadow-sm">
+             <span className="text-[11px] font-black text-emerald-950">+</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <h3 className="text-xl font-black text-slate-800 mb-2">Identify Crop Disease</h3>
-      <p className="text-sm text-slate-400 mb-8 max-w-xs mx-auto">
+      <h3 className="text-2xl font-black text-slate-800 mb-2 tracking-tight">Identify Crop Disease</h3>
+      <p className="text-sm text-slate-400 mb-8 max-w-xs mx-auto font-medium">
         Drag and drop photos or browse to start. Supported: JPG, PNG (Max 10MB).
       </p>
 
-      <button className="px-8 py-3 rounded-xl bg-[#FBBF24] text-[#78350F] text-sm font-black shadow-lg shadow-yellow-200 hover:scale-[1.02] active:scale-[0.98] transition-all">
+      <motion.button 
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-10 py-4 rounded-2xl bg-[#EAB308] text-[#052E16] text-xs font-black uppercase tracking-widest shadow-xl shadow-yellow-500/10 hover:shadow-yellow-500/20 transition-all"
+      >
         Browse Photo Library
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 }

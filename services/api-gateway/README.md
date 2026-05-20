@@ -34,5 +34,5 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 ## Environment Variables
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `INTERNAL_SHARED_SECRET` | `super-secret-internal-key-2026` | Token injected into proxied requests |
+| `INTERNAL_SHARED_SECRET` | (required) | Token injected into proxied requests |
 | `ALLOWED_ORIGINS` | `http://localhost:3000,http://localhost:3001` | CORS origins |

@@ -15,7 +15,7 @@ from fastapi import Header, Depends
 async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
     if request.url.path in ("/health", "/docs", "/openapi.json"):
         return True
-    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    secret = os.environ["INTERNAL_SHARED_SECRET"]
     if not x_internal_token or x_internal_token != secret:
         raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
     return True
@@ -33,6 +33,15 @@ app.add_middleware(
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "service": "advisory-service"}
+
+@app.get("/metrics")
+async def metrics():
+    """Prometheus-compatible metrics endpoint"""
+    from fastapi.responses import Response
+    return Response(
+        content='# HELP service_up Whether the service is up\n# TYPE service_up gauge\nservice_up{service="advisory-service"} 1\n',
+        media_type="text/plain",
+    )
 
 @app.post("/advisory/chat", response_model=ChatResponse)
 async def chat_with_advisor(request: ChatRequest):

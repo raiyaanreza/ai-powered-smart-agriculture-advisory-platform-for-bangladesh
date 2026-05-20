@@ -1,5 +1,5 @@
 "use client";
-import { Paperclip, Mic, Send, CheckCircle2, Leaf, Zap, X, Plus } from "lucide-react";
+import { Paperclip, Mic, MicOff, Send, CheckCircle2, Leaf, Zap, X, Plus, Play, Pause, Square, Volume2, VolumeX, Copy, Check, FileDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -30,6 +30,44 @@ export function ChatInterface({
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
+  const toggleListening = () => {
+    if (isListening) {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+      setIsListening(false);
+    } else {
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Speech recognition is not supported in this browser.");
+        return;
+      }
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "en-US";
+      
+      recognition.onstart = () => {
+        setIsListening(true);
+      };
+      
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+      
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        setInput(prev => prev + (prev ? " " : "") + transcript);
+      };
+      
+      recognitionRef.current = recognition;
+      recognition.start();
+    }
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -137,7 +175,10 @@ export function ChatInterface({
                              </div>
                           </div>
                         ) : (
-                          <FormattedMarkdown content={msg.text} />
+                          <>
+                             <FormattedMarkdown content={msg.text} />
+                             <AdvisoryActions text={msg.text} />
+                           </>
                         )}
                      </div>
                   </div>
@@ -206,9 +247,17 @@ export function ChatInterface({
                className="flex-1 bg-transparent border-none focus:outline-none text-[14px] font-bold text-slate-800 px-2 py-3"
              />
              <div className="flex items-center gap-2">
-                <button className="h-12 w-12 rounded-full hover:bg-slate-50 flex items-center justify-center text-slate-400">
-                   <Mic className="h-5 w-5" />
-                </button>
+                <button 
+                   onClick={toggleListening}
+                   className={`h-12 w-12 rounded-full flex items-center justify-center transition-all ${
+                     isListening 
+                       ? 'bg-red-50 text-red-600 animate-pulse border border-red-100' 
+                       : 'hover:bg-slate-50 text-slate-400'
+                   }`}
+                   title="ইংলিশ ভয়েস ইনপুট"
+                 >
+                    {isListening ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
+                 </button>
                 <button 
                   onClick={handleSend}
                   disabled={isLoading || (!input.trim() && !selectedImage)}
@@ -319,3 +368,118 @@ function renderInlineStyles(text: string) {
     return part;
   });
 }
+
+
+interface AdvisoryActionsProps {
+  text: string;
+}
+
+
+
+
+function AdvisoryActions({ text }: { text: string }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleExportDocx = () => {
+    const header = "🌾 AGRIVISION AI - EXPERT ADVISOR REPORT\n=============================================\n\n";
+    const cleanText = text.replace(/[*#_\-\+`]/g, "");
+    const blob = new Blob([header + cleanText], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `Advisory_Report_${Date.now()}.docx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const togglePlay = () => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      setIsPlaying(false);
+    } else {
+      const cleanText = text.replace(/[*#_\-\+`]/g, "").replace(/\[.*?\]\(.*?\)/g, "");
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      
+      // Load all available voices dynamically
+      const voices = window.speechSynthesis.getVoices();
+      
+      // Look for any Bangla voice (e.g., bn-BD, bn-IN, Google বাংলা)
+      const banglaVoice = voices.find(v => 
+        v.lang.toLowerCase().includes("bn") || 
+        v.name.toLowerCase().includes("bangla") || 
+        v.name.toLowerCase().includes("bengali")
+      );
+      
+      if (banglaVoice) {
+        utterance.voice = banglaVoice;
+        utterance.lang = banglaVoice.lang;
+        console.log("Selected Bangla voice:", banglaVoice.name);
+      } else {
+        // Fallback to default browser voice
+        console.warn("No native Bangla voice found. Falling back to default system voice.");
+        const defaultVoice = voices.find(v => v.default) || voices[0];
+        if (defaultVoice) {
+          utterance.voice = defaultVoice;
+          utterance.lang = defaultVoice.lang;
+        }
+      }
+      
+      // Adjust pitch and rate for natural sound
+      utterance.pitch = 1.0;
+      utterance.rate = 0.95;
+      
+      utterance.onend = () => setIsPlaying(false);
+      utterance.onerror = (e) => {
+        console.error("SpeechSynthesis error:", e);
+        setIsPlaying(false);
+      };
+      
+      window.speechSynthesis.speak(utterance);
+      setIsPlaying(true);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  return (
+    <div className="mt-4 flex items-center gap-2">
+      <button
+        onClick={togglePlay}
+        className={`h-8 w-8 rounded-lg flex items-center justify-center transition-all ${isPlaying ? 'bg-red-50 text-red-600 border border-red-100' : 'bg-slate-50 text-slate-400 hover:text-slate-700 hover:bg-slate-100 border border-slate-100'}`}
+        title="বাংলায় শুনুন"
+      >
+        {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+      </button>
+      <button
+        onClick={handleCopy}
+        className="h-8 w-8 rounded-lg flex items-center justify-center bg-slate-50 text-slate-400 hover:text-slate-700 hover:bg-slate-100 border border-slate-100 transition-all"
+        title="কপি করুন"
+      >
+        {copied ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
+      </button>
+      <button
+        onClick={handleExportDocx}
+        className="h-8 w-8 rounded-lg flex items-center justify-center bg-slate-50 text-slate-400 hover:text-slate-700 hover:bg-slate-100 border border-slate-100 transition-all"
+        title="ডাউনলোড করুন (.docx)"
+      >
+        <FileDown className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
+

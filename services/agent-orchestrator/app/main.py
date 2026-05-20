@@ -1,6 +1,8 @@
 import os
+import re
 import shutil
 import time
+import logging
 from typing import Annotated, TypedDict, Optional
 from fastapi import FastAPI, UploadFile, File, HTTPException, Header, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,10 +11,13 @@ from langgraph.graph import StateGraph, END
 from langgraph.graph.message import add_messages
 from ultralytics import YOLO
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
     if request.url.path in ("/health", "/docs", "/openapi.json"):
         return True
-    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    secret = os.environ["INTERNAL_SHARED_SECRET"]
     if not x_internal_token or x_internal_token != secret:
         raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
     return True
@@ -45,7 +50,7 @@ async def verify_token(authorization: Optional[str] = Header(None)):
             raise HTTPException(status_code=401, detail="Invalid token scheme")
         # In a real environment, decode JWT here
         token = authorization.split(" ")[1]
-        print(f"Verified Authorization token: {token[:10]}...")
+        logger.info("Authorization token verified")
     return True
 
 ######################################################################
@@ -65,13 +70,13 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "..", "..", ".."))
 
 try:
-    print(f"Loading Crop Classifier from: {os.path.join(project_root, 'models', 'crop-classifier', 'best.pt')}")
+    logger.info("Loading Crop Classifier from: %s", os.path.join(project_root, 'models', 'crop-classifier', 'best.pt'))
     CROP_ROUTER_MODEL = YOLO(
         os.path.join(project_root, "models", "crop-classifier", "best.pt")
     )
-    print("Crop Classifier loaded successfully.")
+    logger.info("Crop Classifier loaded successfully.")
 except Exception as e:
-    print(f"CRITICAL ERROR: Failed to load crop classifier. {e}")
+    logger.error("CRITICAL ERROR: Failed to load crop classifier. %s", e)
     CROP_ROUTER_MODEL = None
 
 DISEASE_MODELS = {}
@@ -93,21 +98,21 @@ def get_disease_model(crop_name: str) -> YOLO:
 
     path = model_paths.get(crop_name)
     if not path:
-        print(f"Error: No model path defined for crop: {crop_name}")
+        logger.error("No model path defined for crop: %s", crop_name)
         return None
         
     if not os.path.exists(path):
-        print(f"Error: Model file NOT FOUND at: {path}")
+        logger.error("Model file NOT FOUND at: %s", path)
         return None
 
-    print(f"Lazy loading disease model for {crop_name} from {path}...")
+    logger.info("Lazy loading disease model for %s from %s...", crop_name, path)
     try:
         model = YOLO(path)
         DISEASE_MODELS[crop_name] = model
-        print(f"Successfully loaded model for {crop_name}")
+        logger.info("Successfully loaded model for %s", crop_name)
         return model
     except Exception as e:
-        print(f"FAILED to load {crop_name} model: {e}")
+        logger.error("FAILED to load %s model: %s", crop_name, e)
         return None
 
 
@@ -116,7 +121,7 @@ def get_disease_model(crop_name: str) -> YOLO:
 ######################################################################
 def node_classify_crop(state: AgentState):
     """Identifies the crop from the image."""
-    print("Executing Node: Classify Crop")
+    logger.info("Executing Node: Classify Crop")
     image_path = state["image_path"]
     if not CROP_ROUTER_MODEL:
         return {"crop_type": "Unknown"}
@@ -134,13 +139,13 @@ def node_classify_crop(state: AgentState):
     else:
         return {"crop_type": "Unknown"}
 
-    print(f"Crop Identified: {predicted_class}")
+    logger.info("Crop Identified: %s", predicted_class)
     return {"crop_type": predicted_class}
 
 
 def node_diagnose_disease(state: AgentState):
     """Diagnoses the disease based on the identified crop."""
-    print("Executing Node: Diagnose Disease")
+    logger.info("Executing Node: Diagnose Disease")
     crop_type = state["crop_type"]
     image_path = state["image_path"]
 
@@ -209,8 +214,9 @@ orchestrator_app = workflow.compile()
 async def diagnose(file: UploadFile = File(...), token_valid: bool = Depends(verify_token)):
     """Receives plant crop images and routes through LangGraph nodes"""
     start_time = time.time()
-    print(f"Received file: {file.filename}")
-    file_location = f"temp_{file.filename}"
+    logger.info("Received file: %s", file.filename)
+    safe_filename = re.sub(r'[^\w\-.]', '_', os.path.basename(file.filename or "upload"))
+    file_location = f"temp_{safe_filename}"
     try:
         with open(file_location, "wb+") as file_object:
             shutil.copyfileobj(file.file, file_object)

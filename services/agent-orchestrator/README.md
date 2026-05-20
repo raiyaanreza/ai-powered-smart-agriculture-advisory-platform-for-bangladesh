@@ -23,7 +23,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8003
 ## Environment Variables
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `INTERNAL_SHARED_SECRET` | `super-secret-internal-key-2026` | Validates requests from gateway |
+| `INTERNAL_SHARED_SECRET` | (required) | Validates requests from gateway |
 | `ALLOWED_ORIGINS` | `http://localhost:3000,http://localhost:3001` | CORS origins |
 | `LANGCHAIN_TRACING_V2` | (optional) | Enable LangSmith tracing |
 | `LANGCHAIN_API_KEY` | (optional) | LangSmith API key |

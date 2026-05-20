@@ -25,7 +25,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8001
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `GEMINI_API_KEY` | (required) | Google Gemini API key |
-| `INTERNAL_SHARED_SECRET` | `super-secret-internal-key-2026` | Validates requests from gateway |
+| `INTERNAL_SHARED_SECRET` | (required) | Validates requests from gateway |
 | `ALLOWED_ORIGINS` | `http://localhost:3000,http://localhost:3001` | CORS origins |
 
 ## Architecture

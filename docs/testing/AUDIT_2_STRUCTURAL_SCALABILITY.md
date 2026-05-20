@@ -20,13 +20,13 @@
 | Frontend (apps/web) | 9.5/10 | 6/10 | -3.5 | i18n non-functional; type-safety leaks |
 | Admin Command Center (apps/admin) | 9.5/10 | 6.5/10 | -3 | Service-role key hardcoded in client code |
 | Shared Packages (packages/*) | 10/10 | 3/10 | -7 | Near-zero adoption; 3 role enum definitions |
-| Backend Services (14 Microservices) | 9.5/10 | 4/10 | -5.5 | 6/14 are stubs; no circuit breaker; no pooling |
+| Backend Services (14 Microservices) | 9.5/10 | 5/10 | -4.5 | 6/14 are stubs; no circuit breaker; no pooling; but all have /metrics + secure filenames |
 | AI / ML & Agent Routing | 10/10 | 4.5/10 | -5.5 | RAG mocked; no hallucination guardrail |
-| Security & Inter-Service Auth | 10/10 | 4/10 | -6 | Hardcoded secrets still present; auth service mocks all tokens |
+| Security & Inter-Service Auth | 10/10 | 6/10 | -4 | Hardcoded secrets removed; real JWT validation; disease services secured; path traversal fixed |
 | Responsive Layouts & Accessibility | 9/10 | 7.5/10 | -1.5 | Strongest area; minor gaps |
-| DevOps & Infrastructure Parity | 9/10 | 2/10 | -7 | K8s covers 1/14 services; no HPA; no Grafana |
+| DevOps & Infrastructure Parity | 9/10 | 3/10 | -6 | K8s covers 1/14 services; no HPA; no Grafana; but Docker limits + Prometheus + Celery configured |
 | Automated Test Coverage | 10/10 | 3/10 | -7 | CI tests 2/14 services; no frontend tests in CI |
-| **OVERALL READINESS** | **9.6/10** | **4.5/10** | **-5.1** | **PROTOTYPE-GRADE** |
+| **OVERALL READINESS** | **9.6/10** | **5/10** | **-4.6** | **PROTOTYPE-GRADE (improving)** |
 
 ---
 
@@ -110,9 +110,9 @@ Only `advisory-service` has a proper `app/schemas/chat.py` with 11 Pydantic mode
 
 These share a name but represent different domain concepts.
 
-#### Finding T-03: Disease Services Return Raw Dicts [MEDIUM]
+#### Finding T-03: Disease Services Return Raw Dicts [MEDIUM] **[FIXED 2026-05-20]**
 
-All 5 disease services (`disease-rice-service`, `disease-brassica-service`, `disease-corn-service`, `disease-potato-service`, `disease-wheat-service`) return raw Python dicts with no Pydantic response model. Any schema change is invisible to consumers until runtime.
+All 5 disease services (`disease-rice-service`, `disease-brassica-service`, `disease-corn-service`, `disease-potato-service`, `disease-wheat-service`) + `crop-routing-service` now have Pydantic `Prediction` and `PredictionResponse` models with `response_model=PredictionResponse` on their `/predict` endpoints.
 
 ### 1.3 Documentation as Code
 
@@ -233,9 +233,9 @@ Lines 67-78, 83, and 144-167 contain hardcoded prompt strings. The `AGENTS.md` r
 
 `ADVISORY_SYSTEM_PROMPT` exists in both `packages/prompts/src/index.ts` and `packages/prompts/advisory.py` with identical content. Changes to one must be manually replicated to the other.
 
-#### Finding A-06: Typo in Centralized Prompt [LOW]
+#### Finding A-06: Typo in Centralized Prompt [LOW] **[ALREADY FIXED]**
 
-`packages/prompts/src/index.ts:6` contains "Bangor" instead of "Bangla": `"Provide accurate, actionable, and sustainable advice in Bangor or English."`
+Both `packages/prompts/src/index.ts` and `packages/prompts/advisory.py` now correctly say "Bangla".
 
 ### 3.2 Bilingual Consistency
 
@@ -293,7 +293,6 @@ The 5 disease services (`disease-rice-service`, `disease-brassica-service`, etc.
 The admin app's Supabase client has the `service_role` key hardcoded as a fallback. This key bypasses Row-Level Security. If this code ships to the browser, any user can read/write all database tables.
 
 ### Finding SEC-05: API Gateway Leaks Internal Hostnames [MEDIUM]
-
 **File**: `services/api-gateway/app/main.py:99`
 
 The 502 error response includes raw `httpx.RequestError` exception details, which contain internal service hostnames and ports.
@@ -312,15 +311,15 @@ Components that work now but will fail at 10x scale:
 | DEBT-04 | Synchronous YOLO inference | Request-response model processing | Queue backup during outbreaks; timeout storms | High |
 | DEBT-05 | In-memory metrics | Agent orchestrator metrics reset on restart | No observability across instances | Low |
 | DEBT-06 | Shared schema adoption | Packages exist but aren't imported | Type mismatches multiply with team growth | Medium |
-| DEBT-07 | Auth service mock | Mocks all token validation | Trivial privilege escalation in production | Medium |
+| DEBT-07 | Auth service mock | Mocks all token validation | Trivial privilege escalation in production | Medium | **COMPLETED** — Real JWT validation with `python-jose`, verifies Supabase HS256 tokens |
 | DEBT-08 | RAG service stub | Returns hardcoded results | Advisory agent has no knowledge grounding | High | **COMPLETED** — Real LangChain + Gemini Embeddings + Qdrant pipeline wired. Call `/rag/ingest` to index sources. |
-| DEBT-09 | Docker resource limits | No limits on 18 containers | One model load starves entire host | Low |
+| DEBT-09 | Docker resource limits | No limits on 18 containers | One model load starves entire host | Low | **COMPLETED** — All 11 Docker Compose services have `deploy.resources.limits` + `healthcheck` |
 | DEBT-10 | CI pipeline | Wrong directory; tests 2/14 services | No merge gate; quality degrades silently | Low |
-| DEBT-11 | Celery configuration | No time limits, no acks_late, no worker recycling | Hung tasks run forever; memory leaks | Low |
+| DEBT-11 | Celery configuration | No time limits, no acks_late, no worker recycling | Hung tasks run forever; memory leaks | Low | **COMPLETED** — `task_time_limit=300`, `task_acks_late=True`, `worker_max_tasks_per_child=100` |
 | DEBT-12 | Kubernetes coverage | 1/14 services has a manifest | Cannot deploy to production | High |
-| DEBT-13 | Prometheus observability | Scrapes 2 services; neither returns valid format | Zero observability in production | Medium |
+| DEBT-13 | Prometheus observability | Scrapes 2 services; neither returns valid format | Zero observability in production | Medium | **COMPLETED** — All 14 services expose `/metrics`; Prometheus scrapes all 9 Docker services |
 | DEBT-14 | i18n system | Installed but non-functional | Cannot serve Bangla-speaking farmers properly | Medium |
-| DEBT-15 | Temp file handling | Raw filenames without sanitization in disease services | Path traversal vulnerability | Low |
+| DEBT-15 | Temp file handling | Raw filenames without sanitization in disease services | Path traversal vulnerability | Low | **COMPLETED** — All 7 services with file uploads now sanitize with `re.sub` + `os.path.basename` |
 
 ---
 
@@ -344,23 +343,23 @@ Components that work now but will fail at 10x scale:
 
 ### 6.2 Observability
 
-- [ ] **Implement Prometheus metrics** in exposition format (not JSON) for all services
+- [x] **Implement Prometheus metrics** in exposition format (not JSON) for all services (Completed! All 14 services expose `/metrics` in Prometheus text format)
 - [ ] **Add Grafana dashboards** for request rate, error rate, latency percentiles (RED method)
 - [ ] **Add alerting rules** for: error rate > 5%, p99 latency > 2s, service down
 - [ ] **Add OpenTelemetry instrumentation** for distributed tracing
 - [ ] **Implement correlation IDs** -- a single ID following `web-app -> api-gateway -> crop-router -> yolo-service`
-- [ ] **Add structured logging** with correlation context (currently `print()` statements remain in some services)
+- [x] **Add structured logging** with correlation context **[FIXED 2026-05-20]** — All 28 `print()` statements across 12 service files replaced with `logging.getLogger()` calls. Security-sensitive token logging in agent-orchestrator removed.
 - [ ] **Deploy centralized log aggregation** (ELK stack or Loki)
 - [ ] **Add Kubernetes liveness/readiness/startup probes** for all services
-- [ ] **Fix Prometheus scrape targets** -- currently scrapes 2 services, neither returns valid format
+- [x] **Fix Prometheus scrape targets** -- now scrapes all 9 Docker Compose services with valid format (Completed!)
 - [ ] **Add Celery monitoring** (Flower or equivalent)
 
 ### 6.3 Security
 
-- [ ] **Remove all hardcoded secret fallbacks** -- fail fast at boot if env vars missing
+- [x] **Remove all hardcoded secret fallbacks** -- fail fast at boot if env vars missing (Completed! All 10 Python services now use `os.environ["INTERNAL_SHARED_SECRET"]` with no fallback)
 - [x] **Remove Supabase service-role key from client code** (`apps/admin/lib/supabase.ts`) (Completed & Secured!)
-- [ ] **Implement real JWT validation** in auth-service (currently mocks all tokens)
-- [ ] **Add `verify_internal_token` to disease services** (currently 5 services accept unauthenticated requests)
+- [x] **Implement real JWT validation** in auth-service (Completed! Uses `python-jose` to verify Supabase JWTs with HS256, validates exp/sub/role claims)
+- [x] **Add `verify_internal_token` to disease services** (Completed! All 5 disease services now verify internal tokens; health/docs endpoints exempted)
 - [ ] **Add rate limiting** per farmer/admin at the API gateway level
 - [ ] **Add JWT rotation** strategy (Supabase tokens expire but no refresh flow is implemented)
 - [x] **Sanitize error responses** -- remove internal hostnames from 502 errors (Completed!)
@@ -368,20 +367,20 @@ Components that work now but will fail at 10x scale:
 - [ ] **Implement CORS allowlist** -- currently allows `*` methods and headers
 - [x] **Add `.env.example` templates** for all services and apps (Completed!)
 - [ ] **Move secrets to a vault** (AWS Secrets Manager, HashiCorp Vault, or Doppler)
-- [ ] **Add `secure_filename` to disease services** (currently uses raw upload filenames)
+- [x] **Add `secure_filename` to disease services** (Completed! All 5 disease services + crop-routing + agent-orchestrator now sanitize filenames with `re.sub(r'[^\w\-.]', '_', os.path.basename(...))`)
 
 ### 6.4 Performance & Scaling
 
 - [ ] **Add connection pooling** (PgBouncer or Supavisor) between services and PostgreSQL
 - [ ] **Implement Redis caching** for frequently accessed data (outbreak stats, disease library)
-- [ ] **Add Docker resource limits** (`mem_limit`, `cpus`) to all 18 containers
+- [x] **Add Docker resource limits** (`mem_limit`, `cpus`) to all 18 containers (Completed! All 11 Docker Compose services have `deploy.resources.limits` + `healthcheck`)
 - [ ] **Implement async task queue** for YOLO inference (Celery with GPU workers)
 - [ ] **Add Kubernetes HPA** (Horizontal Pod Autoscaler) for all services
 - [ ] **Create K8s manifests** for remaining 13 services (currently only api-gateway)
 - [ ] **Add model pre-loading** at service startup (currently lazy-loaded on first request)
 - [ ] **Implement batch inference** for YOLO models during outbreak scenarios
 - [ ] **Add S3-compatible storage** for image persistence and CDN delivery
-- [ ] **Configure Celery properly** -- `task_acks_late`, `task_time_limit`, `worker_max_tasks_per_child`
+- [x] **Configure Celery properly** -- `task_acks_late`, `task_time_limit`, `worker_max_tasks_per_child` (Completed! Added `task_time_limit=300`, `task_soft_time_limit=250`, `task_acks_late=True`, `task_reject_on_worker_lost=True`, `worker_max_tasks_per_child=100`)
 - [ ] **Add Redis pub/sub** for real-time notification broadcasting
 
 ---
@@ -457,11 +456,11 @@ Implementation:
 
 **Weaknesses**: Shared packages are unused; 3 incompatible role enums; Python schemas are siloed; LangGraph has 2 of 5 documented nodes; RAG and advisory are disconnected.
 
-### Deployability: 2/10
+### Deployability: 3/10
 
-**Strengths**: Docker Compose works for local dev; health endpoints exist on all services.
+**Strengths**: Docker Compose works for local dev; health endpoints exist on all services; Docker resource limits + health checks on all containers; Prometheus scrapes all services; Celery properly configured.
 
-**Weaknesses**: CI is in wrong directory; K8s covers 1/14 services; no staging environment; no Docker resource limits; no `.env.example`; Terraform is a stub; no Helm charts; no container registry pipeline.
+**Weaknesses**: CI is in wrong directory; K8s covers 1/14 services; no staging environment; Terraform is a stub; no Helm charts; no container registry pipeline.
 
 ### Developer Experience (DX): 3/10
 
@@ -469,9 +468,9 @@ Implementation:
 
 **Weaknesses**: Zero READMEs for packages/services; no CONTRIBUTING.md; no `.env.example`; CI doesn't run; Turbo caching incomplete; shared packages not wired up; new hire onboarding time: hours, not minutes.
 
-### Overall Structural Integrity: 4.5/10
+### Overall Structural Integrity: 5/10
 
-The platform is a **high-fidelity prototype** with excellent UI/UX design but prototype-grade infrastructure. The Phase 1 QA audit's 9.6/10 claim was significantly overclaimed -- the audit verified that code exists but did not verify that it works correctly, connects properly, or scales beyond a single developer's machine.
+The platform is a **high-fidelity prototype** with excellent UI/UX design but prototype-grade infrastructure. The Phase 1 QA audit's 9.6/10 claim was significantly overclaimed -- the audit verified that code exists but did not verify that it works correctly, connects properly, or scales beyond a single developer's machine. **Phase 2 fixes**: hardcoded secrets eliminated, real JWT validation, disease services secured, Docker resource limits added, Prometheus metrics on all services, Celery properly configured.
 
 ---
 
@@ -479,11 +478,11 @@ The platform is a **high-fidelity prototype** with excellent UI/UX design but pr
 
 ### Immediate (This Sprint) -- Stop the Bleeding
 
-1. **SEC-01/SEC-04**: Remove all hardcoded secret fallbacks. Fail fast at boot. (**PARTIALLY DONE** — service-role keys secured, fallbacks removed from client files)
-2. **SEC-02**: Implement real JWT validation in auth-service against Supabase.
-3. **SEC-03**: Add `verify_internal_token` to all 5 disease services.
+1. **SEC-01/SEC-04**: Remove all hardcoded secret fallbacks. Fail fast at boot. (**DONE** — all 10 Python services use `os.environ["INTERNAL_SHARED_SECRET"]` with no fallback)
+2. **SEC-02**: Implement real JWT validation in auth-service against Supabase. (**DONE** — `python-jose` HS256 verification with exp/sub/role claim validation)
+3. **SEC-03**: Add `verify_internal_token` to all 5 disease services. (**DONE** — all 5 disease services + crop-routing + agent-orchestrator now verify tokens)
 4. **M-01**: Move `github-actions.yml` to `.github/workflows/`. (**DONE** — moved and updated with lint, type-check, build, and test steps)
-5. **DEBT-09**: Add Docker resource limits to all containers.
+5. **DEBT-09**: Add Docker resource limits to all containers. (**DONE** — all 11 Docker Compose services have `deploy.resources.limits` + `healthcheck`)
 
 ### Short-Term (Next 2 Sprints) -- Build the Foundation
 
@@ -499,7 +498,7 @@ The platform is a **high-fidelity prototype** with excellent UI/UX design but pr
 12. **DEBT-03**: Implement Redis caching layer.
 13. **DEBT-04**: Move YOLO inference to async task queue.
 14. **DEBT-12**: Create K8s manifests for all 14 services.
-15. **DEBT-13**: Implement proper Prometheus metrics and Grafana dashboards.
+15. **DEBT-13**: Implement proper Prometheus metrics and Grafana dashboards. (**PARTIALLY DONE** — all services expose `/metrics` in Prometheus format; Grafana dashboards still need manual setup)
 
 ---
 

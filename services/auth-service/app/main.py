@@ -3,11 +3,16 @@ from typing import Optional
 from fastapi import FastAPI, Request, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from jose import JWTError, jwt
+from datetime import datetime, timezone
+
+# Supabase JWT secret - required for token verification
+SUPABASE_JWT_SECRET = os.environ.get("SUPABASE_JWT_SECRET", "")
 
 async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
     if request.url.path in ("/health", "/docs", "/openapi.json"):
         return True
-    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    secret = os.environ["INTERNAL_SHARED_SECRET"]
     if not x_internal_token or x_internal_token != secret:
         raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
     return True
@@ -26,53 +31,87 @@ app.add_middleware(
 class TokenValidationRequest(BaseModel):
     token: str
 
+class UserInfo(BaseModel):
+    id: str
+    email: str
+    role: str
+    is_verified: bool
+
+class TokenValidationResponse(BaseModel):
+    valid: bool
+    user: Optional[UserInfo] = None
+
+def _extract_user_from_jwt(token: str) -> dict:
+    """Decode and verify a Supabase JWT, returning user claims."""
+    if not SUPABASE_JWT_SECRET:
+        raise HTTPException(
+            status_code=500,
+            detail="SUPABASE_JWT_SECRET is not configured"
+        )
+
+    try:
+        payload = jwt.decode(
+            token,
+            SUPABASE_JWT_SECRET,
+            algorithms=["HS256"],
+            options={"verify_exp": True},
+        )
+    except JWTError as e:
+        raise HTTPException(status_code=401, detail=f"Invalid token: {str(e)}")
+
+    user_id = payload.get("sub")
+    if not user_id:
+        raise HTTPException(status_code=401, detail="Token missing 'sub' claim")
+
+    email = payload.get("email", "")
+    role = payload.get("role", "farmer")
+    # Supabase sets role to "authenticated" for logged-in users
+    if role == "authenticated":
+        role = "farmer"
+
+    return {
+        "id": user_id,
+        "email": email,
+        "role": role,
+        "is_verified": True,
+    }
+
 @app.get("/health")
 def health():
     return {"status": "healthy", "service": "auth-service"}
 
-@app.post("/auth/validate")
+@app.get("/metrics")
+def metrics():
+    """Prometheus-compatible metrics endpoint"""
+    from fastapi.responses import Response
+    return Response(
+        content='# HELP service_up Whether the service is up\n# TYPE service_up gauge\nservice_up{service="auth-service"} 1\n',
+        media_type="text/plain",
+    )
+
+@app.post("/auth/validate", response_model=TokenValidationResponse)
 async def validate_token(request: TokenValidationRequest):
-    """Parses and validates authorization bearer token payload"""
+    """Validates a Supabase JWT and returns user info."""
     token = request.token.strip()
     if not token:
         raise HTTPException(status_code=400, detail="Token cannot be empty")
-    
-    # Supabase JWT token layout validation
-    # Under standard local dev / test mock: return mock profiles
+
+    # Strip Bearer prefix if present
     if token.startswith("Bearer "):
-        token = token.split(" ")[1]
-        
-    try:
-        # Mock validation fallback to avoid breaking tests when Supabase is offline
-        # If admin token, assign admin roles
-        if "admin" in token.lower():
-            return {
-                "valid": True,
-                "user": {
-                    "id": "admin-session-uuid",
-                    "email": "admin@agrivision.bd",
-                    "role": "admin",
-                    "is_verified": True
-                }
-            }
-        
-        return {
-            "valid": True,
-            "user": {
-                "id": "farmer-session-uuid",
-                "email": "farmer@agrivision.bd",
-                "role": "farmer",
-                "is_verified": True
-            }
-        }
-    except Exception as e:
-        raise HTTPException(status_code=401, detail=f"Token decoding error: {str(e)}")
+        token = token.split(" ", 1)[1]
+
+    user = _extract_user_from_jwt(token)
+    return TokenValidationResponse(valid=True, user=UserInfo(**user))
 
 @app.get("/auth/userinfo")
 async def user_info(authorization: Optional[str] = Header(None)):
-    """Exposes current user session profile data"""
+    """Returns current user profile from the Authorization header JWT."""
     if not authorization:
         raise HTTPException(status_code=401, detail="Missing Authorization Header")
-        
-    result = await validate_token(TokenValidationRequest(token=authorization))
-    return result["user"]
+
+    token = authorization.strip()
+    if token.startswith("Bearer "):
+        token = token.split(" ", 1)[1]
+
+    user = _extract_user_from_jwt(token)
+    return user

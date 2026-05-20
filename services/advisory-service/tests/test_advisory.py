@@ -1,6 +1,10 @@
 import os
 import sys
 
+# Set required env vars before importing the app
+os.environ.setdefault("INTERNAL_SHARED_SECRET", "test-secret-token")
+os.environ.setdefault("GEMINI_API_KEY", "test-key")
+
 # Insert service path to avoid conflicts in monorepo test collection
 service_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if service_dir not in sys.path:
@@ -13,7 +17,7 @@ from app.main import app
 client = TestClient(app)
 
 # Setup internal authorization headers
-INTERNAL_TOKEN = "super-secret-internal-key-2026"
+INTERNAL_TOKEN = os.environ["INTERNAL_SHARED_SECRET"]
 headers = {"X-Internal-Token": INTERNAL_TOKEN}
 
 def test_advisory_unauthorized():

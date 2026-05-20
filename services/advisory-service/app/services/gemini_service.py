@@ -1,16 +1,24 @@
 import os
 import asyncio
+import logging
 import httpx
 import google.generativeai as genai
 from app.schemas.chat import ChatResponse, Diagnosis, TreatmentStep, CropAnalysisResponse
-from packages.prompts.advisory import ADVISORY_SYSTEM_PROMPT
+from packages.prompts.advisory import (
+    ADVISORY_SYSTEM_PROMPT,
+    CROP_ANALYSIS_SYSTEM_PROMPT,
+    CROP_ANALYSIS_USER_PROMPT_TEMPLATE,
+    DIAGNOSIS_PROMPT_TEMPLATE,
+)
 import json
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
 RAG_SERVICE_URL = os.getenv("RAG_SERVICE_URL", "http://localhost:8008")
-INTERNAL_SECRET = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+INTERNAL_SECRET = os.environ["INTERNAL_SHARED_SECRET"]
 
 
 async def _fetch_rag_context(query: str, crop: str = None) -> str:
@@ -29,7 +37,7 @@ async def _fetch_rag_context(query: str, crop: str = None) -> str:
                 data = resp.json()
                 return data.get("formatted_context") or ""
     except Exception as e:
-        print(f"[RAG] Context retrieval skipped: {e}")
+        logger.warning("[RAG] Context retrieval skipped: %s", e)
     return ""
 
 
@@ -97,30 +105,20 @@ class GeminiAdvisoryService:
 
             return ChatResponse(text=response.text)
         except Exception as e:
-            err_msg = str(e).encode('ascii', errors='ignore').decode('ascii')
-            print(f"Error in Gemini: {type(e).__name__} - {err_msg}")
+            logger.error("Error in Gemini: %s", type(e).__name__, exc_info=True)
             return ChatResponse(text=f"Error: {type(e).__name__}")
 
     async def generate_crop_analysis(
         self, crops: list, soil_type: str, district: str, season: str
     ) -> CropAnalysisResponse:
-        prompt = f"""
-        Provide a detailed, expert crop analysis for a farmer in Bangladesh with the following details:
-        - Cultivated Crops: {', '.join(crops)}
-        - Soil Type: {soil_type}
-        - Region/District: {district}
-        - Current Season/Sowing context: {season}
-        
-        You must return a highly precise and practical agricultural advisory. Focus specifically on the agricultural context of {district} district in Bangladesh, prioritizing local climatic conditions, crop calendar constraints, and localized soil properties.
-        
-        Tailor your response according to the CropAnalysisResponse schema structure.
-        For disease prevention, name specific common agricultural brands popular in Bangladesh (such as Nativo, Trooper, Amistar Top, etc.) as a last resort.
-        """
-        
+        prompt = CROP_ANALYSIS_USER_PROMPT_TEMPLATE.format(
+            crops=', '.join(crops), soil_type=soil_type, district=district, season=season
+        )
+
         model_name = "gemini-3.1-flash-lite"
         structured_model = genai.GenerativeModel(
             model_name=model_name,
-            system_instruction="You are a senior agronomist and crop advisor specializing in agricultural cultivation in Bangladesh.",
+            system_instruction=CROP_ANALYSIS_SYSTEM_PROMPT,
         )
         
         try:
@@ -136,8 +134,7 @@ class GeminiAdvisoryService:
             data = json.loads(response.text)
             return CropAnalysisResponse(**data)
         except Exception as e:
-            err_msg = str(e).encode('ascii', errors='ignore').decode('ascii')
-            print(f"Error in generating structured crop analysis: {type(e).__name__} - {err_msg}")
+            logger.error("Error in generating structured crop analysis: %s", type(e).__name__, exc_info=True)
             # Fallback mock data in case of quota or model issues
             return CropAnalysisResponse(
                 summary=f"কৃষি বিশ্লেষণ: {district} জেলায় {', '.join(crops)} চাষাবাদ বিষয়ক পরামর্শ।",
@@ -181,30 +178,13 @@ class GeminiAdvisoryService:
             )
 
     async def generate_diagnosis(self, yolo_crop: str, yolo_disease: str, yolo_confidence: float, language: str, image_data: str) -> dict:
-        prompt = f"""
-        Act as an expert plant pathologist. Analyze this crop image.
-        Provide the diagnosis in { "Bangla" if language == "bn" else "English" }.
-        
-        The AI vision model has pre-identified this as:
-        Crop: {yolo_crop}
-        Condition/Disease: {yolo_disease}
-        (Confidence: {yolo_confidence})
-        
-        If the vision model says "Unknown", rely entirely on the image to make your own judgment.
-        
-        BE CONCISE. Use this JSON format:
-        {{
-          "crop": "Crop Name",
-          "disease": "Disease Name",
-          "pathogen": "Scientific name",
-          "confidence": 0.95,
-          "severity": "Low|Medium|High",
-          "description": "Short description",
-          "treatment_en": ["Step 1 EN"],
-          "treatment_bn": ["Step 1 BN"],
-          "prevention": "One sentence tip"
-        }}
-        """
+        resolved_language = "Bangla" if language == "bn" else "English"
+        prompt = DIAGNOSIS_PROMPT_TEMPLATE.format(
+            language=resolved_language,
+            yolo_crop=yolo_crop,
+            yolo_disease=yolo_disease,
+            yolo_confidence=yolo_confidence,
+        )
 
         model_name = "gemini-3.1-flash-lite"
         model = genai.GenerativeModel(model_name=model_name)
@@ -219,7 +199,7 @@ class GeminiAdvisoryService:
             jsonStr = responseText.replace("```json", "").replace("```", "").strip()
             return json.loads(jsonStr)
         except Exception as e:
-            print(f"Error in generating diagnosis: {e}")
+            logger.error("Error in generating diagnosis: %s", e, exc_info=True)
             raise
 
 gemini_service = GeminiAdvisoryService()

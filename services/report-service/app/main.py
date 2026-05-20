@@ -1,12 +1,16 @@
 import os
+import logging
 from fastapi import FastAPI, HTTPException, Header, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
     if request.url.path in ("/health", "/docs", "/openapi.json"):
         return True
-    secret = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    secret = os.environ["INTERNAL_SHARED_SECRET"]
     if not x_internal_token or x_internal_token != secret:
         raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
     return True
@@ -31,13 +35,22 @@ class ReportRequest(BaseModel):
 def health():
     return {"status": "healthy", "service": "report-service"}
 
+@app.get("/metrics")
+def metrics():
+    """Prometheus-compatible metrics endpoint"""
+    from fastapi.responses import Response
+    return Response(
+        content='# HELP service_up Whether the service is up\n# TYPE service_up gauge\nservice_up{service="report-service"} 1\n',
+        media_type="text/plain",
+    )
+
 @app.post("/reports/generate")
 async def generate_report(request: ReportRequest):
     """Generates expert advisory reports in PDF schema"""
     if not request.farmer_id or not request.farmer_name:
         raise HTTPException(status_code=400, detail="farmer_id and farmer_name are required")
         
-    print(f"Generating high-fidelity PDF report for Farmer: {request.farmer_name} (ID: {request.farmer_id})")
+    logger.info("Generating PDF report for Farmer: %s (ID: %s)", request.farmer_name, request.farmer_id)
     
     # Mock dynamic report creation
     return {

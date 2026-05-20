@@ -15,6 +15,16 @@ celery_app.conf.update(
     result_serializer="json",
     timezone="Asia/Dhaka",
     enable_utc=True,
+    # Task execution limits
+    task_time_limit=300,  # hard limit: 5 minutes
+    task_soft_time_limit=250,  # soft limit: 4 minutes (raises SoftTimeLimitExceeded)
+    # Worker reliability
+    task_acks_late=True,  # acknowledge after completion, not before
+    task_reject_on_worker_lost=True,  # requeue if worker crashes
+    worker_max_tasks_per_child=100,  # restart worker after 100 tasks to prevent memory leaks
+    worker_prefetch_multiplier=1,  # fetch one task at a time for fair scheduling
+    # Broker
+    broker_connection_retry_on_startup=True,
 )
 
 @celery_app.task

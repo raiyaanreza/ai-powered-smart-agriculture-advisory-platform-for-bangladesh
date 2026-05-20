@@ -2,15 +2,27 @@
 
 import os
 import sys
+import logging
 import httpx
 from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="AgriVision API Gateway",
     description="API Gateway for AgriVision AI Agriculture Platform",
     version="0.1.0"
 )
+
+# Fail fast if shared secret is not configured
+INTERNAL_SHARED_SECRET = os.environ.get("INTERNAL_SHARED_SECRET")
+if not INTERNAL_SHARED_SECRET:
+    raise RuntimeError(
+        "INTERNAL_SHARED_SECRET environment variable is not set. "
+        "This is required for inter-service authentication."
+    )
 
 # CORS configuration
 app.add_middleware(
@@ -32,6 +44,8 @@ SERVICES = {
     "rag": "http://localhost:8008",
 }
 
+GATEWAY_TIMEOUT = float(os.getenv("GATEWAY_TIMEOUT", "60.0"))
+
 client = httpx.AsyncClient()
 
 @app.on_event("shutdown")
@@ -42,6 +56,14 @@ async def shutdown_event():
 async def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "service": "api-gateway"}
+
+@app.get("/metrics")
+async def metrics():
+    """Prometheus-compatible metrics endpoint"""
+    return Response(
+        content=f'# HELP service_up Whether the service is up\n# TYPE service_up gauge\nservice_up{{service="api-gateway"}} 1\n',
+        media_type="text/plain",
+    )
 
 @app.get("/")
 async def root():
@@ -78,7 +100,7 @@ async def reverse_proxy(service_name: str, path: str, request: Request):
     headers.pop("host", None)
     
     # Add internal authentication token
-    headers["X-Internal-Token"] = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+    headers["X-Internal-Token"] = INTERNAL_SHARED_SECRET
     
     try:
         response = await client.request(
@@ -86,7 +108,7 @@ async def reverse_proxy(service_name: str, path: str, request: Request):
             url=target_url,
             headers=headers,
             content=body,
-            timeout=60.0
+            timeout=GATEWAY_TIMEOUT
         )
         return Response(
             content=response.content,
@@ -94,7 +116,7 @@ async def reverse_proxy(service_name: str, path: str, request: Request):
             headers=dict(response.headers)
         )
     except httpx.RequestError as exc:
-        print(f"Gateway proxy error to '{service_name}': {exc}")
+        logger.error("Gateway proxy error to '%s': %s", service_name, exc)
         raise HTTPException(
             status_code=502,
             detail=f"Bad Gateway: Error communicating with downstream service '{service_name}'."

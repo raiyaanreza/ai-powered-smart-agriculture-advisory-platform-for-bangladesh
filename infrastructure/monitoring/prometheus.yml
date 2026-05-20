@@ -3,12 +3,56 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
+  - job_name: "agrivision-api-gateway"
+    static_configs:
+      - targets: ["api-gateway:8000"]
+    metrics_path: "/metrics"
+
+  - job_name: "agrivision-advisory-service"
+    static_configs:
+      - targets: ["advisory-service:8001"]
+    metrics_path: "/metrics"
+
+  - job_name: "agrivision-crop-routing-service"
+    static_configs:
+      - targets: ["crop-routing-service:8002"]
+    metrics_path: "/metrics"
+
   - job_name: "agrivision-agent-orchestrator"
     static_configs:
       - targets: ["agent-orchestrator:8003"]
     metrics_path: "/metrics"
 
-  - job_name: "agrivision-api-gateway"
+  - job_name: "agrivision-auth-service"
     static_configs:
-      - targets: ["api-gateway:8000"]
+      - targets: ["auth-service:8004"]
     metrics_path: "/metrics"
+
+  - job_name: "agrivision-notification-service"
+    static_configs:
+      - targets: ["notification-service:8005"]
+    metrics_path: "/metrics"
+
+  - job_name: "agrivision-analytics-service"
+    static_configs:
+      - targets: ["analytics-service:8006"]
+    metrics_path: "/metrics"
+
+  - job_name: "agrivision-report-service"
+    static_configs:
+      - targets: ["report-service:8007"]
+    metrics_path: "/metrics"
+
+  - job_name: "agrivision-rag-service"
+    static_configs:
+      - targets: ["rag-service:8008"]
+    metrics_path: "/metrics"
+
+  # Infrastructure
+  - job_name: "postgres"
+    static_configs:
+      - targets: ["postgres:5432"]
+
+  - job_name: "redis"
+    static_configs:
+      - targets: ["redis:6379"]

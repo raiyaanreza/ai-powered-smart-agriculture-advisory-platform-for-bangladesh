@@ -1,4 +1,4 @@
-# AI Agriculture Advisory Platform — Architecture Planning
+# AI Agriculture Advisory Platform — Architecture
 
 ## 1. Purpose of This Document
 
@@ -17,9 +17,41 @@ This document should be treated as a living architecture contract.
 
 ---
 
-## 2. Product Architecture Goals
+## 2. Vision & Product Philosophy
 
-### 2.1 Primary goals
+### 2.1 Vision
+
+Build a **government-grade AI agriculture platform** focused on:
+* Rural Bangladeshi farmers
+* Mid-scale food suppliers
+* Agricultural officers and extension workers
+* Ministry-level decision makers
+
+The platform acts as a unified ecosystem for disease diagnosis, crop advisory, weather-risk alerts, and national agricultural intelligence.
+
+**Core Innovation**: Beyond simple detection, the platform is an **AI agricultural operating system** with modular agents, localized advisory workflows, and high-fidelity geospatial intelligence.
+
+### 2.2 Core Product Philosophy
+
+The system is designed to be:
+* **Bangla-native**: First-class support for regional language and conversational advisory.
+* **Agent-driven**: Intelligent orchestration of complex advisory tasks using LangGraph.
+* **Modular & Scalable**: Horizontally scalable architecture for government-level deployment.
+* **Premium UX**: High-fidelity glassmorphic interfaces with real-time data visualizations.
+
+### 2.3 Product Experience Philosophy
+
+The platform bridges the gap between complex AI and rural accessibility:
+* **Simple for Rural Farmers**: Minimal cognitive load, high contrast, and voice-assisted.
+* **Professional for Government Officials**: Data-heavy, analytical, and authoritative.
+* **Bangla-native**: Regional language and voice-first interaction.
+* **Trustworthy**: Transparent AI confidence levels and RAG-verified guidance.
+
+---
+
+## 3. Product Architecture Goals
+
+### 3.1 Primary goals
 
 * Serve farmers with fast, trustworthy, localized agricultural guidance.
 * Support crop disease detection using crop-specific routing.
@@ -28,7 +60,7 @@ This document should be treated as a living architecture contract.
 * Reduce human engineering cost by creating a strong AI-friendly code structure.
 * Prepare the platform for public sector and large-user deployments.
 
-### 2.2 Non-goals for early phases
+### 3.2 Non-goals for early phases
 
 * No single monolithic model for all crops.
 * No tightly coupled frontend-backend logic.
@@ -38,7 +70,7 @@ This document should be treated as a living architecture contract.
 
 ---
 
-## 3. System Design Principles
+## 4. System Design Principles
 
 1. **Modularity first**
    Every feature must live in an isolated boundary.
@@ -63,7 +95,36 @@ This document should be treated as a living architecture contract.
 
 ---
 
-## 4. Recommended Architecture Style
+## 5. High-Level System Scope
+
+### Phase 1 — AI Disease Detection Portal (COMPLETED)
+* **Features**: Crop category detection, specialized rice disease routing, severity estimation, and treatment recommendations.
+* **Local Adaptation**: Bangla reports and interactive advisory chat.
+
+### Phase 2 — National Command Center (COMPLETED)
+* **GIS Outbreak Intelligence**: Real-time interactive map showing disease hotspots across Bangladesh.
+* **National Alert System**: Instant broadcast of critical weather and pest warnings.
+* **Disease Library**: National visual reference gallery for verified agricultural data.
+
+---
+
+## 6. Feature Ecosystem
+
+### A. AI Crop Diagnosis & Advisory
+* **Multi-turn Advisory Chat**: LangGraph-powered conversational agent that remembers context and provides localized treatment steps.
+* **Visual Disease Library**: Curated database of crop diseases with high-resolution visual markers for expert and farmer reference.
+
+### B. National Command Center
+* **Live Heatmaps & Predictive Spread**: Regional disease trend analysis for agricultural offices with pulse-animated hotspots.
+* **Verification Workflow**: Administrative control over the national agricultural knowledge base.
+
+### C. UI/UX Innovation
+* **Semantic Map Background**: An animated, glowing map of Bangladesh integrated into the dashboard, providing a sense of geographical scale and real-time connectivity.
+* **Glassmorphism**: A modern, transparent design system that balances technical density with visual clarity.
+
+---
+
+## 7. Recommended Architecture Style
 
 The overall system should be a **modular monorepo with service-oriented backend architecture**.
 
@@ -86,11 +147,9 @@ The overall system should be a **modular monorepo with service-oriented backend 
 
 ---
 
-## 5. Recommended Technology Stack
+## 8. Technology Stack
 
-This stack is selected to support modern AI-native development, long-term maintainability, and independent service ownership.
-
-### 5.1 Frontend
+### 8.1 Frontend
 
 * **Next.js** for the web application and public portal.
 * **TypeScript** for strong typing and safer AI-assisted refactoring.
@@ -100,7 +159,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 * **TanStack Query** for client data caching and server synchronization.
 * **Zod** for schema validation at the UI boundary.
 
-### 5.2 Backend
+### 8.2 Backend
 
 * **FastAPI** as the main backend framework.
 * **Python** for ML and AI ecosystem compatibility.
@@ -109,7 +168,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 * **Celery or Dramatiq** for background jobs.
 * **Redis** for caching, queues, and session support.
 
-### 5.3 AI / ML / Agent Layer
+### 8.3 AI / ML / Agent Layer
 
 * **PyTorch** for model inference and future training workflows.
 * **ONNX Runtime** for optimized inference where possible.
@@ -119,7 +178,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 * **LLM provider APIs** for hosted generation, summarization, and translation tasks.
 * **Whisper-style or equivalent speech services** if voice features are added later.
 
-### 5.4 Data and Storage
+### 8.4 Data and Storage
 
 * **PostgreSQL** as the core relational database.
 * **PostGIS** if geo-based agricultural analytics are required.
@@ -127,7 +186,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 * **Redis** as cache and job broker.
 * **S3-compatible object storage** for images, documents, model artifacts, and reports.
 
-### 5.5 DevOps and Delivery
+### 8.5 DevOps and Delivery
 
 * **Docker** for local reproducibility.
 * **Docker Compose** for developer environments.
@@ -137,7 +196,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 * **Centralized logs** through Loki or a similar stack.
 * **LangSmith or equivalent** for agent tracing and debugging.
 
-### 5.6 API and Integration
+### 8.6 API and Integration
 
 * REST for public and internal APIs.
 * WebSockets or SSE for streaming AI responses.
@@ -146,9 +205,7 @@ This stack is selected to support modern AI-native development, long-term mainta
 
 ---
 
-## 6. Monorepo Root Structure
-
-The repository should start as a monorepo so that app, services, models, and shared packages remain organized.
+## 9. Monorepo Root Structure
 
 ```text
 agri-ai-platform/
@@ -211,20 +268,20 @@ agri-ai-platform/
 
 ---
 
-## 7. Frontend Architecture Plan
+## 10. Frontend Architecture
 
-### 7.1 Frontend goals
+### 10.1 Frontend goals
 
 The frontend must remain fast, accessible, and easy to extend without interfering with business logic.
 
-### 7.2 Frontend boundaries
+### 10.2 Frontend boundaries
 
 * UI only renders data and sends actions.
 * UI never contains model logic.
 * UI never calls model files directly.
 * All external communication must go through API clients or server actions.
 
-### 7.3 Main frontend modules
+### 10.3 Main frontend modules
 
 #### Public web app
 
@@ -253,7 +310,7 @@ The frontend must remain fast, accessible, and easy to extend without interferin
 * Manual moderation queue
 * Knowledge base management
 
-### 7.4 Frontend folder design
+### 10.4 Frontend folder design
 
 ```text
 apps/web/
@@ -276,7 +333,7 @@ apps/web/
 └── tests/
 ```
 
-### 7.5 Frontend development rules
+### 10.5 Frontend development rules
 
 * Each feature should own its own UI, hooks, schemas, and API adapters.
 * Reusable shared UI must go into `packages/ui`.
@@ -286,106 +343,46 @@ apps/web/
 
 ---
 
-## 8. Backend Architecture Plan
+## 11. Backend Architecture
 
-### 8.1 Backend goals
+### 11.1 Backend goals
 
 The backend must provide stable contracts, isolate AI logic, and support long-running workflows.
 
-### 8.2 Core backend services
+### 11.2 Core backend services
 
 #### API Gateway
-
-Responsibilities:
-
-* route requests,
-* enforce auth,
-* rate limit public endpoints,
-* aggregate downstream service responses,
-* centralize API versioning.
+* route requests, enforce auth, rate limit public endpoints, aggregate downstream service responses, centralize API versioning.
 
 #### Auth Service
-
-Responsibilities:
-
-* user registration,
-* login/logout,
-* session handling,
-* role-based access control,
-* future government identity integration.
+* user registration, login/logout, session handling, role-based access control, future government identity integration.
 
 #### Crop Routing Service
-
-Responsibilities:
-
-* determine crop family from image or metadata,
-* route to the correct disease model,
-* return routing confidence,
-* handle fallback logic.
+* determine crop family from image or metadata, route to the correct disease model, return routing confidence, handle fallback logic.
 
 #### Disease Model Services
-
 Separate services for each crop family.
-Responsibilities:
-
-* infer disease class,
-* estimate confidence,
-* provide severity signals,
-* return model metadata and version.
+* infer disease class, estimate confidence, provide severity signals, return model metadata and version.
 
 #### Advisory Service
-
-Responsibilities:
-
-* convert diagnosis results into practical advice,
-* format treatment steps,
-* localize recommendations into Bangla,
-* adapt advice to region and crop stage.
+* convert diagnosis results into practical advice, format treatment steps, localize recommendations into Bangla, adapt advice to region and crop stage.
 
 #### RAG Service
-
-Responsibilities:
-
-* retrieve policy and agriculture knowledge,
-* ground AI answers in trusted documents,
-* provide citations or source references internally.
+* retrieve policy and agriculture knowledge, ground AI answers in trusted documents, provide citations or source references internally.
 
 #### Agent Orchestrator
-
-Responsibilities:
-
-* coordinate multi-step workflows,
-* call tools in sequence,
-* manage branching and fallback,
-* maintain state across agent steps.
+* coordinate multi-step workflows, call tools in sequence, manage branching and fallback, maintain state across agent steps.
 
 #### Analytics Service
-
-Responsibilities:
-
-* store usage metrics,
-* track region-level disease trends,
-* support dashboards,
-* generate reports for officers and administrators.
+* store usage metrics, track region-level disease trends, support dashboards, generate reports for officers and administrators.
 
 #### Notification Service
-
-Responsibilities:
-
-* SMS/email/push notifications,
-* advisory reminders,
-* outbreak alerts,
-* scheduled weather warnings.
+* SMS/email/push notifications, advisory reminders, outbreak alerts, scheduled weather warnings.
 
 #### Report Service
+* generate PDF reports, create downloadable advisory summaries, create government-ready exports.
 
-Responsibilities:
-
-* generate PDF reports,
-* create downloadable advisory summaries,
-* create government-ready exports.
-
-### 8.3 Backend folder design pattern
+### 11.3 Backend folder design pattern
 
 Each service should follow a consistent shape.
 
@@ -405,7 +402,7 @@ service-name/
 └── README.md
 ```
 
-### 8.4 Backend design rules
+### 11.4 Backend design rules
 
 * Keep domain logic inside `domain` or `services`.
 * Keep database access inside repositories.
@@ -415,13 +412,13 @@ service-name/
 
 ---
 
-## 9. Model Architecture Plan
+## 12. Model Architecture
 
-### 9.1 Model system goals
+### 12.1 Model system goals
 
 The model layer should remain specialist-based rather than universal.
 
-### 9.2 Existing model strategy
+### 12.2 Model strategy
 
 * First classify crop type.
 * Route to the correct crop family service.
@@ -429,7 +426,7 @@ The model layer should remain specialist-based rather than universal.
 * Return diagnosis.
 * Pass output to the advisory pipeline.
 
-### 9.3 Model services
+### 12.3 Model services
 
 Each crop family should be treated as a separate model domain.
 
@@ -442,7 +439,7 @@ Suggested model packages:
 * `potato-disease`
 * `wheat-disease`
 
-### 9.4 Model service contract
+### 12.4 Model service contract
 
 Each model service should expose the same interface:
 
@@ -455,7 +452,7 @@ Each model service should expose the same interface:
 * model version
 * inference duration
 
-### 9.5 Model serving principles
+### 12.5 Model serving principles
 
 * Standardize preprocessing.
 * Keep versioned inference pipelines.
@@ -463,7 +460,7 @@ Each model service should expose the same interface:
 * Use ONNX or equivalent only when it improves speed or deployment reliability.
 * Do not mix training code with production inference code.
 
-### 9.6 Model lifecycle structure
+### 12.6 Model lifecycle structure
 
 ```text
 datasets/ -> notebooks/ -> experiments/ -> model registry -> service deployment -> monitoring -> retraining
@@ -471,21 +468,21 @@ datasets/ -> notebooks/ -> experiments/ -> model registry -> service deployment 
 
 ---
 
-### 10. Agentic Workflow Architecture
+## 13. Agentic Workflow Architecture
 
 This is the core intelligence layer of the platform.
 
-### 10.1 Why agent workflows are needed
+### 13.1 Why agent workflows are needed
 
 A single LLM response is not enough for a government-grade advisory system. The system needs workflow control, tool usage, fallback policies, memory, and validation.
 
-### 10.2 Recommended orchestration framework
+### 13.2 Recommended orchestration framework
 
 * Use **LangGraph** as the primary workflow engine.
 * Use **LangChain** for tools, retrievers, prompt composition, and integrations.
 * Use a dedicated agent service rather than embedding orchestration inside the frontend or general API routes.
 
-### 10.3 Primary Agent Roles
+### 13.3 Primary Agent Roles
 
 #### 1. Crop Intake Agent (Intent & Routing)
 * **Purpose**: Identifies intent (diagnosis, pricing, weather, advice).
@@ -497,7 +494,7 @@ A single LLM response is not enough for a government-grade advisory system. The 
 
 #### 3. Weather Risk Agent
 * **Purpose**: Combines Weather API data with crop stages and disease risk models.
-* **Warnings**: “High fungal infection risk in next 3 days.”
+* **Warnings**: "High fungal infection risk in next 3 days."
 
 #### 4. Government Subsidy Agent
 * **Purpose**: Helps farmers find and apply for digital subsidies and schemes.
@@ -506,7 +503,7 @@ A single LLM response is not enough for a government-grade advisory system. The 
 * **Purpose**: Provides local crop prices, demand prediction, and selling suggestions.
 
 #### 6. Emergency Outbreak Agent
-* **Purpose**: Detects regional trends (e.g., “Brown spot increasing in Rajshahi”) for early warning.
+* **Purpose**: Detects regional trends (e.g., "Brown spot increasing in Rajshahi") for early warning.
 
 #### 7. RAG Verification & Safety Agent
 * **Purpose**: Checks advice against BARI/BRRI documents to ensure context grounding and safety.
@@ -514,7 +511,7 @@ A single LLM response is not enough for a government-grade advisory system. The 
 #### 8. Escalation Agent
 * **Purpose**: Decides when to ask for more images or suggest human expert review.
 
-### 10.4 Core Agent Workflow Chain
+### 13.4 Core Agent Workflow Chain
 
 ```text
 User Input
@@ -529,24 +526,71 @@ User Input
 → User Output
 ```
 
+### 13.5 Core Interaction Workflows
+
+#### Disease Diagnosis Workflow
+```text
+Upload Image → Validation → Crop Detection → Disease Routing → AI Inference → Severity Check → RAG Verification → Localized Response (Bangla) → Save/Share
+```
+
+#### AI Advisory Workflow
+```text
+Query → Intent Detection → Knowledge Retrieval → Context Injection → Generation → Safety Guardrail → Voice/Text Response
+```
+
 ---
 
-## 11. Data Architecture Plan
+## 14. Data Architecture
 
-### 11.1 Core database entities
+### 14.1 Core database entities
 
 The relational database should store:
 * users, roles, diagnoses, advisories, crops, disease classes, model versions, agent runs, alert subscriptions, documents, feedback, and audit logs.
 
-### 11.2 Storage Boundaries
+### 14.2 Storage Boundaries
 * **PostgreSQL**: Relational data, history, and moderation records.
 * **Qdrant**: Vector embeddings for RAG and semantic search.
 * **Redis**: Cache, job queues, and temporary workflow state.
 * **S3-Compatible Storage**: Images, PDF reports, and model weights.
 
+### 14.3 Authentication Flow
+* **Guest**: Session-based (temporary).
+* **User**: Email/Google Login (Phase 1) → Phone/OTP (Phase 2).
+* **Official**: Role-based Access Control (RBAC) with audit logging.
+
 ---
 
-## 12. Vibe Coding & AI-Assisted Strategy
+## 15. User Roles & Journeys
+
+### A. Guest User (Non-Registered)
+* **Description**: Visitors exploring the site for the first time.
+* **Goal**: Immediate value demonstration (Aha! moment).
+* **Allowed**: Limited AI diagnosis, article browsing, public alerts.
+* **Journey**: Landing Page → Upload Image → AI Result → Registration CTA.
+
+### B. Registered Farmer/User
+* **Description**: The primary audience (rural farmers, rooftop gardeners).
+* **Goal**: Long-term crop health management.
+* **Allowed**: Full diagnosis history, severity tracking, localized alerts, personalized AI chat assistant.
+* **Journey**: Dashboard → Upload/History → Advisory → Action/Alerts.
+
+### C. Agricultural Expert / Agronomist
+* **Description**: Verified specialists validating AI outputs.
+* **Goal**: Ensure quality and safety of advice.
+* **Allowed**: Review queue for low-confidence cases, manual advisory overriding, knowledge base publishing.
+
+### D. Government / Admin User
+* **Description**: Regional/National agricultural officers.
+* **Goal**: High-level monitoring and policy enforcement.
+* **Allowed**: National disease heatmap, regional outbreak analytics, AI governance audit logs.
+
+### E. Super Admin
+* **Description**: Technical platform operators.
+* **Goal**: System integrity and resource management.
+
+---
+
+## 16. Vibe Coding & AI-Assisted Strategy
 
 To optimize for AI-assisted development (Cursor, Antigravity, etc.), the codebase must maintain:
 * **Strong boundaries**: One feature = one folder.
@@ -556,7 +600,7 @@ To optimize for AI-assisted development (Cursor, Antigravity, etc.), the codebas
 
 ---
 
-## 13. Suggested Development Sequence
+## 17. Suggested Development Sequence
 
 ### Phase 1: Foundation (MVP)
 * Core monorepo setup, auth system, and base UI.
@@ -579,7 +623,7 @@ To optimize for AI-assisted development (Cursor, Antigravity, etc.), the codebas
 
 ---
 
-## 14. Future Expansion Scopes
+## 18. Future Expansion Scopes
 
 * **Drone Integration**: Large-scale farm surveys and government monitoring.
 * **IoT Integration**: Real-time soil moisture, temperature, and humidity sensors.
@@ -588,15 +632,7 @@ To optimize for AI-assisted development (Cursor, Antigravity, etc.), the codebas
 
 ---
 
----
-
-## 15. Strategic Implementation Goal
-
-The primary objective is not just "disease detection," but building an **AI-native agricultural operating system** for Bangladesh. Every technical decision should prioritize horizontal scalability and modularity to allow independent evolution of AI services, models, and UI modules.
-
----
-
-## 16. Operational Context for AI Agents
+## 19. Operational Context for AI Agents
 
 When an AI coding agent works on this repository, it should:
 * search only within the relevant service or feature folder,
@@ -616,7 +652,25 @@ Agents should always ask:
 
 ---
 
-## 17. Final Architecture Summary
+## 20. Business & Strategic Value
+
+### For the Government
+* National crop monitoring and real-time disease outbreak detection.
+* Digitization of agricultural extension services.
+* Data-driven resource allocation for extension officers.
+
+### For Farmers
+* Instant, localized diagnosis leading to reduced crop loss and improved yields.
+* Accessible AI guidance via native language support and historical tracking.
+
+### Key Novelty Points
+* **Multi-agent Agriculture Intelligence**: Specialized agents for distinct agricultural domains orchestrated via LangGraph.
+* **Geospatial Intelligence (GIS)**: Real-time mapping of agricultural health at a national scale.
+* **Modular Routing Architecture**: High-accuracy results via specialized crop-specific model routing.
+
+---
+
+## 21. Final Architecture Summary
 
 The platform is a **modular AI agriculture ecosystem** featuring:
 * **Presentation**: Next.js public/admin frontends.

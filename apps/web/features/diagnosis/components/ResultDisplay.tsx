@@ -34,7 +34,7 @@ export function ResultDisplay({ result, image, onReset }: ResultDisplayProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-2xl shadow-slate-200/60"
+      className="rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-2xl shadow-slate-200/60"
     >
       {/* Header */}
       <div className="bg-gradient-to-r from-[#1A321A] to-[#2D5A27] px-6 py-4 flex items-center justify-between">
@@ -83,11 +83,19 @@ export function ResultDisplay({ result, image, onReset }: ResultDisplayProps) {
                   initial={{ width: 0 }}
                   animate={{ width: `${confidencePct}%` }}
                   transition={{ duration: 1, ease: "easeOut" }}
+                  role="progressbar"
+                  aria-valuenow={confidencePct}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={`AI confidence: ${confidencePct}%`}
                 />
               </div>
               <div className="flex justify-between mt-1">
                 <span className="text-[8px] text-slate-300 font-bold">0%</span>
                 <span className="text-[8px] text-slate-300 font-bold">100%</span>
+              </div>
+              <div className="mt-2 text-[9px] font-semibold text-slate-500">
+                {confidencePct >= 80 ? 'High confidence diagnosis' : confidencePct >= 60 ? 'Moderate confidence - consider expert review' : 'Low confidence - expert review recommended'}
               </div>
             </div>
 

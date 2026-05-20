@@ -5,7 +5,7 @@ export const UserSchema = z.object({
   id: z.string(),
   name: z.string(),
   email: z.string().email(),
-  role: z.enum(['ADMIN', 'FARMER', 'EXPERT', 'GUEST']),
+  role: z.enum(['admin', 'farmer', 'expert', 'user']),
 });
 
 export const DiagnosisSchema = z.object({

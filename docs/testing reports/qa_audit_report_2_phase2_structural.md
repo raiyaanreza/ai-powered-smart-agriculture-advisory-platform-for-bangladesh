@@ -313,7 +313,7 @@ Components that work now but will fail at 10x scale:
 | DEBT-05 | In-memory metrics | Agent orchestrator metrics reset on restart | No observability across instances | Low |
 | DEBT-06 | Shared schema adoption | Packages exist but aren't imported | Type mismatches multiply with team growth | Medium |
 | DEBT-07 | Auth service mock | Mocks all token validation | Trivial privilege escalation in production | Medium |
-| DEBT-08 | RAG service stub | Returns hardcoded results | Advisory agent has no knowledge grounding | High |
+| DEBT-08 | RAG service stub | Returns hardcoded results | Advisory agent has no knowledge grounding | High | **COMPLETED** — Real LangChain + Gemini Embeddings + Qdrant pipeline wired. Call `/rag/ingest` to index sources. |
 | DEBT-09 | Docker resource limits | No limits on 18 containers | One model load starves entire host | Low |
 | DEBT-10 | CI pipeline | Wrong directory; tests 2/14 services | No merge gate; quality degrades silently | Low |
 | DEBT-11 | Celery configuration | No time limits, no acks_late, no worker recycling | Hung tasks run forever; memory leaks | Low |
@@ -328,12 +328,12 @@ Components that work now but will fail at 10x scale:
 
 ### 6.1 CI/CD Maturity
 
-- [ ] **Move workflow to `.github/workflows/`** -- GitHub cannot detect `infrastructure/ci-cd/github-actions.yml`
-- [ ] **Add lint step** to CI using `pnpm run lint` (already defined in `turbo.json`)
-- [ ] **Add type-check step** using `pnpm run type-check`
+- [x] **Move workflow to `.github/workflows/`** -- GitHub cannot detect `infrastructure/ci-cd/github-actions.yml` (Completed & Moved!)
+- [x] **Add lint step** to CI using `pnpm run lint` (Completed!)
+- [x] **Add type-check step** using `pnpm run type-check` (Completed!)
 - [ ] **Run all 14 Python services' tests** in CI (currently only 2)
-- [ ] **Run frontend tests** (`vitest`) in CI
-- [ ] **Add pnpm store caching** (`actions/cache` with `~/.pnpm-store`)
+- [x] **Run frontend tests** (`vitest`) in CI (Completed!)
+- [x] **Add pnpm store caching** (`actions/cache` or `actions/setup-node` integration) (Completed!)
 - [ ] **Add Turbo remote cache** for distributed team builds
 - [ ] **Add Docker image build and push** step for each service
 - [ ] **Add staging environment** deployment pipeline
@@ -358,15 +358,15 @@ Components that work now but will fail at 10x scale:
 ### 6.3 Security
 
 - [ ] **Remove all hardcoded secret fallbacks** -- fail fast at boot if env vars missing
-- [ ] **Remove Supabase service-role key from client code** (`apps/admin/lib/supabase.ts`)
+- [x] **Remove Supabase service-role key from client code** (`apps/admin/lib/supabase.ts`) (Completed & Secured!)
 - [ ] **Implement real JWT validation** in auth-service (currently mocks all tokens)
 - [ ] **Add `verify_internal_token` to disease services** (currently 5 services accept unauthenticated requests)
 - [ ] **Add rate limiting** per farmer/admin at the API gateway level
 - [ ] **Add JWT rotation** strategy (Supabase tokens expire but no refresh flow is implemented)
-- [ ] **Sanitize error responses** -- remove internal hostnames from 502 errors
+- [x] **Sanitize error responses** -- remove internal hostnames from 502 errors (Completed!)
 - [ ] **Add request size limits** at the gateway level (currently only at individual services)
 - [ ] **Implement CORS allowlist** -- currently allows `*` methods and headers
-- [ ] **Add `.env.example` templates** for all services and apps
+- [x] **Add `.env.example` templates** for all services and apps (Completed!)
 - [ ] **Move secrets to a vault** (AWS Secrets Manager, HashiCorp Vault, or Doppler)
 - [ ] **Add `secure_filename` to disease services** (currently uses raw upload filenames)
 
@@ -479,17 +479,17 @@ The platform is a **high-fidelity prototype** with excellent UI/UX design but pr
 
 ### Immediate (This Sprint) -- Stop the Bleeding
 
-1. **SEC-01/SEC-04**: Remove all hardcoded secret fallbacks. Fail fast at boot.
+1. **SEC-01/SEC-04**: Remove all hardcoded secret fallbacks. Fail fast at boot. (**PARTIALLY DONE** — service-role keys secured, fallbacks removed from client files)
 2. **SEC-02**: Implement real JWT validation in auth-service against Supabase.
 3. **SEC-03**: Add `verify_internal_token` to all 5 disease services.
-4. **M-01**: Move `github-actions.yml` to `.github/workflows/`.
+4. **M-01**: Move `github-actions.yml` to `.github/workflows/`. (**DONE** — moved and updated with lint, type-check, build, and test steps)
 5. **DEBT-09**: Add Docker resource limits to all containers.
 
 ### Short-Term (Next 2 Sprints) -- Build the Foundation
 
 6. **DEBT-02**: Deploy PgBouncer and configure connection pooling.
-7. **DEBT-10**: Expand CI to test all 14 services and run frontend tests.
-8. **T-01**: Unify role enums to a single definition in `packages/types`.
+7. **DEBT-10**: Expand CI to test all 14 services and run frontend tests. (**PARTIALLY DONE** — monorepo build/lint/type-check & frontend test pipelines configured)
+8. **T-01**: Unify role enums to a single definition. (**DONE** — unified to lowercase enums across all schemas, auth, and types packages)
 9. **M-03**: Wire up shared packages -- make apps actually import from `@agri-packages/ui`.
 10. **A-02**: Replace RAG mock with real Qdrant integration.
 

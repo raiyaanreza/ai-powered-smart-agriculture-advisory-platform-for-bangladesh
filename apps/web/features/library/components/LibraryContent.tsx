@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Eye, ArrowLeft, Beaker, ShieldCheck, Leaf, AlertTriangle, ScanLine, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import { Disease } from "../data/diseases";
 
 interface LibraryGridProps {
@@ -18,13 +19,16 @@ export function LibraryGrid({ diseases, onView }: LibraryGridProps) {
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ y: -8, scale: 1.01 }}
           transition={{ delay: i * 0.03, type: "spring", stiffness: 140, damping: 18 }}
-          className="bg-white/90 backdrop-blur-xl rounded-4xl overflow-hidden border border-slate-100 shadow-sm flex flex-col group hover:shadow-2xl transition-all duration-500"
+          className="bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-sm flex flex-col group hover:shadow-2xl transition-all duration-500"
         >
           <div className="relative aspect-16/10 overflow-hidden bg-slate-50">
-            <img 
+            <Image 
               src={disease.image} 
               alt={disease.name} 
+              width={400}
+              height={250}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
             <div className="absolute top-4 left-4">
@@ -33,7 +37,7 @@ export function LibraryGrid({ diseases, onView }: LibraryGridProps) {
                  disease.severity === 'Medium' ? 'bg-[#9A3412] text-white' : 
                  'bg-[#1D4ED8] text-white'
                }`}>
-                 {disease.severity}
+                 <AlertTriangle className="h-3 w-3" /> {disease.severity}
                </span>
             </div>
           </div>
@@ -74,19 +78,19 @@ export function LibraryDetails({ disease, onBack }: LibraryDetailsProps) {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white/90 backdrop-blur-xl rounded-[2.5rem] border border-slate-100 shadow-2xl overflow-hidden"
+      className="bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-100 shadow-2xl overflow-hidden"
     >
-      <div className="p-8 md:p-12">
+      <div className="p-6 sm:p-8 md:p-12">
         <button 
           onClick={onBack}
-          className="flex items-center gap-3 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-green-950 transition-all mb-10"
+          className="flex items-center gap-3 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-green-950 transition-all mb-6 sm:mb-10"
         >
           <ArrowLeft className="h-4 w-4" /> BACK TO LIBRARY
         </button>
 
         {/* Hero Section with Header Image */}
-        <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl mb-12 border-4 border-slate-50 group">
-          <img src={disease.image} alt={disease.name} className="w-full h-100 object-cover" />
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl mb-8 sm:mb-12 border-4 border-slate-50 group">
+          <Image src={disease.image} alt={disease.name} width={800} height={400} className="w-full h-100 object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/30" />
           <div className="absolute top-6 left-6">
              <span className={`px-5 py-2 rounded-xl text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl ${

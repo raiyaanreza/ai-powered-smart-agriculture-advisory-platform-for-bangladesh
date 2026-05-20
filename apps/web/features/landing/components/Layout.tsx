@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe, LogIn, Leaf, Zap, BookOpen, MessageSquare, ShoppingCart, Search, LayoutDashboard, ShieldCheck, User, Bell, History } from "lucide-react";
+import { Menu, X, Globe, LogIn, Leaf, Zap, BookOpen, MessageSquare, ShoppingCart, Search, LayoutDashboard, ShieldCheck, User, Bell, History, Info, AlertTriangle, AlertCircle, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -20,6 +20,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
+  const [lang, setLang] = useState<"en" | "bn">("en");
   const { user, profile, signOut } = useAuth();
   const pathname = usePathname();
   const notificationChannelKey = useRef(`schema-db-changes-${Math.random().toString(36).slice(2)}`);
@@ -115,11 +116,17 @@ export function Navbar() {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <button 
-              className="h-9 px-3 rounded-full flex items-center gap-2 text-slate-600 hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200"
-              aria-label="Switch language to Bengali"
+              onClick={() => {
+                const newLang = lang === "en" ? "bn" : "en";
+                setLang(newLang);
+                document.cookie = `NEXT_LOCALE=${newLang}; path=/; max-age=31536000`;
+                window.location.reload();
+              }}
+              className="h-11 px-3 rounded-full flex items-center gap-2 text-slate-600 hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200"
+              aria-label={`Switch language to ${lang === "en" ? "Bengali" : "English"}`}
             >
               <Globe className="h-4 w-4" />
-              <span className="text-[10px] font-black uppercase tracking-widest">BN</span>
+              <span className="text-xs font-semibold uppercase tracking-wide">{lang === "en" ? "BN" : "EN"}</span>
             </button>
             <div className="h-5 w-px bg-slate-200 mx-1" />
 
@@ -127,12 +134,16 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => { setUserMenuOpen(false); setNotificationOpen(!notificationOpen); }}
-                  className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-all relative"
-                  aria-label="Notifications"
+                  className="h-11 w-11 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-all relative"
+                  aria-label={`Notifications${notifications.length > 0 ? `, ${notifications.length} unread` : ""}`}
                   aria-expanded={notificationOpen}
                 >
                   <Bell className="h-5 w-5" />
-                  <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 border-2 border-white" />
+                  {notifications.length > 0 && (
+                    <span className="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] rounded-full bg-red-500 border-2 border-white text-[9px] font-bold text-white flex items-center justify-center px-1">
+                      {notifications.length > 9 ? '9+' : notifications.length}
+                    </span>
+                  )}
                 </button>
 
                 <AnimatePresence>
@@ -298,18 +309,22 @@ export function Navbar() {
 }
 
 function NotificationItem({ title, msg, type, time }: { title: string, msg: string, type: 'info' | 'warning' | 'critical', time: string }) {
-  const icons = {
-    info: <div className="h-2 w-2 rounded-full bg-blue-500" />,
-    warning: <div className="h-2 w-2 rounded-full bg-amber-500" />,
-    critical: <div className="h-2 w-2 rounded-full bg-red-500" />
+  const config = {
+    info: { color: "text-blue-500", bg: "bg-blue-50", icon: Info, label: "Info" },
+    warning: { color: "text-amber-500", bg: "bg-amber-50", icon: AlertTriangle, label: "Warning" },
+    critical: { color: "text-red-500", bg: "bg-red-50", icon: AlertCircle, label: "Critical" }
   };
+  const { color, bg, icon: Icon, label } = config[type];
 
   return (
     <div className="px-6 py-4 hover:bg-slate-50 transition-colors cursor-pointer border-b border-slate-50 last:border-0 group">
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-2">
-          {icons[type]}
+          <div className={`h-6 w-6 rounded-full ${bg} flex items-center justify-center`}>
+            <Icon className={`h-3.5 w-3.5 ${color}`} />
+          </div>
           <span className="text-[11px] font-black text-slate-900 uppercase tracking-tight group-hover:text-earth-700 transition-colors">{title}</span>
+          <span className={`text-[8px] font-bold uppercase tracking-wider ${color} px-1.5 py-0.5 rounded ${bg}`}>{label}</span>
         </div>
         <span className="text-[9px] font-medium text-slate-400">{time}</span>
       </div>
@@ -321,18 +336,47 @@ function NotificationItem({ title, msg, type, time }: { title: string, msg: stri
 }
 
 export function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const footerSections = [
+    {
+      title: "Resources",
+      links: [
+        { label: "Disease Library", href: "/library" },
+        { label: "Expert Advisory", href: "/advisory" },
+        { label: "Impact Reports", href: "/impact" },
+      ]
+    },
+    {
+      title: "Platform",
+      links: [
+        { label: "Start Diagnosis", href: "/diagnose" },
+        { label: "Agri Marketplace", href: "/marketplace" },
+        { label: "Gov Portal", href: "/government" },
+      ]
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About Us", href: "/about" },
+        { label: "Contact", href: "/contact" },
+        { label: "Privacy Policy", href: "/privacy" },
+      ]
+    }
+  ];
+
   return (
-    <footer className="bg-green-950 text-white pt-20 pb-10 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-125 h-125 bg-green-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+    <footer className="bg-green-950 text-white pt-16 sm:pt-20 pb-10 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-80 sm:w-125 h-80 sm:h-125 bg-green-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-16 sm:mb-20">
+          <div className="space-y-4 sm:space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-xl bg-earth-700 flex items-center justify-center">
-                <Leaf className="h-6 w-6 text-white" />
+              <div className="h-8 sm:h-10 w-8 sm:w-10 rounded-xl bg-earth-700 flex items-center justify-center">
+                <Leaf className="h-5 sm:h-6 w-5 sm:w-6 text-white" />
               </div>
-              <span className="text-xl font-black tracking-tighter">
+              <span className="text-lg sm:text-xl font-black tracking-tighter">
                 Agri<span className="text-green-400">Vision</span>
               </span>
             </Link>
@@ -347,39 +391,54 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-bold mb-6 text-white">Resources</h4>
-            <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link href="/library" className="hover:text-green-400 transition-colors">Disease Library</Link></li>
-              <li><Link href="/advisory" className="hover:text-green-400 transition-colors">Expert Advisory</Link></li>
-              <li><Link href="/impact" className="hover:text-green-400 transition-colors">Impact Reports</Link></li>
-            </ul>
-          </div>
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              {/* Desktop: always visible */}
+              <h4 className="hidden md:block text-sm font-bold mb-4 sm:mb-6 text-white">{section.title}</h4>
+              <ul className="hidden md:block space-y-3 sm:space-y-4 text-slate-400 text-sm">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="hover:text-green-400 transition-colors">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
 
-          <div>
-            <h4 className="text-sm font-bold mb-6 text-white">Platform</h4>
-            <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link href="/diagnose" className="hover:text-green-400 transition-colors">Start Diagnosis</Link></li>
-              <li><Link href="/marketplace" className="hover:text-green-400 transition-colors">Agri Marketplace</Link></li>
-              <li><Link href="/government" className="hover:text-green-400 transition-colors">Gov Portal</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-bold mb-6 text-white">Company</h4>
-            <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link href="/about" className="hover:text-green-400 transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-green-400 transition-colors">Contact</Link></li>
-              <li><Link href="/privacy" className="hover:text-green-400 transition-colors">Privacy Policy</Link></li>
-            </ul>
-          </div>
+              {/* Mobile: accordion */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setOpenSection(openSection === section.title ? null : section.title)}
+                  className="w-full flex items-center justify-between py-3 text-sm font-bold text-white"
+                  aria-expanded={openSection === section.title}
+                >
+                  {section.title}
+                  <ChevronRight className={`h-4 w-4 transition-transform ${openSection === section.title ? 'rotate-90' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {openSection === section.title && (
+                    <motion.ul
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden space-y-3 text-slate-400 text-sm pb-3"
+                    >
+                      {section.links.map((link) => (
+                        <li key={link.label}>
+                          <Link href={link.href} className="hover:text-green-400 transition-colors">{link.label}</Link>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-xs">
+        <div className="pt-8 sm:pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+          <p className="text-slate-500 text-xs text-center md:text-left">
             © {new Date().getFullYear()} AgriVision Bangladesh. A Government Partnered AI Initiative.
           </p>
-          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-600">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-[10px] font-black uppercase tracking-widest text-slate-600">
             <span className="hover:text-slate-400 cursor-pointer">Ministry of Agriculture</span>
             <span className="hover:text-slate-400 cursor-pointer">Digital Bangladesh</span>
           </div>

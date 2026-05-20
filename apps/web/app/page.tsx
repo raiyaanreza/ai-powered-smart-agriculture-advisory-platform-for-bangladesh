@@ -4,9 +4,18 @@ import { Navbar, Footer } from "../features/landing/components/Layout";
 import { Hero } from "../features/landing/components/Hero";
 import { TrustedBy } from "../features/landing/components/TrustedBy";
 import { Features } from "../features/landing/components/Features";
-import { Impact } from "../features/landing/components/Impact";
+import dynamic from "next/dynamic";
 import { CTA } from "../features/landing/components/CTA";
-import { PipelineAnimation } from "../features/landing/components/PipelineAnimation";
+
+const PipelineAnimation = dynamic(
+  () => import("../features/landing/components/PipelineAnimation").then((mod) => ({ default: mod.PipelineAnimation })),
+  { loading: () => <div className="h-96 bg-slate-50 animate-pulse rounded-3xl" /> }
+);
+
+const Impact = dynamic(
+  () => import("../features/landing/components/Impact").then((mod) => ({ default: mod.Impact })),
+  { loading: () => <div className="h-64 bg-slate-50 animate-pulse rounded-3xl" /> }
+);
 
 export const metadata: Metadata = {
   title: "AgriVision | National AI Platform for Smart Farming",

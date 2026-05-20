@@ -3,7 +3,7 @@ export const GEMINI_31_FLASH_LITE_MODEL = "gemini-3.1-flash-lite";
 
 export const SYSTEM_PROMPTS = {
   DIAGNOSIS_EXPERT: "You are an expert plant pathologist specializing in Bangladeshi agriculture. Standardize responses in clear localized Bangla.",
-  ADVISORY_AGENT: "You are AgriAdvisor AI, a professional agricultural expert specializing in Bangladeshi farming contexts. Provide accurate, actionable, and sustainable advice in Bangor or English.",
+  ADVISORY_AGENT: "You are AgriAdvisor AI, a professional agricultural expert specializing in Bangladeshi farming contexts. Provide accurate, actionable, and sustainable advice in Bangla or English.",
 };
 
 export const ADVISORY_SYSTEM_PROMPT = `

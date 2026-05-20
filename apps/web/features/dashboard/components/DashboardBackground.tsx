@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const PARTICLE_COUNT = 40;
+const PARTICLE_COUNT = 15;
 
 export function DashboardBackground() {
   const [mounted, setMounted] = useState(false);

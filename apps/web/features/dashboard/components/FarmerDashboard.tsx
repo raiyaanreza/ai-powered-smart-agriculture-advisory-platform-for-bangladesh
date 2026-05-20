@@ -73,7 +73,7 @@ function LiveWeatherWidget() {
   }, []);
 
   return (
-    <div className="bg-[#052E16] backdrop-blur-3xl rounded-[2.5rem] p-10 text-white shadow-[0_32px_64px_-12px_rgba(5,46,22,0.4)] overflow-hidden relative border border-white/10 group">
+    <div className="bg-[#052E16] backdrop-blur-3xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-[0_32px_64px_-12px_rgba(5,46,22,0.4)] overflow-hidden relative border border-white/10 group">
       <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity duration-1000">
         <CloudRain className="h-48 w-48 text-emerald-500" />
       </div>
@@ -136,8 +136,8 @@ function AnalyticsView() {
       animate={{ opacity: 1, y: 0 }}
       className="space-y-8"
     >
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="bg-white border border-slate-100 rounded-[3rem] p-10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden group">
+      <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden group">
            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[4rem] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-8">
@@ -154,7 +154,7 @@ function AnalyticsView() {
           </div>
         </div>
 
-        <div className="bg-white border border-slate-100 rounded-[3rem] p-10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden group">
+        <div className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden group">
            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[4rem] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-8">
@@ -173,7 +173,7 @@ function AnalyticsView() {
           </div>
         </div>
 
-        <div className="bg-[#052E16] rounded-[3rem] p-10 shadow-[0_32px_64px_-12px_rgba(5,46,22,0.3)] relative overflow-hidden group">
+        <div className="bg-[#052E16] rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 shadow-[0_32px_64px_-12px_rgba(5,46,22,0.3)] relative overflow-hidden group">
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.1),transparent_70%)]" />
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-8">
@@ -192,10 +192,10 @@ function AnalyticsView() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center justify-between mb-12">
+        <div className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
+          <div className="flex items-center justify-between mb-8 sm:mb-12">
             <div>
-               <h4 className="text-xl font-black text-slate-900 tracking-tight">Growth Trajectory</h4>
+               <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">Growth Trajectory</h4>
                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Vegetative Progression index</p>
             </div>
             <BarChart3 className="h-6 w-6 text-slate-300" />
@@ -219,10 +219,10 @@ function AnalyticsView() {
           </div>
         </div>
 
-        <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center justify-between mb-12">
+        <div className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
+          <div className="flex items-center justify-between mb-8 sm:mb-12">
              <div>
-               <h4 className="text-xl font-black text-slate-900 tracking-tight">Soil Composition</h4>
+               <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">Soil Composition</h4>
                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Elemental Distribution Analysis</p>
             </div>
             <PieIcon className="h-6 w-6 text-slate-300" />
@@ -297,7 +297,7 @@ export function FarmerDashboard() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white border border-slate-100 rounded-[3rem] p-16 max-w-xl text-center shadow-[0_48px_96px_-24px_rgba(0,0,0,0.06)]"
+          className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 max-w-xl text-center shadow-[0_48px_96px_-24px_rgba(0,0,0,0.06)]"
         >
           <div className="h-24 w-24 rounded-[2rem] bg-amber-50 mx-auto flex items-center justify-center mb-10 border border-amber-100">
             <Lock className="h-10 w-10 text-amber-500" />
@@ -318,18 +318,18 @@ export function FarmerDashboard() {
     <div className="relative min-h-screen bg-[#FDFDFD]">
       <DashboardBackground />
       <div className="relative z-10">
-        <div className="max-w-[1440px] mx-auto px-8 py-16">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
+          <div className="flex flex-col sm:flex-row md:items-end justify-between gap-6 sm:gap-10 mb-12 sm:mb-20">
             <div className="space-y-2">
               <div className="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.3em] text-[#2D5A27] mb-3">
                 <div className="h-2 w-2 rounded-full bg-[#2D5A27] animate-pulse shadow-[0_0_8px_#2D5A27]" />
                 Command Center v4.2
               </div>
-              <h1 className="text-6xl font-black text-[#052E16] tracking-tighter leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#052E16] tracking-tighter leading-tight">
                 Shubho Shokal, <span className="text-transparent bg-clip-text bg-linear-to-r from-[#2D5A27] to-[#052E16]">{profile?.full_name?.split(' ')[0] || user?.email?.split('@')[0]}.</span>
               </h1>
-              <p className="text-slate-400 font-medium text-lg">Real-time intelligence from your agricultural sectors.</p>
+              <p className="text-slate-400 font-medium text-base sm:text-lg">Real-time intelligence from your agricultural sectors.</p>
             </div>
 
             <div className="flex items-center gap-4">
@@ -364,7 +364,7 @@ export function FarmerDashboard() {
                 className="space-y-8"
               >
                 <div className="grid lg:grid-cols-12 gap-8 mb-8">
-                  <div className="lg:col-span-8 bg-white border border-slate-100 rounded-[3.5rem] p-12 relative overflow-hidden group shadow-[0_32px_64px_-24px_rgba(0,0,0,0.04)] transition-all duration-700 hover:shadow-2xl">
+                  <div className="lg:col-span-8 bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden group shadow-[0_32px_64px_-24px_rgba(0,0,0,0.04)] transition-all duration-700 hover:shadow-2xl">
                     <div className="absolute inset-0 z-0">
                       <div className="absolute inset-0 bg-[#FBFDFF]" />
                       <div className="absolute inset-0 opacity-30 grid grid-cols-12 grid-rows-12 gap-1.5 p-3">
@@ -401,17 +401,17 @@ export function FarmerDashboard() {
                       </div>
 
                       <div className="grid md:grid-cols-3 gap-10">
-                        <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-8 border border-white shadow-2xl shadow-slate-200/30">
+                        <div className="bg-white/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white shadow-2xl shadow-slate-200/30">
                           <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-6">Mean NDVI Index</div>
-                          <div className="text-5xl font-black text-emerald-600 mb-2">0.84</div>
+                          <div className="text-3xl sm:text-5xl font-black text-emerald-600 mb-2">0.84</div>
                           <div className="text-[11px] font-bold text-slate-400 leading-relaxed">Peak vegetative stability detected across paddy sectors.</div>
                           <div className="mt-8 h-2 w-full bg-slate-50 rounded-full overflow-hidden border border-slate-100">
                             <motion.div initial={{ width: 0 }} animate={{ width: "84%" }} className="h-full bg-linear-to-r from-emerald-400 to-emerald-600" />
                           </div>
                         </div>
-                        <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-8 border border-white shadow-2xl shadow-slate-200/30">
+                        <div className="bg-white/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white shadow-2xl shadow-slate-200/30">
                           <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-6">Heterogeneity</div>
-                          <div className="text-5xl font-black text-amber-500 mb-2">Low</div>
+                          <div className="text-3xl sm:text-5xl font-black text-amber-500 mb-2">Low</div>
                           <div className="text-[11px] font-bold text-slate-400 leading-relaxed">Uniform biomass distribution. No anomalies identified.</div>
                           <div className="mt-8 flex gap-1.5">
                             {Array.from({ length: 6 }).map((_, i) => (
@@ -419,9 +419,9 @@ export function FarmerDashboard() {
                             ))}
                           </div>
                         </div>
-                        <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-8 border border-white shadow-2xl shadow-slate-200/30">
+                        <div className="bg-white/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white shadow-2xl shadow-slate-200/30">
                           <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-6">H2O Stress</div>
-                          <div className="text-5xl font-black text-slate-900 mb-2">0.12</div>
+                          <div className="text-3xl sm:text-5xl font-black text-slate-900 mb-2">0.12</div>
                           <div className="text-[11px] font-bold text-slate-400 leading-relaxed">Optimal root saturation. Irrigation threshold not met.</div>
                           <div className="mt-8 flex items-center justify-between">
                             <div className="text-[10px] font-black text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full">OPTIMAL</div>
@@ -450,7 +450,7 @@ export function FarmerDashboard() {
 
                   <div className="lg:col-span-4 space-y-8">
                     <LiveWeatherWidget />
-                    <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
+                    <div className="bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
                       <div className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10">Expert Hub</div>
                       <div className="space-y-6">
                         {[
@@ -479,7 +479,7 @@ export function FarmerDashboard() {
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-8">
-                  <div className="lg:col-span-7 bg-white border border-slate-100 rounded-[3rem] p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
+                  <div className="lg:col-span-7 bg-white border border-slate-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.04)]">
                     <div className="flex items-center justify-between mb-12">
                       <h3 className="text-2xl font-black text-[#052E16] tracking-tighter flex items-center gap-4">
                         <History className="h-7 w-7 text-[#2D5A27]" /> Diagnostic Ledger
@@ -520,7 +520,7 @@ export function FarmerDashboard() {
 
                   <div className="lg:col-span-5 grid md:grid-cols-2 gap-6">
                     {futureFeatures.map((feat) => (
-                      <div key={feat.name} className="bg-white border border-slate-100 border-dashed rounded-[2.5rem] p-10 flex flex-col justify-between relative group cursor-not-allowed hover:bg-slate-50 transition-all duration-500">
+                      <div key={feat.name} className="bg-white border border-slate-100 border-dashed rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-between relative group cursor-not-allowed hover:bg-slate-50 transition-all duration-500">
                         <div className="mb-10">
                           <div className={`h-14 w-14 rounded-2xl ${feat.bg} flex items-center justify-center ${feat.text} mb-8 transition-transform group-hover:scale-110`}>
                             <feat.icon className="h-7 w-7" />

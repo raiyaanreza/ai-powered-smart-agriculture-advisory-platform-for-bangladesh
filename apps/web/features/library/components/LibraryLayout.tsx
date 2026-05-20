@@ -88,7 +88,7 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
   return (
     <div className="space-y-6">
       {/* Filters Section */}
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-[15px] font-black text-slate-900 tracking-tight">Filters</h3>
           <button onClick={onReset} className="text-[10px] font-black text-earth-700 uppercase tracking-widest">RESET</button>
@@ -140,7 +140,7 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
       </motion.div>
 
       {/* Seasonal Trends Section (Exact match) */}
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.05 }} className="bg-[#2D5A27] rounded-[2rem] p-8 text-white relative overflow-hidden shadow-xl">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.05 }} className="bg-[#2D5A27] rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl">
         <div className="flex items-center gap-3 mb-6">
            <Calendar className="h-5 w-5 text-[#EAB308]" />
            <h3 className="text-[15px] font-black tracking-tight">Seasonal Trends</h3>
@@ -164,7 +164,7 @@ export function LibrarySidebar({ selectedCrops, onToggleCrop, onReset, selectedS
       </motion.div>
 
       {/* Community Impact Section (Exact match) */}
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm backdrop-blur-xl">
         <div className="flex items-center gap-3 mb-8">
            <Users className="h-5 w-5 text-earth-700" />
            <h3 className="text-[15px] font-black text-slate-900 tracking-tight">Community Impact</h3>

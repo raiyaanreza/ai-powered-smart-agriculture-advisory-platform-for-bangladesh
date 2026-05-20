@@ -116,6 +116,17 @@ export default function OutbreakMap() {
     return { left: `${Math.max(4, Math.min(94, x))}%`, top: `${Math.max(4, Math.min(94, y))}%` };
   };
 
+  // Seeded random for deterministic prediction spread positions
+  const seededRandom = (seed: string) => {
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      const char = seed.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash;
+    }
+    return (Math.abs(hash) % 1000) / 1000;
+  };
+
   // Top diseases for bar chart
   const topDiseases = Object.entries(analytics.byDisease)
     .sort((a, b) => b[1] - a[1])
@@ -138,9 +149,9 @@ export default function OutbreakMap() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* ── GIS MAP ─────────────────────────────────────────────── */}
-      <div className="h-72 w-full rounded-[2rem] overflow-hidden border border-slate-100 bg-gradient-to-br from-slate-50 to-slate-100 relative">
+      <div className="h-64 w-full rounded-xl overflow-hidden border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 relative">
         {/* Bangladesh SVG outline */}
         <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full opacity-10 pointer-events-none">
           <path
@@ -173,9 +184,10 @@ export default function OutbreakMap() {
             // Predict spread by increasing glow radius and jittering pos based on predictionDays
             const spreadFactor = 1 + (predictionDays * 0.15);
             const spreadRadius = Math.min(20, 8 * spreadFactor);
+            const jitter = predictionDays > 0 ? seededRandom(report.id) * predictionDays * 0.05 : 0;
             const pos = projectPoint(
-              report.latitude + (predictionDays > 0 ? (Math.random() - 0.5) * predictionDays * 0.05 : 0), 
-              report.longitude + (predictionDays > 0 ? (Math.random() - 0.5) * predictionDays * 0.05 : 0)
+              report.latitude + jitter, 
+              report.longitude + jitter
             );
             const { dot, glow } = getSeverityColor(report.severity);
             const isHovered = hoveredReport?.id === report.id;
@@ -243,11 +255,11 @@ export default function OutbreakMap() {
       </div>
 
       {/* ── ANALYTICS ROW ──────────────────────────────────────── */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         
         {/* 7-Day Trend Bar Chart */}
-        <div className="bg-white border border-slate-100 rounded-2xl p-4">
-          <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">7-Day Diagnosis Trend</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-3">
+          <div className="text-[10px] font-semibold text-slate-500 mb-2">7-Day Diagnosis Trend</div>
           <div className="h-24 flex items-end gap-1">
             {analytics.trend7.map((val, i) => {
               const h = Math.max(6, (val / maxTrend) * 100);
@@ -266,8 +278,8 @@ export default function OutbreakMap() {
         </div>
 
         {/* Top Diseases Horizontal Bar */}
-        <div className="bg-white border border-slate-100 rounded-2xl p-4">
-          <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Top Diseases</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-3">
+          <div className="text-[10px] font-semibold text-slate-500 mb-2">Top Diseases</div>
           <div className="space-y-2">
             {topDiseases.length === 0 ? (
               <div className="text-[10px] text-slate-300 font-bold">No data yet</div>
@@ -291,10 +303,10 @@ export default function OutbreakMap() {
       </div>
 
       {/* Top Districts & Resource Allocation Model */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         {/* Outbreak Hotspots */}
-        <div className="bg-white border border-slate-100 rounded-2xl p-4">
-          <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">
+        <div className="bg-white border border-slate-200 rounded-xl p-3">
+          <div className="text-[10px] font-semibold text-slate-500 mb-2">
             Outbreak Hotspots by District
           </div>
           <div className="grid grid-cols-5 gap-2">
@@ -310,10 +322,10 @@ export default function OutbreakMap() {
         </div>
 
         {/* Resource Allocation Model */}
-        <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border border-blue-100 rounded-2xl p-4">
-          <div className="text-[10px] font-black uppercase tracking-widest text-blue-500 mb-3 flex justify-between">
+        <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border border-blue-200 rounded-xl p-3">
+          <div className="text-[10px] font-semibold text-blue-600 mb-2 flex justify-between">
             <span>Resource Allocation Model</span>
-            <span className="bg-blue-100 text-blue-700 px-1.5 rounded-md">AI Suggested</span>
+            <span className="bg-blue-100 text-blue-700 px-1.5 rounded text-[9px]">AI Suggested</span>
           </div>
           <div className="space-y-2">
             {topDistricts.slice(0,3).map(([district, count], idx) => {

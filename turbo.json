@@ -20,17 +20,20 @@
         "lint": {
             "dependsOn": [
                 "^lint"
-            ]
+            ],
+            "outputs": []
         },
         "type-check": {
             "dependsOn": [
                 "^type-check"
-            ]
+            ],
+            "outputs": []
         },
         "test": {
             "dependsOn": [
                 "^test"
-            ]
+            ],
+            "outputs": []
         },
         "clean": {
             "cache": false

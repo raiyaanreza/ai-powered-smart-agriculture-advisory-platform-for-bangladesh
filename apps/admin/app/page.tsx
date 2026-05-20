@@ -1,19 +1,36 @@
 "use client";
-import { Navbar } from "@/features/common/components/Layout";
-import { ShieldCheck, Users, Terminal, Bell, LayoutDashboard, Database } from "lucide-react";
+import { ShieldCheck, Users, Terminal, Bell, LayoutDashboard, Database, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
+import dynamic from "next/dynamic";
 
 // Modular Feature Imports
+import { Navbar } from "@/features/common/components/Layout";
 import { SidebarLink } from "@/features/common/components/SidebarLink";
-import { OverviewTab } from "@/features/overview/components/OverviewTab";
-import { VerificationTab } from "@/features/verification/components/VerificationTab";
-import { AlertsTab } from "@/features/monitoring/components/AlertsTab";
-import { SystemTab } from "@/features/monitoring/components/SystemTab";
+
+const OverviewTab = dynamic(
+  () => import("@/features/overview/components/OverviewTab").then((mod) => ({ default: mod.OverviewTab })),
+  { loading: () => <div className="h-96 rounded-3xl bg-slate-100 animate-pulse" /> }
+);
+
+const VerificationTab = dynamic(
+  () => import("@/features/verification/components/VerificationTab").then((mod) => ({ default: mod.VerificationTab })),
+  { loading: () => <div className="h-96 rounded-3xl bg-slate-100 animate-pulse" /> }
+);
+
+const AlertsTab = dynamic(
+  () => import("@/features/monitoring/components/AlertsTab").then((mod) => ({ default: mod.AlertsTab })),
+  { loading: () => <div className="h-96 rounded-3xl bg-slate-100 animate-pulse" /> }
+);
+
+const SystemTab = dynamic(
+  () => import("@/features/monitoring/components/SystemTab").then((mod) => ({ default: mod.SystemTab })),
+  { loading: () => <div className="h-96 rounded-3xl bg-slate-100 animate-pulse" /> }
+);
 
 type Tab = "overview" | "verification" | "library" | "alerts" | "system";
 
@@ -23,6 +40,7 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [pendingFarmers, setPendingFarmers] = useState<any[]>([]);
   const [fetching, setFetching] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   
   const [dashboardMetrics, setDashboardMetrics] = useState({
     totalUsers: 0,
@@ -155,54 +173,85 @@ export default function AdminDashboard() {
   if (loading || !user || profile?.role !== "admin") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-12 w-12 border-4 border-[#052E16] border-t-transparent rounded-full animate-spin" />
-          <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Authenticating Expert Access...</p>
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-8 w-8 border-2 border-[#052E16] border-t-transparent rounded-full animate-spin" />
+          <p className="text-xs font-medium text-slate-500">Authenticating...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#FBFDFF] text-slate-900 selection:bg-[#052E16] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       <Navbar />
       
-      <div className="flex min-h-[calc(100vh-64px)]">
-        {/* Premium Sidebar */}
-        <aside className="w-80 bg-white border-r border-slate-100 p-10 hidden lg:block sticky top-16 h-[calc(100vh-64px)] overflow-y-auto">
-          <div className="mb-14">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-10 w-10 rounded-2xl bg-[#052E16] flex items-center justify-center shadow-lg">
-                <ShieldCheck className="h-6 w-6 text-white" />
+      <div className="flex">
+        {/* Mobile Sidebar Overlay */}
+        {sidebarOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 bg-black/50 z-40"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar */}
+        <aside className={`w-56 bg-white border-r border-slate-200 fixed lg:sticky top-14 h-[calc(100vh-56px)] overflow-y-auto z-45 transition-transform duration-200 ${
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        }`}>
+          <div className="p-3">
+            {/* Mobile Close Button */}
+            <div className="lg:hidden flex items-center justify-between mb-3 pb-3 border-b border-slate-200">
+              <span className="text-sm font-semibold text-slate-900">Navigation</span>
+              <button onClick={() => setSidebarOpen(false)} className="p-1 rounded-md hover:bg-slate-100">
+                <X className="h-4 w-4 text-slate-500" />
+              </button>
+            </div>
+
+            {/* System Status */}
+            <div className="mb-4 p-3 rounded-lg bg-slate-50 border border-slate-200">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide">System Status</span>
               </div>
-              <div>
-                <h2 className="text-lg font-black text-[#052E16] tracking-tighter">Command Center</h2>
-                <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">National AI Admin</p>
+              <div className="text-sm font-bold text-slate-900">99.8% Online</div>
+              <div className="mt-2 h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                <div className="h-full bg-emerald-500 rounded-full" style={{ width: "99.8%" }} />
               </div>
             </div>
-             
-            <div className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 mb-10">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">System Integrity</span>
-              </div>
-              <div className="text-2xl font-black text-slate-900 tracking-tighter">99.8% Online</div>
-              <div className="mt-4 h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
-                <div className="h-full bg-emerald-500 w-[99.8%]" />
-              </div>
-            </div>
+
+            {/* Navigation */}
+            <nav className="space-y-1">
+              <SidebarLink active={activeTab === "overview"} onClick={() => { setActiveTab("overview"); setSidebarOpen(false); }} icon={LayoutDashboard} label="Global Overview" />
+              <SidebarLink active={activeTab === "verification"} onClick={() => { setActiveTab("verification"); setSidebarOpen(false); }} icon={Users} label="Farmer Verification" badge={pendingFarmers.length || 0} />
+              <SidebarLink active={activeTab === "alerts"} onClick={() => { setActiveTab("alerts"); setSidebarOpen(false); }} icon={Bell} label="National Alerts" />
+              <SidebarLink active={activeTab === "system"} onClick={() => { setActiveTab("system"); setSidebarOpen(false); }} icon={Terminal} label="System Engine" />
+            </nav>
           </div>
 
-          <nav className="space-y-3">
-            <SidebarLink active={activeTab === "overview"} onClick={() => setActiveTab("overview")} icon={LayoutDashboard} label="Global Overview" />
-            <SidebarLink active={activeTab === "verification"} onClick={() => setActiveTab("verification")} icon={Users} label="Farmer Verification" badge={pendingFarmers.length || 0} />
-            <SidebarLink active={activeTab === "alerts"} onClick={() => setActiveTab("alerts")} icon={Bell} label="National Alerts" />
-            <SidebarLink active={activeTab === "system"} onClick={() => setActiveTab("system")} icon={Terminal} label="System Engine" />
-          </nav>
+          {/* Bottom Section */}
+          <div className="p-3 border-t border-slate-200">
+            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
+              <div className="flex items-center gap-2 mb-2">
+                <Database className="h-3.5 w-3.5 text-slate-400" />
+                <span className="text-[10px] font-semibold text-slate-500">Database</span>
+              </div>
+              <div className="text-xs font-medium text-slate-700">PostgreSQL 18</div>
+              <div className="text-[10px] text-slate-400">Connected</div>
+            </div>
+          </div>
         </aside>
 
         {/* Main Workspace */}
-        <main id="main-content" role="main" className="flex-1 p-8 lg:p-14 overflow-x-hidden">
+        <main id="main-content" role="main" className="flex-1 p-4 lg:p-6 overflow-x-hidden">
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="lg:hidden fixed bottom-4 right-4 z-50 h-12 w-12 rounded-full bg-[#052E16] text-white shadow-lg flex items-center justify-center hover:bg-[#064E3B] transition-colors"
+            aria-label="Open navigation menu"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+
           <AnimatePresence mode="wait">
             {activeTab === "overview" && (
               <OverviewTab metrics={dashboardMetrics} />

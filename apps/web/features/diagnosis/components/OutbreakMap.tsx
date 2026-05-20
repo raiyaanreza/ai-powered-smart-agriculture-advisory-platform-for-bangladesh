@@ -81,11 +81,11 @@ export function OutbreakMap() {
   };
 
   return (
-    <div className="rounded-[2.5rem] bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden">
+    <div className="rounded-2xl sm:rounded-3xl bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden">
       <div className="grid lg:grid-cols-12">
         
         {/* Left Info Panel */}
-        <div className="lg:col-span-4 p-10 bg-green-950 text-white">
+        <div className="lg:col-span-4 p-6 sm:p-8 md:p-10 bg-green-950 text-white">
           <div className="flex items-center gap-3 mb-10">
             <div className="h-10 w-10 rounded-2xl bg-white/10 flex items-center justify-center">
               <MapIcon className="h-5 w-5 text-green-400" />
@@ -115,12 +115,12 @@ export function OutbreakMap() {
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[13px] font-black">{point.location_name}</span>
-                  <span className={`text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest ${
+                  <span className={`text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest flex items-center gap-1 ${
                     getSeverityTone(point.severity) === 'High' ? 'bg-red-500/20 text-red-400' :
                     getSeverityTone(point.severity) === 'Medium' ? 'bg-orange-500/20 text-orange-400' :
                     'bg-blue-500/20 text-blue-400'
                   }`}>
-                    {point.severity}
+                    <ShieldAlert className="h-2.5 w-2.5" /> {point.severity}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-[10px] font-medium text-green-100/60">
@@ -157,6 +157,7 @@ export function OutbreakMap() {
             {/* Heat Points */}
             {reports.map((point, i) => {
               const position = projectPoint(point.latitude, point.longitude);
+              const severityLabel = getSeverityTone(point.severity);
               return (
               <motion.div
                 key={point.id}
@@ -165,12 +166,14 @@ export function OutbreakMap() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: i * 0.1, type: "spring" }}
+                role="img"
+                aria-label={`${point.disease_name} outbreak at ${point.location_name}, severity: ${severityLabel}`}
               >
                 {/* Pulse Animation */}
                 <motion.div 
                   className={`absolute -inset-4 rounded-full opacity-20 ${
-                    getSeverityTone(point.severity) === 'High' ? 'bg-red-500' :
-                    getSeverityTone(point.severity) === 'Medium' ? 'bg-orange-500' :
+                    severityLabel === 'High' ? 'bg-red-500' :
+                    severityLabel === 'Medium' ? 'bg-orange-500' :
                     'bg-blue-500'
                   }`}
                   animate={{ scale: [1, 2, 1], opacity: [0.2, 0.5, 0.2] }}
@@ -178,15 +181,17 @@ export function OutbreakMap() {
                 />
                 
                 {/* Center Point */}
-                <div className={`relative h-3 w-3 rounded-full shadow-lg border-2 border-white ${
-                  getSeverityTone(point.severity) === 'High' ? 'bg-red-500' :
-                  getSeverityTone(point.severity) === 'Medium' ? 'bg-orange-500' :
+                <div className={`relative h-4 w-4 rounded-full shadow-lg border-2 border-white flex items-center justify-center ${
+                  severityLabel === 'High' ? 'bg-red-500' :
+                  severityLabel === 'Medium' ? 'bg-orange-500' :
                   'bg-blue-500'
-                }`} />
+                }`}>
+                  <span className="sr-only">{severityLabel} severity</span>
+                </div>
 
                 {/* Label */}
                 <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded-lg shadow-sm border border-slate-100 text-[9px] font-black text-slate-900 z-20">
-                  {point.location_name}
+                  {point.location_name} · {severityLabel}
                 </div>
               </motion.div>
               );

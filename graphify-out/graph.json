@@ -9,7 +9,7 @@
       "source_file": "playwright.config.ts",
       "source_location": "L1",
       "id": "playwright_config_ts",
-      "community": 61,
+      "community": 63,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "scratch_scaffold.py",
       "source_location": "L1",
       "id": "scratch_scaffold_py",
-      "community": 62,
+      "community": 64,
       "norm_label": "scratch_scaffold.py"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "apps/admin/eslint.config.mjs",
       "source_location": "L1",
       "id": "apps_admin_eslint_config_mjs",
-      "community": 63,
+      "community": 65,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "apps/admin/next-env.d.ts",
       "source_location": "L1",
       "id": "apps_admin_next_env_d_ts",
-      "community": 64,
+      "community": 66,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "apps/admin/next.config.ts",
       "source_location": "L1",
       "id": "apps_admin_next_config_ts",
-      "community": 65,
+      "community": 67,
       "norm_label": "next.config.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "apps/admin/postcss.config.mjs",
       "source_location": "L1",
       "id": "apps_admin_postcss_config_mjs",
-      "community": 66,
+      "community": 68,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "apps/admin/app/layout.tsx",
       "source_location": "L1",
       "id": "apps_admin_app_layout_tsx",
-      "community": 12,
+      "community": 14,
       "norm_label": "layout.tsx"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "apps/admin/app/layout.tsx",
       "source_location": "L32",
       "id": "app_layout_rootlayout",
-      "community": 12,
+      "community": 14,
       "norm_label": "rootlayout()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L1",
       "id": "apps_admin_app_page_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "page.tsx"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L50",
       "id": "app_page_fetchadmindata",
-      "community": 6,
+      "community": 7,
       "norm_label": "fetchadmindata()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L78",
       "id": "app_page_handleverify",
-      "community": 6,
+      "community": 7,
       "norm_label": "handleverify()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L118",
       "id": "app_page_handlebroadcast",
-      "community": 6,
+      "community": 7,
       "norm_label": "handlebroadcast()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "apps/admin/app/api/admin/broadcast/route.ts",
       "source_location": "L1",
       "id": "apps_admin_app_api_admin_broadcast_route_ts",
-      "community": 10,
+      "community": 12,
       "norm_label": "route.ts"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "apps/admin/app/api/admin/broadcast/route.ts",
       "source_location": "L5",
       "id": "broadcast_route_post",
-      "community": 10,
+      "community": 12,
       "norm_label": "post()"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "apps/admin/app/api/admin/farmers/route.ts",
       "source_location": "L1",
       "id": "apps_admin_app_api_admin_farmers_route_ts",
-      "community": 10,
+      "community": 12,
       "norm_label": "route.ts"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "apps/admin/app/api/admin/farmers/route.ts",
       "source_location": "L8",
       "id": "farmers_route_get",
-      "community": 10,
+      "community": 12,
       "norm_label": "get()"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "apps/admin/app/api/admin/farmers/route.ts",
       "source_location": "L34",
       "id": "farmers_route_post",
-      "community": 10,
+      "community": 12,
       "norm_label": "post()"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "apps/admin/app/api/outbreak-analytics/route.ts",
       "source_location": "L1",
       "id": "apps_admin_app_api_outbreak_analytics_route_ts",
-      "community": 10,
+      "community": 12,
       "norm_label": "route.ts"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "apps/admin/app/api/outbreak-analytics/route.ts",
       "source_location": "L7",
       "id": "outbreak_analytics_route_get",
-      "community": 10,
+      "community": 12,
       "norm_label": "get()"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "apps/admin/app/login/page.tsx",
       "source_location": "L1",
       "id": "apps_admin_app_login_page_tsx",
-      "community": 29,
+      "community": 31,
       "norm_label": "page.tsx"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "apps/admin/app/login/page.tsx",
       "source_location": "L10",
       "id": "login_page_adminloginpage",
-      "community": 29,
+      "community": 31,
       "norm_label": "adminloginpage()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "apps/admin/components/ui/button.tsx",
       "source_location": "L1",
       "id": "apps_admin_components_ui_button_tsx",
-      "community": 7,
+      "community": 8,
       "norm_label": "button.tsx"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "apps/web/components/ui/button.tsx",
       "source_location": "L61",
       "id": "ui_button_cn",
-      "community": 7,
+      "community": 8,
       "norm_label": "cn()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L1",
       "id": "apps_admin_components_ui_dialog_tsx",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialog.tsx"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L10",
       "id": "ui_dialog_dialog",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialog()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L16",
       "id": "ui_dialog_dialogtrigger",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogtrigger()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L22",
       "id": "ui_dialog_dialogportal",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogportal()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L28",
       "id": "ui_dialog_dialogclose",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogclose()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L63",
       "id": "ui_dialog_cn",
-      "community": 7,
+      "community": 8,
       "norm_label": "cn()"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "apps/admin/features/admin/components/OutbreakMap.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_admin_components_outbreakmap_tsx",
-      "community": 13,
+      "community": 15,
       "norm_label": "outbreakmap.tsx"
     },
     {
@@ -432,7 +432,7 @@
       "source_file": "apps/admin/features/admin/components/OutbreakMap.tsx",
       "source_location": "L48",
       "id": "components_outbreakmap_fetchall",
-      "community": 13,
+      "community": 15,
       "norm_label": "fetchall()"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "apps/admin/features/admin/components/OutbreakMap.tsx",
       "source_location": "L105",
       "id": "components_outbreakmap_getseveritycolor",
-      "community": 13,
+      "community": 15,
       "norm_label": "getseveritycolor()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "apps/web/features/diagnosis/components/OutbreakMap.tsx",
       "source_location": "L68",
       "id": "components_outbreakmap_projectpoint",
-      "community": 13,
+      "community": 15,
       "norm_label": "projectpoint()"
     },
     {
@@ -484,7 +484,7 @@
       "label": "handleScroll()",
       "file_type": "code",
       "source_file": "apps/web/features/landing/components/Layout.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "components_layout_handlescroll",
       "community": 5,
       "norm_label": "handlescroll()"
@@ -495,7 +495,7 @@
       "source_file": "apps/admin/features/common/components/SidebarLink.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_common_components_sidebarlink_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "sidebarlink.tsx"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "apps/admin/features/common/components/SidebarLink.tsx",
       "source_location": "L12",
       "id": "components_sidebarlink_sidebarlink",
-      "community": 6,
+      "community": 7,
       "norm_label": "sidebarlink()"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "apps/admin/features/library/data/diseases.ts",
       "source_location": "L1",
       "id": "apps_admin_features_library_data_diseases_ts",
-      "community": 67,
+      "community": 69,
       "norm_label": "diseases.ts"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "apps/admin/features/monitoring/components/AlertsTab.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_monitoring_components_alertstab_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "alertstab.tsx"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "apps/admin/features/monitoring/components/AlertsTab.tsx",
       "source_location": "L16",
       "id": "components_alertstab_alertstab",
-      "community": 6,
+      "community": 7,
       "norm_label": "alertstab()"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "apps/admin/features/monitoring/components/SystemTab.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_monitoring_components_systemtab_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "systemtab.tsx"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "apps/admin/features/monitoring/components/SystemTab.tsx",
       "source_location": "L5",
       "id": "components_systemtab_systemtab",
-      "community": 6,
+      "community": 7,
       "norm_label": "systemtab()"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "apps/admin/features/overview/components/MetricCard.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_overview_components_metriccard_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "metriccard.tsx"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "apps/admin/features/overview/components/MetricCard.tsx",
       "source_location": "L12",
       "id": "components_metriccard_metriccard",
-      "community": 6,
+      "community": 7,
       "norm_label": "metriccard()"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "apps/admin/features/overview/components/OverviewTab.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_overview_components_overviewtab_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "overviewtab.tsx"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "apps/admin/features/overview/components/OverviewTab.tsx",
       "source_location": "L24",
       "id": "components_overviewtab_overviewtab",
-      "community": 6,
+      "community": 7,
       "norm_label": "overviewtab()"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "apps/admin/features/verification/components/VerificationCard.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_verification_components_verificationcard_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "verificationcard.tsx"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "apps/admin/features/verification/components/VerificationCard.tsx",
       "source_location": "L15",
       "id": "components_verificationcard_verificationcard",
-      "community": 6,
+      "community": 7,
       "norm_label": "verificationcard()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "apps/admin/features/verification/components/VerificationTab.tsx",
       "source_location": "L1",
       "id": "apps_admin_features_verification_components_verificationtab_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "verificationtab.tsx"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "apps/admin/features/verification/components/VerificationTab.tsx",
       "source_location": "L12",
       "id": "components_verificationtab_verificationtab",
-      "community": 6,
+      "community": 7,
       "norm_label": "verificationtab()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "apps/admin/lib/auth.ts",
       "source_location": "L1",
       "id": "apps_admin_lib_auth_ts",
-      "community": 10,
+      "community": 12,
       "norm_label": "auth.ts"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "apps/admin/lib/auth.ts",
       "source_location": "L4",
       "id": "lib_auth_authenticateadmin",
-      "community": 10,
+      "community": 12,
       "norm_label": "authenticateadmin()"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "apps/admin/lib/supabase.ts",
       "source_location": "L1",
       "id": "apps_admin_lib_supabase_ts",
-      "community": 68,
+      "community": 70,
       "norm_label": "supabase.ts"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "apps/web/eslint.config.mjs",
       "source_location": "L1",
       "id": "apps_web_eslint_config_mjs",
-      "community": 69,
+      "community": 71,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "apps/web/next-env.d.ts",
       "source_location": "L1",
       "id": "apps_web_next_env_d_ts",
-      "community": 70,
+      "community": 72,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "apps/web/next.config.ts",
       "source_location": "L1",
       "id": "apps_web_next_config_ts",
-      "community": 71,
+      "community": 73,
       "norm_label": "next.config.ts"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "apps/web/postcss.config.mjs",
       "source_location": "L1",
       "id": "apps_web_postcss_config_mjs",
-      "community": 59,
+      "community": 61,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "apps/web/vitest.config.ts",
       "source_location": "L1",
       "id": "apps_web_vitest_config_ts",
-      "community": 72,
+      "community": 74,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "apps/web/app/layout.tsx",
       "source_location": "L1",
       "id": "apps_web_app_layout_tsx",
-      "community": 12,
+      "community": 14,
       "norm_label": "layout.tsx"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "apps/web/app/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_page_tsx",
-      "community": 14,
+      "community": 16,
       "norm_label": "page.tsx"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "apps/web/app/advisory/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_advisory_page_tsx",
-      "community": 30,
+      "community": 32,
       "norm_label": "page.tsx"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "apps/web/app/advisory/page.tsx",
       "source_location": "L10",
       "id": "advisory_page_advisorypage",
-      "community": 30,
+      "community": 32,
       "norm_label": "advisorypage()"
     },
     {
@@ -756,7 +756,7 @@
       "source_file": "apps/web/app/api/diagnose/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_diagnose_route_ts",
-      "community": 31,
+      "community": 33,
       "norm_label": "route.ts"
     },
     {
@@ -765,7 +765,7 @@
       "source_file": "apps/web/app/api/diagnose/route.ts",
       "source_location": "L4",
       "id": "diagnose_route_post",
-      "community": 31,
+      "community": 33,
       "norm_label": "post()"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "apps/web/app/api/diseases/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_diseases_route_ts",
-      "community": 32,
+      "community": 34,
       "norm_label": "route.ts"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "apps/web/app/api/diseases/route.ts",
       "source_location": "L4",
       "id": "diseases_route_get",
-      "community": 32,
+      "community": 34,
       "norm_label": "get()"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "apps/web/app/api/onboarding/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_onboarding_route_ts",
-      "community": 33,
+      "community": 35,
       "norm_label": "route.ts"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "apps/web/app/api/onboarding/route.ts",
       "source_location": "L4",
       "id": "onboarding_route_post",
-      "community": 33,
+      "community": 35,
       "norm_label": "post()"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "apps/web/app/api/reports/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_reports_route_ts",
-      "community": 34,
+      "community": 36,
       "norm_label": "route.ts"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "apps/web/app/api/reports/route.ts",
       "source_location": "L4",
       "id": "reports_route_get",
-      "community": 34,
+      "community": 36,
       "norm_label": "get()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "apps/web/app/api/seed/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_seed_route_ts",
-      "community": 35,
+      "community": 37,
       "norm_label": "route.ts"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "apps/web/app/api/seed/route.ts",
       "source_location": "L6",
       "id": "seed_route_get",
-      "community": 35,
+      "community": 37,
       "norm_label": "get()"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "apps/web/app/api/stats/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_stats_route_ts",
-      "community": 36,
+      "community": 38,
       "norm_label": "route.ts"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "apps/web/app/api/stats/route.ts",
       "source_location": "L6",
       "id": "stats_route_get",
-      "community": 36,
+      "community": 38,
       "norm_label": "get()"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "apps/web/app/api/sync-diseases/route.ts",
       "source_location": "L1",
       "id": "apps_web_app_api_sync_diseases_route_ts",
-      "community": 37,
+      "community": 39,
       "norm_label": "route.ts"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "apps/web/app/api/sync-diseases/route.ts",
       "source_location": "L6",
       "id": "sync_diseases_route_get",
-      "community": 37,
+      "community": 39,
       "norm_label": "get()"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "apps/web/app/auth/callback/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_auth_callback_page_tsx",
-      "community": 38,
+      "community": 40,
       "norm_label": "page.tsx"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "apps/web/app/auth/callback/page.tsx",
       "source_location": "L6",
       "id": "callback_page_authcallbackpage",
-      "community": 38,
+      "community": 40,
       "norm_label": "authcallbackpage()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "apps/web/app/diagnose/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_diagnose_page_tsx",
-      "community": 73,
+      "community": 75,
       "norm_label": "page.tsx"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "apps/web/app/farmer/layout.tsx",
       "source_location": "L1",
       "id": "apps_web_app_farmer_layout_tsx",
-      "community": 39,
+      "community": 41,
       "norm_label": "layout.tsx"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "apps/web/app/farmer/layout.tsx",
       "source_location": "L4",
       "id": "farmer_layout_farmerlayout",
-      "community": 39,
+      "community": 41,
       "norm_label": "farmerlayout()"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "apps/web/app/farmer/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_farmer_page_tsx",
-      "community": 40,
+      "community": 42,
       "norm_label": "page.tsx"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "apps/web/app/farmer/page.tsx",
       "source_location": "L4",
       "id": "farmer_page_farmerdashboardpage",
-      "community": 40,
+      "community": 42,
       "norm_label": "farmerdashboardpage()"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "apps/web/app/farmer/history/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_farmer_history_page_tsx",
-      "community": 41,
+      "community": 43,
       "norm_label": "page.tsx"
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "apps/web/app/farmer/history/page.tsx",
       "source_location": "L10",
       "id": "history_page_farmerhistorypage",
-      "community": 41,
+      "community": 43,
       "norm_label": "farmerhistorypage()"
     },
     {
@@ -963,7 +963,7 @@
       "source_file": "apps/web/app/library/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_library_page_tsx",
-      "community": 42,
+      "community": 44,
       "norm_label": "page.tsx"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "apps/web/app/library/page.tsx",
       "source_location": "L11",
       "id": "library_page_librarypage",
-      "community": 42,
+      "community": 44,
       "norm_label": "librarypage()"
     },
     {
@@ -981,7 +981,7 @@
       "source_file": "apps/web/app/login/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_login_page_tsx",
-      "community": 74,
+      "community": 76,
       "norm_label": "page.tsx"
     },
     {
@@ -1008,7 +1008,7 @@
       "source_file": "apps/web/app/premium/page.tsx",
       "source_location": "L1",
       "id": "apps_web_app_premium_page_tsx",
-      "community": 75,
+      "community": 77,
       "norm_label": "page.tsx"
     },
     {
@@ -1017,7 +1017,7 @@
       "source_file": "apps/web/components/providers/QueryProvider.tsx",
       "source_location": "L1",
       "id": "apps_web_components_providers_queryprovider_tsx",
-      "community": 12,
+      "community": 14,
       "norm_label": "queryprovider.tsx"
     },
     {
@@ -1026,7 +1026,7 @@
       "source_file": "apps/web/components/providers/QueryProvider.tsx",
       "source_location": "L6",
       "id": "providers_queryprovider_queryprovider",
-      "community": 12,
+      "community": 14,
       "norm_label": "queryprovider()"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "apps/web/components/ui/button.tsx",
       "source_location": "L1",
       "id": "apps_web_components_ui_button_tsx",
-      "community": 7,
+      "community": 8,
       "norm_label": "button.tsx"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "apps/web/components/ui/dialog.tsx",
       "source_location": "L1",
       "id": "apps_web_components_ui_dialog_tsx",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialog.tsx"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "apps/web/components/ui/sonner.tsx",
       "source_location": "L1",
       "id": "apps_web_components_ui_sonner_tsx",
-      "community": 60,
+      "community": 62,
       "norm_label": "sonner.tsx"
     },
     {
@@ -1143,7 +1143,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryContent.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_advisorycontent_tsx",
-      "community": 22,
+      "community": 24,
       "norm_label": "advisorycontent.tsx"
     },
     {
@@ -1152,7 +1152,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryContent.tsx",
       "source_location": "L34",
       "id": "components_advisorycontent_handleimageupload",
-      "community": 22,
+      "community": 24,
       "norm_label": "handleimageupload()"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryContent.tsx",
       "source_location": "L45",
       "id": "components_advisorycontent_handlesend",
-      "community": 22,
+      "community": 24,
       "norm_label": "handlesend()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryContent.tsx",
       "source_location": "L53",
       "id": "components_advisorycontent_scrolltobottom",
-      "community": 22,
+      "community": 24,
       "norm_label": "scrolltobottom()"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryDashboard.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_advisorydashboard_tsx",
-      "community": 18,
+      "community": 20,
       "norm_label": "advisorydashboard.tsx"
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryDashboard.tsx",
       "source_location": "L96",
       "id": "components_advisorydashboard_saveconversations",
-      "community": 18,
+      "community": 20,
       "norm_label": "saveconversations()"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryDashboard.tsx",
       "source_location": "L101",
       "id": "components_advisorydashboard_handleselectchat",
-      "community": 18,
+      "community": 20,
       "norm_label": "handleselectchat()"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryDashboard.tsx",
       "source_location": "L107",
       "id": "components_advisorydashboard_handlenewchat",
-      "community": 18,
+      "community": 20,
       "norm_label": "handlenewchat()"
     },
     {
@@ -1215,7 +1215,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisoryDashboard.tsx",
       "source_location": "L121",
       "id": "components_advisorydashboard_handlesendmessage",
-      "community": 18,
+      "community": 20,
       "norm_label": "handlesendmessage()"
     },
     {
@@ -1224,7 +1224,7 @@
       "source_file": "apps/web/features/advisory/components/AdvisorySidebar.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_advisorysidebar_tsx",
-      "community": 76,
+      "community": 78,
       "norm_label": "advisorysidebar.tsx"
     },
     {
@@ -1233,7 +1233,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_cropanalysisview_tsx",
-      "community": 16,
+      "community": 18,
       "norm_label": "cropanalysisview.tsx"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L168",
       "id": "components_cropanalysisview_savereports",
-      "community": 16,
+      "community": 18,
       "norm_label": "savereports()"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L173",
       "id": "components_cropanalysisview_handletogglecrop",
-      "community": 16,
+      "community": 18,
       "norm_label": "handletogglecrop()"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L181",
       "id": "components_cropanalysisview_handlegenerate",
-      "community": 16,
+      "community": 18,
       "norm_label": "handlegenerate()"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L274",
       "id": "components_cropanalysisview_handlestartnewanalysis",
-      "community": 16,
+      "community": 18,
       "norm_label": "handlestartnewanalysis()"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "apps/web/features/advisory/components/CropAnalysisView.tsx",
       "source_location": "L280",
       "id": "components_cropanalysisview_handledeletereport",
-      "community": 16,
+      "community": 18,
       "norm_label": "handledeletereport()"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "apps/web/features/advisory/components/HistoryModal.tsx",
       "source_location": "L1",
       "id": "apps_web_features_advisory_components_historymodal_tsx",
-      "community": 77,
+      "community": 79,
       "norm_label": "historymodal.tsx"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "apps/web/features/auth/components/AuthForm.test.tsx",
       "source_location": "L1",
       "id": "apps_web_features_auth_components_authform_test_tsx",
-      "community": 78,
+      "community": 80,
       "norm_label": "authform.test.tsx"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "apps/web/features/auth/components/AuthForm.tsx",
       "source_location": "L1",
       "id": "apps_web_features_auth_components_authform_tsx",
-      "community": 24,
+      "community": 26,
       "norm_label": "authform.tsx"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "apps/web/features/auth/components/AuthForm.tsx",
       "source_location": "L25",
       "id": "components_authform_handleauth",
-      "community": 24,
+      "community": 26,
       "norm_label": "handleauth()"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "apps/web/features/auth/components/AuthForm.tsx",
       "source_location": "L56",
       "id": "components_authform_handlegooglelogin",
-      "community": 24,
+      "community": 26,
       "norm_label": "handlegooglelogin()"
     },
     {
@@ -1341,7 +1341,7 @@
       "source_file": "apps/web/features/dashboard/components/DashboardBackground.tsx",
       "source_location": "L1",
       "id": "apps_web_features_dashboard_components_dashboardbackground_tsx",
-      "community": 79,
+      "community": 81,
       "norm_label": "dashboardbackground.tsx"
     },
     {
@@ -1404,7 +1404,7 @@
       "source_file": "apps/web/features/diagnosis/components/OutbreakMap.tsx",
       "source_location": "L1",
       "id": "apps_web_features_diagnosis_components_outbreakmap_tsx",
-      "community": 13,
+      "community": 15,
       "norm_label": "outbreakmap.tsx"
     },
     {
@@ -1413,7 +1413,7 @@
       "source_file": "apps/web/features/diagnosis/components/OutbreakMap.tsx",
       "source_location": "L23",
       "id": "components_outbreakmap_fetchreports",
-      "community": 13,
+      "community": 15,
       "norm_label": "fetchreports()"
     },
     {
@@ -1422,7 +1422,7 @@
       "source_file": "apps/web/features/diagnosis/components/OutbreakMap.tsx",
       "source_location": "L57",
       "id": "components_outbreakmap_getseveritytone",
-      "community": 13,
+      "community": 15,
       "norm_label": "getseveritytone()"
     },
     {
@@ -1494,7 +1494,7 @@
       "source_file": "apps/web/features/landing/components/AnimatedBanner.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_animatedbanner_tsx",
-      "community": 80,
+      "community": 82,
       "norm_label": "animatedbanner.tsx"
     },
     {
@@ -1503,7 +1503,7 @@
       "source_file": "apps/web/features/landing/components/CTA.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_cta_tsx",
-      "community": 43,
+      "community": 45,
       "norm_label": "cta.tsx"
     },
     {
@@ -1512,7 +1512,7 @@
       "source_file": "apps/web/features/landing/components/CTA.tsx",
       "source_location": "L6",
       "id": "components_cta_goldtext",
-      "community": 43,
+      "community": 45,
       "norm_label": "goldtext()"
     },
     {
@@ -1521,7 +1521,7 @@
       "source_file": "apps/web/features/landing/components/Features.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_features_tsx",
-      "community": 44,
+      "community": 46,
       "norm_label": "features.tsx"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_file": "apps/web/features/landing/components/Features.tsx",
       "source_location": "L62",
       "id": "components_features_gradienttext",
-      "community": 44,
+      "community": 46,
       "norm_label": "gradienttext()"
     },
     {
@@ -1539,7 +1539,7 @@
       "source_file": "apps/web/features/landing/components/Hero.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_hero_tsx",
-      "community": 45,
+      "community": 47,
       "norm_label": "hero.tsx"
     },
     {
@@ -1548,7 +1548,7 @@
       "source_file": "apps/web/features/landing/components/Hero.tsx",
       "source_location": "L19",
       "id": "components_hero_greengradienttext",
-      "community": 45,
+      "community": 47,
       "norm_label": "greengradienttext()"
     },
     {
@@ -1557,7 +1557,7 @@
       "source_file": "apps/web/features/landing/components/HowItWorks.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_howitworks_tsx",
-      "community": 46,
+      "community": 48,
       "norm_label": "howitworks.tsx"
     },
     {
@@ -1566,7 +1566,7 @@
       "source_file": "apps/web/features/landing/components/HowItWorks.tsx",
       "source_location": "L5",
       "id": "components_howitworks_gradienttext",
-      "community": 46,
+      "community": 48,
       "norm_label": "gradienttext()"
     },
     {
@@ -1575,7 +1575,7 @@
       "source_file": "apps/web/features/landing/components/Impact.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_impact_tsx",
-      "community": 81,
+      "community": 83,
       "norm_label": "impact.tsx"
     },
     {
@@ -1591,7 +1591,7 @@
       "label": "fetchNotifications()",
       "file_type": "code",
       "source_file": "apps/web/features/landing/components/Layout.tsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "id": "components_layout_fetchnotifications",
       "community": 5,
       "norm_label": "fetchnotifications()"
@@ -1602,7 +1602,7 @@
       "source_file": "apps/web/features/landing/components/PipelineAnimation.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_pipelineanimation_tsx",
-      "community": 14,
+      "community": 16,
       "norm_label": "pipelineanimation.tsx"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "apps/web/features/landing/components/PipelineAnimation.tsx",
       "source_location": "L7",
       "id": "components_pipelineanimation_pipelineanimation",
-      "community": 14,
+      "community": 16,
       "norm_label": "pipelineanimation()"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "apps/web/features/landing/components/Testimonials.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_testimonials_tsx",
-      "community": 47,
+      "community": 49,
       "norm_label": "testimonials.tsx"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "apps/web/features/landing/components/Testimonials.tsx",
       "source_location": "L32",
       "id": "components_testimonials_gradienttext",
-      "community": 47,
+      "community": 49,
       "norm_label": "gradienttext()"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "apps/web/features/landing/components/TrustedBy.test.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_trustedby_test_tsx",
-      "community": 14,
+      "community": 16,
       "norm_label": "trustedby.test.tsx"
     },
     {
@@ -1647,7 +1647,7 @@
       "source_file": "apps/web/features/landing/components/TrustedBy.tsx",
       "source_location": "L1",
       "id": "apps_web_features_landing_components_trustedby_tsx",
-      "community": 14,
+      "community": 16,
       "norm_label": "trustedby.tsx"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_file": "apps/web/features/landing/components/TrustedBy.tsx",
       "source_location": "L15",
       "id": "components_trustedby_trustedby",
-      "community": 14,
+      "community": 16,
       "norm_label": "trustedby()"
     },
     {
@@ -1665,25 +1665,25 @@
       "source_file": "apps/web/features/library/components/LibraryContainer.tsx",
       "source_location": "L1",
       "id": "apps_web_features_library_components_librarycontainer_tsx",
-      "community": 17,
+      "community": 19,
       "norm_label": "librarycontainer.tsx"
     },
     {
       "label": "fetchDbDiseases()",
       "file_type": "code",
       "source_file": "apps/web/features/library/components/LibraryContainer.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "id": "components_librarycontainer_fetchdbdiseases",
-      "community": 17,
+      "community": 19,
       "norm_label": "fetchdbdiseases()"
     },
     {
       "label": "handleView()",
       "file_type": "code",
       "source_file": "apps/web/features/library/components/LibraryContainer.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "components_librarycontainer_handleview",
-      "community": 17,
+      "community": 19,
       "norm_label": "handleview()"
     },
     {
@@ -1692,7 +1692,7 @@
       "source_file": "apps/web/features/library/components/LibraryContent.tsx",
       "source_location": "L1",
       "id": "apps_web_features_library_components_librarycontent_tsx",
-      "community": 17,
+      "community": 19,
       "norm_label": "librarycontent.tsx"
     },
     {
@@ -1701,7 +1701,7 @@
       "source_file": "apps/web/features/library/components/LibraryContent.tsx",
       "source_location": "L11",
       "id": "components_librarycontent_librarygrid",
-      "community": 17,
+      "community": 19,
       "norm_label": "librarygrid()"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_file": "apps/web/features/library/components/LibraryContent.tsx",
       "source_location": "L72",
       "id": "components_librarycontent_librarydetails",
-      "community": 17,
+      "community": 19,
       "norm_label": "librarydetails()"
     },
     {
@@ -1719,7 +1719,7 @@
       "source_file": "apps/web/features/library/components/LibraryLayout.tsx",
       "source_location": "L1",
       "id": "apps_web_features_library_components_librarylayout_tsx",
-      "community": 82,
+      "community": 84,
       "norm_label": "librarylayout.tsx"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "apps/web/features/library/data/diseases.ts",
       "source_location": "L1",
       "id": "apps_web_features_library_data_diseases_ts",
-      "community": 83,
+      "community": 85,
       "norm_label": "diseases.ts"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "apps/web/lib/supabase.ts",
       "source_location": "L1",
       "id": "apps_web_lib_supabase_ts",
-      "community": 84,
+      "community": 86,
       "norm_label": "supabase.ts"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "apps/web/lib/supabaseAdmin.ts",
       "source_location": "L1",
       "id": "apps_web_lib_supabaseadmin_ts",
-      "community": 85,
+      "community": 87,
       "norm_label": "supabaseadmin.ts"
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "experiments/verify_langgraph.py",
       "source_location": "L1",
       "id": "experiments_verify_langgraph_py",
-      "community": 48,
+      "community": 50,
       "norm_label": "verify_langgraph.py"
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "experiments/verify_langgraph.py",
       "source_location": "L6",
       "id": "experiments_verify_langgraph_verify",
-      "community": 48,
+      "community": 50,
       "norm_label": "verify()"
     },
     {
@@ -1782,7 +1782,7 @@
       "source_file": "models/shared-model-utils/exporter.py",
       "source_location": "L1",
       "id": "models_shared_model_utils_exporter_py",
-      "community": 25,
+      "community": 27,
       "norm_label": "exporter.py"
     },
     {
@@ -1791,7 +1791,7 @@
       "source_file": "models/shared-model-utils/exporter.py",
       "source_location": "L5",
       "id": "shared_model_utils_exporter_export_to_onnx",
-      "community": 25,
+      "community": 27,
       "norm_label": "export_to_onnx()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_file": "models/shared-model-utils/exporter.py",
       "source_location": "L6",
       "id": "shared_model_utils_exporter_rationale_6",
-      "community": 25,
+      "community": 27,
       "norm_label": "exports a pytorch yolo model to onnx format."
     },
     {
@@ -1809,7 +1809,7 @@
       "source_file": "models/shared-model-utils/loader.py",
       "source_location": "L1",
       "id": "models_shared_model_utils_loader_py",
-      "community": 19,
+      "community": 21,
       "norm_label": "loader.py"
     },
     {
@@ -1818,7 +1818,7 @@
       "source_file": "models/shared-model-utils/loader.py",
       "source_location": "L4",
       "id": "shared_model_utils_loader_modelloader",
-      "community": 19,
+      "community": 21,
       "norm_label": "modelloader"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "models/shared-model-utils/loader.py",
       "source_location": "L6",
       "id": "shared_model_utils_loader_modelloader_init",
-      "community": 19,
+      "community": 21,
       "norm_label": ".__init__()"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "models/shared-model-utils/loader.py",
       "source_location": "L12",
       "id": "shared_model_utils_loader_modelloader_load",
-      "community": 19,
+      "community": 21,
       "norm_label": ".load()"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "models/shared-model-utils/loader.py",
       "source_location": "L5",
       "id": "shared_model_utils_loader_rationale_5",
-      "community": 19,
+      "community": 21,
       "norm_label": "safely loads inference models, preferring onnx for speed with pytorch fallback."
     },
     {
@@ -1854,7 +1854,7 @@
       "source_file": "models/shared-model-utils/metadata_template.py",
       "source_location": "L1",
       "id": "models_shared_model_utils_metadata_template_py",
-      "community": 49,
+      "community": 51,
       "norm_label": "metadata_template.py"
     },
     {
@@ -1863,7 +1863,7 @@
       "source_file": "models/shared-model-utils/metadata_template.py",
       "source_location": "L5",
       "id": "shared_model_utils_metadata_template_generate_metadata",
-      "community": 49,
+      "community": 51,
       "norm_label": "generate_metadata()"
     },
     {
@@ -1872,7 +1872,7 @@
       "source_file": "packages/ai-tools/src/index.ts",
       "source_location": "L1",
       "id": "packages_ai_tools_src_index_ts",
-      "community": 86,
+      "community": 88,
       "norm_label": "index.ts"
     },
     {
@@ -1881,7 +1881,7 @@
       "source_file": "packages/auth/src/index.ts",
       "source_location": "L1",
       "id": "packages_auth_src_index_ts",
-      "community": 20,
+      "community": 22,
       "norm_label": "index.ts"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_file": "packages/auth/src/index.ts",
       "source_location": "L8",
       "id": "src_index_hasrole",
-      "community": 20,
+      "community": 22,
       "norm_label": "hasrole()"
     },
     {
@@ -1899,7 +1899,7 @@
       "source_file": "packages/auth/src/index.ts",
       "source_location": "L13",
       "id": "src_index_isadmin",
-      "community": 20,
+      "community": 22,
       "norm_label": "isadmin()"
     },
     {
@@ -1908,7 +1908,7 @@
       "source_file": "packages/auth/src/index.ts",
       "source_location": "L17",
       "id": "src_index_isfarmer",
-      "community": 20,
+      "community": 22,
       "norm_label": "isfarmer()"
     },
     {
@@ -1917,7 +1917,7 @@
       "source_file": "packages/auth/src/index.ts",
       "source_location": "L21",
       "id": "src_index_parsejwt",
-      "community": 20,
+      "community": 22,
       "norm_label": "parsejwt()"
     },
     {
@@ -1926,7 +1926,7 @@
       "source_file": "packages/config/src/index.ts",
       "source_location": "L1",
       "id": "packages_config_src_index_ts",
-      "community": 87,
+      "community": 89,
       "norm_label": "index.ts"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "packages/constants/src/index.ts",
       "source_location": "L1",
       "id": "packages_constants_src_index_ts",
-      "community": 88,
+      "community": 90,
       "norm_label": "index.ts"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "packages/prompts/advisory.py",
       "source_location": "L1",
       "id": "packages_prompts_advisory_py",
-      "community": 89,
+      "community": 91,
       "norm_label": "advisory.py"
     },
     {
@@ -1953,7 +1953,7 @@
       "source_file": "packages/prompts/src/index.ts",
       "source_location": "L1",
       "id": "packages_prompts_src_index_ts",
-      "community": 90,
+      "community": 92,
       "norm_label": "index.ts"
     },
     {
@@ -1962,7 +1962,7 @@
       "source_file": "packages/schemas/src/index.ts",
       "source_location": "L1",
       "id": "packages_schemas_src_index_ts",
-      "community": 91,
+      "community": 93,
       "norm_label": "index.ts"
     },
     {
@@ -1971,7 +1971,7 @@
       "source_file": "packages/types/src/index.ts",
       "source_location": "L1",
       "id": "packages_types_src_index_ts",
-      "community": 92,
+      "community": 94,
       "norm_label": "index.ts"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_file": "packages/ui/src/index.ts",
       "source_location": "L1",
       "id": "packages_ui_src_index_ts",
-      "community": 15,
+      "community": 17,
       "norm_label": "index.ts"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "packages/ui/src/components/Button.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_button_tsx",
-      "community": 50,
+      "community": 52,
       "norm_label": "button.tsx"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_file": "packages/ui/src/components/Button.tsx",
       "source_location": "L6",
       "id": "components_button_cn",
-      "community": 50,
+      "community": 52,
       "norm_label": "cn()"
     },
     {
@@ -2025,7 +2025,7 @@
       "source_file": "packages/ui/src/components/Card.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_card_tsx",
-      "community": 23,
+      "community": 25,
       "norm_label": "card.tsx"
     },
     {
@@ -2034,7 +2034,7 @@
       "source_file": "packages/ui/src/components/Card.tsx",
       "source_location": "L3",
       "id": "components_card_card",
-      "community": 23,
+      "community": 25,
       "norm_label": "card()"
     },
     {
@@ -2043,7 +2043,7 @@
       "source_file": "packages/ui/src/components/Card.tsx",
       "source_location": "L11",
       "id": "components_card_cardheader",
-      "community": 23,
+      "community": 25,
       "norm_label": "cardheader()"
     },
     {
@@ -2052,7 +2052,7 @@
       "source_file": "packages/ui/src/components/Card.tsx",
       "source_location": "L19",
       "id": "components_card_cardcontent",
-      "community": 23,
+      "community": 25,
       "norm_label": "cardcontent()"
     },
     {
@@ -2070,7 +2070,7 @@
       "source_file": "packages/ui/src/components/Input.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_input_tsx",
-      "community": 93,
+      "community": 95,
       "norm_label": "input.tsx"
     },
     {
@@ -2079,7 +2079,7 @@
       "source_file": "packages/ui/src/components/Modal.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_modal_tsx",
-      "community": 94,
+      "community": 96,
       "norm_label": "modal.tsx"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "packages/ui/src/components/SkipToContent.tsx",
       "source_location": "L1",
       "id": "packages_ui_src_components_skiptocontent_tsx",
-      "community": 51,
+      "community": 53,
       "norm_label": "skiptocontent.tsx"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "packages/ui/src/components/SkipToContent.tsx",
       "source_location": "L8",
       "id": "components_skiptocontent_skiptocontent",
-      "community": 51,
+      "community": 53,
       "norm_label": "skiptocontent()"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "packages/utils/celery_app.py",
       "source_location": "L1",
       "id": "packages_utils_celery_app_py",
-      "community": 26,
+      "community": 28,
       "norm_label": "celery_app.py"
     },
     {
@@ -2124,7 +2124,7 @@
       "source_file": "packages/utils/celery_app.py",
       "source_location": "L21",
       "id": "utils_celery_app_generate_pdf_report_task",
-      "community": 26,
+      "community": 28,
       "norm_label": "generate_pdf_report_task()"
     },
     {
@@ -2133,7 +2133,7 @@
       "source_file": "packages/utils/celery_app.py",
       "source_location": "L22",
       "id": "utils_celery_app_rationale_22",
-      "community": 26,
+      "community": 28,
       "norm_label": "mock task for generating pdf report asynchronously.     in a real implementation"
     },
     {
@@ -2142,7 +2142,7 @@
       "source_file": "packages/utils/src/index.ts",
       "source_location": "L1",
       "id": "packages_utils_src_index_ts",
-      "community": 21,
+      "community": 23,
       "norm_label": "index.ts"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "packages/utils/src/index.ts",
       "source_location": "L2",
       "id": "src_index_formatdate",
-      "community": 21,
+      "community": 23,
       "norm_label": "formatdate()"
     },
     {
@@ -2160,7 +2160,7 @@
       "source_file": "packages/utils/src/index.ts",
       "source_location": "L21",
       "id": "src_index_sanitizetext",
-      "community": 21,
+      "community": 23,
       "norm_label": "sanitizetext()"
     },
     {
@@ -2169,7 +2169,7 @@
       "source_file": "packages/utils/src/index.ts",
       "source_location": "L27",
       "id": "src_index_getconfidencecolor",
-      "community": 21,
+      "community": 23,
       "norm_label": "getconfidencecolor()"
     },
     {
@@ -2178,7 +2178,7 @@
       "source_file": "packages/utils/src/index.ts",
       "source_location": "L33",
       "id": "src_index_average",
-      "community": 21,
+      "community": 23,
       "norm_label": "average()"
     },
     {
@@ -2187,7 +2187,7 @@
       "source_file": "scratch/check_supabase_data.js",
       "source_location": "L1",
       "id": "scratch_check_supabase_data_js",
-      "community": 52,
+      "community": 54,
       "norm_label": "check_supabase_data.js"
     },
     {
@@ -2196,7 +2196,7 @@
       "source_file": "scratch/check_supabase_data.js",
       "source_location": "L14",
       "id": "scratch_check_supabase_data_checkdata",
-      "community": 52,
+      "community": 54,
       "norm_label": "checkdata()"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "scratch/seed_mock_data.js",
       "source_location": "L1",
       "id": "scratch_seed_mock_data_js",
-      "community": 53,
+      "community": 55,
       "norm_label": "seed_mock_data.js"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "scratch/seed_mock_data.js",
       "source_location": "L14",
       "id": "scratch_seed_mock_data_seeddata",
-      "community": 53,
+      "community": 55,
       "norm_label": "seeddata()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "scratch/start_all.py",
       "source_location": "L1",
       "id": "scratch_start_all_py",
-      "community": 95,
+      "community": 97,
       "norm_label": "start_all.py"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "scratch/sync_diseases.js",
       "source_location": "L1",
       "id": "scratch_sync_diseases_js",
-      "community": 54,
+      "community": 56,
       "norm_label": "sync_diseases.js"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "scratch/sync_diseases.js",
       "source_location": "L23",
       "id": "scratch_sync_diseases_syncdiseases",
-      "community": 54,
+      "community": 56,
       "norm_label": "syncdiseases()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_file": "scratch/test_pipeline.py",
       "source_location": "L1",
       "id": "scratch_test_pipeline_py",
-      "community": 96,
+      "community": 98,
       "norm_label": "test_pipeline.py"
     },
     {
@@ -2259,7 +2259,7 @@
       "source_file": "scratch/verify_db.py",
       "source_location": "L1",
       "id": "scratch_verify_db_py",
-      "community": 55,
+      "community": 57,
       "norm_label": "verify_db.py"
     },
     {
@@ -2268,7 +2268,7 @@
       "source_file": "scratch/verify_db.py",
       "source_location": "L9",
       "id": "scratch_verify_db_check",
-      "community": 55,
+      "community": 57,
       "norm_label": "check()"
     },
     {
@@ -2277,7 +2277,7 @@
       "source_file": "scripts/check_db.py",
       "source_location": "L1",
       "id": "scripts_check_db_py",
-      "community": 97,
+      "community": 99,
       "norm_label": "check_db.py"
     },
     {
@@ -2286,7 +2286,7 @@
       "source_file": "scripts/fix_cors.py",
       "source_location": "L1",
       "id": "scripts_fix_cors_py",
-      "community": 56,
+      "community": 58,
       "norm_label": "fix_cors.py"
     },
     {
@@ -2295,7 +2295,7 @@
       "source_file": "scripts/fix_cors.py",
       "source_location": "L4",
       "id": "scripts_fix_cors_fix_cors",
-      "community": 56,
+      "community": 58,
       "norm_label": "fix_cors()"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_file": "scripts/scaffold_services.py",
       "source_location": "L1",
       "id": "scripts_scaffold_services_py",
-      "community": 98,
+      "community": 100,
       "norm_label": "scaffold_services.py"
     },
     {
@@ -2619,7 +2619,7 @@
       "source_file": "scripts/scaffold_service_docs.py",
       "source_location": "L1",
       "id": "scripts_scaffold_service_docs_py",
-      "community": 99,
+      "community": 101,
       "norm_label": "scaffold_service_docs.py"
     },
     {
@@ -2628,7 +2628,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L1",
       "id": "scripts_seed_database_py",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_database.py"
     },
     {
@@ -2637,7 +2637,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L71",
       "id": "scripts_seed_database_rdate",
-      "community": 11,
+      "community": 13,
       "norm_label": "rdate()"
     },
     {
@@ -2646,7 +2646,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L78",
       "id": "scripts_seed_database_iso",
-      "community": 11,
+      "community": 13,
       "norm_label": "iso()"
     },
     {
@@ -2655,7 +2655,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L82",
       "id": "scripts_seed_database_seed_diseases",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_diseases()"
     },
     {
@@ -2664,7 +2664,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L103",
       "id": "scripts_seed_database_seed_profiles",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_profiles()"
     },
     {
@@ -2673,7 +2673,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L205",
       "id": "scripts_seed_database_seed_diagnoses",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_diagnoses()"
     },
     {
@@ -2682,7 +2682,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L257",
       "id": "scripts_seed_database_seed_reports",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_reports()"
     },
     {
@@ -2691,7 +2691,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L287",
       "id": "scripts_seed_database_seed_notifications",
-      "community": 11,
+      "community": 13,
       "norm_label": "seed_notifications()"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_file": "scripts/seed_database.py",
       "source_location": "L1",
       "id": "scripts_seed_database_rationale_1",
-      "community": 11,
+      "community": 13,
       "norm_label": "agrivision platform - database seed script (matching actual supabase schema)"
     },
     {
@@ -2709,7 +2709,7 @@
       "source_file": "services/advisory-service/list_models.py",
       "source_location": "L1",
       "id": "services_advisory_service_list_models_py",
-      "community": 100,
+      "community": 102,
       "norm_label": "list_models.py"
     },
     {
@@ -2718,7 +2718,7 @@
       "source_file": "services/advisory-service/app/main.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_main_py",
-      "community": 8,
+      "community": 9,
       "norm_label": "main.py"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L42",
       "id": "app_main_health_check",
-      "community": 8,
+      "community": 9,
       "norm_label": "health_check()"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "services/advisory-service/app/main.py",
       "source_location": "L38",
       "id": "app_main_chat_with_advisor",
-      "community": 8,
+      "community": 9,
       "norm_label": "chat_with_advisor()"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "services/advisory-service/app/main.py",
       "source_location": "L46",
       "id": "app_main_generate_analysis",
-      "community": 8,
+      "community": 9,
       "norm_label": "generate_analysis()"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "services/advisory-service/app/main.py",
       "source_location": "L58",
       "id": "app_main_generate_diagnosis",
-      "community": 8,
+      "community": 9,
       "norm_label": "generate_diagnosis()"
     },
     {
@@ -2772,7 +2772,7 @@
       "source_file": "services/advisory-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_init_py",
-      "community": 101,
+      "community": 103,
       "norm_label": "__init__.py"
     },
     {
@@ -2781,7 +2781,7 @@
       "source_file": "services/advisory-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_api_init_py",
-      "community": 102,
+      "community": 104,
       "norm_label": "__init__.py"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "services/advisory-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_core_init_py",
-      "community": 103,
+      "community": 105,
       "norm_label": "__init__.py"
     },
     {
@@ -2799,7 +2799,7 @@
       "source_file": "services/advisory-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_domain_init_py",
-      "community": 104,
+      "community": 106,
       "norm_label": "__init__.py"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_file": "services/advisory-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_repositories_init_py",
-      "community": 105,
+      "community": 107,
       "norm_label": "__init__.py"
     },
     {
@@ -2943,7 +2943,7 @@
       "source_file": "services/advisory-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_schemas_init_py",
-      "community": 106,
+      "community": 108,
       "norm_label": "__init__.py"
     },
     {
@@ -2956,10 +2956,19 @@
       "norm_label": "gemini_service.py"
     },
     {
+      "label": "_fetch_rag_context()",
+      "file_type": "code",
+      "source_file": "services/advisory-service/app/services/gemini_service.py",
+      "source_location": "L16",
+      "id": "services_gemini_service_fetch_rag_context",
+      "community": 4,
+      "norm_label": "_fetch_rag_context()"
+    },
+    {
       "label": "GeminiAdvisoryService",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
-      "source_location": "L12",
+      "source_location": "L36",
       "id": "services_gemini_service_geminiadvisoryservice",
       "community": 4,
       "norm_label": "geminiadvisoryservice"
@@ -2968,7 +2977,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
-      "source_location": "L13",
+      "source_location": "L37",
       "id": "services_gemini_service_geminiadvisoryservice_init",
       "community": 4,
       "norm_label": ".__init__()"
@@ -2977,7 +2986,7 @@
       "label": ".get_response()",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
-      "source_location": "L20",
+      "source_location": "L44",
       "id": "services_gemini_service_geminiadvisoryservice_get_response",
       "community": 4,
       "norm_label": ".get_response()"
@@ -2986,7 +2995,7 @@
       "label": ".generate_crop_analysis()",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
-      "source_location": "L64",
+      "source_location": "L104",
       "id": "services_gemini_service_geminiadvisoryservice_generate_crop_analysis",
       "community": 4,
       "norm_label": ".generate_crop_analysis()"
@@ -2995,10 +3004,19 @@
       "label": ".generate_diagnosis()",
       "file_type": "code",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
-      "source_location": "L143",
+      "source_location": "L183",
       "id": "services_gemini_service_geminiadvisoryservice_generate_diagnosis",
       "community": 4,
       "norm_label": ".generate_diagnosis()"
+    },
+    {
+      "label": "Call rag-service to retrieve grounding context for the farmer's query.",
+      "file_type": "rationale",
+      "source_file": "services/advisory-service/app/services/gemini_service.py",
+      "source_location": "L17",
+      "id": "services_gemini_service_rationale_17",
+      "community": 4,
+      "norm_label": "call rag-service to retrieve grounding context for the farmer's query."
     },
     {
       "label": "__init__.py",
@@ -3006,7 +3024,7 @@
       "source_file": "services/advisory-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_services_init_py",
-      "community": 107,
+      "community": 109,
       "norm_label": "__init__.py"
     },
     {
@@ -3015,7 +3033,7 @@
       "source_file": "services/advisory-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_app_workers_init_py",
-      "community": 108,
+      "community": 110,
       "norm_label": "__init__.py"
     },
     {
@@ -3060,7 +3078,7 @@
       "source_file": "services/advisory-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_advisory_service_tests_init_py",
-      "community": 109,
+      "community": 111,
       "norm_label": "__init__.py"
     },
     {
@@ -3069,7 +3087,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_main_py",
-      "community": 3,
+      "community": 6,
       "norm_label": "main.py"
     },
     {
@@ -3078,7 +3096,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L41",
       "id": "app_main_verify_token",
-      "community": 3,
+      "community": 6,
       "norm_label": "verify_token()"
     },
     {
@@ -3087,7 +3105,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L54",
       "id": "app_main_agentstate",
-      "community": 3,
+      "community": 6,
       "norm_label": "agentstate"
     },
     {
@@ -3096,7 +3114,7 @@
       "source_file": "",
       "source_location": "",
       "id": "typeddict",
-      "community": 3,
+      "community": 6,
       "norm_label": "typeddict"
     },
     {
@@ -3105,7 +3123,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L80",
       "id": "app_main_get_disease_model",
-      "community": 3,
+      "community": 6,
       "norm_label": "get_disease_model()"
     },
     {
@@ -3123,7 +3141,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L141",
       "id": "app_main_node_diagnose_disease",
-      "community": 3,
+      "community": 6,
       "norm_label": "node_diagnose_disease()"
     },
     {
@@ -3132,7 +3150,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L182",
       "id": "app_main_should_diagnose",
-      "community": 3,
+      "community": 6,
       "norm_label": "should_diagnose()"
     },
     {
@@ -3141,7 +3159,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L209",
       "id": "app_main_diagnose",
-      "community": 3,
+      "community": 6,
       "norm_label": "diagnose()"
     },
     {
@@ -3159,7 +3177,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L244",
       "id": "app_main_metrics",
-      "community": 3,
+      "community": 6,
       "norm_label": "metrics()"
     },
     {
@@ -3168,7 +3186,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L42",
       "id": "app_main_rationale_42",
-      "community": 3,
+      "community": 6,
       "norm_label": "validates authorization token for secure endpoints"
     },
     {
@@ -3186,7 +3204,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L142",
       "id": "app_main_rationale_142",
-      "community": 3,
+      "community": 6,
       "norm_label": "diagnoses the disease based on the identified crop."
     },
     {
@@ -3195,7 +3213,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L183",
       "id": "app_main_rationale_183",
-      "community": 3,
+      "community": 6,
       "norm_label": "conditional edge router."
     },
     {
@@ -3204,7 +3222,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L210",
       "id": "app_main_rationale_210",
-      "community": 3,
+      "community": 6,
       "norm_label": "receives plant crop images and routes through langgraph nodes"
     },
     {
@@ -3213,7 +3231,7 @@
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L245",
       "id": "app_main_rationale_245",
-      "community": 3,
+      "community": 6,
       "norm_label": "expose application metrics and cache hits"
     },
     {
@@ -3222,7 +3240,7 @@
       "source_file": "services/agent-orchestrator/app/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_init_py",
-      "community": 110,
+      "community": 112,
       "norm_label": "__init__.py"
     },
     {
@@ -3231,7 +3249,7 @@
       "source_file": "services/agent-orchestrator/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_api_init_py",
-      "community": 111,
+      "community": 113,
       "norm_label": "__init__.py"
     },
     {
@@ -3240,7 +3258,7 @@
       "source_file": "services/agent-orchestrator/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_core_init_py",
-      "community": 112,
+      "community": 114,
       "norm_label": "__init__.py"
     },
     {
@@ -3249,7 +3267,7 @@
       "source_file": "services/agent-orchestrator/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_domain_init_py",
-      "community": 113,
+      "community": 115,
       "norm_label": "__init__.py"
     },
     {
@@ -3258,7 +3276,7 @@
       "source_file": "services/agent-orchestrator/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_repositories_init_py",
-      "community": 114,
+      "community": 116,
       "norm_label": "__init__.py"
     },
     {
@@ -3267,7 +3285,7 @@
       "source_file": "services/agent-orchestrator/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_schemas_init_py",
-      "community": 115,
+      "community": 117,
       "norm_label": "__init__.py"
     },
     {
@@ -3276,7 +3294,7 @@
       "source_file": "services/agent-orchestrator/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_services_init_py",
-      "community": 116,
+      "community": 118,
       "norm_label": "__init__.py"
     },
     {
@@ -3285,7 +3303,7 @@
       "source_file": "services/agent-orchestrator/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_app_workers_init_py",
-      "community": 117,
+      "community": 119,
       "norm_label": "__init__.py"
     },
     {
@@ -3294,7 +3312,7 @@
       "source_file": "services/agent-orchestrator/tests/__init__.py",
       "source_location": "L1",
       "id": "services_agent_orchestrator_tests_init_py",
-      "community": 118,
+      "community": 120,
       "norm_label": "__init__.py"
     },
     {
@@ -3348,7 +3366,7 @@
       "source_file": "services/analytics-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_init_py",
-      "community": 119,
+      "community": 121,
       "norm_label": "__init__.py"
     },
     {
@@ -3357,7 +3375,7 @@
       "source_file": "services/analytics-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_api_init_py",
-      "community": 120,
+      "community": 122,
       "norm_label": "__init__.py"
     },
     {
@@ -3366,7 +3384,7 @@
       "source_file": "services/analytics-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_core_init_py",
-      "community": 121,
+      "community": 123,
       "norm_label": "__init__.py"
     },
     {
@@ -3375,7 +3393,7 @@
       "source_file": "services/analytics-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_domain_init_py",
-      "community": 122,
+      "community": 124,
       "norm_label": "__init__.py"
     },
     {
@@ -3384,7 +3402,7 @@
       "source_file": "services/analytics-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_repositories_init_py",
-      "community": 123,
+      "community": 125,
       "norm_label": "__init__.py"
     },
     {
@@ -3393,7 +3411,7 @@
       "source_file": "services/analytics-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_schemas_init_py",
-      "community": 124,
+      "community": 126,
       "norm_label": "__init__.py"
     },
     {
@@ -3402,7 +3420,7 @@
       "source_file": "services/analytics-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_services_init_py",
-      "community": 125,
+      "community": 127,
       "norm_label": "__init__.py"
     },
     {
@@ -3411,7 +3429,7 @@
       "source_file": "services/analytics-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_app_workers_init_py",
-      "community": 126,
+      "community": 128,
       "norm_label": "__init__.py"
     },
     {
@@ -3420,7 +3438,7 @@
       "source_file": "services/analytics-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_analytics_service_tests_init_py",
-      "community": 127,
+      "community": 129,
       "norm_label": "__init__.py"
     },
     {
@@ -3429,7 +3447,7 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_main_py",
-      "community": 8,
+      "community": 9,
       "norm_label": "main.py"
     },
     {
@@ -3438,7 +3456,7 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L38",
       "id": "app_main_shutdown_event",
-      "community": 8,
+      "community": 9,
       "norm_label": "shutdown_event()"
     },
     {
@@ -3447,7 +3465,7 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L47",
       "id": "app_main_root",
-      "community": 8,
+      "community": 9,
       "norm_label": "root()"
     },
     {
@@ -3456,26 +3474,26 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L56",
       "id": "app_main_reverse_proxy",
-      "community": 8,
+      "community": 9,
       "norm_label": "reverse_proxy()"
     },
     {
       "label": "direct_diagnose()",
       "file_type": "code",
       "source_file": "services/api-gateway/app/main.py",
-      "source_location": "L103",
+      "source_location": "L104",
       "id": "app_main_direct_diagnose",
-      "community": 8,
+      "community": 9,
       "norm_label": "direct_diagnose()"
     },
     {
-      "label": "API Gateway Service - Entry Point with Asynchronous Reverse Proxying",
+      "label": "RAG Service \u2014 FastAPI Application Provides /rag/query (semantic retrieval) and /",
       "file_type": "rationale",
-      "source_file": "services/api-gateway/app/main.py",
+      "source_file": "services/rag-service/app/main.py",
       "source_location": "L1",
       "id": "app_main_rationale_1",
-      "community": 8,
-      "norm_label": "api gateway service - entry point with asynchronous reverse proxying"
+      "community": 9,
+      "norm_label": "rag service \u2014 fastapi application provides /rag/query (semantic retrieval) and /"
     },
     {
       "label": "Health check endpoint",
@@ -3483,7 +3501,7 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L43",
       "id": "app_main_rationale_43",
-      "community": 8,
+      "community": 9,
       "norm_label": "health check endpoint"
     },
     {
@@ -3492,16 +3510,16 @@
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L57",
       "id": "app_main_rationale_57",
-      "community": 8,
+      "community": 9,
       "norm_label": "generically proxy incoming gateway traffic to downstream services"
     },
     {
       "label": "Direct route for YOLO crop/disease diagnostics",
       "file_type": "rationale",
       "source_file": "services/api-gateway/app/main.py",
-      "source_location": "L104",
-      "id": "app_main_rationale_104",
-      "community": 8,
+      "source_location": "L105",
+      "id": "app_main_rationale_105",
+      "community": 9,
       "norm_label": "direct route for yolo crop/disease diagnostics"
     },
     {
@@ -3510,7 +3528,7 @@
       "source_file": "services/api-gateway/app/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_init_py",
-      "community": 128,
+      "community": 130,
       "norm_label": "__init__.py"
     },
     {
@@ -3519,7 +3537,7 @@
       "source_file": "services/api-gateway/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_api_init_py",
-      "community": 129,
+      "community": 131,
       "norm_label": "__init__.py"
     },
     {
@@ -3528,7 +3546,7 @@
       "source_file": "services/api-gateway/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_core_init_py",
-      "community": 130,
+      "community": 132,
       "norm_label": "__init__.py"
     },
     {
@@ -3537,7 +3555,7 @@
       "source_file": "services/api-gateway/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_domain_init_py",
-      "community": 131,
+      "community": 133,
       "norm_label": "__init__.py"
     },
     {
@@ -3546,7 +3564,7 @@
       "source_file": "services/api-gateway/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_repositories_init_py",
-      "community": 132,
+      "community": 134,
       "norm_label": "__init__.py"
     },
     {
@@ -3555,7 +3573,7 @@
       "source_file": "services/api-gateway/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_schemas_init_py",
-      "community": 133,
+      "community": 135,
       "norm_label": "__init__.py"
     },
     {
@@ -3564,7 +3582,7 @@
       "source_file": "services/api-gateway/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_services_init_py",
-      "community": 134,
+      "community": 136,
       "norm_label": "__init__.py"
     },
     {
@@ -3573,7 +3591,7 @@
       "source_file": "services/api-gateway/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_app_workers_init_py",
-      "community": 135,
+      "community": 137,
       "norm_label": "__init__.py"
     },
     {
@@ -3582,7 +3600,7 @@
       "source_file": "services/api-gateway/tests/test_gateway.py",
       "source_location": "L1",
       "id": "services_api_gateway_tests_test_gateway_py",
-      "community": 27,
+      "community": 29,
       "norm_label": "test_gateway.py"
     },
     {
@@ -3591,7 +3609,7 @@
       "source_file": "services/api-gateway/tests/test_gateway.py",
       "source_location": "L14",
       "id": "tests_test_gateway_test_gateway_root",
-      "community": 27,
+      "community": 29,
       "norm_label": "test_gateway_root()"
     },
     {
@@ -3600,7 +3618,7 @@
       "source_file": "services/api-gateway/tests/test_gateway.py",
       "source_location": "L19",
       "id": "tests_test_gateway_test_gateway_health",
-      "community": 27,
+      "community": 29,
       "norm_label": "test_gateway_health()"
     },
     {
@@ -3609,7 +3627,7 @@
       "source_file": "services/api-gateway/tests/__init__.py",
       "source_location": "L1",
       "id": "services_api_gateway_tests_init_py",
-      "community": 136,
+      "community": 138,
       "norm_label": "__init__.py"
     },
     {
@@ -3672,7 +3690,7 @@
       "source_file": "services/auth-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_init_py",
-      "community": 137,
+      "community": 139,
       "norm_label": "__init__.py"
     },
     {
@@ -3681,7 +3699,7 @@
       "source_file": "services/auth-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_api_init_py",
-      "community": 138,
+      "community": 140,
       "norm_label": "__init__.py"
     },
     {
@@ -3690,7 +3708,7 @@
       "source_file": "services/auth-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_core_init_py",
-      "community": 139,
+      "community": 141,
       "norm_label": "__init__.py"
     },
     {
@@ -3699,7 +3717,7 @@
       "source_file": "services/auth-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_domain_init_py",
-      "community": 140,
+      "community": 142,
       "norm_label": "__init__.py"
     },
     {
@@ -3708,7 +3726,7 @@
       "source_file": "services/auth-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_repositories_init_py",
-      "community": 141,
+      "community": 143,
       "norm_label": "__init__.py"
     },
     {
@@ -3717,7 +3735,7 @@
       "source_file": "services/auth-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_schemas_init_py",
-      "community": 142,
+      "community": 144,
       "norm_label": "__init__.py"
     },
     {
@@ -3726,7 +3744,7 @@
       "source_file": "services/auth-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_services_init_py",
-      "community": 143,
+      "community": 145,
       "norm_label": "__init__.py"
     },
     {
@@ -3735,7 +3753,7 @@
       "source_file": "services/auth-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_app_workers_init_py",
-      "community": 144,
+      "community": 146,
       "norm_label": "__init__.py"
     },
     {
@@ -3744,7 +3762,7 @@
       "source_file": "services/auth-service/tests/test_auth.py",
       "source_location": "L1",
       "id": "services_auth_service_tests_test_auth_py",
-      "community": 28,
+      "community": 30,
       "norm_label": "test_auth.py"
     },
     {
@@ -3753,7 +3771,7 @@
       "source_file": "services/auth-service/tests/test_auth.py",
       "source_location": "L14",
       "id": "tests_test_auth_test_auth_health",
-      "community": 28,
+      "community": 30,
       "norm_label": "test_auth_health()"
     },
     {
@@ -3762,7 +3780,7 @@
       "source_file": "services/auth-service/tests/test_auth.py",
       "source_location": "L19",
       "id": "tests_test_auth_test_auth_validation",
-      "community": 28,
+      "community": 30,
       "norm_label": "test_auth_validation()"
     },
     {
@@ -3771,7 +3789,7 @@
       "source_file": "services/auth-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_auth_service_tests_init_py",
-      "community": 145,
+      "community": 147,
       "norm_label": "__init__.py"
     },
     {
@@ -3798,7 +3816,7 @@
       "source_file": "services/crop-routing-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_init_py",
-      "community": 146,
+      "community": 148,
       "norm_label": "__init__.py"
     },
     {
@@ -3807,7 +3825,7 @@
       "source_file": "services/crop-routing-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_api_init_py",
-      "community": 147,
+      "community": 149,
       "norm_label": "__init__.py"
     },
     {
@@ -3816,7 +3834,7 @@
       "source_file": "services/crop-routing-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_core_init_py",
-      "community": 148,
+      "community": 150,
       "norm_label": "__init__.py"
     },
     {
@@ -3825,7 +3843,7 @@
       "source_file": "services/crop-routing-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_domain_init_py",
-      "community": 149,
+      "community": 151,
       "norm_label": "__init__.py"
     },
     {
@@ -3834,7 +3852,7 @@
       "source_file": "services/crop-routing-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_repositories_init_py",
-      "community": 150,
+      "community": 152,
       "norm_label": "__init__.py"
     },
     {
@@ -3843,7 +3861,7 @@
       "source_file": "services/crop-routing-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_schemas_init_py",
-      "community": 151,
+      "community": 153,
       "norm_label": "__init__.py"
     },
     {
@@ -3852,7 +3870,7 @@
       "source_file": "services/crop-routing-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_services_init_py",
-      "community": 152,
+      "community": 154,
       "norm_label": "__init__.py"
     },
     {
@@ -3861,7 +3879,7 @@
       "source_file": "services/crop-routing-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_app_workers_init_py",
-      "community": 153,
+      "community": 155,
       "norm_label": "__init__.py"
     },
     {
@@ -3870,7 +3888,7 @@
       "source_file": "services/crop-routing-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_crop_routing_service_tests_init_py",
-      "community": 154,
+      "community": 156,
       "norm_label": "__init__.py"
     },
     {
@@ -3888,7 +3906,7 @@
       "source_file": "services/disease-brassica-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_init_py",
-      "community": 155,
+      "community": 157,
       "norm_label": "__init__.py"
     },
     {
@@ -3897,7 +3915,7 @@
       "source_file": "services/disease-brassica-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_api_init_py",
-      "community": 156,
+      "community": 158,
       "norm_label": "__init__.py"
     },
     {
@@ -3906,7 +3924,7 @@
       "source_file": "services/disease-brassica-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_core_init_py",
-      "community": 157,
+      "community": 159,
       "norm_label": "__init__.py"
     },
     {
@@ -3915,7 +3933,7 @@
       "source_file": "services/disease-brassica-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_domain_init_py",
-      "community": 158,
+      "community": 160,
       "norm_label": "__init__.py"
     },
     {
@@ -3924,7 +3942,7 @@
       "source_file": "services/disease-brassica-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_repositories_init_py",
-      "community": 159,
+      "community": 161,
       "norm_label": "__init__.py"
     },
     {
@@ -3933,7 +3951,7 @@
       "source_file": "services/disease-brassica-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_schemas_init_py",
-      "community": 160,
+      "community": 162,
       "norm_label": "__init__.py"
     },
     {
@@ -3942,7 +3960,7 @@
       "source_file": "services/disease-brassica-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_services_init_py",
-      "community": 161,
+      "community": 163,
       "norm_label": "__init__.py"
     },
     {
@@ -3951,7 +3969,7 @@
       "source_file": "services/disease-brassica-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_app_workers_init_py",
-      "community": 162,
+      "community": 164,
       "norm_label": "__init__.py"
     },
     {
@@ -3960,7 +3978,7 @@
       "source_file": "services/disease-brassica-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_disease_brassica_service_tests_init_py",
-      "community": 163,
+      "community": 165,
       "norm_label": "__init__.py"
     },
     {
@@ -3978,7 +3996,7 @@
       "source_file": "services/disease-corn-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_init_py",
-      "community": 164,
+      "community": 166,
       "norm_label": "__init__.py"
     },
     {
@@ -3987,7 +4005,7 @@
       "source_file": "services/disease-corn-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_api_init_py",
-      "community": 165,
+      "community": 167,
       "norm_label": "__init__.py"
     },
     {
@@ -3996,7 +4014,7 @@
       "source_file": "services/disease-corn-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_core_init_py",
-      "community": 166,
+      "community": 168,
       "norm_label": "__init__.py"
     },
     {
@@ -4005,7 +4023,7 @@
       "source_file": "services/disease-corn-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_domain_init_py",
-      "community": 167,
+      "community": 169,
       "norm_label": "__init__.py"
     },
     {
@@ -4014,7 +4032,7 @@
       "source_file": "services/disease-corn-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_repositories_init_py",
-      "community": 168,
+      "community": 170,
       "norm_label": "__init__.py"
     },
     {
@@ -4023,7 +4041,7 @@
       "source_file": "services/disease-corn-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_schemas_init_py",
-      "community": 169,
+      "community": 171,
       "norm_label": "__init__.py"
     },
     {
@@ -4032,7 +4050,7 @@
       "source_file": "services/disease-corn-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_services_init_py",
-      "community": 170,
+      "community": 172,
       "norm_label": "__init__.py"
     },
     {
@@ -4041,7 +4059,7 @@
       "source_file": "services/disease-corn-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_app_workers_init_py",
-      "community": 171,
+      "community": 173,
       "norm_label": "__init__.py"
     },
     {
@@ -4050,7 +4068,7 @@
       "source_file": "services/disease-corn-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_disease_corn_service_tests_init_py",
-      "community": 172,
+      "community": 174,
       "norm_label": "__init__.py"
     },
     {
@@ -4068,7 +4086,7 @@
       "source_file": "services/disease-potato-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_init_py",
-      "community": 173,
+      "community": 175,
       "norm_label": "__init__.py"
     },
     {
@@ -4077,7 +4095,7 @@
       "source_file": "services/disease-potato-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_api_init_py",
-      "community": 174,
+      "community": 176,
       "norm_label": "__init__.py"
     },
     {
@@ -4086,7 +4104,7 @@
       "source_file": "services/disease-potato-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_core_init_py",
-      "community": 175,
+      "community": 177,
       "norm_label": "__init__.py"
     },
     {
@@ -4095,7 +4113,7 @@
       "source_file": "services/disease-potato-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_domain_init_py",
-      "community": 176,
+      "community": 178,
       "norm_label": "__init__.py"
     },
     {
@@ -4104,7 +4122,7 @@
       "source_file": "services/disease-potato-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_repositories_init_py",
-      "community": 177,
+      "community": 179,
       "norm_label": "__init__.py"
     },
     {
@@ -4113,7 +4131,7 @@
       "source_file": "services/disease-potato-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_schemas_init_py",
-      "community": 178,
+      "community": 180,
       "norm_label": "__init__.py"
     },
     {
@@ -4122,7 +4140,7 @@
       "source_file": "services/disease-potato-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_services_init_py",
-      "community": 179,
+      "community": 181,
       "norm_label": "__init__.py"
     },
     {
@@ -4131,7 +4149,7 @@
       "source_file": "services/disease-potato-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_app_workers_init_py",
-      "community": 180,
+      "community": 182,
       "norm_label": "__init__.py"
     },
     {
@@ -4140,7 +4158,7 @@
       "source_file": "services/disease-potato-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_disease_potato_service_tests_init_py",
-      "community": 181,
+      "community": 183,
       "norm_label": "__init__.py"
     },
     {
@@ -4158,7 +4176,7 @@
       "source_file": "services/disease-rice-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_init_py",
-      "community": 182,
+      "community": 184,
       "norm_label": "__init__.py"
     },
     {
@@ -4167,7 +4185,7 @@
       "source_file": "services/disease-rice-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_api_init_py",
-      "community": 183,
+      "community": 185,
       "norm_label": "__init__.py"
     },
     {
@@ -4176,7 +4194,7 @@
       "source_file": "services/disease-rice-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_core_init_py",
-      "community": 184,
+      "community": 186,
       "norm_label": "__init__.py"
     },
     {
@@ -4185,7 +4203,7 @@
       "source_file": "services/disease-rice-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_domain_init_py",
-      "community": 185,
+      "community": 187,
       "norm_label": "__init__.py"
     },
     {
@@ -4194,7 +4212,7 @@
       "source_file": "services/disease-rice-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_repositories_init_py",
-      "community": 186,
+      "community": 188,
       "norm_label": "__init__.py"
     },
     {
@@ -4203,7 +4221,7 @@
       "source_file": "services/disease-rice-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_schemas_init_py",
-      "community": 187,
+      "community": 189,
       "norm_label": "__init__.py"
     },
     {
@@ -4212,7 +4230,7 @@
       "source_file": "services/disease-rice-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_services_init_py",
-      "community": 188,
+      "community": 190,
       "norm_label": "__init__.py"
     },
     {
@@ -4221,7 +4239,7 @@
       "source_file": "services/disease-rice-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_app_workers_init_py",
-      "community": 189,
+      "community": 191,
       "norm_label": "__init__.py"
     },
     {
@@ -4230,7 +4248,7 @@
       "source_file": "services/disease-rice-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_disease_rice_service_tests_init_py",
-      "community": 190,
+      "community": 192,
       "norm_label": "__init__.py"
     },
     {
@@ -4248,7 +4266,7 @@
       "source_file": "services/disease-wheat-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_init_py",
-      "community": 191,
+      "community": 193,
       "norm_label": "__init__.py"
     },
     {
@@ -4257,7 +4275,7 @@
       "source_file": "services/disease-wheat-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_api_init_py",
-      "community": 192,
+      "community": 194,
       "norm_label": "__init__.py"
     },
     {
@@ -4266,7 +4284,7 @@
       "source_file": "services/disease-wheat-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_core_init_py",
-      "community": 193,
+      "community": 195,
       "norm_label": "__init__.py"
     },
     {
@@ -4275,7 +4293,7 @@
       "source_file": "services/disease-wheat-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_domain_init_py",
-      "community": 194,
+      "community": 196,
       "norm_label": "__init__.py"
     },
     {
@@ -4284,7 +4302,7 @@
       "source_file": "services/disease-wheat-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_repositories_init_py",
-      "community": 195,
+      "community": 197,
       "norm_label": "__init__.py"
     },
     {
@@ -4293,7 +4311,7 @@
       "source_file": "services/disease-wheat-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_schemas_init_py",
-      "community": 196,
+      "community": 198,
       "norm_label": "__init__.py"
     },
     {
@@ -4302,7 +4320,7 @@
       "source_file": "services/disease-wheat-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_services_init_py",
-      "community": 197,
+      "community": 199,
       "norm_label": "__init__.py"
     },
     {
@@ -4311,7 +4329,7 @@
       "source_file": "services/disease-wheat-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_app_workers_init_py",
-      "community": 198,
+      "community": 200,
       "norm_label": "__init__.py"
     },
     {
@@ -4320,7 +4338,7 @@
       "source_file": "services/disease-wheat-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_disease_wheat_service_tests_init_py",
-      "community": 199,
+      "community": 201,
       "norm_label": "__init__.py"
     },
     {
@@ -4365,7 +4383,7 @@
       "source_file": "services/notification-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_init_py",
-      "community": 200,
+      "community": 202,
       "norm_label": "__init__.py"
     },
     {
@@ -4374,7 +4392,7 @@
       "source_file": "services/notification-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_api_init_py",
-      "community": 201,
+      "community": 203,
       "norm_label": "__init__.py"
     },
     {
@@ -4383,7 +4401,7 @@
       "source_file": "services/notification-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_core_init_py",
-      "community": 202,
+      "community": 204,
       "norm_label": "__init__.py"
     },
     {
@@ -4392,7 +4410,7 @@
       "source_file": "services/notification-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_domain_init_py",
-      "community": 203,
+      "community": 205,
       "norm_label": "__init__.py"
     },
     {
@@ -4401,7 +4419,7 @@
       "source_file": "services/notification-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_repositories_init_py",
-      "community": 204,
+      "community": 206,
       "norm_label": "__init__.py"
     },
     {
@@ -4410,7 +4428,7 @@
       "source_file": "services/notification-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_schemas_init_py",
-      "community": 205,
+      "community": 207,
       "norm_label": "__init__.py"
     },
     {
@@ -4419,7 +4437,7 @@
       "source_file": "services/notification-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_services_init_py",
-      "community": 206,
+      "community": 208,
       "norm_label": "__init__.py"
     },
     {
@@ -4428,7 +4446,7 @@
       "source_file": "services/notification-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_app_workers_init_py",
-      "community": 207,
+      "community": 209,
       "norm_label": "__init__.py"
     },
     {
@@ -4437,7 +4455,7 @@
       "source_file": "services/notification-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_notification_service_tests_init_py",
-      "community": 208,
+      "community": 210,
       "norm_label": "__init__.py"
     },
     {
@@ -4446,62 +4464,80 @@
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L1",
       "id": "services_rag_service_app_main_py",
-      "community": 1,
+      "community": 3,
       "norm_label": "main.py"
     },
     {
       "label": "QueryRequest",
       "file_type": "code",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L24",
+      "source_location": "L50",
       "id": "app_main_queryrequest",
-      "community": 1,
+      "community": 3,
       "norm_label": "queryrequest"
     },
     {
-      "label": "UpsertRequest",
+      "label": "QueryResult",
       "file_type": "code",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L29",
-      "id": "app_main_upsertrequest",
-      "community": 1,
-      "norm_label": "upsertrequest"
+      "source_location": "L57",
+      "id": "app_main_queryresult",
+      "community": 3,
+      "norm_label": "queryresult"
+    },
+    {
+      "label": "QueryResponse",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L63",
+      "id": "app_main_queryresponse",
+      "community": 3,
+      "norm_label": "queryresponse"
+    },
+    {
+      "label": "IngestResponse",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L71",
+      "id": "app_main_ingestresponse",
+      "community": 3,
+      "norm_label": "ingestresponse"
     },
     {
       "label": "query_knowledge_base()",
       "file_type": "code",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L39",
+      "source_location": "L85",
       "id": "app_main_query_knowledge_base",
-      "community": 1,
+      "community": 3,
       "norm_label": "query_knowledge_base()"
     },
     {
-      "label": "upsert_document()",
+      "label": "ingest_documents()",
       "file_type": "code",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L64",
-      "id": "app_main_upsert_document",
-      "community": 1,
-      "norm_label": "upsert_document()"
+      "source_location": "L113",
+      "id": "app_main_ingest_documents",
+      "community": 3,
+      "norm_label": "ingest_documents()"
     },
     {
-      "label": "Semantic vector lookup for specialized plant disease management advice",
+      "label": "Semantic vector search over the agricultural knowledge base.     Returns relevan",
       "file_type": "rationale",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L40",
-      "id": "app_main_rationale_40",
-      "community": 1,
-      "norm_label": "semantic vector lookup for specialized plant disease management advice"
+      "source_location": "L86",
+      "id": "app_main_rationale_86",
+      "community": 3,
+      "norm_label": "semantic vector search over the agricultural knowledge base.     returns relevan"
     },
     {
-      "label": "Indexes agriculture training texts into the vector database",
+      "label": "Trigger ingestion of all documents under models/sources/ into Qdrant.     This e",
       "file_type": "rationale",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L65",
-      "id": "app_main_rationale_65",
-      "community": 1,
-      "norm_label": "indexes agriculture training texts into the vector database"
+      "source_location": "L114",
+      "id": "app_main_rationale_114",
+      "community": 3,
+      "norm_label": "trigger ingestion of all documents under models/sources/ into qdrant.     this e"
     },
     {
       "label": "__init__.py",
@@ -4509,7 +4545,7 @@
       "source_file": "services/rag-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_init_py",
-      "community": 209,
+      "community": 211,
       "norm_label": "__init__.py"
     },
     {
@@ -4518,7 +4554,7 @@
       "source_file": "services/rag-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_api_init_py",
-      "community": 210,
+      "community": 212,
       "norm_label": "__init__.py"
     },
     {
@@ -4527,7 +4563,7 @@
       "source_file": "services/rag-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_core_init_py",
-      "community": 211,
+      "community": 213,
       "norm_label": "__init__.py"
     },
     {
@@ -4536,7 +4572,7 @@
       "source_file": "services/rag-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_domain_init_py",
-      "community": 212,
+      "community": 214,
       "norm_label": "__init__.py"
     },
     {
@@ -4545,7 +4581,7 @@
       "source_file": "services/rag-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_repositories_init_py",
-      "community": 213,
+      "community": 215,
       "norm_label": "__init__.py"
     },
     {
@@ -4554,8 +4590,188 @@
       "source_file": "services/rag-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_schemas_init_py",
-      "community": 214,
+      "community": 216,
       "norm_label": "__init__.py"
+    },
+    {
+      "label": "ingestion.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_services_ingestion_py",
+      "community": 11,
+      "norm_label": "ingestion.py"
+    },
+    {
+      "label": "_get_embeddings()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L32",
+      "id": "services_ingestion_get_embeddings",
+      "community": 11,
+      "norm_label": "_get_embeddings()"
+    },
+    {
+      "label": "_ensure_collection()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L42",
+      "id": "services_ingestion_ensure_collection",
+      "community": 11,
+      "norm_label": "_ensure_collection()"
+    },
+    {
+      "label": "_load_documents()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L55",
+      "id": "services_ingestion_load_documents",
+      "community": 11,
+      "norm_label": "_load_documents()"
+    },
+    {
+      "label": "_flatten_json()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L128",
+      "id": "services_ingestion_flatten_json",
+      "community": 11,
+      "norm_label": "_flatten_json()"
+    },
+    {
+      "label": "_split_documents()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L143",
+      "id": "services_ingestion_split_documents",
+      "community": 11,
+      "norm_label": "_split_documents()"
+    },
+    {
+      "label": "run_ingestion()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L152",
+      "id": "services_ingestion_run_ingestion",
+      "community": 11,
+      "norm_label": "run_ingestion()"
+    },
+    {
+      "label": "RAG Ingestion Pipeline Reads PDF, DOCX, MD, JSON files from models/sources/ and",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L1",
+      "id": "services_ingestion_rationale_1",
+      "community": 11,
+      "norm_label": "rag ingestion pipeline reads pdf, docx, md, json files from models/sources/ and"
+    },
+    {
+      "label": "Create Qdrant collection if it does not already exist.",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L43",
+      "id": "services_ingestion_rationale_43",
+      "community": 11,
+      "norm_label": "create qdrant collection if it does not already exist."
+    },
+    {
+      "label": "Load all supported documents from the sources directory.",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L56",
+      "id": "services_ingestion_rationale_56",
+      "community": 11,
+      "norm_label": "load all supported documents from the sources directory."
+    },
+    {
+      "label": "Recursively flatten a JSON object into readable key-value text.",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L129",
+      "id": "services_ingestion_rationale_129",
+      "community": 11,
+      "norm_label": "recursively flatten a json object into readable key-value text."
+    },
+    {
+      "label": "Main ingestion entry point.     Loads all source documents, chunks them, embeds",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L153",
+      "id": "services_ingestion_rationale_153",
+      "community": 11,
+      "norm_label": "main ingestion entry point.     loads all source documents, chunks them, embeds"
+    },
+    {
+      "label": "retrieval.py",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L1",
+      "id": "services_rag_service_app_services_retrieval_py",
+      "community": 3,
+      "norm_label": "retrieval.py"
+    },
+    {
+      "label": "_get_embeddings()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L22",
+      "id": "services_retrieval_get_embeddings",
+      "community": 3,
+      "norm_label": "_get_embeddings()"
+    },
+    {
+      "label": "_collection_exists()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L32",
+      "id": "services_retrieval_collection_exists",
+      "community": 3,
+      "norm_label": "_collection_exists()"
+    },
+    {
+      "label": "retrieve()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L42",
+      "id": "services_retrieval_retrieve",
+      "community": 3,
+      "norm_label": "retrieve()"
+    },
+    {
+      "label": "format_context_for_prompt()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L79",
+      "id": "services_retrieval_format_context_for_prompt",
+      "community": 3,
+      "norm_label": "format_context_for_prompt()"
+    },
+    {
+      "label": "RAG Retrieval Service Semantic vector lookup using Qdrant + Gemini text-embeddin",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L1",
+      "id": "services_retrieval_rationale_1",
+      "community": 3,
+      "norm_label": "rag retrieval service semantic vector lookup using qdrant + gemini text-embeddin"
+    },
+    {
+      "label": "Retrieve the top-k most semantically relevant document chunks for a query.     O",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L43",
+      "id": "services_retrieval_rationale_43",
+      "community": 3,
+      "norm_label": "retrieve the top-k most semantically relevant document chunks for a query.     o"
+    },
+    {
+      "label": "Format retrieved results into a clean context block to inject into the Gemini pr",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L80",
+      "id": "services_retrieval_rationale_80",
+      "community": 3,
+      "norm_label": "format retrieved results into a clean context block to inject into the gemini pr"
     },
     {
       "label": "__init__.py",
@@ -4563,7 +4779,7 @@
       "source_file": "services/rag-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_services_init_py",
-      "community": 215,
+      "community": 217,
       "norm_label": "__init__.py"
     },
     {
@@ -4572,7 +4788,7 @@
       "source_file": "services/rag-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_app_workers_init_py",
-      "community": 216,
+      "community": 218,
       "norm_label": "__init__.py"
     },
     {
@@ -4581,7 +4797,7 @@
       "source_file": "services/rag-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_rag_service_tests_init_py",
-      "community": 217,
+      "community": 219,
       "norm_label": "__init__.py"
     },
     {
@@ -4626,7 +4842,7 @@
       "source_file": "services/report-service/app/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_init_py",
-      "community": 218,
+      "community": 220,
       "norm_label": "__init__.py"
     },
     {
@@ -4635,7 +4851,7 @@
       "source_file": "services/report-service/app/api/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_api_init_py",
-      "community": 219,
+      "community": 221,
       "norm_label": "__init__.py"
     },
     {
@@ -4644,7 +4860,7 @@
       "source_file": "services/report-service/app/core/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_core_init_py",
-      "community": 220,
+      "community": 222,
       "norm_label": "__init__.py"
     },
     {
@@ -4653,7 +4869,7 @@
       "source_file": "services/report-service/app/domain/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_domain_init_py",
-      "community": 221,
+      "community": 223,
       "norm_label": "__init__.py"
     },
     {
@@ -4662,7 +4878,7 @@
       "source_file": "services/report-service/app/repositories/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_repositories_init_py",
-      "community": 222,
+      "community": 224,
       "norm_label": "__init__.py"
     },
     {
@@ -4671,7 +4887,7 @@
       "source_file": "services/report-service/app/schemas/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_schemas_init_py",
-      "community": 223,
+      "community": 225,
       "norm_label": "__init__.py"
     },
     {
@@ -4680,7 +4896,7 @@
       "source_file": "services/report-service/app/services/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_services_init_py",
-      "community": 224,
+      "community": 226,
       "norm_label": "__init__.py"
     },
     {
@@ -4689,7 +4905,7 @@
       "source_file": "services/report-service/app/workers/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_app_workers_init_py",
-      "community": 225,
+      "community": 227,
       "norm_label": "__init__.py"
     },
     {
@@ -4698,7 +4914,7 @@
       "source_file": "services/report-service/tests/__init__.py",
       "source_location": "L1",
       "id": "services_report_service_tests_init_py",
-      "community": 226,
+      "community": 228,
       "norm_label": "__init__.py"
     },
     {
@@ -4707,7 +4923,7 @@
       "source_file": "tests/integration/accessibility.spec.ts",
       "source_location": "L1",
       "id": "tests_integration_accessibility_spec_ts",
-      "community": 57,
+      "community": 59,
       "norm_label": "accessibility.spec.ts"
     },
     {
@@ -4716,7 +4932,7 @@
       "source_file": "tests/integration/accessibility.spec.ts",
       "source_location": "L13",
       "id": "integration_accessibility_spec_runaxeaudit",
-      "community": 57,
+      "community": 59,
       "norm_label": "runaxeaudit()"
     },
     {
@@ -4725,15 +4941,96 @@
       "source_file": "tests/integration/dashboard.spec.ts",
       "source_location": "L1",
       "id": "tests_integration_dashboard_spec_ts",
-      "community": 227,
+      "community": 229,
       "norm_label": "dashboard.spec.ts"
+    },
+    {
+      "label": "Semantic vector search over the agricultural knowledge base.     Returns relevan",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L82",
+      "community": 3,
+      "norm_label": "semantic vector search over the agricultural knowledge base.     returns relevan",
+      "id": "app_main_rationale_82"
+    },
+    {
+      "label": "Trigger ingestion of all documents under models/sources/ into Qdrant.     This e",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L110",
+      "community": 3,
+      "norm_label": "trigger ingestion of all documents under models/sources/ into qdrant.     this e",
+      "id": "app_main_rationale_110"
+    },
+    {
+      "label": "Retrieve the top-k most semantically relevant document chunks for a query.     O",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L42",
+      "community": 3,
+      "norm_label": "retrieve the top-k most semantically relevant document chunks for a query.     o",
+      "id": "services_retrieval_rationale_42"
+    },
+    {
+      "label": "Format retrieved results into a clean context block to inject into the Gemini pr",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L77",
+      "community": 3,
+      "norm_label": "format retrieved results into a clean context block to inject into the gemini pr",
+      "id": "services_retrieval_rationale_77"
+    },
+    {
+      "label": "UpsertRequest",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L29",
+      "community": 3,
+      "norm_label": "upsertrequest",
+      "id": "app_main_upsertrequest"
+    },
+    {
+      "label": "upsert_document()",
+      "file_type": "code",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L64",
+      "community": 1,
+      "norm_label": "upsert_document()",
+      "id": "app_main_upsert_document"
+    },
+    {
+      "label": "Semantic vector lookup for specialized plant disease management advice",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L40",
+      "community": 3,
+      "norm_label": "semantic vector lookup for specialized plant disease management advice",
+      "id": "app_main_rationale_40"
+    },
+    {
+      "label": "Indexes agriculture training texts into the vector database",
+      "file_type": "rationale",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L65",
+      "community": 1,
+      "norm_label": "indexes agriculture training texts into the vector database",
+      "id": "app_main_rationale_65"
+    },
+    {
+      "label": "Direct route for YOLO crop/disease diagnostics",
+      "file_type": "rationale",
+      "source_file": "services/api-gateway/app/main.py",
+      "source_location": "L104",
+      "community": 9,
+      "norm_label": "direct route for yolo crop/disease diagnostics",
+      "id": "app_main_rationale_104"
     },
     {
       "label": "fetchDashboardStats()",
       "file_type": "code",
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L51",
-      "community": 6,
+      "community": 7,
       "norm_label": "fetchdashboardstats()",
       "id": "app_page_fetchdashboardstats"
     },
@@ -4742,7 +5039,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L62",
-      "community": 6,
+      "community": 7,
       "norm_label": "fetchpending()",
       "id": "app_page_fetchpending"
     },
@@ -4751,7 +5048,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L1",
-      "community": 9,
+      "community": 10,
       "norm_label": "chart.tsx",
       "id": "apps_admin_components_ui_chart_tsx"
     },
@@ -4760,7 +5057,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L32",
-      "community": 9,
+      "community": 10,
       "norm_label": "usechart()",
       "id": "ui_chart_usechart"
     },
@@ -4769,7 +5066,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L67",
-      "community": 9,
+      "community": 10,
       "norm_label": "cn()",
       "id": "ui_chart_cn"
     },
@@ -4796,25 +5093,16 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L34",
-      "community": 3,
+      "community": 6,
       "norm_label": "validates authorization token for secure endpoints",
       "id": "app_main_rationale_34"
-    },
-    {
-      "label": "Identifies the crop from the image.",
-      "file_type": "rationale",
-      "source_file": "services/agent-orchestrator/app/main.py",
-      "source_location": "L110",
-      "community": 3,
-      "norm_label": "identifies the crop from the image.",
-      "id": "app_main_rationale_110"
     },
     {
       "label": "Diagnoses the disease based on the identified crop.",
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L134",
-      "community": 3,
+      "community": 6,
       "norm_label": "diagnoses the disease based on the identified crop.",
       "id": "app_main_rationale_134"
     },
@@ -4823,7 +5111,7 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L175",
-      "community": 3,
+      "community": 6,
       "norm_label": "conditional edge router.",
       "id": "app_main_rationale_175"
     },
@@ -4832,7 +5120,7 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L202",
-      "community": 3,
+      "community": 6,
       "norm_label": "receives plant crop images and routes through langgraph nodes",
       "id": "app_main_rationale_202"
     },
@@ -4841,7 +5129,7 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L237",
-      "community": 3,
+      "community": 6,
       "norm_label": "expose application metrics and cache hits",
       "id": "app_main_rationale_237"
     },
@@ -4868,7 +5156,7 @@
       "file_type": "rationale",
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L101",
-      "community": 8,
+      "community": 9,
       "norm_label": "direct route for yolo crop/disease diagnostics",
       "id": "app_main_rationale_101"
     },
@@ -4895,7 +5183,7 @@
       "file_type": "rationale",
       "source_file": "services/rag-service/app/main.py",
       "source_location": "L31",
-      "community": 1,
+      "community": 3,
       "norm_label": "semantic vector lookup for specialized plant disease management advice",
       "id": "app_main_rationale_31"
     },
@@ -4922,7 +5210,7 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L102",
-      "community": 3,
+      "community": 6,
       "norm_label": "diagnoses the disease based on the identified crop.",
       "id": "app_main_rationale_102"
     },
@@ -4931,7 +5219,7 @@
       "file_type": "rationale",
       "source_file": "services/agent-orchestrator/app/main.py",
       "source_location": "L143",
-      "community": 3,
+      "community": 6,
       "norm_label": "conditional edge router.",
       "id": "app_main_rationale_143"
     },
@@ -4940,7 +5228,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appapi__init__.py",
       "source_location": "L1",
-      "community": 228,
+      "community": 230,
       "norm_label": "appapi__init__.py",
       "id": "services_api_gateway_appapi_init_py"
     },
@@ -4949,7 +5237,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appcore__init__.py",
       "source_location": "L1",
-      "community": 229,
+      "community": 231,
       "norm_label": "appcore__init__.py",
       "id": "services_api_gateway_appcore_init_py"
     },
@@ -4958,7 +5246,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appdomain__init__.py",
       "source_location": "L1",
-      "community": 230,
+      "community": 232,
       "norm_label": "appdomain__init__.py",
       "id": "services_api_gateway_appdomain_init_py"
     },
@@ -4967,7 +5255,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/apprepositories__init__.py",
       "source_location": "L1",
-      "community": 231,
+      "community": 233,
       "norm_label": "apprepositories__init__.py",
       "id": "services_api_gateway_apprepositories_init_py"
     },
@@ -4976,7 +5264,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appschemas__init__.py",
       "source_location": "L1",
-      "community": 232,
+      "community": 234,
       "norm_label": "appschemas__init__.py",
       "id": "services_api_gateway_appschemas_init_py"
     },
@@ -4985,7 +5273,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appservices__init__.py",
       "source_location": "L1",
-      "community": 233,
+      "community": 235,
       "norm_label": "appservices__init__.py",
       "id": "services_api_gateway_appservices_init_py"
     },
@@ -4994,7 +5282,7 @@
       "file_type": "code",
       "source_file": "services/api-gateway/appworkers__init__.py",
       "source_location": "L1",
-      "community": 234,
+      "community": 236,
       "norm_label": "appworkers__init__.py",
       "id": "services_api_gateway_appworkers_init_py"
     },
@@ -5003,7 +5291,7 @@
       "file_type": "rationale",
       "source_file": "services/api-gateway/app/main.py",
       "source_location": "L23",
-      "community": 8,
+      "community": 9,
       "norm_label": "health check endpoint",
       "id": "app_main_rationale_23"
     },
@@ -5012,7 +5300,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L137",
-      "community": 6,
+      "community": 7,
       "norm_label": "fetchlibrarydiseases()",
       "id": "app_page_fetchlibrarydiseases"
     },
@@ -5021,7 +5309,7 @@
       "file_type": "code",
       "source_file": "apps/web/check_user.js",
       "source_location": "L1",
-      "community": 58,
+      "community": 60,
       "norm_label": "check_user.js",
       "id": "apps_web_check_user_js"
     },
@@ -5030,7 +5318,7 @@
       "file_type": "code",
       "source_file": "apps/web/check_user.js",
       "source_location": "L8",
-      "community": 58,
+      "community": 60,
       "norm_label": "checkuser()",
       "id": "web_check_user_checkuser"
     },
@@ -5048,7 +5336,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/layout.tsx",
       "source_location": "L5",
-      "community": 12,
+      "community": 14,
       "norm_label": "geistsans",
       "id": "app_layout_geistsans"
     },
@@ -5057,7 +5345,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/layout.tsx",
       "source_location": "L10",
-      "community": 12,
+      "community": 14,
       "norm_label": "geistmono",
       "id": "app_layout_geistmono"
     },
@@ -5066,7 +5354,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/layout.tsx",
       "source_location": "L15",
-      "community": 12,
+      "community": 14,
       "norm_label": "metadata",
       "id": "app_layout_metadata"
     },
@@ -5075,7 +5363,7 @@
       "file_type": "code",
       "source_file": "apps/admin/app/page.tsx",
       "source_location": "L3",
-      "community": 14,
+      "community": 16,
       "norm_label": "home()",
       "id": "app_page_home"
     },
@@ -5129,7 +5417,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/button.tsx",
       "source_location": "L7",
-      "community": 7,
+      "community": 8,
       "norm_label": "buttonvariants",
       "id": "ui_button_buttonvariants"
     },
@@ -5138,7 +5426,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/button.tsx",
       "source_location": "L44",
-      "community": 7,
+      "community": 8,
       "norm_label": "button()",
       "id": "ui_button_button"
     },
@@ -5201,7 +5489,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L10",
-      "community": 9,
+      "community": 10,
       "norm_label": "themes",
       "id": "ui_chart_themes"
     },
@@ -5210,7 +5498,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L12",
-      "community": 9,
+      "community": 10,
       "norm_label": "initial_dimension",
       "id": "ui_chart_initial_dimension"
     },
@@ -5219,7 +5507,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L13",
-      "community": 9,
+      "community": 10,
       "norm_label": "tooltipnametype",
       "id": "ui_chart_tooltipnametype"
     },
@@ -5228,7 +5516,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L15",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartconfig",
       "id": "ui_chart_chartconfig"
     },
@@ -5237,7 +5525,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L26",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartcontextprops",
       "id": "ui_chart_chartcontextprops"
     },
@@ -5246,7 +5534,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L30",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartcontext",
       "id": "ui_chart_chartcontext"
     },
@@ -5255,7 +5543,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L42",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartcontainer()",
       "id": "ui_chart_chartcontainer"
     },
@@ -5264,7 +5552,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L84",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartstyle()",
       "id": "ui_chart_chartstyle"
     },
@@ -5273,7 +5561,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L119",
-      "community": 9,
+      "community": 10,
       "norm_label": "charttooltipcontent()",
       "id": "ui_chart_charttooltipcontent"
     },
@@ -5282,7 +5570,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L275",
-      "community": 9,
+      "community": 10,
       "norm_label": "chartlegendcontent()",
       "id": "ui_chart_chartlegendcontent"
     },
@@ -5291,7 +5579,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/chart.tsx",
       "source_location": "L330",
-      "community": 9,
+      "community": 10,
       "norm_label": "getpayloadconfigfrompayload()",
       "id": "ui_chart_getpayloadconfigfrompayload"
     },
@@ -5300,7 +5588,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L34",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogoverlay()",
       "id": "ui_dialog_dialogoverlay"
     },
@@ -5309,7 +5597,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L50",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogcontent()",
       "id": "ui_dialog_dialogcontent"
     },
@@ -5318,7 +5606,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L88",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogheader()",
       "id": "ui_dialog_dialogheader"
     },
@@ -5327,7 +5615,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L98",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogfooter()",
       "id": "ui_dialog_dialogfooter"
     },
@@ -5336,7 +5624,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L125",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogtitle()",
       "id": "ui_dialog_dialogtitle"
     },
@@ -5345,7 +5633,7 @@
       "file_type": "code",
       "source_file": "apps/admin/components/ui/dialog.tsx",
       "source_location": "L141",
-      "community": 7,
+      "community": 8,
       "norm_label": "dialogdescription()",
       "id": "ui_dialog_dialogdescription"
     },
@@ -5444,7 +5732,7 @@
       "file_type": "code",
       "source_file": "apps/web/postcss.config.mjs",
       "source_location": "L1",
-      "community": 59,
+      "community": 61,
       "norm_label": "config",
       "id": "web_postcss_config_config"
     },
@@ -5453,7 +5741,7 @@
       "file_type": "code",
       "source_file": "apps/web/components/ui/sonner.tsx",
       "source_location": "L7",
-      "community": 60,
+      "community": 62,
       "norm_label": "toaster()",
       "id": "ui_sonner_toaster"
     },
@@ -5462,7 +5750,7 @@
       "file_type": "code",
       "source_file": "packages/ai-tools/src/index.ts",
       "source_location": "L2",
-      "community": 15,
+      "community": 17,
       "norm_label": "ai_config",
       "id": "src_index_ai_config"
     },
@@ -5471,7 +5759,7 @@
       "file_type": "code",
       "source_file": "packages/prompts/src/index.ts",
       "source_location": "L2",
-      "community": 15,
+      "community": 17,
       "norm_label": "system_prompts",
       "id": "src_index_system_prompts"
     },
@@ -5480,7 +5768,7 @@
       "file_type": "code",
       "source_file": "packages/schemas/src/index.ts",
       "source_location": "L4",
-      "community": 15,
+      "community": 17,
       "norm_label": "userschema",
       "id": "src_index_userschema"
     },
@@ -5489,7 +5777,7 @@
       "file_type": "code",
       "source_file": "packages/schemas/src/index.ts",
       "source_location": "L11",
-      "community": 15,
+      "community": 17,
       "norm_label": "userdto",
       "id": "src_index_userdto"
     },
@@ -5498,7 +5786,7 @@
       "file_type": "code",
       "source_file": "packages/types/src/index.ts",
       "source_location": "L2",
-      "community": 15,
+      "community": 17,
       "norm_label": "userrole",
       "id": "src_index_userrole"
     },
@@ -5507,7 +5795,7 @@
       "file_type": "code",
       "source_file": "packages/types/src/index.ts",
       "source_location": "L4",
-      "community": 15,
+      "community": 17,
       "norm_label": "user",
       "id": "src_index_user"
     }
@@ -9317,10 +9605,30 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L20",
+      "source_location": "L53",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_main_upsertrequest",
+      "source": "app_main_queryresult",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_queryresponse",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_ingestresponse",
       "target": "basemodel"
     },
     {
@@ -9331,6 +9639,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_main_reportrequest",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_upsertrequest",
       "target": "basemodel"
     },
     {
@@ -9454,11 +9772,42 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "services/advisory-service/app/services/gemini_service.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_advisory_service_app_services_gemini_service_py",
+      "target": "services_gemini_service_fetch_rag_context"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/advisory-service/app/services/gemini_service.py",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "services_advisory_service_app_services_gemini_service_py",
       "target": "services_gemini_service_geminiadvisoryservice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/advisory-service/app/services/gemini_service.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_gemini_service_geminiadvisoryservice_get_response",
+      "target": "services_gemini_service_fetch_rag_context"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/advisory-service/app/services/gemini_service.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_gemini_service_rationale_17",
+      "target": "services_gemini_service_fetch_rag_context"
     },
     {
       "relation": "method",
@@ -10036,6 +10385,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/api-gateway/app/main.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_105",
+      "target": "app_main_direct_diagnose"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/api-gateway/app/main.py",
       "source_location": "L104",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10051,6 +10410,16 @@
       "confidence_score": 1.0,
       "source": "app_main_rationale_101",
       "target": "app_main_direct_diagnose"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_1",
+      "target": "services_rag_service_app_main_py"
     },
     {
       "relation": "contains",
@@ -10298,11 +10667,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L20",
+      "source_location": "L53",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
-      "target": "app_main_upsertrequest"
+      "target": "app_main_queryresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_main_py",
+      "target": "app_main_queryresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_main_py",
+      "target": "app_main_ingestresponse"
     },
     {
       "relation": "contains",
@@ -10318,11 +10707,106 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "services/rag-service/app/main.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_main_py",
+      "target": "app_main_ingest_documents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_main_py",
+      "target": "app_main_upsertrequest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
       "source_location": "L55",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "services_rag_service_app_main_py",
       "target": "app_main_upsert_document"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_query_knowledge_base",
+      "target": "app_main_queryresult"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_query_knowledge_base",
+      "target": "app_main_queryresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_ingest_documents",
+      "target": "app_main_ingestresponse"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "app_main_rationale_86",
+      "target": "app_main_query_knowledge_base",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "app_main_query_knowledge_base",
+      "target": "services_retrieval_retrieve"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "app_main_query_knowledge_base",
+      "target": "services_retrieval_format_context_for_prompt"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_82",
+      "target": "app_main_query_knowledge_base"
     },
     {
       "relation": "rationale_for",
@@ -10348,21 +10832,309 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/rag-service/app/main.py",
-      "source_location": "L65",
+      "source_location": "L114",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_main_rationale_65",
-      "target": "app_main_upsert_document"
+      "source": "app_main_rationale_114",
+      "target": "app_main_ingest_documents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "app_main_ingest_documents",
+      "target": "services_ingestion_run_ingestion"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/rag-service/app/main.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_110",
+      "target": "app_main_ingest_documents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_get_embeddings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_ensure_collection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_load_documents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_flatten_json"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_split_documents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_ingestion_py",
+      "target": "services_ingestion_run_ingestion"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_rationale_1",
+      "target": "services_rag_service_app_services_ingestion_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_run_ingestion",
+      "target": "services_ingestion_get_embeddings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_rationale_43",
+      "target": "services_ingestion_ensure_collection"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L168",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_run_ingestion",
+      "target": "services_ingestion_ensure_collection"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_load_documents",
+      "target": "services_ingestion_flatten_json"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_run_ingestion",
+      "target": "services_ingestion_load_documents"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
       "source_location": "L56",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_main_rationale_56",
-      "target": "app_main_upsert_document"
+      "source": "services_ingestion_rationale_56",
+      "target": "services_ingestion_load_documents"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_rationale_129",
+      "target": "services_ingestion_flatten_json"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_run_ingestion",
+      "target": "services_ingestion_split_documents"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/ingestion.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ingestion_rationale_153",
+      "target": "services_ingestion_run_ingestion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_retrieval_py",
+      "target": "services_retrieval_get_embeddings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_retrieval_py",
+      "target": "services_retrieval_collection_exists"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_retrieval_py",
+      "target": "services_retrieval_retrieve"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_rag_service_app_services_retrieval_py",
+      "target": "services_retrieval_format_context_for_prompt"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_rationale_1",
+      "target": "services_rag_service_app_services_retrieval_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_retrieve",
+      "target": "services_retrieval_get_embeddings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_retrieve",
+      "target": "services_retrieval_collection_exists"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_rationale_43",
+      "target": "services_retrieval_retrieve"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_rationale_42",
+      "target": "services_retrieval_retrieve"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_rationale_80",
+      "target": "services_retrieval_format_context_for_prompt"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/services/retrieval.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_retrieval_rationale_77",
+      "target": "services_retrieval_format_context_for_prompt"
     },
     {
       "relation": "contains",
@@ -10413,6 +11185,26 @@
       "confidence_score": 1.0,
       "source": "tests_integration_accessibility_spec_ts",
       "target": "integration_accessibility_spec_runaxeaudit"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_65",
+      "target": "app_main_upsert_document"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/rag-service/app/main.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_main_rationale_56",
+      "target": "app_main_upsert_document"
     },
     {
       "relation": "contains",
@@ -10600,5 +11392,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4057572d3cfc5942580dcebb398912643c2f6846"
+  "built_at_commit": "a3ce396daa4c0d68d8ce3ca6c9aaba473db287a5"
 }

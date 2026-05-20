@@ -188,22 +188,21 @@
   .card-base {
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
-    border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.15s ease;
   }
 
   .card-base:hover {
-    border-color: rgba(45, 90, 39, 0.25);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 12px 32px rgba(45, 90, 39, 0.08);
-    transform: translateY(-2px);
+    border-color: #CBD5E1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }
 
   .card-elevated {
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }
 
   /* ── Pill badge ── */
@@ -311,6 +310,29 @@
   /* ── Text sizes ── */
   .text-balance { text-wrap: balance; }
   .text-pretty  { text-wrap: pretty; }
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY — Reduced Motion Support
+   Respects user's OS-level preference for reduced motion
+   ───────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-ping,
+  .animate-pulse,
+  .animate-bounce,
+  [class*="animate-"] {
+    animation: none !important;
+  }
 }
 
 /* ─────────────────────────────────────────────

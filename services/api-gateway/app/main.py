@@ -94,9 +94,10 @@ async def reverse_proxy(service_name: str, path: str, request: Request):
             headers=dict(response.headers)
         )
     except httpx.RequestError as exc:
+        print(f"Gateway proxy error to '{service_name}': {exc}")
         raise HTTPException(
             status_code=502,
-            detail=f"Bad Gateway: Error communicating with downstream service '{service_name}'. {exc}"
+            detail=f"Bad Gateway: Error communicating with downstream service '{service_name}'."
         )
 
 @app.api_route("/diagnose", methods=["POST", "OPTIONS"])

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
+import { cookies } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,13 +25,16 @@ import { Toaster } from "sonner";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { SkipToContent } from "@agri-packages/ui";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE")?.value || "en";
+
   return (
-    <html lang="en" className={`${inter.variable} ${hindSiliguri.variable} h-full scroll-smooth`}>
+    <html lang={lang} className={`${inter.variable} ${hindSiliguri.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col" style={{ color: "#1E293B" }} suppressHydrationWarning>
         <SkipToContent />
         <QueryProvider>

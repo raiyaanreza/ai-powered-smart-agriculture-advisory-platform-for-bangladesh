@@ -275,7 +275,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65 }}
-          className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
           {STATS.map((s, i) => (
             <motion.div
@@ -283,7 +283,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 + i * 0.06 }}
-              className="text-center p-5 rounded-2xl transition-shadow hover:shadow-md"
+              className="text-center p-3 sm:p-5 rounded-xl sm:rounded-2xl transition-shadow hover:shadow-md"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid #E2E8F0",
@@ -291,7 +291,7 @@ export function Hero() {
               }}
             >
               <div className="font-black mb-1"
-                   style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", letterSpacing: "-0.03em", color: "#2D5A27", lineHeight: 1 }}>
+                   style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)", letterSpacing: "-0.03em", color: "#2D5A27", lineHeight: 1 }}>
                 {s.value}
               </div>
               <div className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "#94A3B8" }}>{s.label}</div>

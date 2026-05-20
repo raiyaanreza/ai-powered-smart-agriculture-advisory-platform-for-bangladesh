@@ -4,7 +4,7 @@ import { LibraryHero, LibrarySidebar } from "./LibraryLayout";
 import { LibraryGrid, LibraryDetails } from "./LibraryContent";
 import { diseases as staticDiseases, Disease } from "../data/diseases";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ChevronDown, Zap, MessageSquare, FilterX, Sparkles } from "lucide-react";
+import { Search, ChevronDown, Zap, MessageSquare, FilterX, Sparkles, Filter } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -16,6 +16,7 @@ export function LibraryContainer() {
   const [selectedSeverities, setSelectedSeverities] = useState<string[]>([]);
   const [visibleCount, setVisibleCount] = useState(20);
   const [loading, setLoading] = useState(true);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
     fetchDbDiseases();
@@ -81,13 +82,53 @@ export function LibraryContainer() {
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-10">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
 
-          <div className="lg:col-span-3 lg:sticky lg:top-6 self-start">
+          {/* Mobile Filter Toggle */}
+          <div className="lg:hidden mb-4">
+            <button
+              onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
+              aria-label="Toggle filters"
+              aria-expanded={mobileFiltersOpen}
+            >
+              <Filter className="h-4 w-4" />
+              Filters
+              {(selectedCrops.length > 0 || selectedSeverities.length > 0) && (
+                <span className="h-5 w-5 rounded-full bg-[#2D5A27] text-white text-[10px] font-bold flex items-center justify-center">
+                  {selectedCrops.length + selectedSeverities.length}
+                </span>
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Filter Overlay */}
+          {mobileFiltersOpen && (
+            <div
+              className="lg:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setMobileFiltersOpen(false)}
+            />
+          )}
+
+          <div className={`lg:col-span-3 lg:sticky lg:top-6 self-start ${
+            mobileFiltersOpen
+              ? 'fixed inset-y-0 left-0 z-45 w-80 bg-white overflow-y-auto shadow-2xl translate-x-0 transition-transform'
+              : 'hidden lg:block'
+          }`}>
+            <div className="lg:hidden flex items-center justify-between p-4 border-b border-slate-100 sticky top-0 bg-white z-10">
+              <span className="text-sm font-bold text-slate-900">Filters</span>
+              <button
+                onClick={() => setMobileFiltersOpen(false)}
+                className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                aria-label="Close filters"
+              >
+                <FilterX className="h-5 w-5" />
+              </button>
+            </div>
             <LibrarySidebar
               selectedCrops={selectedCrops}
               onToggleCrop={(c) => setSelectedCrops(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c])}
-              onReset={() => { setSelectedCrops([]); setSelectedSeverities([]); setSearchQuery(""); }}
+              onReset={() => { setSelectedCrops([]); setSelectedSeverities([]); setSearchQuery(""); setMobileFiltersOpen(false); }}
               selectedSeverities={selectedSeverities}
               onToggleSeverity={(s) => setSelectedSeverities(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s])}
             />

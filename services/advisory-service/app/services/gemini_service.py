@@ -1,5 +1,6 @@
 import os
 import asyncio
+import httpx
 import google.generativeai as genai
 from app.schemas.chat import ChatResponse, Diagnosis, TreatmentStep, CropAnalysisResponse
 from packages.prompts.advisory import ADVISORY_SYSTEM_PROMPT
@@ -7,6 +8,29 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
+
+RAG_SERVICE_URL = os.getenv("RAG_SERVICE_URL", "http://localhost:8008")
+INTERNAL_SECRET = os.getenv("INTERNAL_SHARED_SECRET", "super-secret-internal-key-2026")
+
+
+async def _fetch_rag_context(query: str, crop: str = None) -> str:
+    """Call rag-service to retrieve grounding context for the farmer's query."""
+    try:
+        async with httpx.AsyncClient(timeout=8.0) as client:
+            payload = {"query": query, "top_k": 3, "include_formatted": True}
+            if crop:
+                payload["crop"] = crop
+            resp = await client.post(
+                f"{RAG_SERVICE_URL}/rag/query",
+                json=payload,
+                headers={"X-Internal-Token": INTERNAL_SECRET},
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                return data.get("formatted_context") or ""
+    except Exception as e:
+        print(f"[RAG] Context retrieval skipped: {e}")
+    return ""
 
 
 class GeminiAdvisoryService:
@@ -34,7 +58,23 @@ class GeminiAdvisoryService:
         # Start chat with history
         chat = self.model.start_chat(history=formatted_history)
 
-        content = [message]
+        # ── RAG Grounding ──────────────────────────────────────────────────────
+        rag_context = await _fetch_rag_context(message)
+        if rag_context:
+            grounded_message = (
+                f"{rag_context}\n\n"
+                "---\n"
+                "Use the above official agricultural reference context to answer "
+                "the following question accurately. If the context does not cover "
+                "the topic, answer from your general agricultural knowledge but "
+                "clearly note it is not from the official BARI/BRRI handbooks.\n\n"
+                f"Farmer's Question: {message}"
+            )
+        else:
+            grounded_message = message
+        # ───────────────────────────────────────────────────────────────────────
+
+        content = [grounded_message]
         if image_data:
             content.append({"mime_type": "image/jpeg", "data": image_data})
 

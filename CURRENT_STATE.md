@@ -52,6 +52,11 @@ Stabilizing the unified ecosystem and preparing for Phase 5 (National Scale Feat
 - **Key Feature**: Formulated the unified `docs/PROJECT_OVERVIEW.md` (combining overview, system architecture, and design details) and the master `docs/testing reports/qa_audit_report_1.md` (unifying all frontend and backend audits). Engineered a dual-stage smooth scroll strategy and custom scrollbars to fix the chat interface scroller.
 - **Status**: Complete, Verified & Polish-Perfect.
 
+### 10. Qdrant Cloud RAG Grounding Pipeline
+- **Description**: Designed, implemented, and fully wired a production-ready Retrieval-Augmented Generation (RAG) pipeline to ground AgriAdvisor chat responses.
+- **Key Feature**: Connects securely to an online Qdrant Cloud cluster, parses and embeds local manuals in `models/sources/` using Gemini embedding models (`models/gemini-embedding-001`), and retrieves real agricultural guidelines for contextual Gemini generation.
+- **Status**: Complete, Verified & Fully Grounded.
+
 ---
 
 ## ⏳ Active Tasks & Known Issues

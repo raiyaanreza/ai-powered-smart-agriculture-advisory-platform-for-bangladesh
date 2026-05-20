@@ -1,11 +1,11 @@
 // @agri-packages/auth
 export interface AuthUser {
   id: string;
-  role: 'admin' | 'farmer' | 'user';
+  role: 'admin' | 'farmer' | 'expert' | 'user';
   email: string;
 }
 
-export function hasRole(user: AuthUser | null | undefined, allowedRoles: ('admin' | 'farmer' | 'user')[]): boolean {
+export function hasRole(user: AuthUser | null | undefined, allowedRoles: ('admin' | 'farmer' | 'expert' | 'user')[]): boolean {
   if (!user) return false;
   return allowedRoles.includes(user.role);
 }

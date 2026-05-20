@@ -4,10 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Camera, Upload, Sparkles, AlertCircle, History, ArrowLeft, Leaf, TrendingUp, Map as MapIcon, Users, CheckCircle2 } from "lucide-react";
 import { ImageUploader } from "./ImageUploader";
 import { ResultDisplay } from "./ResultDisplay";
-import { OutbreakMap } from "./OutbreakMap";
+import dynamic from "next/dynamic";
 import { toast } from "sonner";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useDiagnosisStats, useDiagnoseImage } from "../hooks/useDiagnosis";
+
+const OutbreakMap = dynamic(
+  () => import("./OutbreakMap").then((mod) => ({ default: mod.OutbreakMap })),
+  { ssr: false, loading: () => <div className="h-96 rounded-2xl bg-slate-100 animate-pulse" /> }
+);
 
 export function DiagnosisContainer() {
   const { user, profile } = useAuth();

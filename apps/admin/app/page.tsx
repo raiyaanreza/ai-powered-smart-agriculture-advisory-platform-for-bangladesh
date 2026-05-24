@@ -182,7 +182,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
       <Navbar />
       
       <div className="flex">
@@ -195,26 +195,26 @@ export default function AdminDashboard() {
         )}
 
         {/* Sidebar */}
-        <aside className={`w-56 bg-white border-r border-slate-200 fixed lg:sticky top-14 h-[calc(100vh-56px)] overflow-y-auto z-45 transition-transform duration-200 ${
+        <aside className={`w-56 bg-card border-r border-border fixed lg:sticky top-14 h-[calc(100vh-56px)] overflow-y-auto z-45 transition-transform duration-200 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}>
           <div className="p-3">
             {/* Mobile Close Button */}
-            <div className="lg:hidden flex items-center justify-between mb-3 pb-3 border-b border-slate-200">
-              <span className="text-sm font-semibold text-slate-900">Navigation</span>
-              <button onClick={() => setSidebarOpen(false)} className="p-1 rounded-md hover:bg-slate-100">
-                <X className="h-4 w-4 text-slate-500" />
+            <div className="lg:hidden flex items-center justify-between mb-3 pb-3 border-b border-border">
+              <span className="text-sm font-semibold text-foreground">Navigation</span>
+              <button onClick={() => setSidebarOpen(false)} className="p-1 rounded-md hover:bg-muted">
+                <X className="h-4 w-4 text-slate-500 dark:text-slate-400" />
               </button>
             </div>
 
             {/* System Status */}
-            <div className="mb-4 p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div className="mb-4 p-3 rounded-lg bg-background border border-border">
               <div className="flex items-center gap-2 mb-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide">System Status</span>
+                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-450 uppercase tracking-wide">System Status</span>
               </div>
-              <div className="text-sm font-bold text-slate-900">99.8% Online</div>
-              <div className="mt-2 h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+              <div className="text-sm font-bold text-foreground">99.8% Online</div>
+              <div className="mt-2 h-1 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div className="h-full bg-emerald-500 rounded-full" style={{ width: "99.8%" }} />
               </div>
             </div>
@@ -229,14 +229,14 @@ export default function AdminDashboard() {
           </div>
 
           {/* Bottom Section */}
-          <div className="p-3 border-t border-slate-200">
-            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div className="p-3 border-t border-border">
+            <div className="p-3 rounded-lg bg-background border border-border">
               <div className="flex items-center gap-2 mb-2">
-                <Database className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-[10px] font-semibold text-slate-500">Database</span>
+                <Database className="h-3.5 w-3.5 text-slate-400 dark:text-slate-550" />
+                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-450">Database</span>
               </div>
-              <div className="text-xs font-medium text-slate-700">PostgreSQL 18</div>
-              <div className="text-[10px] text-slate-400">Connected</div>
+              <div className="text-xs font-medium text-slate-700 dark:text-slate-300">PostgreSQL 18</div>
+              <div className="text-[10px] text-slate-400 dark:text-slate-500">Connected</div>
             </div>
           </div>
         </aside>

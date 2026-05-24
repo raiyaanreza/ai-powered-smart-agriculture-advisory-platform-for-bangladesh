@@ -1,0 +1,602 @@
+File: Agricultural_Extension\agricultural_extension_manual_2018_bn.md
+  Crop: All
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: কৃষি সম্প্রসারণ অধিদপ্তর (DAE), কৃষি মন্ত্রণালয়, বাংলাদেশ
+  Citation: DAE. (2018). Agricultural Extension Manual (4th ed.). Department of Agricultural Extension, Ministry of Agriculture, Government of the People's Republic of Bangladesh.
+--------------------------------------------------
+File: Agricultural_Extension\agricultural_extension_manual_2018_en.md
+  Crop: All
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Department of Agricultural Extension (DAE), Ministry of Agriculture, Bangladesh
+  Citation: DAE. (2018). Agricultural Extension Manual (4th ed.). Department of Agricultural Extension, Ministry of Agriculture, Government of the People's Republic of Bangladesh.
+--------------------------------------------------
+File: Brassica\brassica_pw_alternariaonbrassica.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির অল্টারনারিয়া রোগ
+  DOI: 10.1079/pwkb.20137804259
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). AlternariaonBrassica. CABI Digital Library. DOI: 10.1079/pwkb.20137804259. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804259
+--------------------------------------------------
+File: Brassica\brassica_pw_bacterialleafspotonbrassica.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির ব্যাকটেরিয়াল স্পট (ব্যাকটেরিয়াজনিত দাগ রোগ)
+  DOI: 10.1079/pwkb.20137804275
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). BacterialleafspotonBrassica. CABI Digital Library. DOI: 10.1079/pwkb.20137804275. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804275
+--------------------------------------------------
+File: Brassica\brassica_pw_blackrotoncabbage.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির ব্ল্যাক রট (কালো পচা) রোগ
+  DOI: 10.1079/pwkb.20177800738
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Blackrotoncabbage.. CABI Digital Library. DOI: 10.1079/pwkb.20177800738. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20177800738
+--------------------------------------------------
+File: Brassica\brassica_pw_blackrot_on_cabbage-zambia.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির ব্ল্যাক স্পট (কালো দাগ) রোগ
+  DOI: 10.1079/pwkb.20237800261
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Blackrot on cabbage-Zambia.. CABI Digital Library. DOI: 10.1079/pwkb.20237800261. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20237800261
+--------------------------------------------------
+File: Brassica\brassica_pw_cabbagebacterial_leafspot.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির অল্টারনারিয়া স্পট
+  DOI: 10.1079/pwkb.20127802017
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). CabbageBacterial LeafSpot. CABI Digital Library. DOI: 10.1079/pwkb.20127802017. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20127802017
+--------------------------------------------------
+File: Brassica\brassica_pw_chinese_kale_-downymildew.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির ডাউনি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20157800082
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Chinese kale -Downymildew. CABI Digital Library. DOI: 10.1079/pwkb.20157800082. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800082
+--------------------------------------------------
+File: Brassica\brassica_pw_common_pests_and_diseases_oncabbage__ghana.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির অল্টারনারিয়া স্পট রোগ
+  DOI: 10.1079/pwkb.20187800411
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Common pests and diseases oncabbage: Ghana.. CABI Digital Library. DOI: 10.1079/pwkb.20187800411. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20187800411
+--------------------------------------------------
+File: Brassica\brassica_pw_control_ofblackrotincabbage.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির ব্ল্যাক রট (কালো পচা) রোগ
+  DOI: 10.1079/pwkb.20157800494
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Control ofBlackRotinCabbage. CABI Digital Library. DOI: 10.1079/pwkb.20157800494. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800494
+--------------------------------------------------
+File: Brassica\brassica_pw_downeymildewya_njegere.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির ডাউনি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20257800954
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). DowneyMildewya Njegere. CABI Digital Library. DOI: 10.1079/pwkb.20257800954. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20257800954
+--------------------------------------------------
+File: Brassica\brassica_pw_downymildewon_peas_-_kenya.md
+  Crop: Brassica
+  Disease/Pest: বাঁধাকপির ডাউনি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20247800135
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Downymildewon peas - Kenya.. CABI Digital Library. DOI: 10.1079/pwkb.20247800135. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20247800135
+--------------------------------------------------
+File: Brassica\brassica_pw_leaf_miner_onbrassica.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির কালো দাগ রোগ
+  DOI: 10.1079/pwkb.20137804276
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Leaf miner onBrassica. CABI Digital Library. DOI: 10.1079/pwkb.20137804276. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804276
+--------------------------------------------------
+File: Brassica\brassica_pw_pest_and_disease_photoguide_tocabbagedisorders.md
+  Crop: Brassica
+  Disease/Pest: Cabbage Alternaria Spot
+  DOI: 10.1079/pwkb.20187800553
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Pest and Disease Photoguide toCabbagedisorders.. CABI Digital Library. DOI: 10.1079/pwkb.20187800553. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20187800553
+--------------------------------------------------
+File: Brassica\brassica_pw_ringspotonbrassica.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির ব্যাকটেরিয়াল স্পট
+  DOI: 10.1079/pwkb.20137804282
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). RingSpotonBrassica. CABI Digital Library. DOI: 10.1079/pwkb.20137804282. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804282
+--------------------------------------------------
+File: Brassica\brassica_pw_softroton_vegetables.md
+  Crop: Brassica
+  Disease/Pest: ফুলকপির ব্যাকটেরিয়াল সফট রট (পচন রোগ)
+  DOI: 10.1079/pwkb.20177801170
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Softroton vegetables.. CABI Digital Library. DOI: 10.1079/pwkb.20177801170. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20177801170
+--------------------------------------------------
+File: Climate_Resilience\mountain_area_management.md
+  Crop: All
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Institute (BARI) / DAE
+  Citation: BARI/DAE. (2024). Agricultural Management Guidelines for Mountain and Hill Areas of Bangladesh. Bangladesh Agricultural Research Institute, Gazipur.
+--------------------------------------------------
+File: Climate_Resilience\salt_irrigation.md
+  Crop: All
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Institute (BARI) / SRDI
+  Citation: BARI/SRDI. (2024). Saline Soil and Salt-Tolerant Irrigation Management Guide for Coastal Bangladesh. Bangladesh Agricultural Research Institute, Gazipur.
+--------------------------------------------------
+File: Corn\corn_pw_commonrust.md
+  Crop: Corn
+  Disease/Pest: কমন রাস্ট (সাধারণ মরিচা রোগ)
+  DOI: 10.5555/pwkb.20117800333
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Commonrust.. CABI Digital Library. DOI: 10.5555/pwkb.20117800333. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20117800333
+--------------------------------------------------
+File: Corn\corn_pw_commonrustof_maize.md
+  Crop: Corn
+  Disease/Pest: কমন রাস্ট (সাধারণ মরিচা রোগ)
+  DOI: 10.1079/pwkb.20157800281
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Commonrustof maize.. CABI Digital Library. DOI: 10.1079/pwkb.20157800281. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800281
+--------------------------------------------------
+File: Corn\corn_pw_grayleafspotof_maize-nepal.md
+  Crop: Corn
+  Disease/Pest: গ্রে লিফ স্পট (ভুট্টার পাতায় দাগ রোগ)
+  DOI: 10.1079/pwkb.20167800007
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). GrayLeafSpotof Maize-Nepal. CABI Digital Library. DOI: 10.1079/pwkb.20167800007. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20167800007
+--------------------------------------------------
+File: Corn\corn_pw_grayleafspoton_eggplant_-_ghana.md
+  Crop: Vegetable
+  Disease/Pest: গ্রে লিফ স্পট (ধূসর পাতা দাগ রোগ)
+  DOI: 10.1079/pwkb.20257800002
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Grey Leaf Spot on Eggplant - Ghana. CABI Digital Library. DOI: 10.1079/pwkb.20257800002. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20257800002
+--------------------------------------------------
+File: Corn\corn_pw_leafblighton_sorghum.md
+  Crop: Sorghum
+  Disease/Pest: নর্দান লিফ ব্লাইট (উত্তরীয় পাতা পোড়া রোগ)
+  DOI: 10.1079/pwkb.20157800284
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Leaf Blight on Sorghum. CABI Digital Library. DOI: 10.1079/pwkb.20157800284. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800284
+--------------------------------------------------
+File: Corn\corn_pw_pest_and_disease_photoguide_to_sorghum_disorders.md
+  Crop: Corn
+  Disease/Pest: উত্তরীয় পাতা পোড়া রোগ
+  DOI: 10.1079/pwkb.20187800561
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Pest and Disease Photoguide to Sorghum disorders.. CABI Digital Library. DOI: 10.1079/pwkb.20187800561. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20187800561
+--------------------------------------------------
+File: Corn\corn_pw_roya_común_del_maíz.md
+  Crop: Corn
+  Disease/Pest: কমন রাস্ট (সাধারণ মরিচা রোগ)
+  DOI: 10.1079/pwkb.20167800342
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Roya común del maíz. CABI Digital Library. DOI: 10.1079/pwkb.20167800342. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20167800342
+--------------------------------------------------
+File: Market_and_Pricing\availability_and_price.md
+  Crop: All
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Department of Agricultural Marketing (DAM), Bangladesh
+  Citation: Department of Agricultural Marketing (DAM). (2024). Agricultural Commodity Prices and Availability in Bangladesh. Ministry of Agriculture, Government of Bangladesh.
+--------------------------------------------------
+File: Oilseed_Crops\bari_shorisha_er_jat_porichiti_o_utpadon.md
+  Crop: Mustard (Shorisha)
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Institute (BARI)
+  Citation: BARI. (2024). BARI Shorisha (Mustard) Variety Description and Cultivation Guide. Bangladesh Agricultural Research Institute, Gazipur.
+--------------------------------------------------
+File: Potato\potato_pw_earlyblight.md
+  Crop: Potato
+  Disease/Pest: আর্লি ব্লাইট (আগাম ধসা) রোগ
+  DOI: 10.1079/pwkb.20127802679
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Earlyblight. CABI Digital Library. DOI: 10.1079/pwkb.20127802679. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20127802679
+--------------------------------------------------
+File: Potato\potato_pw_earlyblighton_potato.md
+  Crop: Potato
+  Disease/Pest: আর্লি ব্লাইট (আগাম ধসা) রোগ
+  DOI: 10.1079/pwkb.20257800023
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Earlyblighton potato.. CABI Digital Library. DOI: 10.1079/pwkb.20257800023. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20257800023
+--------------------------------------------------
+File: Potato\potato_pw_earlyblighton_tomato.md
+  Crop: Potato
+  Disease/Pest: আর্লি ব্লাইট (আগাম ধসা) রোগ
+  DOI: 10.1079/pwkb.20137804212
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Earlyblighton Tomato. CABI Digital Library. DOI: 10.1079/pwkb.20137804212. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804212
+--------------------------------------------------
+File: Potato\potato_pw_lateblighton_tomato.md
+  Crop: Potato
+  Disease/Pest: লেট ব্লাইট (নাবি ধসা) রোগ
+  DOI: 10.1079/pwkb.20137804214
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Lateblighton Tomato. CABI Digital Library. DOI: 10.1079/pwkb.20137804214. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804214
+--------------------------------------------------
+File: Potato\potato_pw_potatolateblight.md
+  Crop: Potato
+  Disease/Pest: লেট ব্লাইট (নাবি ধসা) রোগ
+  DOI: 10.1079/pwkb.20147801535
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). PotatoLateBlight. CABI Digital Library. DOI: 10.1079/pwkb.20147801535. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20147801535
+--------------------------------------------------
+File: Rice\rice_brri_disease_badami_dag_rog.md
+  Crop: Rice
+  Disease/Pest: বাদামী দাগ রোগ (Brown Spot)
+  DOI: 10.5555/pwkb.20147801059
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). বাদামী দাগ রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801059. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801059
+--------------------------------------------------
+File: Rice\rice_brri_disease_bakani_rog.md
+  Crop: Rice
+  Disease/Pest: বাকানি রোগ (Bakanae / Foolish Seedling)
+  DOI: 10.5555/pwkb.20147801058
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). বাকানি রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801058. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801058
+--------------------------------------------------
+File: Rice\rice_brri_disease_blast_rog.md
+  Crop: Rice
+  Disease/Pest: ব্লাস্ট রোগ (Blast Disease)
+  DOI: 10.5555/pwkb.20147801056
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). Blast rog. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801056. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801056
+--------------------------------------------------
+File: Rice\rice_brri_disease_dhaner_foska_dag_rog.md
+  Crop: Rice
+  Disease/Pest: ধানের ফোস্কা দাগ রোগ (Rice Narrow Brown Leaf Spot)
+  DOI: 10.5555/pwkb.20147801060
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). ধানের ফোস্কা দাগ রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801060. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801060
+--------------------------------------------------
+File: Rice\rice_brri_disease_kholpocha_rog.md
+  Crop: Rice
+  Disease/Pest: খোলপোচা রোগ (Sheath Rot)
+  DOI: 10.5555/pwkb.20147801057
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). খোলপোচা রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801057. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801057
+--------------------------------------------------
+File: Rice\rice_brri_disease_kholpora_rog.md
+  Crop: Rice
+  Disease/Pest: খোলপোড়া রোগ (Sheath Blight)
+  DOI: 10.5555/pwkb.20147801055
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). খোলপোড়া রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801055. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801055
+--------------------------------------------------
+File: Rice\rice_brri_disease_patapora_rog.md
+  Crop: Rice
+  Disease/Pest: পাতাপোড়া রোগ (Bacterial Leaf Blight)
+  DOI: 10.5555/pwkb.20147801054
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). পাতাপোড়া রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801054. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801054
+--------------------------------------------------
+File: Rice\rice_brri_disease_tungro_rog.md
+  Crop: Rice
+  Disease/Pest: টুংরো রোগ (Rice Tungro Disease)
+  DOI: 10.5555/pwkb.20147801061
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). টুংরো রোগ.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801061. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801061
+--------------------------------------------------
+File: Rice\rice_brri_pest_badami_gasforing.md
+  Crop: Rice
+  Disease/Pest: বাদামী গাছফড়িং (Brown Planthopper - BPH)
+  DOI: 10.5555/pwkb.20147801071
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). বাদামী গাছফড়িং.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801071. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801071
+--------------------------------------------------
+File: Rice\rice_brri_pest_chatra_poka.md
+  Crop: Rice
+  Disease/Pest: ছাতরা পোকা (Rice Skipper / Case Worm)
+  DOI: 10.5555/pwkb.20147801070
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). ছাতরা পোকা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801070. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801070
+--------------------------------------------------
+File: Rice\rice_brri_pest_chungi_poka.md
+  Crop: Rice
+  Disease/Pest: চুঙ্গি পোকা (Rice Leaf Folder)
+  DOI: 10.5555/pwkb.20147801065
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). চুঙ্গি পোকা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801065. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801065
+--------------------------------------------------
+File: Rice\rice_brri_pest_gandi_poka.md
+  Crop: Rice
+  Disease/Pest: গান্ধী পোকা (Rice Stink Bug / Gundhi Bug)
+  DOI: 10.5555/pwkb.20147801073
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). গান্ধী পোকা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801073. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801073
+--------------------------------------------------
+File: Rice\rice_brri_pest_ghasforing.md
+  Crop: Rice
+  Disease/Pest: ধূসর গাছফড়িং (Grey Planthopper)
+  DOI: 10.5555/pwkb.20147801066
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). ধূসর গাছফড়িং.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801066. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801066
+--------------------------------------------------
+File: Rice\rice_brri_pest_golmasi_ba_nolimasi.md
+  Crop: Rice
+  Disease/Pest: গলমাছি / নলীমাছি (Gall Midge)
+  DOI: 10.5555/pwkb.20147801062
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). গলমাছি / নলীমাছি.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801062. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801062
+--------------------------------------------------
+File: Rice\rice_brri_pest_patamorano_poka.md
+  Crop: Rice
+  Disease/Pest: পাতামোড়ানো পোকা (Leaf Roller)
+  DOI: 10.5555/pwkb.20147801068
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). পাতামোড়ানো পোকা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801068. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801068
+--------------------------------------------------
+File: Rice\rice_brri_pest_rats_management.md
+  Crop: Rice
+  Disease/Pest: ইঁদুর ব্যবস্থাপনা (Rodent Management)
+  DOI: 10.5555/pwkb.20147801074
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). ইঁদুর ব্যবস্থাপনা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801074. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801074
+--------------------------------------------------
+File: Rice\rice_brri_pest_sada_gasforing.md
+  Crop: Rice
+  Disease/Pest: সাদা গাছফড়িং (Whitebacked Planthopper - WBPH)
+  DOI: 10.5555/pwkb.20147801072
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). সাদা গাছফড়িং.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801072. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801072
+--------------------------------------------------
+File: Rice\rice_brri_pest_shobuj_pataforing.md
+  Crop: Rice
+  Disease/Pest: সবুজ পাতাফড়িং (Green Leafhopper - GLH)
+  DOI: 10.5555/pwkb.20147801069
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). সবুজ পাতাফড়িং.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801069. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801069
+--------------------------------------------------
+File: Rice\rice_brri_pest_thrips.md
+  Crop: Rice
+  Disease/Pest: থ্রিপস (Rice Thrips)
+  DOI: 10.5555/pwkb.20147801064
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). থ্রিপস.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801064. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801064
+--------------------------------------------------
+File: Rice\rice_brri_pest_urchunga.md
+  Crop: Rice
+  Disease/Pest: উড়চুঙ্গা / মাটি ফড়িং (Cricket / Mole Cricket)
+  DOI: 10.5555/pwkb.20147801067
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). উড়চুঙ্গা / মাটি ফড়িং.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801067. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801067
+--------------------------------------------------
+File: Rice\rice_brri_pest_yellow_stem_borer.md
+  Crop: Rice
+  Disease/Pest: হলুদ মাজরা পোকা (Yellow Stem Borer - YSB)
+  DOI: 10.5555/pwkb.20147801063
+  Publisher: Bangladesh Rice Research Institute (BRRI)
+  Citation: Bangladesh Rice Research Institute (BRRI). (2018). হলুদ মাজরা পোকা.. PlantwisePlus Knowledge Bank. DOI: 10.5555/pwkb.20147801063. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20147801063
+--------------------------------------------------
+File: Rice\rice_irri_#_irri_rice_disease_reference_manual.md
+  Crop: Rice
+  Disease/Pest: আইআরআরআই (IRRI) ধান রোগ নির্দেশিকা ম্যানুয়াল
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). IRRI Rice Disease Reference Manual. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/
+--------------------------------------------------
+File: Rice\rice_irri_bacterial_blight.md
+  Crop: Rice
+  Disease/Pest: ব্যাকটেরিয়াল ব্লাইট (পাতা পোড়া) রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Bacterial blight. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/bacterial-blight?category_id=326
+--------------------------------------------------
+File: Rice\rice_irri_bacterial_leaf_streak.md
+  Crop: Rice
+  Disease/Pest: ব্যাকটেরিয়াল লিফ স্ট্রিক (পাতার দাগ রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Bacterial leaf streak. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/bacterial-leaf-streak
+--------------------------------------------------
+File: Rice\rice_irri_bacterial_sheath_brown_rot.md
+  Crop: Rice
+  Disease/Pest: ব্যাকটেরিয়াল শিথ ব্রাউন রট (খোলপচা রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Bacterial sheath brown rot. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/bacterial-sheath-brown-rot
+--------------------------------------------------
+File: Rice\rice_irri_bakanae.md
+  Crop: Rice
+  Disease/Pest: বাকানি রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Bakanae. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/bakanae
+--------------------------------------------------
+File: Rice\rice_irri_blast_(leaf_and_collar).md
+  Crop: Rice
+  Disease/Pest: ব্লাস্ট (পাতা ও কলার)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Blast (leaf and collar). International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/
+--------------------------------------------------
+File: Rice\rice_irri_blast_(node_and_neck).md
+  Crop: Rice
+  Disease/Pest: ব্লাস্ট রোগ (পর্ব ও নেক ব্লাস্ট)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Blast (node and neck). International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/
+--------------------------------------------------
+File: Rice\rice_irri_brown_spot.md
+  Crop: Rice
+  Disease/Pest: বাদামী দাগ রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Brown spot. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/brown-spot
+--------------------------------------------------
+File: Rice\rice_irri_false_smut.md
+  Crop: Rice
+  Disease/Pest: ধানের ফস্কা দাগ রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). False smut. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/false-smut
+--------------------------------------------------
+File: Rice\rice_irri_leaf_scald.md
+  Crop: Rice
+  Disease/Pest: লিফ স্ক্যাল্ড (পাতার ঝলসানো রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Leaf Scald. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/leaf-scald
+--------------------------------------------------
+File: Rice\rice_irri_narrow_brown_spot.md
+  Crop: Rice
+  Disease/Pest: ন্যারো ব্রাউন স্পট (সরু বাদামী দাগ রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Narrow brown spot. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/narrow-brown-spot
+--------------------------------------------------
+File: Rice\rice_irri_red_stripe.md
+  Crop: Rice
+  Disease/Pest: রেড স্ট্রাইপ (লাল দাগ রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Red stripe. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/red-stripe
+--------------------------------------------------
+File: Rice\rice_irri_rice_grassy_stunt.md
+  Crop: Rice
+  Disease/Pest: রাইস গ্রাসি স্টান্ট রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Rice grassy stunt. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-grassy-stunt
+--------------------------------------------------
+File: Rice\rice_irri_rice_ragged_stunt.md
+  Crop: Rice
+  Disease/Pest: রাইস র‍্যাগেড স্টান্ট (ধানের র‍্যাগেড স্টান্ট রোগ)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Rice ragged stunt. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-ragged-stunt
+--------------------------------------------------
+File: Rice\rice_irri_rice_stripe_virus_disease.md
+  Crop: Rice
+  Disease/Pest: রাইস স্ট্রাইপ ভাইরাস রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Rice stripe virus disease. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-stripe?category_id=326
+--------------------------------------------------
+File: Rice\rice_irri_rice_yellow_mottle_virus.md
+  Crop: Rice
+  Disease/Pest: রাইস ইয়েলো মটল ভাইরাস (Rice Yellow Mottle Virus)
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Rice Yellow Mottle Virus. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-yellow-mottle-virus-fact-sheet
+--------------------------------------------------
+File: Rice\rice_irri_sheath_blight.md
+  Crop: Rice
+  Disease/Pest: খোলপোড়া রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Sheath blight. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/sheath-blight
+--------------------------------------------------
+File: Rice\rice_irri_sheath_rot.md
+  Crop: Rice
+  Disease/Pest: খোলপচা রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Sheath rot. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/sheath-rot
+--------------------------------------------------
+File: Rice\rice_irri_stem_rot.md
+  Crop: Rice
+  Disease/Pest: কাণ্ড পচা রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Stem rot. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/stem-rot
+--------------------------------------------------
+File: Rice\rice_irri_tungro.md
+  Crop: Rice
+  Disease/Pest: টুংরো রোগ
+  DOI: N/A
+  Publisher: IRRI Rice Knowledge Bank
+  Citation: IRRI Rice Knowledge Bank. (2026). Tungro. International Rice Research Institute. URL: http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/tungro
+--------------------------------------------------
+File: Soil_and_Fertilizer\barc_fertilizer_guide_2024.md
+  Crop: Soil and Fertilizer
+  Disease/Pest: সার সুপারিশমালা হাতবই-২০২৪ (BARC Fertilizer Recommendation Guide)
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Council (BARC)
+  Citation: BARC. (2024). Fertilizer Recommendation Guide - 2024 (Bangla Edition: সার সুপারিশমালা হাতবই-২০২৪). Bangladesh Agricultural Research Council, Dhaka. ISBN: 978-984-35-5737-7.
+--------------------------------------------------
+File: Vegetable_Crops\bari_morich_er_jat_porichiti_and_kolakoushol.md
+  Crop: Chili (Morich)
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Institute (BARI)
+  Citation: BARI. (2024). BARI Morich (Chili) Variety Description and Cultivation Guidelines. Bangladesh Agricultural Research Institute, Gazipur.
+--------------------------------------------------
+File: Vegetable_Crops\bari_peyaj_6_er_kondo_o_utpadon.md
+  Crop: Onion (Peyaj)
+  Disease/Pest: None
+  DOI: N/A
+  Publisher: Bangladesh Agricultural Research Institute (BARI)
+  Citation: BARI. (2024). BARI Peyaj 6 (Onion) Bulb Production Guidelines. Bangladesh Agricultural Research Institute, Gazipur.
+--------------------------------------------------
+File: Wheat\wheat_pw_blastdisease_of_rice-ghana.md
+  Crop: Rice
+  Disease/Pest: ব্লাস্ট রোগ
+  DOI: 10.1079/pwkb.20167800288
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Blast Disease of Rice (Ghana). CABI Digital Library. DOI: 10.1079/pwkb.20167800288. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20167800288
+--------------------------------------------------
+File: Wheat\wheat_pw_leafrust.md
+  Crop: Wheat
+  Disease/Pest: পাতা মরিচা রোগ
+  DOI: 10.5555/pwkb.20137803934
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Leafrust.. CABI Digital Library. DOI: 10.5555/pwkb.20137803934. URL: https://plantwiseplusknowledgebank.org/doi/10.5555/pwkb.20137803934
+--------------------------------------------------
+File: Wheat\wheat_pw_mangopowderymildew.md
+  Crop: Mango
+  Disease/Pest: পাউডারি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20137804393
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Mango Powdery Mildew. CABI Digital Library. DOI: 10.1079/pwkb.20137804393. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20137804393
+--------------------------------------------------
+File: Wheat\wheat_pw_powderymildewon_mango.md
+  Crop: Wheat
+  Disease/Pest: পাউডারি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20157800221
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Powderymildewon mango.. CABI Digital Library. DOI: 10.1079/pwkb.20157800221. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800221
+--------------------------------------------------
+File: Wheat\wheat_pw_riceblast-kenya.md
+  Crop: Wheat
+  Disease/Pest: ব্লাস্ট রোগ
+  DOI: 10.1079/pwkb.20157800752
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Riceblast-Kenya. CABI Digital Library. DOI: 10.1079/pwkb.20157800752. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157800752
+--------------------------------------------------
+File: Wheat\wheat_pw_stemrustof_wheat.md
+  Crop: Wheat
+  Disease/Pest: কাণ্ড মরিচা রোগ
+  DOI: 10.1079/pwkb.20147801367
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Stemrustof wheat. CABI Digital Library. DOI: 10.1079/pwkb.20147801367. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20147801367
+--------------------------------------------------
+File: Wheat\wheat_pw_striperust.md
+  Crop: Wheat
+  Disease/Pest: স্ট্রাইপ রাস্ট (হলুদ মরিচা রোগ)
+  DOI: 10.1079/pwkb.20157801457
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). StripeRust. CABI Digital Library. DOI: 10.1079/pwkb.20157801457. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20157801457
+--------------------------------------------------
+File: Wheat\wheat_pw_striperustin_wheat_-_pakistan.md
+  Crop: Wheat
+  Disease/Pest: স্ট্রাইপ রাস্ট (হলুদ মরিচা রোগ)
+  DOI: 10.1079/pwkb.20257800943
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Striperustin wheat - Pakistan.. CABI Digital Library. DOI: 10.1079/pwkb.20257800943. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20257800943
+--------------------------------------------------
+File: Wheat\wheat_pw_tomatopowderymildew.md
+  Crop: Tomato
+  Disease/Pest: পাউডারি মিলডিউ রোগ
+  DOI: 10.1079/pwkb.20127801049
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Tomato Powdery Mildew. CABI Digital Library. DOI: 10.1079/pwkb.20127801049. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20127801049
+--------------------------------------------------
+File: Wheat\wheat_pw_wheatstemrust.md
+  Crop: Wheat
+  Disease/Pest: কাণ্ড মরিচা রোগ
+  DOI: 10.1079/pwkb.20127801775
+  Publisher: CABI PlantwisePlus Knowledge Bank
+  Citation: PlantwisePlus Knowledge Bank. (2026). Wheatstemrust. CABI Digital Library. DOI: 10.1079/pwkb.20127801775. URL: https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.20127801775
+--------------------------------------------------

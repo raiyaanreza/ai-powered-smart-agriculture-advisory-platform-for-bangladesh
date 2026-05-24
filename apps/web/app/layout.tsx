@@ -34,8 +34,27 @@ export default async function RootLayout({
   const lang = cookieStore.get("NEXT_LOCALE")?.value || "en";
 
   return (
-    <html lang={lang} className={`${inter.variable} ${hindSiliguri.variable} h-full scroll-smooth`}>
-      <body className="min-h-full flex flex-col" style={{ color: "#1E293B" }} suppressHydrationWarning>
+    <html lang={lang} className={`${inter.variable} ${hindSiliguri.variable} h-full scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-200" suppressHydrationWarning>
         <SkipToContent />
         <QueryProvider>
           {children}

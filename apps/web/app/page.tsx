@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
   return (
-    <div style={{ minHeight: "100vh", background: "#FAFAFA", color: "#1E293B" }}>
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
       <AnimatedBanner />
       <Navbar />
 

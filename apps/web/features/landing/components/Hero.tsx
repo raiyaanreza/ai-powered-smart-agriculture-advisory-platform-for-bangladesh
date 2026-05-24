@@ -16,38 +16,12 @@ const TRUST_BADGES = [
   { icon: TrendingUp,  text: "Free for Farmers" },
 ];
 
-const GreenGradientText = ({ children }: { children: React.ReactNode }) => (
-  <span style={{
-    background: "linear-gradient(135deg, #2D5A27 0%, #3D9150 50%, #2D7A3E 100%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-    position: "relative",
-    display: "inline",
-  }}>
-    {children}
-  </span>
-);
-
 export function Hero() {
   return (
-    <section
-      className="relative min-h-[90vh] flex items-center overflow-hidden"
-      style={{
-        /* Light hero: soft green-to-white-to-warm gradient with subtle grid */
-        background: `
-          linear-gradient(rgba(45,90,39,0.035) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(45,90,39,0.035) 1px, transparent 1px),
-          linear-gradient(160deg, #EEF7EF 0%, #FAFAFA 45%, #FDFCF0 100%)
-        `,
-        backgroundSize: "40px 40px, 40px 40px, 100% 100%",
-      }}
-    >
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero hero-grid">
       {/* Decorative blobs */}
-      <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(45,90,39,0.10) 0%, transparent 70%)" }} />
-      <div className="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(234,179,8,0.12) 0%, transparent 70%)" }} />
+      <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full pointer-events-none bg-radial from-earth-700/10 dark:from-emerald-500/10 to-transparent" />
+      <div className="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none bg-radial from-amber-500/10 to-transparent" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
@@ -60,15 +34,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="inline-flex items-center gap-2 rounded-full mb-6 text-[10px] font-black uppercase tracking-[0.14em]"
-              style={{
-                padding: "6px 14px",
-                background: "rgba(45,90,39,0.07)",
-                color: "#2D5A27",
-                border: "1px solid rgba(45,90,39,0.16)",
-              }}
+              className="inline-flex items-center gap-2 rounded-full mb-6 text-[10px] font-black uppercase tracking-[0.14em] px-3.5 py-1.5 bg-earth-700/10 dark:bg-emerald-500/10 text-earth-700 dark:text-emerald-400 border border-earth-700/20 dark:border-emerald-500/20"
             >
-              <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: "#2D5A27" }} />
+              <span className="h-1.5 w-1.5 rounded-full animate-pulse bg-earth-700 dark:bg-emerald-400" />
               National AI Infrastructure · Bangladesh
             </motion.div>
 
@@ -77,18 +45,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-black leading-[1.06] tracking-tighter text-slate-900 mb-5"
-              style={{
-                fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
-                textWrap: "balance",
-              } as React.CSSProperties}
+              className="font-black leading-[1.06] tracking-tighter text-slate-900 dark:text-white mb-5 text-[clamp(2.4rem,5vw,3.6rem)] text-balance"
             >
               Protect Your Crops with{" "}
-              <span className="relative inline-block">
-                <GreenGradientText>Instant AI</GreenGradientText>
+              <span className="relative inline-block text-gradient">
+                Instant AI
                 {/* Underline squiggle */}
-                <svg className="absolute -bottom-1 left-0 w-full" style={{ height: "6px", opacity: 0.45 }} viewBox="0 0 200 6" preserveAspectRatio="none">
-                  <path d="M0,3 Q50,0 100,3 Q150,6 200,3" stroke="#2D5A27" strokeWidth="2" fill="none" strokeLinecap="round" />
+                <svg className="absolute -bottom-1 left-0 w-full text-earth-700 dark:text-emerald-400 h-[6px] opacity-45" viewBox="0 0 200 6" preserveAspectRatio="none">
+                  <path d="M0,3 Q50,0 100,3 Q150,6 200,3" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
                 </svg>
               </span>{" "}
               Diagnosis
@@ -99,8 +63,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.25 }}
-              className="text-lg leading-relaxed mb-3 max-w-xl mx-auto lg:mx-0"
-              style={{ color: "#475569" }}
+              className="text-lg leading-relaxed mb-3 max-w-xl mx-auto lg:mx-0 text-slate-600 dark:text-slate-350"
             >
               Upload a photo of your affected crop. Get an expert-verified treatment
               plan in Bangla within seconds — completely free.
@@ -110,8 +73,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.32 }}
-              className="text-base font-semibold mb-8 max-w-xl mx-auto lg:mx-0"
-              style={{ color: "#2D5A27" }}
+              className="text-base font-semibold mb-8 max-w-xl mx-auto lg:mx-0 text-earth-700 dark:text-emerald-400"
             >
               ফসলের রোগ নির্ণয় করুন তাৎক্ষণিকভাবে।
             </motion.p>
@@ -125,12 +87,7 @@ export function Hero() {
             >
               <Link
                 href="/diagnose"
-                className="group flex items-center gap-2 rounded-xl text-sm font-bold text-white transition-all duration-250 hover:-translate-y-0.5 w-full sm:w-auto justify-center"
-                style={{
-                  height: "48px", padding: "0 28px",
-                  background: "linear-gradient(135deg, #2D5A27, #3D9150)",
-                  boxShadow: "0 4px 18px rgba(45,90,39,0.38)",
-                }}
+                className="group flex items-center gap-2 rounded-xl text-sm font-bold text-white transition-all duration-250 hover:-translate-y-0.5 w-full sm:w-auto justify-center h-12 px-7 bg-linear-to-br from-earth-700 to-earth-500 dark:from-emerald-600 dark:to-emerald-400 shadow-lg shadow-green-900/20"
               >
                 <Camera className="h-4 w-4" />
                 Start Free Diagnosis
@@ -139,12 +96,7 @@ export function Hero() {
 
               <Link
                 href="#how-it-works"
-                className="flex items-center gap-2 rounded-xl text-sm font-bold text-slate-700 transition-all duration-200 hover:bg-slate-100 w-full sm:w-auto justify-center"
-                style={{
-                  height: "48px", padding: "0 28px",
-                  background: "#FFFFFF",
-                  border: "1px solid #E2E8F0",
-                }}
+                className="flex items-center gap-2 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-300 transition-all duration-200 hover:bg-slate-100 dark:hover:bg-slate-800 w-full sm:w-auto justify-center h-12 px-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
               >
                 See How It Works
               </Link>
@@ -158,8 +110,8 @@ export function Hero() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-5"
             >
               {TRUST_BADGES.map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "#94A3B8" }}>
-                  <Icon className="h-3.5 w-3.5" style={{ color: "#2D5A27" }} />
+                <div key={text} className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 dark:text-slate-500">
+                  <Icon className="h-3.5 w-3.5 text-earth-700 dark:text-emerald-400" />
                   {text}
                 </div>
               ))}
@@ -174,68 +126,53 @@ export function Hero() {
             className="relative"
           >
             {/* Glow behind */}
-            <div className="absolute inset-6 rounded-3xl pointer-events-none"
-                 style={{
-                   background: "linear-gradient(135deg, rgba(45,90,39,0.18), rgba(234,179,8,0.12))",
-                   filter: "blur(48px)",
-                   opacity: 0.6,
-                 }} />
+            <div className="absolute inset-6 rounded-3xl pointer-events-none bg-linear-to-br from-earth-700/20 to-amber-500/10 blur-3xl opacity-60" />
 
             {/* Browser card */}
-            <div className="relative overflow-hidden rounded-3xl"
-                 style={{
-                   background: "#FFFFFF",
-                   border: "1px solid #E2E8F0",
-                   boxShadow: "0 24px 64px rgba(0,0,0,0.09), 0 4px 16px rgba(0,0,0,0.05)",
-                 }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl shadow-slate-200/50 dark:shadow-black/50">
 
               {/* Chrome bar */}
-              <div className="flex items-center gap-3 px-4 py-3 rounded-t-3xl"
-                   style={{ background: "#F8FAFC", borderBottom: "1px solid #F1F5F9" }}>
+              <div className="flex items-center gap-3 px-4 py-3 bg-slate-50 dark:bg-slate-950 border-b border-slate-150 dark:border-slate-850 rounded-t-3xl">
                 <div className="flex gap-1.5">
                   {["#FC5753","#FDBC40","#33C748"].map(c => (
                     <div key={c} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />
                   ))}
                 </div>
-                <div className="flex-1 flex items-center h-6 rounded-md px-3" style={{ background: "#FFFFFF", border: "1px solid #E2E8F0" }}>
-                  <span className="text-[10px] font-mono" style={{ color: "#94A3B8" }}>agrivision.gov.bd/diagnose</span>
+                <div className="flex-1 flex items-center h-6 rounded-md px-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <span className="text-[10px] font-mono text-slate-400 dark:text-slate-550">agrivision.gov.bd/diagnose</span>
                 </div>
               </div>
 
               <div className="p-5">
                 {/* Upload zone */}
-                <div className="rounded-xl p-5 text-center mb-4 cursor-pointer"
-                     style={{ border: "2px dashed #CBD5E1" }}>
-                  <div className="h-11 w-11 rounded-xl mx-auto mb-2.5 flex items-center justify-center"
-                       style={{ background: "linear-gradient(135deg, #F1F8F2, #E0F0E3)" }}>
-                    <Camera className="h-5 w-5" style={{ color: "#2D5A27" }} />
+                <div className="rounded-xl p-5 text-center mb-4 cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-700">
+                  <div className="h-11 w-11 rounded-xl mx-auto mb-2.5 flex items-center justify-center bg-linear-to-br from-earth-50 to-earth-100 dark:from-emerald-950 dark:to-emerald-900">
+                    <Camera className="h-5 w-5 text-earth-700 dark:text-emerald-400" />
                   </div>
-                  <p className="text-sm font-semibold text-slate-700">Upload crop photo</p>
-                  <p className="text-xs mt-0.5" style={{ color: "#94A3B8" }}>Drag & drop or tap to capture</p>
+                  <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Upload crop photo</p>
+                  <p className="text-xs mt-0.5 text-slate-400 dark:text-slate-500">Drag & drop or tap to capture</p>
                 </div>
 
                 {/* Result */}
-                <div className="rounded-xl p-4 mb-3"
-                     style={{ background: "linear-gradient(135deg, #F1F8F2, #FEFCE8)", border: "1px solid #C1E2C6" }}>
+                <div className="rounded-xl p-4 mb-3 bg-linear-to-br from-earth-50 to-amber-50 dark:from-emerald-950/20 dark:to-amber-950/10 border border-earth-200/50 dark:border-emerald-900/30">
                   <div className="flex items-start gap-3">
-                    <div className="h-9 w-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                         style={{ background: "#E0F0E3" }}>
-                      <ShieldCheck className="h-4.5 w-4.5" style={{ color: "#2D5A27", height:"18px", width:"18px" }} />
+                    <div className="h-9 w-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-earth-100 dark:bg-emerald-900/50">
+                      <ShieldCheck className="h-4.5 w-4.5 text-earth-700 dark:text-emerald-400" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-0.5">
-                        <p className="text-sm font-bold text-slate-800">Brown Spot Disease</p>
-                        <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: "#E0F0E3", color: "#2D5A27" }}>
+                        <p className="text-sm font-bold text-slate-850 dark:text-slate-200">Brown Spot Disease</p>
+                        <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-earth-100 dark:bg-emerald-900/50 text-earth-700 dark:text-emerald-400">
                           97.3%
                         </span>
                       </div>
-                      <p className="text-xs" style={{ color: "#64748B" }}>Paddy · Rajshahi Region</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Paddy · Rajshahi Region</p>
                     </div>
                   </div>
                   <div className="mt-3 space-y-1.5">
                     {["Apply Copper fungicide within 48h","Improve field drainage","Monitor for 5 days"].map((tip, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs" style={{ color: "#475569" }}>
-                        <div className="h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ background: "#2D5A27" }} />
+                      <div key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-350">
+                        <div className="h-1.5 w-1.5 rounded-full flex-shrink-0 bg-earth-700 dark:bg-emerald-400" />
                         {tip}
                       </div>
                     ))}
@@ -243,8 +180,7 @@ export function Hero() {
                 </div>
 
                 {/* Action */}
-                <button className="w-full rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                        style={{ height: "40px", background: "linear-gradient(135deg, #2D5A27, #3D9150)" }}>
+                <button className="w-full rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity h-10 bg-linear-to-br from-earth-700 to-earth-500 dark:from-emerald-600 dark:to-emerald-400 shadow-md">
                   <Sparkles className="h-4 w-4" />
                   View Full Report in Bangla
                 </button>
@@ -255,16 +191,11 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 -right-3 rounded-xl px-3 py-2"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-              }}
+              className="absolute -top-3 -right-3 rounded-xl px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg"
             >
               <div className="flex items-center gap-1.5">
-                <div className="h-2 w-2 rounded-full animate-pulse" style={{ background: "#22C55E" }} />
-                <span className="text-xs font-bold text-slate-700">Live AI · Online</span>
+                <div className="h-2 w-2 rounded-full animate-pulse bg-emerald-500" />
+                <span className="text-xs font-bold text-slate-700 dark:text-slate-300">Live AI · Online</span>
               </div>
             </motion.div>
           </motion.div>
@@ -283,18 +214,12 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 + i * 0.06 }}
-              className="text-center p-3 sm:p-5 rounded-xl sm:rounded-2xl transition-shadow hover:shadow-md"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
+              className="text-center p-3 sm:p-5 rounded-xl sm:rounded-2xl transition-all hover:shadow-md hover:border-earth-700/30 dark:hover:border-emerald-500/30 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm shadow-slate-100/50 dark:shadow-none"
             >
-              <div className="font-black mb-1"
-                   style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)", letterSpacing: "-0.03em", color: "#2D5A27", lineHeight: 1 }}>
+              <div className="font-black mb-1 text-[clamp(1.5rem,3.5vw,2.4rem)] letter-spacing-[-0.03em] text-earth-700 dark:text-emerald-400 leading-none">
                 {s.value}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "#94A3B8" }}>{s.label}</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{s.label}</div>
             </motion.div>
           ))}
         </motion.div>

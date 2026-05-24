@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AdvisoryPage() {
   return (
-    <div className="flex flex-col h-screen bg-[#FAFAFA] overflow-hidden">
+    <div className="flex flex-col h-screen bg-background text-foreground transition-colors duration-200 overflow-hidden">
       <Navbar />
       <main id="main-content" role="main" className="flex-1 overflow-hidden flex flex-col">
         <AdvisoryDashboard />

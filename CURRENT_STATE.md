@@ -1,5 +1,5 @@
 # Current State — AgriVision AI
-**Last Updated**: 2026-05-19
+**Last Updated**: 2026-05-24
 
 ## 🎯 Current Focus
 Stabilizing the unified ecosystem and preparing for Phase 5 (National Scale Features).
@@ -60,7 +60,38 @@ Stabilizing the unified ecosystem and preparing for Phase 5 (National Scale Feat
 ### 11. Phase 5 Copernicus Sentinel-2 Satellite & Bilingual Voice Integration (Latest)
 - **Description**: Engineered and fully integrated Copernicus Sentinel-2 Satellite Multi-spectral telemetry and bilingual Voice Interaction (TTS/STT).
 - **Key Feature**: Built a live Sentinel-2 NDVI API endpoint with seamless OAuth handshake and robust sandbox fallbacks. Designed an interactive HTML5 Multi-spectral Canvas HUD on the Farmer Dashboard supporting region switching, cell coordinate audits, and custom spectral bands (NDVI, NDWI, False Color). Built a professional, client-side Bangla Text-to-Speech (TTS) Voice Player with split sentence streaming, variable playback speed controls, active CSS audio wave equalizers, and client-side English Speech-to-Text (STT) voice input for low-literacy accessibility.
-- **Status**: Stable & Fully Verified.
+### 12. RAG Knowledge Base QA Audit & Document Fixes (Latest)
+- **Description**: Full QA audit of all documents in `models/sources/` added by junior developer. Identified and fixed 6 categories of critical errors that would have silently broken RAG retrieval, citation accuracy, and crop filtering.
+- **Bugs Fixed**:
+  - **Wrong crop metadata (5 files)**: Rice blast doc miscategorized as `Wheat`; Mango & Tomato mildew docs as `Wheat`; Sorghum leaf blight as `Corn`; Eggplant gray leaf spot as `Corn`. All corrected to accurate crop values.
+  - **Corrupted YAML frontmatter (1 file)**: `rice_irri_#_irri_rice_disease_reference_manual.md` had `#` in an unquoted `disease_pest_name` — YAML treated it as a comment, silently dropping the field. Fixed with proper quoting.
+  - **Corrupted OCR content (1 file)**: `rice_brri_disease_blast_rog.md` had garbled OCR-encoded Bangla text (®ষ¡ etc.) making the document completely unreadable. Replaced with clean, structured Bengali content.
+  - **20 empty stub documents**: All 20 BRRI disease/pest stub files had only frontmatter + empty heading and no content. Added Bengali summaries, management, and chemical control sections.
+  - **Missing `scientific_name` fields**: 10 documents had empty scientific names; all populated correctly.
+  - **Misleading English `disease_pest_name`**: 20 BRRI files used transliterated English (e.g., "Blast rog") instead of proper Bengali. Updated to Bengali with English in parentheses.
+- **AGENTS.md updated**: RAG service `AGENTS.md` now documents the YAML frontmatter contract and rules to prevent these bugs.
+- **Tests**: All 3 advisory service unit tests pass (`pytest` ✅). Live chat API verified.
+- **Status**: Complete & Fixed.
+
+### 13. Production Qdrant Cloud RAG Ingestion & E2E Verification
+- **Description**: Connected RAG service to the online Qdrant Cloud cluster, optimized the batch upload mechanism to prevent API rate limits, resolved API Gateway environment variables loading, and fully validated the end-to-end user flows.
+- **Key Feature**: Ingested 87 documents split into 2,884 chunks into the cloud vector store. Wrote and ran a Playwright E2E spec verifying pages (`/`, `/advisory`, `/diagnose`, `/library`) and validating that chat queries return grounded agricultural advisor answers with proper BARI/BRRI citations.
+- **Status**: Stable & Verified E2E.
+
+### 14. Original Citations & Metadata Verification
+- **Description**: Checked and audited the entire RAG knowledge base to extract and apply authentic citations directly from the reference document bodies, replacing placeholder transliterated file names, dummy DOIs, and misaligned crops.
+- **Key Feature**: Updated 77 documents. Replaced dummy DOIs (`10.5555/...`) in all BRRI/BARI documents with `N/A` and set article URLs to the official BRRI website. Reformulated academic citations to point to the original authors, institutions, and training manual modules (e.g. citing Bangladesh Rice Research Institute and specific training module session numbers). Corrected crop mismatch filters (such as Coffee Leaf Rust and Willow Leaf Rust in `wheat_pw_leafrust.md` mapped to `Coffee`). Re-ingested all 2,884 chunks into Qdrant Cloud and verified E2E using Playwright.
+- **Status**: Stable & Verified.
+
+### 15. E2E Role and Page Routing Verification
+- **Description**: Launched the Admin console server and verified the end-to-end user navigation pathways across all roles (Farmer, Admin, Standard User/Visitor) and portals (Farmer Portal on port 3000, Admin Portal on port 3001).
+- **Key Feature**: Started the Admin Next.js app on port `3001`. Created a comprehensive Playwright validation spec (`tests/integration/roles_pages.spec.ts`) that executes authentication flows with existing test credentials. Verified that the personalized Farmer Dashboard, Advisory Chat, Disease Diagnosis, and Library load correctly under the Farmer role, and validated that Admin login routes staff correctly to the Command Center dashboard on port 3001.
+- **Status**: Complete, Tested & Verified E2E.
+
+### 16. Chat UI Redesign, Voice Fixes & Cultural Greeting Correction (Latest)
+- **Description**: Redesigned the AgriAdvisor chat interface layout and system prompts for an industry-grade, premium user experience, and resolved voice input/output issues.
+- **Key Feature**: Centered the chat viewport to eliminate empty space, upgraded the input bar to a glassmorphic auto-growing textarea, extracted raw text citations, and rendered them as beautiful structured cards. Added strict instructions in LLM prompts to greet users with "Assalamu Alaikum" or neutral welcoming agricultural terms. Engineered a serverless Gemini-powered Text-to-Speech endpoint (`/api/voice/tts`) using specialized `gemini-3.1-flash-tts-preview` and server-side PCM-to-WAV header conversion to output high-quality playable audio streams. Integrated browser fallback mechanisms and set spoken recognition language to `bn-BD`.
+- **Status**: Complete & Verified with Playwright E2E tests.
 
 ---
 

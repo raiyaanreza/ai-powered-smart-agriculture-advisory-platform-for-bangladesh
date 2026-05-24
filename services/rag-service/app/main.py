@@ -58,6 +58,12 @@ class QueryResult(BaseModel):
     text: str
     source: str
     score: float
+    crop: Optional[str] = None
+    disease_pest_name: Optional[str] = None
+    publisher: Optional[str] = None
+    publication_year: Optional[str] = None
+    doi: Optional[str] = None
+    academic_citation: Optional[str] = None
 
 
 class QueryResponse(BaseModel):

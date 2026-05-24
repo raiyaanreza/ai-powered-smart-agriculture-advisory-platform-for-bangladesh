@@ -165,6 +165,7 @@ export function FarmerDashboard() {
   const [insight, setInsight] = useState<string>("");
   const [insightLoading, setInsightLoading] = useState<boolean>(false);
   const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (user) {
@@ -173,14 +174,17 @@ export function FarmerDashboard() {
     }
   }, [user]);
 
-  // Make speech synthesis stop when page unmounts
+  // Make speech synthesis and audio stop when page unmounts
   useEffect(() => {
     return () => {
+      if (audio) {
+        audio.pause();
+      }
       if (typeof window !== "undefined" && window.speechSynthesis) {
         window.speechSynthesis.cancel();
       }
     };
-  }, []);
+  }, [audio]);
 
   const fetchRealHistory = async () => {
     const { data } = await supabase
@@ -254,12 +258,12 @@ export function FarmerDashboard() {
 
   // Speaks the daily cached crop recommendation in high-accessibility Bangla
   const handleVocalAssistant = async () => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return;
-
-    // Always reset the synthesis state first to prevent any jams
-    window.speechSynthesis.cancel();
-
     if (isSpeaking) {
+      if (audio) {
+        audio.pause();
+      } else if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
       setIsSpeaking(false);
       return;
     }
@@ -300,7 +304,43 @@ export function FarmerDashboard() {
       speechText = `রহমান ভাই, আপনার রাজশাহীর জমির ধান খুবই চমৎকার ও সবল আছে। মাটির পানির আর্দ্রতা পর্যাপ্ত পরিমাণে আছে, তাই আপাতত বাড়তি সেচের প্রয়োজন নেই। পাতা ব্লাস্ট রোগ থেকে বাঁচতে জমিতে পরিমিত ইউরিয়া দিন এবং ধানের পাতা নিয়মিত পর্যবেক্ষণ করুন।`;
     }
 
-    const utterance = new SpeechSynthesisUtterance(speechText);
+    const cleanText = speechText.replace(/[*#_\-\+`]/g, "").trim();
+    setIsSpeaking(true);
+
+    try {
+      const url = `/api/voice/tts?text=${encodeURIComponent(cleanText)}`;
+      const newAudio = new Audio(url);
+      setAudio(newAudio);
+      
+      newAudio.onended = () => {
+        setIsSpeaking(false);
+        setAudio(null);
+      };
+      
+      newAudio.onerror = (e) => {
+        console.error("Gemini TTS playback failed, falling back to Web Speech API:", e);
+        newAudio.pause();
+        setAudio(null);
+        fallbackSpeechSynthesis(cleanText);
+      };
+
+      await newAudio.play();
+    } catch (err) {
+      console.error("Error playing Gemini TTS:", err);
+      fallbackSpeechSynthesis(cleanText);
+    }
+  };
+
+  const fallbackSpeechSynthesis = (cleanText: string) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) {
+      setIsSpeaking(false);
+      return;
+    }
+
+    // Always reset first
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = "bn-BD";
     
     // Choose regional Bangla voice if loaded
@@ -327,7 +367,6 @@ export function FarmerDashboard() {
     };
 
     window.speechSynthesis.speak(utterance);
-    setIsSpeaking(true);
   };
 
   if (loading) return null;

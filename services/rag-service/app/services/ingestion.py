@@ -10,8 +10,8 @@ import logging
 from pathlib import Path
 from typing import List
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 COLLECTION_NAME = "agri_knowledge_base"
-EMBEDDING_MODEL = "models/gemini-embedding-001"          # Standard Gemini embedding model
+EMBEDDING_MODEL = "models/gemini-embedding-2"          # New Gemini embedding model
 SOURCES_DIR = os.getenv("RAG_SOURCES_DIR", "models/sources")
 
 # Resolve sources dir relative to repo root (3 levels up from this file)
@@ -39,7 +39,7 @@ def _get_embeddings() -> GoogleGenerativeAIEmbeddings:
     )
 
 
-def _ensure_collection(client: QdrantClient, vector_size: int = 768):
+def _ensure_collection(client: QdrantClient, vector_size: int = 3072):
     """Create Qdrant collection if it does not already exist."""
     existing = [c.name for c in client.get_collections().collections]
     if COLLECTION_NAME not in existing:
@@ -50,6 +50,24 @@ def _ensure_collection(client: QdrantClient, vector_size: int = 768):
         logger.info(f"Created Qdrant collection: {COLLECTION_NAME}")
     else:
         logger.info(f"Collection '{COLLECTION_NAME}' already exists — skipping creation.")
+
+
+def _parse_yaml_frontmatter(text: str) -> tuple[dict, str]:
+    """Parse YAML frontmatter from a markdown string."""
+    metadata = {}
+    content = text
+    if text.strip().startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            frontmatter_text = parts[1]
+            content = parts[2]
+            for line in frontmatter_text.splitlines():
+                if ":" in line:
+                    key, val = line.split(":", 1)
+                    key = key.strip()
+                    val = val.strip().strip('"').strip("'")
+                    metadata[key] = val
+    return metadata, content
 
 
 def _load_documents() -> List[Document]:
@@ -80,11 +98,21 @@ def _load_documents() -> List[Document]:
     for fp in sources_path.glob("**/*.md"):
         try:
             text = fp.read_text(encoding="utf-8")
+            metadata, content = _parse_yaml_frontmatter(text)
             docs.append(Document(
-                page_content=text,
-                metadata={"source": fp.name, "type": "markdown"}
+                page_content=content,
+                metadata={
+                    "source": fp.name,
+                    "type": "markdown",
+                    "crop": metadata.get("crop", "Unknown"),
+                    "disease_pest_name": metadata.get("disease_pest_name", metadata.get("topic", "Unknown")),
+                    "publisher": metadata.get("publisher", "Unknown"),
+                    "publication_year": metadata.get("year", metadata.get("publication_year", "Unknown")),
+                    "doi": metadata.get("doi", "Unknown"),
+                    "academic_citation": metadata.get("academic_citation", "Unknown"),
+                }
             ))
-            logger.info(f"Loaded Markdown: {fp.name}")
+            logger.info(f"Loaded Markdown with metadata: {fp.name}")
         except Exception as e:
             logger.error(f"Failed to load MD {fp}: {e}")
 
@@ -166,15 +194,48 @@ def run_ingestion() -> dict:
     embeddings = _get_embeddings()
     qdrant_api_key = os.getenv("QDRANT_API_KEY")
 
-    # Upsert all chunks into Qdrant using LangChain's vector store wrapper
-    QdrantVectorStore.from_documents(
-        documents=chunks,
-        embedding=embeddings,
-        url=QDRANT_URL,
-        api_key=qdrant_api_key,
+    # Initialize client explicitly with high timeout to prevent cloud timeouts
+    client = QdrantClient(url=QDRANT_URL, api_key=qdrant_api_key, timeout=120)
+    _ensure_collection(client)
+
+    # Upload in batches of 32 to prevent write timeouts and rate limits
+    batch_size = 32
+    total_chunks = len(chunks)
+    logger.info(f"Uploading {total_chunks} chunks to Qdrant in batches of {batch_size}...")
+
+    # Initialize store using client
+    store = QdrantVectorStore(
+        client=client,
         collection_name=COLLECTION_NAME,
+        embedding=embeddings,
     )
-    logger.info(f"Upserted {len(chunks)} chunks to Qdrant collection '{COLLECTION_NAME}'.")
+
+    # Upload batches with robust retry and rate limit handling
+    import time
+    for i in range(0, total_chunks, batch_size):
+        batch = chunks[i : i + batch_size]
+        
+        max_retries = 7
+        delay = 10
+        for attempt in range(max_retries):
+            try:
+                store.add_documents(batch)
+                logger.info(f"Uploaded chunks {i+1}-{min(i+batch_size, total_chunks)} of {total_chunks}")
+                time.sleep(2.0)  # Pause to avoid rate limits
+                break
+            except Exception as e:
+                err_str = str(e)
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "Quota exceeded" in err_str:
+                    logger.warning(f"Rate limit hit during batch upload. Retrying in {delay} seconds (Attempt {attempt+1}/{max_retries})...")
+                    time.sleep(delay)
+                    delay *= 2
+                else:
+                    raise e
+        else:
+            raise RuntimeError(f"Failed to upload batch starting at chunk {i} after {max_retries} retries.")
+
+
+    logger.info(f"Upserted all {total_chunks} chunks to Qdrant collection '{COLLECTION_NAME}'.")
     return {
         "status": "success",
         "documents_loaded": len(docs),

@@ -11,7 +11,7 @@ import { useDiagnosisStats, useDiagnoseImage } from "../hooks/useDiagnosis";
 
 const OutbreakMap = dynamic(
   () => import("./OutbreakMap").then((mod) => ({ default: mod.OutbreakMap })),
-  { ssr: false, loading: () => <div className="h-96 rounded-2xl bg-slate-100 animate-pulse" /> }
+  { ssr: false, loading: () => <div className="h-96 rounded-2xl bg-slate-100 dark:bg-slate-900 animate-pulse" /> }
 );
 
 export function DiagnosisContainer() {
@@ -58,15 +58,10 @@ export function DiagnosisContainer() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden"
-      style={{
-        background: "#FFFFFF",
-        backgroundImage: "radial-gradient(#CBD5E1 0.8px, transparent 0.8px)",
-        backgroundSize: "32px 32px"
-      }}>
+    <div className="min-h-screen relative overflow-hidden bg-background bg-[radial-gradient(rgba(203,213,225,0.2)_0.8px,transparent_0.8px)] dark:bg-[radial-gradient(rgba(30,46,37,0.4)_0.8px,transparent_0.8px)] [background-size:32px_32px] transition-colors duration-200">
 
       {/* Subtle top gradient */}
-      <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-[#F0FDF4] to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-[#F0FDF4] dark:from-emerald-950/15 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 relative z-10 pt-16 pb-20">
 
@@ -75,8 +70,7 @@ export function DiagnosisContainer() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-sm border border-[#2D7A3E]/10"
-            style={{ background: "#FFFFFF", color: "#2D7A3E" }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-xs border border-primary/20 bg-card text-primary"
           >
             <Sparkles className="h-3 w-3" />
             AI-Powered Precision Agriculture
@@ -85,7 +79,7 @@ export function DiagnosisContainer() {
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-black text-[#1A321A] tracking-tighter mb-4 leading-tight"
+            className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter mb-4 leading-tight"
           >
             Instant Crop Diagnosis
           </motion.h1>
@@ -96,12 +90,13 @@ export function DiagnosisContainer() {
             transition={{ delay: 0.1 }}
             className="space-y-4"
           >
-            <p className="text-xl font-bold text-[#2D5A27] font-bn tracking-wide">
+            <p className="text-xl font-bold text-primary font-bn tracking-wide">
               কৃষকের জন্য রিয়েল-টাইম এআই রোগ শনাক্তকরণ
             </p>
-            <p className="text-slate-500 max-w-xl mx-auto text-[13px] leading-relaxed font-medium">
+            <p className="text-slate-550 dark:text-slate-400 max-w-xl mx-auto text-[13px] leading-relaxed font-medium">
               Empowering farmers across Bangladesh with real-time AI disease detection.
               Upload a photo to receive expert-verified treatment plans.
+              আক্রান্ত ফসলের একটি ছবি আপলোড করুন এবং পরামর্শ পান।
             </p>
           </motion.div>
         </div>
@@ -126,7 +121,7 @@ export function DiagnosisContainer() {
                   key="loading"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="h-full min-h-[420px] rounded-[2.5rem] bg-[#052E16] border border-emerald-950 shadow-2xl flex flex-col items-center justify-center p-12 text-center relative overflow-hidden"
+                  className="h-full min-h-[420px] rounded-[2.5rem] bg-[#052E16] dark:bg-[#07130b] border border-emerald-950 dark:border-emerald-900/20 shadow-2xl flex flex-col items-center justify-center p-12 text-center relative overflow-hidden"
                 >
                   {/* Futuristic Laser Scanning Line */}
                   <motion.div 
@@ -185,40 +180,39 @@ export function DiagnosisContainer() {
           <div className="lg:col-span-5 space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <motion.div
-                className="rounded-3xl p-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/20 group cursor-default"
+                className="rounded-3xl p-6 bg-card border border-border shadow-xs group cursor-default"
                 whileHover={{ y: -3, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <TrendingUp className="h-5 w-5 text-[#2D7A3E] mb-3 group-hover:scale-110 transition-transform" />
-                <div className="text-3xl font-black text-slate-900 tracking-tighter">{diagnosesToday.toLocaleString()}</div>
-                <div className="text-[9px] font-black uppercase tracking-widest text-slate-400 mt-1">Diagnoses Today</div>
+                <TrendingUp className="h-5 w-5 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                <div className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{diagnosesToday.toLocaleString()}</div>
+                <div className="text-[9px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-1">Diagnoses Today</div>
               </motion.div>
 
               <motion.div
-                className="rounded-3xl p-6 text-white shadow-xl shadow-green-950/30 group cursor-default"
-                style={{ background: "#1A321A" }}
+                className="rounded-3xl p-6 text-white border border-transparent dark:border-emerald-800/30 bg-earth-900 dark:bg-emerald-950/40 shadow-xs group cursor-default"
                 whileHover={{ y: -3, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <CheckCircle2 className="h-5 w-5 text-green-400 mb-3 group-hover:scale-110 transition-transform" />
-                <div className="text-3xl font-black tracking-tighter">{modelPrecision}</div>
-                <div className="text-[9px] font-black uppercase tracking-widest opacity-60 mt-1">Model Precision</div>
+                <CheckCircle2 className="h-5 w-5 text-emerald-400 mb-3 group-hover:scale-110 transition-transform" />
+                <div className="text-3xl font-black tracking-tighter text-white">{modelPrecision}</div>
+                <div className="text-[9px] font-black uppercase tracking-widest opacity-60 mt-1 text-white/80">Model Precision</div>
               </motion.div>
             </div>
 
             <motion.div
-              className="rounded-[2rem] p-8 bg-white border border-slate-100 shadow-xl shadow-slate-200/20"
+              className="rounded-[2rem] p-8 bg-card border border-border shadow-xs"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-2">
-                  <History className="h-4 w-4 text-[#2D7A3E]" />
-                  <span className="text-xs font-black text-slate-800">Recent Global Diagnoses</span>
+                  <History className="h-4 w-4 text-primary" />
+                  <span className="text-xs font-black text-slate-800 dark:text-slate-100">Recent Global Diagnoses</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-red-50">
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-red-50 dark:bg-red-950/20">
                   <div className="h-1 w-1 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[8px] font-black uppercase text-red-600">Live</span>
+                  <span className="text-[8px] font-black uppercase text-red-600 dark:text-red-400">Live</span>
                 </div>
               </div>
 
@@ -226,8 +220,8 @@ export function DiagnosisContainer() {
                 {recentDiagnoses.length > 0 ? recentDiagnoses.map((item: any, i: number) => {
                   const isHealthy = item.disease_detected?.toLowerCase().includes("healthy");
                   const iconComp = isHealthy ? Leaf : Sparkles;
-                  const color = isHealthy ? "text-green-500" : "text-amber-500";
-                  const bg = isHealthy ? "bg-green-50" : "bg-amber-50";
+                  const color = isHealthy ? "text-emerald-600 dark:text-emerald-450" : "text-amber-500 dark:text-amber-400";
+                  const bg = isHealthy ? "bg-emerald-50 dark:bg-emerald-950/20" : "bg-amber-50 dark:bg-amber-955/20";
                   const NameIcon = iconComp;
 
                   let timeAgo = "Just now";
@@ -244,17 +238,17 @@ export function DiagnosisContainer() {
 
                   return (
                     <div key={i} className="flex items-center gap-4 group cursor-pointer transition-all hover:translate-x-1">
-                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center `}>
-                        <NameIcon className={`h-5 w-5 `} />
+                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${bg} ${color}`}>
+                        <NameIcon className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-[12px] font-black text-slate-900 group-hover:text-[#2D5A27] transition-colors">{item.crop_detected} {isHealthy ? 'Healthy' : 'Issue Detected'}</div>
-                        <div className="text-[10px] text-slate-400 font-bold">{item.district || "Bangladesh"} � {timeAgo}</div>
+                        <div className="text-[12px] font-black text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">{item.crop_detected} {isHealthy ? 'Healthy' : 'Issue Detected'}</div>
+                        <div className="text-[10px] text-slate-400 dark:text-slate-500 font-bold">{item.district || "Bangladesh"} · {timeAgo}</div>
                       </div>
                     </div>
                   )
                 }) : (
-                  <div className="text-xs text-slate-400 text-center py-4">Waiting for incoming data...</div>
+                  <div className="text-xs text-slate-400 dark:text-slate-550 text-center py-4">Waiting for incoming data...</div>
                 )}
               </div>
             </motion.div>
@@ -265,12 +259,12 @@ export function DiagnosisContainer() {
         <div className="mb-24">
           <div className="flex items-center justify-between mb-10">
             <div>
-              <h2 className="text-3xl font-black text-[#1A321A] tracking-tighter mb-2">National Disease Surveillance</h2>
-              <p className="text-sm font-bold text-[#2D5A27] font-bn">পোস্টজিআইএস (PostGIS) প্রযুক্তিতে দেশব্যাপী রোগের প্রাদুর্ভাব পর্যবেক্ষণ</p>
+              <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter mb-2">National Disease Surveillance</h2>
+              <p className="text-sm font-bold text-primary font-bn">পোস্টজিআইএস (PostGIS) প্রযুক্তিতে দেশব্যাপী রোগের প্রাদুর্ভাব পর্যবেক্ষণ</p>
             </div>
-            <div className="hidden md:flex items-center gap-4 px-6 py-3 rounded-2xl bg-white border border-slate-100 shadow-sm">
+            <div className="hidden md:flex items-center gap-4 px-6 py-3 rounded-2xl bg-card border border-border shadow-xs">
               <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Live Data Sync</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">Live Data Sync</span>
             </div>
           </div>
           <OutbreakMap />
@@ -278,22 +272,22 @@ export function DiagnosisContainer() {
 
         {/* Look For Cards */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-black text-slate-900 mb-2">What to Look For</h2>
-          <p className="text-xs text-slate-400">Early detection is key for healthy harvests.</p>
+          <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-2">What to Look For</h2>
+          <p className="text-xs text-slate-400 dark:text-slate-550">Early detection is key for healthy harvests. সনাক্তকরণ বৃদ্ধির লক্ষণসমূহ।</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {[
-            { Icon: AlertCircle, color: "text-amber-500", bg: "bg-amber-50", title: "Leaf Spotting", desc: "Small brown or yellow circles." },
-            { Icon: TrendingUp, color: "text-red-500", bg: "bg-red-50", title: "Stunted Growth", desc: "Plants significantly shorter." },
-            { Icon: Leaf, color: "text-emerald-500", bg: "bg-emerald-50", title: "Wilting", desc: "Drooping leaves with water." },
-            { Icon: Sparkles, color: "text-blue-500", bg: "bg-blue-50", title: "Discolored Grains", desc: "White, black, or grey harvest." },
+            { Icon: AlertCircle, color: "text-amber-500", bg: "bg-amber-50 dark:bg-amber-955/15", title: "Leaf Spotting", desc: "Small brown or yellow circles." },
+            { Icon: TrendingUp, color: "text-red-500 dark:text-red-400", bg: "bg-red-50 dark:bg-red-955/15", title: "Stunted Growth", desc: "Plants significantly shorter." },
+            { Icon: Leaf, color: "text-emerald-500 dark:text-emerald-450", bg: "bg-emerald-50 dark:bg-emerald-955/15", title: "Wilting", desc: "Drooping leaves with water." },
+            { Icon: Sparkles, color: "text-blue-500 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-955/15", title: "Discolored Grains", desc: "White, black, or grey harvest." },
           ].map((item, i) => (
-            <div key={i} className="rounded-3xl p-6 bg-white border border-slate-100 text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#2D7A3E]/20 transition-all cursor-pointer">
+            <div key={i} className="rounded-3xl p-6 bg-card border border-border text-center hover:shadow-lg dark:hover:shadow-black/50 hover:-translate-y-1 hover:border-primary/20 transition-all cursor-pointer">
               <div className={`h-12 w-12 rounded-2xl mx-auto mb-4 flex items-center justify-center ${item.bg}`}>
                 <item.Icon className={`h-6 w-6 ${item.color}`} />
               </div>
-              <h4 className="text-[11px] font-black text-slate-900 mb-1">{item.title}</h4>
-              <p className="text-[10px] text-slate-400 leading-tight">{item.desc}</p>
+              <h4 className="text-[11px] font-black text-slate-900 dark:text-slate-100 mb-1">{item.title}</h4>
+              <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-tight">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -302,4 +296,3 @@ export function DiagnosisContainer() {
     </div>
   );
 }
-

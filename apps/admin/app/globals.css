@@ -122,6 +122,63 @@
 
     --radius: 0.75rem;
   }
+
+  .dark {
+    /* Page */
+    --background:         #0A0F0D;
+    --foreground:         #F1F5F9;
+
+    /* Cards */
+    --card:               #111915;
+    --card-foreground:    #F1F5F9;
+
+    /* Popover */
+    --popover:            #111915;
+    --popover-foreground: #F1F5F9;
+
+    /* Brand */
+    --primary:            #10B981;
+    --primary-foreground: #022C22;
+
+    /* Secondary */
+    --secondary:          #1D2B23;
+    --secondary-foreground: #F1F5F9;
+
+    /* Muted */
+    --muted:              #1D2B23;
+    --muted-foreground:   #94A3B8;
+
+    /* Accent (Harvest Gold) */
+    --accent:             #F59E0B;
+    --accent-foreground:  #180800;
+
+    /* Danger */
+    --destructive:        #EF4444;
+    --destructive-foreground: #FFFFFF;
+
+    /* Borders */
+    --border:             #1C2A21;
+    --input:              #1C2A21;
+    --ring:               rgba(16, 185, 129, 0.4);
+
+    /* Charts */
+    --chart-1:            #10B981;
+    --chart-2:            #FBBF24;
+    --chart-3:            #3B82F6;
+    --chart-4:            #34D399;
+    --chart-5:            #F87171;
+
+    /* Semantic Status Tokens */
+    --status-success:     #10B981;
+    --status-warning:     #F59E0B;
+    --status-danger:      #EF4444;
+    --status-info:        #3B82F6;
+
+    /* Severity Tokens */
+    --severity-low:       #10B981;
+    --severity-medium:    #F59E0B;
+    --severity-high:      #EF4444;
+  }
 }
 
 @layer base {
@@ -146,8 +203,13 @@
     color: #2D5A27;
   }
 
+  .dark ::selection {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+  }
+
   :focus-visible {
-    outline: 2px solid #2D5A27;
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -163,13 +225,29 @@
     background: #F8FAFC;
   }
 
+  .dark .bg-section-alt {
+    background: #0E1411;
+  }
+
   .bg-dark-section {
     background: linear-gradient(135deg, #1A321A 0%, #2D5A27 60%, #214020 100%);
+  }
+
+  .dark .bg-dark-section {
+    background: linear-gradient(135deg, #05120A 0%, #111A14 60%, #080D0A 100%);
   }
 
   /* ── Gradient text ── */
   .text-gradient {
     background: linear-gradient(135deg, #2D5A27 0%, #3D9150 50%, #2D7A3E 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark .text-gradient {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 50%, #059669 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -184,23 +262,31 @@
     background-clip: text;
   }
 
+  .dark .text-gradient-gold {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* ── Cards ── */
   .card-base {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     transition: all 0.15s ease;
   }
 
   .card-base:hover {
-    border-color: #CBD5E1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
   .card-elevated {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }

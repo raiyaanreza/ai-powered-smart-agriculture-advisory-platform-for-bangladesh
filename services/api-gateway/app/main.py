@@ -4,8 +4,11 @@ import os
 import sys
 import logging
 import httpx
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

@@ -9,14 +9,14 @@ from typing import List, Optional
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
-from langchain.schema import Document
+from langchain_core.documents import Document
 from qdrant_client import QdrantClient
 
 logger = logging.getLogger(__name__)
 
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 COLLECTION_NAME = "agri_knowledge_base"
-EMBEDDING_MODEL = "models/gemini-embedding-001"
+EMBEDDING_MODEL = "models/gemini-embedding-2"
 
 
 def _get_embeddings() -> GoogleGenerativeAIEmbeddings:
@@ -67,6 +67,12 @@ def retrieve(query: str, top_k: int = 3, crop: Optional[str] = None) -> List[dic
             {
                 "text": doc.page_content,
                 "source": doc.metadata.get("source", "Unknown"),
+                "crop": doc.metadata.get("crop", "Unknown"),
+                "disease_pest_name": doc.metadata.get("disease_pest_name", "Unknown"),
+                "publisher": doc.metadata.get("publisher", "Unknown"),
+                "publication_year": doc.metadata.get("publication_year", "Unknown"),
+                "doi": doc.metadata.get("doi", "Unknown"),
+                "academic_citation": doc.metadata.get("academic_citation", "Unknown"),
                 "score": float(score),
             }
             for doc, score in results_with_scores
@@ -86,6 +92,14 @@ def format_context_for_prompt(results: List[dict]) -> str:
     lines = ["### Official Agricultural Reference Context (BARI/BRRI Sources):"]
     for i, r in enumerate(results, 1):
         lines.append(f"\n[Source {i}: {r['source']}]")
+        if r.get("academic_citation") and r["academic_citation"] != "Unknown":
+            lines.append(f"Academic Citation: {r['academic_citation']}")
+        if r.get("doi") and r["doi"] != "Unknown":
+            lines.append(f"DOI: {r['doi']}")
+        if r.get("publisher") and r["publisher"] != "Unknown":
+            lines.append(f"Publisher: {r['publisher']}")
+        if r.get("publication_year") and r["publication_year"] != "Unknown":
+            lines.append(f"Year: {r['publication_year']}")
         lines.append(r["text"].strip())
 
     return "\n".join(lines)

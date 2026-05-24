@@ -1,6 +1,6 @@
 """
 RAG Service — FastAPI Application
-Provides /rag/query (semantic retrieval) and /rag/ingest (document ingestion).
+Provides /rag/query, /rag/ingest, and /rag/status endpoints.
 """
 import os
 import logging
@@ -13,17 +13,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional
 
-from app.services.ingestion import run_ingestion
-from app.services.retrieval import retrieve, format_context_for_prompt
+from app.services.ingestion import run_ingestion, get_cache
+from app.services.retrieval import retrieve, format_context_for_prompt, get_cache_stats
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 async def verify_internal_token(request: Request, x_internal_token: str = Header(None)):
-    if request.url.path in ("/health", "/docs", "/openapi.json", "/rag/ingest"):
+    if request.url.path in ("/health", "/metrics", "/docs", "/openapi.json", "/rag/ingest", "/rag/status"):
         return True
-    secret = os.environ["INTERNAL_SHARED_SECRET"]
+    secret = os.environ.get("INTERNAL_SHARED_SECRET", "")
     if not x_internal_token or x_internal_token != secret:
         raise HTTPException(status_code=403, detail="Forbidden: Invalid internal token")
     return True
@@ -31,14 +31,20 @@ async def verify_internal_token(request: Request, x_internal_token: str = Header
 
 app = FastAPI(
     title="AgriVision RAG Service",
-    description="Semantic retrieval over BARI/BRRI agricultural knowledge base using Gemini embeddings + Qdrant.",
-    version="1.0.0",
+    description=(
+        "Semantic retrieval over BARI/BRRI agricultural knowledge base using "
+        "Gemini embeddings + Qdrant. Optimized with SHA-256 hash cache and "
+        "TTL query embedding cache to minimize Gemini API usage."
+    ),
+    version="2.0.0",
     dependencies=[Depends(verify_internal_token)],
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001").split(","),
+    allow_origins=os.getenv(
+        "ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001"
+    ).split(","),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -74,25 +80,64 @@ class QueryResponse(BaseModel):
     collection_empty: bool = False
 
 
+class IngestRequest(BaseModel):
+    force: bool = Field(
+        False,
+        description=(
+            "If true, wipe the Qdrant collection and hash cache, then re-embed "
+            "all documents from scratch. Use only when the embedding model or "
+            "chunk schema changes. Costs API quota proportional to total chunks."
+        ),
+    )
+
+
 class IngestResponse(BaseModel):
     success: bool
     message: str
     details: Optional[dict] = None
 
 
+class StatusResponse(BaseModel):
+    status: str
+    embedding_cache: dict
+    query_cache: dict
+
+
 # ── Endpoints ──────────────────────────────────────────────────────────────────
 
 @app.get("/health")
 def health():
-    return {"status": "healthy", "service": "rag-service", "version": "1.0.0"}
+    return {"status": "healthy", "service": "rag-service", "version": "2.0.0"}
+
 
 @app.get("/metrics")
 def metrics():
-    """Prometheus-compatible metrics endpoint"""
+    """Prometheus-compatible metrics endpoint."""
     from fastapi.responses import Response
     return Response(
-        content='# HELP service_up Whether the service is up\n# TYPE service_up gauge\nservice_up{service="rag-service"} 1\n',
+        content=(
+            '# HELP service_up Whether the service is up\n'
+            '# TYPE service_up gauge\n'
+            'service_up{service="rag-service"} 1\n'
+        ),
         media_type="text/plain",
+    )
+
+
+@app.get("/rag/status", response_model=StatusResponse)
+def rag_status():
+    """
+    Return current cache stats: number of cached chunk hashes (embedding cache)
+    and number of cached query vectors (query embedding cache).
+    Use this to verify the optimization is working — re-ingestion should show
+    chunks_newly_indexed=0 after the first run.
+    """
+    embedding_cache_stats = get_cache().stats()
+    query_cache_stats = get_cache_stats()
+    return StatusResponse(
+        status="operational",
+        embedding_cache=embedding_cache_stats,
+        query_cache=query_cache_stats,
     )
 
 
@@ -100,7 +145,7 @@ def metrics():
 async def query_knowledge_base(req: QueryRequest):
     """
     Semantic vector search over the agricultural knowledge base.
-    Returns relevant chunks from BARI/BRRI documents to ground the advisory LLM.
+    Query embeddings are cached for 1 hour — repeated questions cost 0 extra API calls.
     """
     results = retrieve(query=req.query, top_k=req.top_k, crop=req.crop)
 
@@ -125,18 +170,29 @@ async def query_knowledge_base(req: QueryRequest):
 
 
 @app.post("/rag/ingest", response_model=IngestResponse)
-async def ingest_documents(background_tasks: BackgroundTasks):
+async def ingest_documents(req: IngestRequest = IngestRequest()):
     """
-    Trigger ingestion of all documents under models/sources/ into Qdrant.
-    This endpoint runs synchronously and returns when ingestion is complete.
+    Trigger incremental ingestion of documents under models/sources/ into Qdrant.
+    
+    - **Default (force=false)**: Only embeds new/changed chunks (0 API calls if nothing changed).
+    - **force=true**: Wipes collection and hash cache, re-embeds everything from scratch.
+      Use only when the embedding model or chunk schema changes.
     """
     try:
-        result = run_ingestion()
-        return IngestResponse(
-            success=True,
-            message=f"Ingestion complete. {result.get('chunks_indexed', 0)} chunks indexed.",
-            details=result,
-        )
+        result = run_ingestion(force=req.force)
+        newly = result.get("chunks_newly_indexed", 0)
+        skipped = result.get("chunks_skipped", 0)
+        status = result.get("status", "unknown")
+
+        if status == "up_to_date":
+            msg = f"All {skipped} chunks already indexed — 0 API calls made. Cache is fresh."
+        else:
+            msg = (
+                f"Ingestion complete. {newly} new chunks embedded, "
+                f"{skipped} skipped from cache."
+            )
+
+        return IngestResponse(success=True, message=msg, details=result)
     except Exception as e:
         logger.error(f"Ingestion failed: {e}")
         raise HTTPException(status_code=500, detail=f"Ingestion failed: {str(e)}")

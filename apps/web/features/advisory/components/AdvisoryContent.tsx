@@ -150,6 +150,13 @@ export function ChatInterface({
       recognition.onerror = (e: any) => {
         console.error("Speech recognition error:", e);
         setIsListening(false);
+        if (e.error === 'not-allowed') {
+          alert("মাইক্রোফোন ব্যবহারের অনুমতি দেওয়া হয়নি। দয়া করে ব্রাউজার সেটিংস থেকে অনুমতি দিন।");
+        } else if (e.error === 'no-speech') {
+          // Silent timeout, no need to alert, just reset state
+        } else {
+          alert(`ভয়েস ইনপুট ত্রুটি: ${e.error}`);
+        }
       };
       
       recognition.onresult = (event: any) => {
@@ -390,7 +397,7 @@ export function ChatInterface({
                         ? 'bg-red-50 dark:bg-red-950/20 text-red-600 animate-pulse border border-red-100' 
                         : 'hover:bg-slate-100/70 dark:hover:bg-slate-800 text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
                     }`}
-                    title="ইংলিশ ভয়েস ইনপুট"
+                    title="কণ্ঠস্বরের মাধ্যমে লিখুন"
                   >
                      {isListening ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
                   </button>
@@ -541,25 +548,60 @@ function AdvisoryActions({ text }: { text: string }) {
       return;
     }
 
-    const cleanText = text.replace(/[*#_\-\+`]/g, "").replace(/\[.*?\]\(.*?\)/g, "").trim();
+    // Robust cleaning: remove URLs, brackets, and citation metadata lines
+    const cleanText = text
+      .split('\n')
+      .filter(line => {
+        const trimmed = line.trim();
+        return !trimmed.startsWith('Academic Citation:') &&
+               !trimmed.startsWith('DOI:') &&
+               !trimmed.startsWith('Publisher:') &&
+               !trimmed.startsWith('Year:');
+      })
+      .join('\n')
+      .replace(/\[Source\s+\d+:.*?\]/gi, "")
+      .replace(/\[.*?\.md\]/gi, "")
+      .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
+      .replace(/https?:\/\/[^\s]+/gi, "")
+      .replace(/[*#_\-\+`]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
     if (!cleanText) return;
 
     setIsPlaying(true);
 
     try {
-      const url = `/api/voice/tts?text=${encodeURIComponent(cleanText)}`;
-      const newAudio = new Audio(url);
+      // POST the text to bypass URL character limits (e.g. 414 URI Too Long)
+      const response = await fetch("/api/voice/tts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: cleanText }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`TTS server error: ${response.status}`);
+      }
+
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      
+      const newAudio = new Audio(blobUrl);
       setAudio(newAudio);
       
       newAudio.onended = () => {
         setIsPlaying(false);
         setAudio(null);
+        URL.revokeObjectURL(blobUrl);
       };
       
       newAudio.onerror = (e) => {
         console.error("Gemini TTS playback failed, falling back to Web Speech API:", e);
         newAudio.pause();
         setAudio(null);
+        URL.revokeObjectURL(blobUrl);
         fallbackSpeechSynthesis(cleanText);
       };
 

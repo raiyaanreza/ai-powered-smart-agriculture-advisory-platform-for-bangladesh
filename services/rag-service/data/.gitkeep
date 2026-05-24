@@ -1,0 +1,2 @@
+# This directory stores the SQLite embedding cache (embedding_cache.db).
+# The .db file is gitignored — only this .gitkeep is tracked.

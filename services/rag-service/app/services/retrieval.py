@@ -1,91 +1,98 @@
 """
-RAG Retrieval Service
-Semantic vector lookup using Qdrant + Gemini text-embedding-004.
-Called by the advisory service before sending a prompt to Gemini.
+RAG Retrieval Service — Local Embeddings + TTL Query Cache
+==========================================================
+Uses local BAAI/bge-m3 (sentence-transformers) for query embedding.
+Zero API calls. Query vectors cached for 1 hour.
 """
-import os
 import logging
+import os
 from typing import List, Optional
 
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_qdrant import QdrantVectorStore
-from langchain_core.documents import Document
 from qdrant_client import QdrantClient
+from qdrant_client.models import ScoredPoint
+
+from app.services.embeddings import embed_query, get_query_cache_stats
 
 logger = logging.getLogger(__name__)
 
-QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_URL      = os.getenv("QDRANT_URL", "http://localhost:6333")
 COLLECTION_NAME = "agri_knowledge_base"
-EMBEDDING_MODEL = "models/gemini-embedding-2"
 
 
-def _get_embeddings() -> GoogleGenerativeAIEmbeddings:
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("GEMINI_API_KEY not set")
-    return GoogleGenerativeAIEmbeddings(
-        model=EMBEDDING_MODEL,
-        google_api_key=api_key,
+def _get_client() -> QdrantClient:
+    return QdrantClient(
+        url=QDRANT_URL,
+        api_key=os.getenv("QDRANT_API_KEY"),
+        timeout=30,
     )
 
 
 def _collection_exists() -> bool:
     try:
-        qdrant_api_key = os.getenv("QDRANT_API_KEY")
-        client = QdrantClient(url=QDRANT_URL, api_key=qdrant_api_key)
-        existing = [c.name for c in client.get_collections().collections]
-        return COLLECTION_NAME in existing
+        names = [c.name for c in _get_client().get_collections().collections]
+        return COLLECTION_NAME in names
     except Exception:
         return False
 
 
 def retrieve(query: str, top_k: int = 3, crop: Optional[str] = None) -> List[dict]:
     """
-    Retrieve the top-k most semantically relevant document chunks for a query.
-    Optionally filter by crop metadata.
-    Returns a list of dicts: { "text": ..., "source": ..., "score": ... }
+    Retrieve top-k semantically relevant chunks for a query.
+    Uses local bge-m3 embedding (0 API calls) + TTL cache for repeated queries.
+
+    Args:
+        query:  Farmer's question.
+        top_k:  Number of chunks to retrieve.
+        crop:   Optional crop filter.
+
+    Returns:
+        List of result dicts with text, source, score, and metadata.
     """
     if not _collection_exists():
-        logger.warning("Qdrant collection does not exist yet. Run ingestion first.")
+        logger.warning("Qdrant collection not found. Run /rag/ingest first.")
         return []
 
     try:
-        embeddings = _get_embeddings()
-        qdrant_api_key = os.getenv("QDRANT_API_KEY")
-        store = QdrantVectorStore.from_existing_collection(
-            embedding=embeddings,
+        # embed_query() uses TTL cache — same query = 0 compute after first call
+        query_vector = embed_query(query)
+
+        client = _get_client()
+        res = client.query_points(
             collection_name=COLLECTION_NAME,
-            url=QDRANT_URL,
-            api_key=qdrant_api_key,
+            query=query_vector,
+            limit=top_k,
         )
 
-        results_with_scores: List[tuple[Document, float]] = store.similarity_search_with_score(
-            query, k=top_k
-        )
-
-        return [
+        raw = [
             {
-                "text": doc.page_content,
-                "source": doc.metadata.get("source", "Unknown"),
-                "crop": doc.metadata.get("crop", "Unknown"),
-                "disease_pest_name": doc.metadata.get("disease_pest_name", "Unknown"),
-                "publisher": doc.metadata.get("publisher", "Unknown"),
-                "publication_year": doc.metadata.get("publication_year", "Unknown"),
-                "doi": doc.metadata.get("doi", "Unknown"),
-                "academic_citation": doc.metadata.get("academic_citation", "Unknown"),
-                "score": float(score),
+                "text": point.payload.get("text", point.payload.get("page_content", "")),
+                "source": point.payload.get("source", "Unknown"),
+                "crop": point.payload.get("crop", "Unknown"),
+                "disease_pest_name": point.payload.get("disease_pest_name", "Unknown"),
+                "publisher": point.payload.get("publisher", "Unknown"),
+                "publication_year": point.payload.get("publication_year", "Unknown"),
+                "doi": point.payload.get("doi", "Unknown"),
+                "academic_citation": point.payload.get("academic_citation", "Unknown"),
+                "score": float(point.score),
             }
-            for doc, score in results_with_scores
+            for point in res.points
         ]
+
+        if crop:
+            filtered = [r for r in raw if r["crop"].lower() == crop.lower()]
+            if filtered:
+                return filtered
+            logger.info(f"Crop filter '{crop}' → 0 results, falling back to unfiltered.")
+
+        return raw
+
     except Exception as e:
         logger.error(f"RAG retrieval failed: {e}")
         return []
 
 
 def format_context_for_prompt(results: List[dict]) -> str:
-    """
-    Format retrieved results into a clean context block to inject into the Gemini prompt.
-    """
+    """Format retrieved chunks into a Gemini-ready context block."""
     if not results:
         return ""
 
@@ -103,3 +110,8 @@ def format_context_for_prompt(results: List[dict]) -> str:
         lines.append(r["text"].strip())
 
     return "\n".join(lines)
+
+
+# Re-export cache stats for /rag/status endpoint
+def get_cache_stats() -> dict:
+    return get_query_cache_stats()

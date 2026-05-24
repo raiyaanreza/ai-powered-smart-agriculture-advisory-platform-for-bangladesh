@@ -86,3 +86,5 @@ pnpm-debug.log*
 # --- Testing ---
 playwright-report/
 test-results/
+# RAG embedding cache (SQLite)
+services/rag-service/data/embedding_cache.db

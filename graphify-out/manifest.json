@@ -208,8 +208,8 @@
     "hash": "e111556e1b5609e93420dc1bd7b65dd1"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\api\\voice\\tts\\route.ts": {
-    "mtime": 1779625737.444429,
-    "hash": "acebd69a11e8c0e95119f838a2d260e7"
+    "mtime": 1779633234.0809197,
+    "hash": "c62b38cfa9da775cb59f199b0036220f"
   },
   "E:\\agri-ai-platform\\apps\\web\\app\\auth\\callback\\page.tsx": {
     "mtime": 1778791909.6028218,
@@ -296,8 +296,8 @@
     "hash": "485d47f9e6f866e564685e6584e1e747"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisoryContent.tsx": {
-    "mtime": 1779625763.7102776,
-    "hash": "302963cc3ca3ec5898d7d2bd55687425"
+    "mtime": 1779633403.017838,
+    "hash": "5a16be3d84697209ec554f5cd65cefd3"
   },
   "E:\\agri-ai-platform\\apps\\web\\features\\advisory\\components\\AdvisoryDashboard.tsx": {
     "mtime": 1779175979.7123933,
@@ -606,6 +606,10 @@
   "E:\\agri-ai-platform\\scratch\\test_gemini_audio.py": {
     "mtime": 1779625691.8958106,
     "hash": "50d4835dbf0e7566b77f3b010a20adc3"
+  },
+  "E:\\agri-ai-platform\\scratch\\test_google_tts.py": {
+    "mtime": 1779626613.4238653,
+    "hash": "cebade95053418bf0668e975161dcd89"
   },
   "E:\\agri-ai-platform\\scratch\\test_pipeline.py": {
     "mtime": 1778847702.5772583,
@@ -1164,8 +1168,8 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\main.py": {
-    "mtime": 1779607100.043784,
-    "hash": "d41162566ef26870b89e470ba798a061"
+    "mtime": 1779627162.7110105,
+    "hash": "189b89b51e74107a363410f7ee82a0f5"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\__init__.py": {
     "mtime": 1779014397.8320844,
@@ -1191,13 +1195,17 @@
     "mtime": 1779014397.830572,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
+  "E:\\agri-ai-platform\\services\\rag-service\\app\\services\\embeddings.py": {
+    "mtime": 1779633176.5853665,
+    "hash": "69f46a0313059a73dfd0dba526daed28"
+  },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\services\\ingestion.py": {
-    "mtime": 1779609818.2968607,
-    "hash": "7a1fafd9b0a0bc1967af9e1db41c86bb"
+    "mtime": 1779630678.065424,
+    "hash": "0046ce8134263b8a595e31f66d7bdb3f"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\services\\retrieval.py": {
-    "mtime": 1779607582.5545125,
-    "hash": "f6ee4ab82f3f78b32dddeefbfb8fe93c"
+    "mtime": 1779632837.1328402,
+    "hash": "1544d0b6b17398f7331fcbb5e0056224"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\app\\services\\__init__.py": {
     "mtime": 1779014397.830572,
@@ -1280,8 +1288,8 @@
     "hash": "8777224563e727170f6cabf94e923898"
   },
   "E:\\agri-ai-platform\\CURRENT_STATE.md": {
-    "mtime": 1779625817.0300162,
-    "hash": "c802c93c3fd9617d904cd111abb8836e"
+    "mtime": 1779626670.4620156,
+    "hash": "ba3de2cbfb9453ff3c2f16a926d44d45"
   },
   "E:\\agri-ai-platform\\DECISIONS.md": {
     "mtime": 1779018180.1188202,
@@ -1760,8 +1768,8 @@
     "hash": "fb89a426759534804b0ca41bfec08f17"
   },
   "E:\\agri-ai-platform\\playwright-report\\index.html": {
-    "mtime": 1779625809.5207524,
-    "hash": "0f3db5846fce17d40e13715a80f2bfa2"
+    "mtime": 1779626673.4725566,
+    "hash": "c208253a4020e2f2dd6da16ff699a4da"
   },
   "E:\\agri-ai-platform\\scratch\\advisory_rag_response.txt": {
     "mtime": 1779263376.775967,
@@ -1936,8 +1944,8 @@
     "hash": "28af2284f09fe3879c9f2ec090c5c8e3"
   },
   "E:\\agri-ai-platform\\services\\rag-service\\requirements.txt": {
-    "mtime": 1779261714.830043,
-    "hash": "33a82cebd3cbb560512f645112d02476"
+    "mtime": 1779627715.889972,
+    "hash": "7798013ac34c8bb712970a1598f94d12"
   },
   "E:\\agri-ai-platform\\services\\report-service\\AGENTS.md": {
     "mtime": 1779172297.4640288,
@@ -5890,5 +5898,9 @@
   "E:\\agri-ai-platform\\assets\\Overview_Videomp_.mp4": {
     "mtime": 1778838169.1686225,
     "hash": "f8136f2710c48944063d522097a6de73"
+  },
+  "E:\\agri-ai-platform\\scratch\\test_google_tts.mp3": {
+    "mtime": 1779626620.3253217,
+    "hash": "68f825ee2a2602612f48603eadef35b8"
   }
 }

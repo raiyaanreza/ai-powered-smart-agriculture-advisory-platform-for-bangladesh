@@ -90,7 +90,7 @@ Stabilizing the unified ecosystem and preparing for Phase 5 (National Scale Feat
 
 ### 16. Chat UI Redesign, Voice Fixes & Cultural Greeting Correction (Latest)
 - **Description**: Redesigned the AgriAdvisor chat interface layout and system prompts for an industry-grade, premium user experience, and resolved voice input/output issues.
-- **Key Feature**: Centered the chat viewport to eliminate empty space, upgraded the input bar to a glassmorphic auto-growing textarea, extracted raw text citations, and rendered them as beautiful structured cards. Added strict instructions in LLM prompts to greet users with "Assalamu Alaikum" or neutral welcoming agricultural terms. Engineered a serverless Gemini-powered Text-to-Speech endpoint (`/api/voice/tts`) using specialized `gemini-3.1-flash-tts-preview` and server-side PCM-to-WAV header conversion to output high-quality playable audio streams. Integrated browser fallback mechanisms and set spoken recognition language to `bn-BD`.
+- **Key Feature**: Centered the chat viewport to eliminate empty space, upgraded the input bar to a glassmorphic auto-growing textarea, extracted raw text citations, and rendered them as beautiful structured cards. Added strict instructions in LLM prompts to greet users with "Assalamu Alaikum" or neutral welcoming agricultural terms. Engineered a serverless Google Translate TTS proxy endpoint (`/api/voice/tts`) that splits text under the 180-character limit, downloads MP3 buffers, and concatenates them to stream a standard browser-playable `audio/mpeg` response. Integrated browser SpeechSynthesis fallback mechanisms and set spoken recognition language to `bn-BD`.
 - **Status**: Complete & Verified with Playwright E2E tests.
 
 ---
